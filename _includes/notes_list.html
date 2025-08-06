@@ -1,17 +1,17 @@
 {% if site.notes.size > 0 %}
   <h2 class="home-title">{{ site.theme_config.home.title_blog }}</h2>
-  <ul class="post-list">
+  <div class="vertical-list">  <!-- Changed from ul to div -->
     {% assign sorted_notes = site.notes | sort: "date" | reverse %}
     {% for note in sorted_notes %}
-      <li class="post-list-item">
-        <p class="post-meta">
-          <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
-          • {{ note.date | date: site.theme_config.date_format }}
-        </p>
+      <div class="vertical-list-item">  <!-- Changed from li -->
+        <a href="{{ note.url | relative_url }}" class="vertical-list-link">
+          <span class="vertical-list-title">{{ note.title }}</span>
+          <span class="vertical-list-meta">{{ note.date | date: site.theme_config.date_format }}</span>
+        </a>
         {% if note.excerpt %}
-          <p class="post-excerpt">{{ note.excerpt }}</p>
+          <p class="vertical-list-desc">{{ note.excerpt }}</p>
         {% endif %}
-      </li>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 {% endif %}
