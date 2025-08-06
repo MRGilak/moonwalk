@@ -60,6 +60,13 @@ misc_entries:
   - title: and you can add data in _data/home.yml
     url: false
 
+  - title: My Notes
+  url: false
+
+  - title: View All Notes
+    url: /notes/
+    desc: Browse all my knowledge base
+
   - title: Blog posts
     post_list: true
     url: false
