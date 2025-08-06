@@ -22,8 +22,8 @@ layout: default
 {% endif %}
 
 {% if site.theme_config.show_notes == true %}
-  <h2>{{ site.theme_config.home.title_notes }}</h2>
-  {% include notes_list.html %}
+  <h2><a href="{{ "/notes/" | relative_url }}">{{ site.theme_config.home.title_blog }}</a></h2>
+  {% include recent_notes_list.html %}
 {% endif %}
 
 {% if site.theme_config.show_misc_list == true %}
