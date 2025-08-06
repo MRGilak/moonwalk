@@ -52,7 +52,8 @@ theme_config:
   home:
     title_projects: My Projects
     title_misc_list: Details
-    title_blog: My Notes
+    title_notes: My Notes
+    title_blog: My Blog
     title_old_projects: Archive
 
 highlighter: rouge
