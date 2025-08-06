@@ -2,12 +2,12 @@
   <ul class="post-list">
     {% for post in site.posts %}
       <li class="post-list-item">
-        <h3>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h3>
-
         <p class="post-meta">
-          {{ post.date | date: site.theme_config.date_format }}
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          • {{ post.date | date: site.theme_config.date_format }}
+          {% if post.vault %}
+            • Vault: {{ post.vault }}
+          {% endif %}
         </p>
 
         {% if post.excerpt and post.excerpt != "" %}
