@@ -8,9 +8,6 @@
           <span class="vertical-list-title">{{ note.title }}</span>
           <span class="vertical-list-meta">{{ note.date | date: site.theme_config.date_format }}</span>
         </a>
-        {% if note.excerpt %}
-          <p class="vertical-list-desc">{{ note.excerpt }}</p>
-        {% endif %}
       </div>
     {% endfor %}
   </div>
