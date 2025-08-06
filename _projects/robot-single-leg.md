@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: page
 title: Robot Single Leg
 permalink: /robot-single-leg
 ---
