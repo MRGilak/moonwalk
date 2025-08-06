@@ -23,22 +23,18 @@ project_entries:
     desc: Exploring learning algorithms applied to robotics and dynamic systems.
 
 old_project_entries:
-  - title: Soopr
-    url: https://www.soopr.co
-    desc: Delight your readers - add beautiful share and like buttons easily to your websites 
+  - title: Model Predictive Control
+    url: https://github.com/MRGilak/Model-Predictive-Control
+    desc: MATLAB codes for a DMC and an EPFC controller
     highlight: NEW
 
-  - title: Cookie
-    url: https://github.com/abhinavs/cookie
-    desc: An open source landing website with supporting pages and integrated blog
+  - title: Optimal Control
+    url: https://github.com/MRGilak/Optimal-Control
+    desc: MATLAB codes for solving the general nonlinear optimal control problem
 
-  - title: Moonwalk
-    url: https://github.com/abhinavs/moonwalk
-    desc: A fast and minimalist Jekyll blog theme with clean dark mode
-
-  - title: Humangous
-    url: https://www.humangous.co
-    desc: The better people know you, the better they collaborate
+  - title: Java Hspice
+    url: https://github.com/MRGilak/ProjectPhase1
+    desc: A Java implementation of Hspice for simulating electrical circuits
 
 footer_entries:
   - title: Linkedin
