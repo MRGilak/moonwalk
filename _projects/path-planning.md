@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: page
 title: Path Planning
 permalink: /path-planning
 ---
