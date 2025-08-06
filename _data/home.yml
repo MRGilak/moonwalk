@@ -57,11 +57,11 @@ misc_entries:
     url: false
 
   - title: My Notes
-  url: false
+    url: false
 
   - title: View All Notes
     url: /notes/
-    desc: Browse all my knowledge base
+    # desc: Browse all my knowledge base
 
   - title: Blog posts
     post_list: true
