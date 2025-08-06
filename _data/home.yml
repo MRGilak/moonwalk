@@ -7,19 +7,19 @@ navbar_entries:
 
 project_entries:
   - title: Robot Single Leg
-    url: /projects/robot-single-leg
+    url: /robot-single-leg
     desc: Notes and development updates on the design and control of a single robotic leg.
 
   - title: Path Planning
-    url: /projects/path-planning
+    url: /path-planning
     desc: An ADRC approach to autonomous vehicles path planning in complex environments.
 
   - title: Inverse Optimal Control
-    url: /projects/inverse-optimal-control
+    url: /inverse-optimal-control
     desc: A research-driven project exploring the inverse optimal control framework.
 
   - title: Learning
-    url: /projects/learning
+    url: /learning
     desc: Exploring learning algorithms applied to robotics and dynamic systems.
 
 old_project_entries:
