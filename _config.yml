@@ -18,6 +18,7 @@ collections:
     output: true
     permalink: /notes/:path/
     sort_by: date
+    published: true 
 
 defaults:
   - scope:
