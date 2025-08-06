@@ -61,7 +61,7 @@ misc_entries:
 
   - title: View All Notes
     url: /notes/
-    # desc: Browse all my knowledge base
+    desc: "Browse all my knowledge base"  # Removed comment, added as string
 
   - title: Blog posts
     post_list: true
@@ -84,5 +84,3 @@ misc_entries:
 
           - title: it is easy to use, see _data/home.yml to see how to configure it.
             url: false
-
-
