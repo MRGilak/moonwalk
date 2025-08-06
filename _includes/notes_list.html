@@ -1,14 +1,22 @@
 {% if site.notes.size > 0 %}
-  <h2 class="home-title">{{ site.theme_config.home.title_blog }}</h2>
-  <div class="vertical-list">  <!-- Changed from ul to div -->
+  <ul class="post-list">
     {% assign sorted_notes = site.notes | sort: "date" | reverse %}
     {% for note in sorted_notes %}
-      <div class="vertical-list-item">  <!-- Changed from li -->
-        <a href="{{ note.url | relative_url }}" class="vertical-list-link">
-          <span class="vertical-list-title">{{ note.title }}</span>
-          <span class="vertical-list-meta">{{ note.date | date: site.theme_config.date_format }}</span>
-        </a>
-      </div>
+      <li class="post-list-item">
+        <p class="post-meta">
+          {{ note.date | date: site.theme_config.date_format }}
+          • <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+          {% if note.vault %}
+            • Vault: {{ note.vault }}
+          {% endif %}
+        </p>
+
+        {% if note.excerpt and note.excerpt != "" %}
+          <p class="post-excerpt">
+            {{ note.excerpt }}
+          </p>
+        {% endif %}
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 {% endif %}
