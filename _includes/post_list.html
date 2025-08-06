@@ -3,8 +3,8 @@
     {% for post in site.posts %}
       <li class="post-list-item">
         <p class="post-meta">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          • {{ post.date | date: site.theme_config.date_format }}
+          {{ post.date | date: site.theme_config.date_format }}
+          • <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           {% if post.vault %}
             • Vault: {{ post.vault }}
           {% endif %}
