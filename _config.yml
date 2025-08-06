@@ -8,6 +8,12 @@ permalink: /:slug
 
 favicon: "./logo.png" # relative path to site's favicon
 
+# Register the _projects folder as a collection so Jekyll builds pages for each file
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 #theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
 remote_theme: abhinavs/moonwalk
 
