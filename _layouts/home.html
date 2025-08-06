@@ -22,7 +22,9 @@ layout: default
 {% endif %}
 
 {% if site.theme_config.show_notes == true %}
-  <h2><a href="{{ "/notes/" | relative_url }}">{{ site.theme_config.home.title_notes }}</a></h2>
+  <h2 class="notes-header">
+    <a href="{{ "/notes/" | relative_url }}">{{ site.theme_config.home.title_notes }}</a>
+  </h2>
   {% include recent_notes_list.html %}
 {% endif %}
 
