@@ -1,0 +1,17 @@
+{% if site.notes.size > 0 %}
+  <h2 class="home-title">{{ site.theme_config.home.title_blog }}</h2>
+  <ul class="post-list">
+    {% assign sorted_notes = site.notes | sort: "date" | reverse %}
+    {% for note in sorted_notes %}
+      <li class="post-list-item">
+        <p class="post-meta">
+          <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+          • {{ note.date | date: site.theme_config.date_format }}
+        </p>
+        {% if note.excerpt %}
+          <p class="post-excerpt">{{ note.excerpt }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
