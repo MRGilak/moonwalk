@@ -1,16 +1,12 @@
-title: Moonwalk
-author: Abhinav Saxena
-url: https://www.abhinavsaxena.com/moonwalk # root address of the site
+title: My Personal Website
+author: Mohammadreza Gilak
+url: https://mrgilak.github.io/moonwalk/
 description: > # description of the site (multiple lines allowed)
-  Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.
+  Welcome to my personal site, where I write about my projects and share my notes. 
 
 permalink: /:slug
 
 favicon: "./logo.png" # relative path to site's favicon
-
-twitter:
-    username: abhinav # update or delete this
-    card: summary_large_image
 
 #theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
 remote_theme: abhinavs/moonwalk
@@ -33,13 +29,10 @@ theme_config:
   show_tags: true # show tags in a blog posts
   # options for "home" page
   home:
-    title_projects: Portfolio
+    title_projects: My Projects
     title_misc_list: Details
-    title_blog: Blog
-    title_old_projects: Old Projects
-
-soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
+    title_blog: My Writings
+    title_old_projects: Archive
 
 highlighter: rouge
 
