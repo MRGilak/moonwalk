@@ -14,6 +14,19 @@ collections:
     output: true
     permalink: /projects/:name/
 
+  notes:
+    output: true
+    permalink: /notes/:path/
+    sort_by: date
+
+defaults:
+  - scope:
+      path: "_notes"
+      type: "notes"
+    values:
+      layout: "note"
+      show_toc: true
+
 #theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
 remote_theme: abhinavs/moonwalk
 
