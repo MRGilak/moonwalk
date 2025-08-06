@@ -10,7 +10,7 @@
           {{ post.date | date: site.theme_config.date_format }}
         </p>
 
-        {% if post.excerpt != post.content %}
+        {% if post.excerpt and post.excerpt != "" %}
           <p class="post-excerpt">
             {{ post.excerpt }}
           </p>
