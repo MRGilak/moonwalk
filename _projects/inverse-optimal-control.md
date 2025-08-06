@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: page
 title: Inverse Optimal Control
 permalink: /inverse-optimal-control
 ---
