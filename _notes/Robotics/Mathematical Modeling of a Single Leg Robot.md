@@ -7,7 +7,7 @@ excerpt: "# General Overview of the Problem"
 
 # General Overview of the Problem
 The problem can be simply stated as this: We have a mass $M$ attached to a leg. The leg has a hip and a knee. A torque can be applied to each of these joints, named $\tau_h$ and $\tau_k$. The height of the mass $M$ is called $y$. There is also a force acting on the point where the leg touches the ground. This force is called $F$. These are shown in the image below:
-![2025_08_03 13_59 Office Lens.jpg](/assets/2025_08_03 13_59 Office Lens.jpg)
+![2025_08_03 13_59 Office Lens.jpg](/assets/Robotics/2025_08_03 13_59 Office Lens.jpg)
 A simple jump action is also demonstrated on the right.
 The control goal is to determine appropriate inputs $\tau_h$ and $\tau_k$. such that the $y$ and $F$ follow the desired reference.  
 The dynamic model can be written from two points of view:
@@ -50,7 +50,7 @@ Various authors and robotic teams were suggested, including Alexander Badri-Spro
 
 ## A more clear view of the problem
 The angles are defined as below:
-![photo_5805553624271669357_y.jpg](/assets/photo_5805553624271669357_y.jpg)
+![photo_5805553624271669357_y.jpg](/assets/Robotics/photo_5805553624271669357_y.jpg)
 The motors used are brushless motors.
 In the early days of robotic, stepper motors were used. These motors have control over their angles, so they will go to any angle. The problem with those was that if you exerted enough pressure and force on them, they would turn and lose the right angle. They are also what gave the early robots their signature robot-like movements.
 Today, brushless DC motors (BLDC) are used. These motors have a permanent magnet inside a coiling. The voltage applied to the coil is directly related to the motor spinning speed in no load condition. The current applied is directly related to the torque the motor exerts when under load.
