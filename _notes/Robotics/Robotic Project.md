@@ -1,6 +1,6 @@
 ---
 layout: note
-title: "overview of the entire project"
+title: "Robotic Project"
 date: 2025-08-03
 excerpt: "Here, we will focus on controlling a 2DoF robot single leg."
 ---

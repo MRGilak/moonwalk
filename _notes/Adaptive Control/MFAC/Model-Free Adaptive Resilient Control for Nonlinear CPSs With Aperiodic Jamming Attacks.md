@@ -16,4 +16,4 @@ excerpt: "#MFAC #AdaptiveControl #CPS #DoS #IEEE"
 
 This paper is based on [MFAC](mfac).
 
-![Pasted image 20250713115014.png](/assets//assets/assets/Pasted image 20250713115014.png)
+![Pasted image 20250713115014.png](/assets/Pasted image 20250713115014.png)
