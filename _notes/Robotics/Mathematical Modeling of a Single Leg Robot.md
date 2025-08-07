@@ -1,7 +1,7 @@
 ---
 layout: note
 title: "Mathematical Modeling of a Single Leg Robot"
-date: 2025-08-05
+date: 2025-08-07
 excerpt: "# General Overview of the Problem"
 ---
 
