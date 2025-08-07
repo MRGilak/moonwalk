@@ -1,34 +1,6 @@
-<!-- …home button at the very top -->
+<!-- New structured notes content goes here -->
 <ul>
-  <li><a href="/notes/">…home</a></li>
-</ul>
-
-<!-- Overview (Home.md) -->
-<ul>
-  {% assign overview = site.notes | where: "path", "_notes/Home.md" | first %}
-  {% if overview %}
-    <li><a href="{{ overview.url }}">Overview</a></li>
-  {% endif %}
-</ul>
-
-{% comment %}
-  Group the rest of the notes by their top-level folder, excluding Home.md.
-{% endcomment %}
-{% assign other_notes = site.notes | reject: "path", "_notes/Home.md" | sort: 'path' %}
-{% assign grouped = other_notes | group_by_exp: "note", "note.path | split: '/' | slice: 1, 1 | first" %}
-
-<ul>
-  {% for group in grouped %}
-    <li>
-      <strong>{{ group.name }}</strong>
-      <ul>
-        {% assign subnotes = group.items | sort: 'path' %}
-        {% for note in subnotes %}
-          <li>
-            <a href="{{ note.url }}">{{ note.title | default: note.path | split: '/' | last | remove: '.md' }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </li>
-  {% endfor %}
+  <li>Note 1</li>
+  <li>Note 2</li>
+  <li>Note 3</li>
 </ul>
