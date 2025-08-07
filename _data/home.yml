@@ -57,7 +57,7 @@ misc_entries:
     url: false
 
   - title: My Notes
-    url: false
+    url: /notes/
 
   - title: View All Notes
     url: /notes/
