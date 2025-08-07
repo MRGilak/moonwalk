@@ -1,24 +1,43 @@
+{% comment %}
+Show Home.md first
+{% endcomment %}
 {% assign home_note = site.notes | where: "path", "_notes/Home.md" | first %}
 {% if home_note %}
-  <h3>{{ home_note.title }}</h3>
-  <p><a href="{{ home_note.url }}">{{ home_note.title }}</a></p>
+  <h3><a href="{{ home_note.url }}">{{ home_note.title }}</a></h3>
 {% endif %}
 
+{% comment %}
+Exclude Home.md from the rest
+{% endcomment %}
 {% assign other_notes = site.notes | reject: "path", "_notes/Home.md" %}
-{% assign grouped_notes = other_notes | group_by_exp: "note", "note.path | split: '/' | slice: 1, 1 | join" %}
 
-{% for folder in grouped_notes %}
-  <h2>{{ folder.name }}</h2>
+{% comment %}
+Group by top-level folder (e.g., Adaptive Control, Robotics)
+{% endcomment %}
+{% assign grouped = other_notes | group_by_exp: "note", "note.path | split: '/' | slice: 1, 1 | first" %}
 
-  {% assign sub_group = folder.items | group_by_exp: "note", "note.path | split: '/' | slice: 2, 1 | join" %}
-  {% for sub in sub_group %}
-    {% if sub.name != folder.name %}
-      <h3>{{ sub.name }}</h3>
+{% for group in grouped %}
+  {% assign folder = group.name %}
+  <h2>{{ folder }}</h2>
+
+  {% comment %}
+  Now group within this folder by subfolder, if any
+  e.g., Adaptive Control/MRAC/
+  {% endcomment %}
+  {% assign group_notes = group.items %}
+  {% assign subgroups = group_notes | group_by_exp: "note", "note.path | split: '/' | slice: 2, 1 | first" %}
+
+  {% for subgroup in subgroups %}
+    {% assign subfolder = subgroup.name %}
+    {% assign has_subfolder = subfolder != subgroup.items[0].path | split: '/' | slice: 1, 1 | first %}
+
+    {% if has_subfolder %}
+      <h3>{{ subfolder }}</h3>
     {% endif %}
 
     <ul>
-      {% for note in sub.items %}
-        <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+      {% for note in subgroup.items %}
+        <li><a href="{{ note.url }}">{{ note.title | default: note.path | split: '/' | last | remove: '.md' }}</a></li>
       {% endfor %}
     </ul>
   {% endfor %}
