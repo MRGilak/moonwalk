@@ -1,0 +1,25 @@
+{% assign home_note = site.notes | where: "path", "_notes/Home.md" | first %}
+{% if home_note %}
+  <h3>{{ home_note.title }}</h3>
+  <p><a href="{{ home_note.url }}">{{ home_note.title }}</a></p>
+{% endif %}
+
+{% assign other_notes = site.notes | reject: "path", "_notes/Home.md" %}
+{% assign grouped_notes = other_notes | group_by_exp: "note", "note.path | split: '/' | slice: 1, 1 | join" %}
+
+{% for folder in grouped_notes %}
+  <h2>{{ folder.name }}</h2>
+
+  {% assign sub_group = folder.items | group_by_exp: "note", "note.path | split: '/' | slice: 2, 1 | join" %}
+  {% for sub in sub_group %}
+    {% if sub.name != folder.name %}
+      <h3>{{ sub.name }}</h3>
+    {% endif %}
+
+    <ul>
+      {% for note in sub.items %}
+        <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endfor %}
