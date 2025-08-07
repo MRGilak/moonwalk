@@ -1,31 +1,39 @@
 <!-- …home button at the very top -->
-<ul>
-  <li><a href="/notes/">…home</a></li>
+<ul class="post-list">
+  <li class="post-list-item">
+    <p class="post-meta"><a href="/notes/">…home</a></p>
+  </li>
 </ul>
 
 <!-- Overview (Home.md) -->
-<ul>
+<ul class="post-list">
   {% assign overview = site.notes | where: "path", "_notes/Home.md" | first %}
   {% if overview %}
-    <li><a href="{{ overview.url }}">Overview</a></li>
+    <li class="post-list-item">
+      <p class="post-meta">
+        {% if overview.date %}{{ overview.date | date: site.theme_config.date_format }} • {% endif %}<a href="{{ overview.url | relative_url }}">{{ overview.title | default: "Overview" }}</a>
+      </p>
+    </li>
   {% endif %}
 </ul>
 
 {% comment %}
   Group the rest of the notes by their top-level folder, excluding Home.md.
 {% endcomment %}
-{% assign other_notes = site.notes | reject: "path", "_notes/Home.md" | sort: 'path' %}
+{% assign other_notes = site.notes | where_exp: "note", "note.path != '_notes/Home.md'" | sort: 'path' %}
 {% assign grouped = other_notes | group_by_exp: "note", "note.path | split: '/' | slice: 1, 1 | first" %}
 
-<ul>
+<ul class="post-list">
   {% for group in grouped %}
-    <li>
+    <li class="post-list-item">
       <strong>{{ group.name }}</strong>
-      <ul>
+      <ul class="post-list">
         {% assign subnotes = group.items | sort: 'path' %}
         {% for note in subnotes %}
-          <li>
-            <a href="{{ note.url }}">{{ note.title | default: note.path | split: '/' | last | remove: '.md' }}</a>
+          <li class="post-list-item">
+            <p class="post-meta">
+              {% if note.date %}{{ note.date | date: site.theme_config.date_format }} • {% endif %}<a href="{{ note.url | relative_url }}">{{ note.title | default: note.path | split: '/' | last | remove: '.md' }}</a>
+            </p>
           </li>
         {% endfor %}
       </ul>
