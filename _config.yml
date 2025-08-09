@@ -1,6 +1,6 @@
-title: My Personal Website
+title: Mohammadreza Gilak
 author: Mohammadreza Gilak
-url: https://mrgilak.github.io/moonwalk/
+url: https://mgilak.ir
 description: > # description of the site (multiple lines allowed)
   Welcome to my personal site, where I write about my projects and share my notes. 
 
@@ -63,3 +63,6 @@ sass:
 
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
