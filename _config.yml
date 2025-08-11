@@ -8,7 +8,7 @@ description: > # description of the site (multiple lines allowed)
 
 permalink: /:slug
 
-favicon: "./idea.jpg" # relative path to site's favicon
+favicon: "./technology.png" # relative path to site's favicon
 
 # Register the _projects folder as a collection so Jekyll builds pages for each file
 collections:
