@@ -31,6 +31,7 @@ old_project_entries:
   - title: Optimal Control
     url: https://github.com/MRGilak/Optimal-Control
     desc: MATLAB codes for solving the general nonlinear optimal control problem
+    highlight: NEW
 
   - title: Java Hspice
     url: https://github.com/MRGilak/ProjectPhase1
