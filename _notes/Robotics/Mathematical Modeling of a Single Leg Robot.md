@@ -41,7 +41,7 @@ The dynamic model can be written from two points of view:
 									\tau
 									\end{bmatrix} + J^{-1} [F]
 	$$
-	$q$ are the angles of the rods attached to the motors and $J^{-1}$ denotes the inverse dynamics. The direct dynamics $J$ is the mapping from $q$ to Cartesian coordinates $x,y$ . The inverse dynamic is the mapping from the Cartesian coordinates to $q$ values, which is not unique ($J$ might be singular), according to [this article](active-disturbance-rejection-control-of-a-2dof-manipulator-with-significant-modeling-uncertainty). 
+	$q$ are the angles of the rods attached to the motors and $J^{-1}$ denotes the inverse dynamics. The direct dynamics $J$ is the mapping from $q$ to Cartesian coordinates $x,y$ . The inverse dynamic is the mapping from the Cartesian coordinates to $q$ values, which is not unique ($J$ might be singular), according to [this article](/notes/active-disturbance-rejection-control-of-a-2dof-manipulator-with-significant-modeling-uncertainty/). 
 	So in this frame, the control inputs are $q$ (there is two of them, one for each motor). $F$ can be seen explicitly in the dynamics, but $y$ is hidden in $J^{-1}$. ==What is $\tau$ here?==
 >[!note] Note
 >To make designing a controller easier, a typical approximation is used, where it is assumed that $F = ky$. This is called SLIP (Spring-Loaded Inverted Pendulum).
@@ -54,4 +54,4 @@ The angles are defined as below:
 The motors used are brushless motors.
 In the early days of robotic, stepper motors were used. These motors have control over their angles, so they will go to any angle. The problem with those was that if you exerted enough pressure and force on them, they would turn and lose the right angle. They are also what gave the early robots their signature robot-like movements.
 Today, brushless DC motors (BLDC) are used. These motors have a permanent magnet inside a coiling. The voltage applied to the coil is directly related to the motor spinning speed in no load condition. The current applied is directly related to the torque the motor exerts when under load.
-The goal in [this project](robotic-project) is to find the appropriate $V-I$ characteristics (by finding the appropriate $\tau - \dot{q}$ characteristic), so that the right type of motor can be selected.
+The goal in [this project](/notes/robotic-project/) is to find the appropriate $V-I$ characteristics (by finding the appropriate $\tau - \dot{q}$ characteristic), so that the right type of motor can be selected.
