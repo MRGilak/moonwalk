@@ -6,6 +6,6 @@ excerpt: "Several papers have been reviewed for controlling a 2DoF robotic manip
 ---
 
 Several papers have been reviewed for controlling a 2DoF robotic manipulator or leg, including:
-- [This paper](/notes/Imported_Notes/active-disturbance-rejection-control-of-a-2dof-manipulator-with-significant-modeling-uncertainty/) uses two separate ADRC controllers for the two 2DoF robot. The ADRC results are compared with a traditional PID controller.
+- [This paper](/notes/Imported_Notes/Active Disturbance Rejection Control of a 2DOF manipulator with significant modeling uncertainty/) uses two separate ADRC controllers for the two 2DoF robot. The ADRC results are compared with a traditional PID controller.
 - a
 That's it for now :)
