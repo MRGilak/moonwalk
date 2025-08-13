@@ -18,7 +18,7 @@ collections:
 
   notes:
     output: true
-    permalink: /notes/:path/index.html
+    permalink: /notes/:path/
     sort_by: date
     published: true 
 
