@@ -8,7 +8,7 @@ excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
 #AdaptiveControl #MFAC #IEEE #IEEE2011 
 #IEEEControlSystemsTechnology 
 >[!summary] Summary
->This paper introduces (and contributes to) [MFAC](/notes/mfac/).
+>This paper introduces (and contributes to) [MFAC](/notes/Adaptive Control/MFAC/mfac/).
 >A general SISO nonlinear system is considered as:
 >$$
 > y(k+1)=f(y(k),...,y(k-n_y),u(k),...,u(k-n_u))
@@ -19,4 +19,4 @@ excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
 >$$
 >Parameter $\Phi$ is then estimated online and used for calculating the control input that minimizes a one-step-ahead cost function.
  
-This paper introduces and contributes to [MFAC](/notes/mfac/), especially PFDL and CFDL.
+This paper introduces and contributes to [MFAC](/notes/Adaptive Control/MFAC/mfac/), especially PFDL and CFDL.

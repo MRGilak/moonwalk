@@ -6,5 +6,5 @@ excerpt: "Projects include:"
 ---
 
 Projects include:
-- [Single Leg Control](/notes/robotic-project/)
+- [Single Leg Control](/notes/Robotics/robotic-project/)
 That's it for now :)

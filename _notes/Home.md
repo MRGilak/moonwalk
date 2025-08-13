@@ -6,10 +6,10 @@ excerpt: "For now, we're focusing on:"
 ---
 
 For now, we're focusing on:
-[Robotics](/notes/robotics/)
+[Robotics](/notes/Robotics/robotics/)
 
 
 General areas of research include:
-- [Adaptive Control](/notes/adaptive-control/)
-- [Robotics](/notes/robotics/)
+- [Adaptive Control](/notes/Adaptive Control/adaptive-control/)
+- [Robotics](/notes/Robotics/robotics/)
 a

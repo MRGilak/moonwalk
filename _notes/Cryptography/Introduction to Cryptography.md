@@ -33,6 +33,6 @@ Another important distinction between random and pseudo-random sequences is that
 
 A random walk is sometimes used to visualize a random sequence. The random walk for a seed eventually repeats itself, but the random walk of a truly random sequence doesn't. You can see this in effect [here](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/pi/random-walk-exploration).
 
-Continue learning about cryptography [here](/notes/ciphers/).
+Continue learning about cryptography [here](/notes/Cryptography/ciphers/).
 
 Most of the stuff on this page was from [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).
