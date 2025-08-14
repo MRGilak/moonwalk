@@ -2,7 +2,7 @@
 layout: note
 title: "A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems"
 date: 2025-07-20
-excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
+excerpt: ""
 ---
 
 #AdaptiveControl #MFAC #IEEE #IEEE2011 

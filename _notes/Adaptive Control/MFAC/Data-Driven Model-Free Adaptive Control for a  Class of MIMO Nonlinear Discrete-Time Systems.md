@@ -2,7 +2,7 @@
 layout: note
 title: "Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems"
 date: 2025-07-20
-excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
+excerpt: ""
 ---
 
 #AdaptiveControl #MFAC #IEEE #IEEE2011 

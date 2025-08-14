@@ -2,12 +2,10 @@
 layout: note
 title: "Active Disturbance Rejection Control of a 2DOF manipulator with significant modeling uncertainty"
 date: 2025-08-03
-excerpt: "> [!info]"
+excerpt: "This paper presents a practical veriﬁcation of an Active Disturbance Rejection Control (ADRC) method in governing a multidimensional system."
 ---
 
 > [!info]
->
-> - **Link:** [PDF](/assets/C:Users/mehrdad/Zotero/storage/EJMGCICT/Przybyła%20et%20al.%20-%202012%20-%20Active%20Disturbance%20Rejection%20Control%20of%20a%202DOF%20manipulator%20with%20significant%20modeling%20uncertainty.pdf)
 > - **Abstract:** This paper presents a practical veriﬁcation of an Active Disturbance Rejection Control (ADRC) method in governing a multidimensional system. The experiments were conducted on a two degrees of a freedom planar manipulator with only partial knowledge about the mathematical model of the plant. This multi input multi output system was controlled with a set of two, independent, single input single output ADRC controllers, each regulating one of the manipulator degree of freedom. Modeling uncertainty (nonlinearities, cross-coupling eﬀects, etc.) and external disturbances were assumed to be a part of the disturbance, to be estimated with an observer and cancelled on-line in the control loop. The ADRC robustness was experimentally compared with the results obtained from using two decentralized, classic PID controllers. Both control methods were tested under various conditions, e.g. changing the inertial parameters of the plant. Signiﬁcantly better results, in terms of parametric robustness, have been reported for the ADRC approach.
 
 ## Annotations

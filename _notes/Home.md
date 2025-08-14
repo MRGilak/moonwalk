@@ -2,7 +2,7 @@
 layout: note
 title: "Home"
 date: 2025-08-02
-excerpt: "For now, we're focusing on:"
+excerpt: "Overview of all of the notes"
 ---
 
 For now, we're focusing on:

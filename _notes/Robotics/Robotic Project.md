@@ -2,7 +2,7 @@
 layout: note
 title: "Robotic Project"
 date: 2025-08-03
-excerpt: "Here, we will focus on controlling a 2DoF robot single leg."
+excerpt: "Desgining a controller for a 2DoF robot single leg"
 ---
 
 Here, we will focus on controlling a 2DoF robot single leg.

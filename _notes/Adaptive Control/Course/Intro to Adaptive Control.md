@@ -2,7 +2,7 @@
 layout: note
 title: "Intro to Adaptive Control"
 date: 2025-08-07
-excerpt: "Control is used for these purposes:"
+excerpt: "Adaptive control is a field of control that concerns systems with time-varying parameters. Adaptive Control alongside Robust Control were introduced to deal with uncertainties in the system model."
 ---
 
 Control is used for these purposes:

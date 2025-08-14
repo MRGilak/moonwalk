@@ -2,7 +2,7 @@
 layout: note
 title: "From model-based control to data-driven control, Survey, classification and perspective"
 date: 2025-07-16
-excerpt: "#AdaptiveControl #DataDrivenControl"
+excerpt: "A survey of data-driven control methods"
 ---
 
 #AdaptiveControl #DataDrivenControl

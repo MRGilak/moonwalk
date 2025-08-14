@@ -2,7 +2,7 @@
 layout: note
 title: "Robotics"
 date: 2025-08-02
-excerpt: "Projects include:"
+excerpt: "A note dedicated to Robotics"
 ---
 
 Projects include:

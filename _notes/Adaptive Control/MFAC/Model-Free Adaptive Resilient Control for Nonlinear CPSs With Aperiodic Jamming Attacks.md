@@ -2,7 +2,7 @@
 layout: note
 title: "Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks"
 date: 2025-07-13
-excerpt: "#MFAC #AdaptiveControl #CPS #DoS #IEEE"
+excerpt: ""
 ---
 
 #MFAC #AdaptiveControl #CPS #DoS #IEEE

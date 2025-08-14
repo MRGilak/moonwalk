@@ -2,7 +2,7 @@
 layout: note
 title: "2DoF Robot Control Literature"
 date: 2025-08-03
-excerpt: "Several papers have been reviewed for controlling a 2DoF robotic manipulator or leg, including:"
+excerpt: "A literature review of 2DoF manipulator and leg control"
 ---
 
 Several papers have been reviewed for controlling a 2DoF robotic manipulator or leg, including:
