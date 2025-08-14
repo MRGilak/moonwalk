@@ -2,7 +2,7 @@
 layout: note
 title: "Modern Cryptography"
 date: 2025-08-14
-excerpt: "Modern cryptography is based on the fundamental theorem of arithmetic, which states that a number has one and exactly one prime factorization, for example $30 = 2 * 3 * 5$."
+excerpt: "what is modern cryptography and what does it have to do with prime numbers? What are private and public keys?"
 ---
 
 Modern cryptography is based on the fundamental theorem of arithmetic, which states that a number has one and exactly one prime factorization, for example $30 = 2 * 3 * 5$. 

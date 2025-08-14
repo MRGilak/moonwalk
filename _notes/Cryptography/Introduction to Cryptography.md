@@ -2,7 +2,7 @@
 layout: note
 title: "Introduction to Cryptography"
 date: 2025-08-12
-excerpt: "# The Caesar Cipher"
+excerpt: "How was cryptography used thousands of years ago and how has it improved?"
 ---
 
 # The Caesar Cipher

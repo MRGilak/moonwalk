@@ -2,7 +2,7 @@
 layout: note
 title: "Ciphers"
 date: 2025-08-12
-excerpt: "# What is a cipher?"
+excerpt: "What is a cipher? how is it different that a code?"
 ---
 
 # What is a cipher?

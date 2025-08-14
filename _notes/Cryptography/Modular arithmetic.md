@@ -2,7 +2,7 @@
 layout: note
 title: "Modular arithmetic"
 date: 2025-08-14
-excerpt: "When we divide two integers, we have an equation that looks like this:"
+excerpt: "Modular arithmetic is used in many fields, including cryptography"
 ---
 
 When we divide two integers, we have an equation that looks like this:
