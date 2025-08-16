@@ -44,8 +44,12 @@ footer_entries:
   - title: Github
     url: https://github.com/MRGilak
 
+  - title: Google Scholar
+    url: https://scholar.google.com/citations?user=sAYdpEwAAAAJ
+
   - title: Mathworks
     url: https://www.mathworks.com/matlabcentral/profile/authors/38114750
+
 
 misc_entries:
   - title: this is an example vertical list
