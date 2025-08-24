@@ -2,7 +2,7 @@
 layout: note
 title: "Adaptive Control"
 date: 2025-07-13
-excerpt: "In the pursuit of precision, adaptive control systems have emerged to tackle the unpredictable, where parameters shift like sand beneath our feet. But what secrets lie within the two main categories of indirect and direct methods, and how d"
+excerpt: "Adaptive control addresses systems with time-varying parameters, seeking to mitigate uncertainties in system models."
 ---
 
 Adaptive control is a field of control that concerns systems with time-varying parameters. Adaptive Control alongside Robust Control were introduced to deal with uncertainties in the system model.

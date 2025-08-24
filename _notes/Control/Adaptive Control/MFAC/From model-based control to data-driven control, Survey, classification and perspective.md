@@ -2,7 +2,7 @@
 layout: note
 title: "From model-based control to data-driven control, Survey, classification and perspective"
 date: 2025-07-16
-excerpt: "As traditional model-based control approaches struggle to keep up with the complexity of modern systems, a new era of data-driven control methods emerges, promising to revolutionize the field by leveraging system input-output data to optimi"
+excerpt: "This survey paper compares model-based control with data-driven control, highlighting the challenges of deriving accurate models and proposing data-driven control as a solution for systems with diffic"
 ---
 
 #AdaptiveControl #DataDrivenControl

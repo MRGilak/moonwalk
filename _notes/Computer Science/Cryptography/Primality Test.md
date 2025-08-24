@@ -2,7 +2,7 @@
 layout: note
 title: "Primality Test"
 date: 2025-08-23
-excerpt: "Heres a possible excerpt:  Testing whether a number is prime or not can be surprisingly efficient, yet deceptively simple. From the Sieve Algorithm to Fermats Primality Test, and even random trials, each approach holds its own secrets - and"
+excerpt: "A primality test is a method to determine whether a given number is prime or composite."
 ---
 
 #cryptography #computer-science 

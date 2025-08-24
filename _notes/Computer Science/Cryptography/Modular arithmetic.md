@@ -2,7 +2,7 @@
 layout: note
 title: "Modular arithmetic"
 date: 2025-08-23
-excerpt: "In a world without division, modular arithmetic reigns supreme, where remainders hold the secrets to cryptic codes and the Euclidean Algorithm uncovers hidden patterns in the realm of integers. But what lies at the heart of this mysterious "
+excerpt: "Modular arithmetic is a system of arithmetic where numbers wrap around after reaching a certain value, defined by the modulus."
 ---
 
 #cryptography #computer-science 

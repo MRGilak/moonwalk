@@ -2,7 +2,7 @@
 layout: note
 title: "Steganography"
 date: 2025-08-23
-excerpt: "Discover the ancient art of hiding information in plain sight, where a single image can conceal secrets, and the Mona Lisa is not what she seems. In the world of steganography, the line between visibility and invisibility blurs, and the sta"
+excerpt: "Steganography is the practice of hiding information in plain sight, distinct from cryptography which involves encrypting information."
 ---
 
 Steganography refers to hiding information in plain sight.

@@ -2,7 +2,7 @@
 layout: note
 title: "Intro to Adaptive Control"
 date: 2025-08-12
-excerpt: "In the pursuit of control, a complex challenge emerges: how to achieve stability and performance when the system model is incomplete, imprecise, or even time-varying. Can adaptive control rise to the occasion and overcome the limitations of"
+excerpt: "Adaptive control is a methodology used to achieve control objectives, such as stability and disturbance rejection, in systems with incomplete or uncertain models."
 ---
 
 This note is closely related to [Adaptive Control](/notes/Control/Adaptive Control/Adaptive Control/).

@@ -2,7 +2,7 @@
 layout: note
 title: "Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks"
 date: 2025-07-13
-excerpt: "In the face of aperiodic jamming attacks, a novel control strategy emerges to safeguard nonlinear cyber-physical systems, defying the conventional approach. Can a model-free adaptive control system predict and counter disruptions without in"
+excerpt: "This paper proposes a model-free adaptive resilient control method for nonlinear Cyber-Physical Systems (CPSs) to counter aperiodic jamming attacks."
 ---
 
 #MFAC #AdaptiveControl #CPS #DoS #IEEE

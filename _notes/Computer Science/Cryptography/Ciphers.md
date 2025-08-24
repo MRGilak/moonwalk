@@ -2,7 +2,7 @@
 layout: note
 title: "Ciphers"
 date: 2025-08-23
-excerpt: "In the world of cryptography, a subtle distinction between codes and ciphers holds the key to secrecy, and understanding this difference can mean the difference between secure communication and vulnerable messages."
+excerpt: "Ciphers are mechanical operations that transform individual symbols according to an algorithm, unlike codes which involve meaningful unit-mappings."
 ---
 
 #cryptography #computer-science 

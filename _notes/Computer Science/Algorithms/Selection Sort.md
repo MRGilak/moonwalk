@@ -2,7 +2,7 @@
 layout: note
 title: "Selection Sort"
 date: 2025-08-19
-excerpt: "Discover a surprisingly simple yet efficient algorithm that can sort an array in just a few steps, and uncover the clever logic behind its implementation. But be warned: its running time may not be as speedy as youd hope."
+excerpt: "Selection sort is a simple sorting algorithm that repeatedly finds the smallest element in an array and swaps it into its correct position."
 ---
 
 #algorithm #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "Insertion Sort"
 date: 2025-08-19
-excerpt: "In the world of sorting algorithms, one approach stands out for its simplicity and surprising efficiency, with a best-case performance that defies its overall time complexity. But how does insertion sorts clever slide operation make it all "
+excerpt: "Insertion sort is a sorting algorithm that works by iteratively inserting each element into its proper position in a sorted array."
 ---
 
 #algorithm #computer-science 

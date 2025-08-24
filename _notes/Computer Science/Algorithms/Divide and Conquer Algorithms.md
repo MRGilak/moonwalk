@@ -2,7 +2,7 @@
 layout: note
 title: "Divide and Conquer Algorithms"
 date: 2025-08-19
-excerpt: "In the world of computer science, a powerful strategy emerges to tackle complex problems, where the art of division becomes the key to conquering even the most daunting challenges. By breaking down problems into smaller, manageable parts, d"
+excerpt: "Divide and conquer algorithms solve complex problems by breaking them down into smaller sub-problems, solving each sub-problem, and then combining the solutions."
 ---
 
 #algorithm #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "Data-driven Control"
 date: 2025-07-13
-excerpt: "Imagine a control system that doesnt need to understand the underlying mechanics of a process to regulate it - instead, it learns from the data it generates. This revolutionary approach, known as data-driven control, is rewriting the rules "
+excerpt: "Data-driven control designs controllers using only input/output data from the controlled system, eliminating the need for a mathematical plant model."
 ---
 
 Data-driven control is the branch of control that tries to eliminate the need for a proper plant model by using only the input/output data of plant to tune the controller parameters. A definition is presented in [this paper](/notes/Control/Adaptive Control/MFAC/From model-based control to data-driven control, Survey, classification and perspective/):

@@ -2,7 +2,7 @@
 layout: note
 title: "Recursive Algorithms"
 date: 2025-08-19
-excerpt: "Heres a concise and intriguing excerpt:  Did you know that some algorithms can solve problems by solving smaller instances of the same problem, a technique called recursion? This mind-bending approach can be used to calculate factorials, ch"
+excerpt: "Recursive algorithms solve problems by breaking them down into smaller instances of the same problem, allowing for efficient solutions."
 ---
 
 #algorithm #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "Algorithms"
 date: 2025-08-19
-excerpt: "Dive into the world of algorithms, where a single set of steps can unlock the secrets of efficient problem-solving, and discover the surprising nuances that separate the slowest from the fastest. From binary search to recursive algorithms, "
+excerpt: "An algorithm is a set of steps that a computer program follows to accomplish a task, providing a precise solution to a computational problem."
 ---
 
 #algorithm #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "Mathematical Modeling of a Single Leg Robot"
 date: 2025-08-20
-excerpt: "As a single leg robot takes a leap, a complex dance of torque, forces, and angles unfolds, begging the question: how can we engineer the perfect jump by controlling the hip and knee joints to achieve the desired height and ground force?"
+excerpt: "The mathematical modeling of a single leg robot involves determining the optimal inputs for hip and knee torques to achieve desired height and ground force, considering the robots dynamic behavior an"
 ---
 
 #Robotics #Modeling

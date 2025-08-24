@@ -2,7 +2,7 @@
 layout: note
 title: "Home"
 date: 2025-08-18
-excerpt: "At the intersection of robotics and cryptography, a fascinating journey unfolds, where the lines between man and machine blur and the future of security hangs in the balance. What secrets will emerge from the research labs, and how will the"
+excerpt: "Research on home technology encompasses various disciplines, including robotics, adaptive control, and cryptography."
 ---
 
 For now, we're focusing on:

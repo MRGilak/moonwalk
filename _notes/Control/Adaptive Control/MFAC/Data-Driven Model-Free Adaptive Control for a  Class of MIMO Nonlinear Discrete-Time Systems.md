@@ -2,7 +2,7 @@
 layout: note
 title: "Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems"
 date: 2025-07-20
-excerpt: "A revolutionary approach to adaptive control is born, as a novel method transforms complex MIMO nonlinear systems into manageable counterparts, paving the way for unprecedented precision in real-time optimization. But what secrets lie withi"
+excerpt: "This paper presents a data-driven, model-free adaptive control method for a class of MIMO nonlinear discrete-time systems, enabling online estimation and control input calculation."
 ---
 
 #AdaptiveControl #MFAC #IEEE #IEEE2011 

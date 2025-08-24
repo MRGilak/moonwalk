@@ -2,7 +2,7 @@
 layout: note
 title: "Cryptography"
 date: 2025-08-19
-excerpt: "In a world where secrecy is paramount, a subtle game of hide and seek between Alice, Bob, and the eavesdropping Eve unfolds, with cryptography holding the key to their secured communication. But what mysterious ciphers lie at the heart of t"
+excerpt: "Cryptography enables secure communication by using ciphers to encrypt and decrypt messages, protecting them from unauthorized access."
 ---
 
 #cryptography #computer-science 

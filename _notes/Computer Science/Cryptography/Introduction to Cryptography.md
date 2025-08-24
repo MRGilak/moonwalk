@@ -2,7 +2,7 @@
 layout: note
 title: "Introduction to Cryptography"
 date: 2025-08-23
-excerpt: "From ancient Rome to modern computers, the art of cryptography has evolved to outsmart codebreakers, but can perfect secrecy be achieved, and whats the secret to truly random sequences?"
+excerpt: "Cryptography involves encrypting messages by shifting letters or using random sequences to obscure their meaning, with techniques ranging from the simple Caesar cipher to the theoretically unbreakable"
 ---
 
 #cryptography #computer-science 

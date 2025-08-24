@@ -2,7 +2,7 @@
 layout: note
 title: "Asymptotic Notation"
 date: 2025-08-19
-excerpt: "Heres a possible excerpt:  Algorithms cant be compared based on running time alone, but a clever notation system reveals their true efficiency - and its all about the growth rate."
+excerpt: "Asymptotic notation is a way to compare the efficiency of algorithms by describing their running time in terms of the input size, independent of specific implementation details."
 ---
 
 #algorithm #computer-science 

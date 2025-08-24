@@ -2,7 +2,7 @@
 layout: note
 title: "Binary Search"
 date: 2025-08-19
-excerpt: "By exploiting the power of halving, binary search can pinpoint a specific item in a vast sorted list with an astonishing speed, requiring a mere fraction of the guesses needed by traditional linear search methods. But how does this algorith"
+excerpt: "Binary search is an efficient algorithm for finding an item in a sorted list by repeatedly dividing the search space in half."
 ---
 
 #algorithm #computer-science 

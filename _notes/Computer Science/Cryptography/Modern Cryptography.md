@@ -2,7 +2,7 @@
 layout: note
 title: "Modern Cryptography"
 date: 2025-08-23
-excerpt: "In the world of cryptography, a secret message can be shielded from prying eyes by harnessing the power of one-way functions, where information flows easily in one direction but becomes impenetrable in the other. The fate of secure communic"
+excerpt: "Modern cryptography relies on the fundamental theorem of arithmetic and the concept of one-sided functions, which enable secure key exchange and encryption through modular arithmetic and prime factori"
 ---
 
 #cryptography #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems"
 date: 2025-07-20
-excerpt: "By introducing a novel constant and making two simple assumptions, a complex nonlinear system can be transformed into a linearizable form, enabling adaptive control with surprising simplicity. This breakthrough approach has far-reaching imp"
+excerpt: "This paper presents a novel data-driven control approach for discrete-time nonlinear systems, introducing a constant control input length constant of linearization and an equivalent PFDL description"
 ---
 
 #AdaptiveControl #MFAC #IEEE #IEEE2011 

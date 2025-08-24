@@ -2,7 +2,7 @@
 layout: note
 title: "MFAC"
 date: 2025-07-20
-excerpt: "In a groundbreaking departure from traditional adaptive control methods, model-free adaptive control (MFAC) ditches nonlinear modeling for a dynamic linearization approach thats surprisingly effective. By estimating time-varying pseudo-part"
+excerpt: "Model-free adaptive control (MFAC) is a data-driven approach that uses pseudo-partial derivatives to create a dynamic linearization model of a plant, eliminating the need for identifying a nonlinear m"
 ---
 
 MFAC refers to model free adaptive control, which is is a data-driven approach to [adaptive control](/notes/Control/Adaptive Control/Adaptive Control/). The core idea stems from a concept called pseudo-partial derivative (PPD). Here is its introduction in [this paper](/notes/Control/Adaptive Control/MFAC/A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems/):
