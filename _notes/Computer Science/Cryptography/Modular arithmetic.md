@@ -1,10 +1,11 @@
 ---
 layout: note
 title: "Modular arithmetic"
-date: 2025-08-14
-excerpt: "In a world without division, modular arithmetic reigns supreme, where remainders become the ultimate deciders and modular inverses hold the key to unlocking secrets. But how do we navigate this strange landscape, and what ancient algorithm "
+date: 2025-08-23
+excerpt: "In a world without division, modular arithmetic reigns supreme, where remainders hold the secrets to cryptic codes and the Euclidean Algorithm uncovers hidden patterns in the realm of integers. But what lies at the heart of this mysterious "
 ---
 
+#cryptography #computer-science 
 When we divide two integers, we have an equation that looks like this:
 $$
 \frac{A}{B} = Q\ remainder\ R
@@ -46,4 +47,5 @@ The algorithm for finding GCD(A,B) is as follows:
 - Write $A$ in quotient remainder form $(A = B⋅Q + R)$
 - Find $GCD(B, R)$ using the Euclidean Algorithm since $GCD(A, B) = GCD(B, R)$.
 
-Most of the stuff on this page was from [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).
+Sources:
+1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

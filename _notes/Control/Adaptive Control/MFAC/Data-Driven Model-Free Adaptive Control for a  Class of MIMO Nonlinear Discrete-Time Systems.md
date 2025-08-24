@@ -8,7 +8,7 @@ excerpt: "A revolutionary approach to adaptive control is born, as a novel metho
 #AdaptiveControl #MFAC #IEEE #IEEE2011 
 #IEEEControlSystemsTechnology #MIMO
 >[!summary] Summary
->This paper introduces (and contributes to) [MFAC](/notes/Adaptive Control/MFAC/MFAC/).
+>This paper introduces (and contributes to) [MFAC](/notes/Control/Adaptive Control/MFAC/MFAC/).
 >A general MIMO nonlinear system is considered as:
 >$$
 > y(k+1)=f(y(k),...,y(k-n_y),u(k),...,u(k-n_u))
@@ -19,4 +19,4 @@ excerpt: "A revolutionary approach to adaptive control is born, as a novel metho
 >$$
 >Parameter $\Phi$ is then estimated online and used for calculating the control input that minimizes a one-step-ahead cost function.
  
-This paper introduces and contributes to [MFAC](/notes/Adaptive Control/MFAC/MFAC/), especially PFDL and CFDL.
+This paper introduces and contributes to [MFAC](/notes/Control/Adaptive Control/MFAC/MFAC/), especially PFDL and CFDL.

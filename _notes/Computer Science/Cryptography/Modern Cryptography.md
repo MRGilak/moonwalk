@@ -1,10 +1,11 @@
 ---
 layout: note
 title: "Modern Cryptography"
-date: 2025-08-14
-excerpt: "Heres a possible excerpt:  What if you could send a secret message to someone, and only they could decipher it, without anyone else being able to figure out how they did it? Modern cryptography makes this possible, using a fascinating combi"
+date: 2025-08-23
+excerpt: "In the world of cryptography, a secret message can be shielded from prying eyes by harnessing the power of one-way functions, where information flows easily in one direction but becomes impenetrable in the other. The fate of secure communic"
 ---
 
+#cryptography #computer-science 
 Modern cryptography is based on the fundamental theorem of arithmetic, which states that a number has one and exactly one prime factorization, for example $30 = 2 * 3 * 5$. 
 
 # Public Key and Private Key
@@ -83,8 +84,9 @@ c^d\ mod\ N = m
 $$
 No one else with $c$, $n$ and $e$ can figure out $m$, unless they know $\Phi (n)$. If $n$ is sufficiently large, calculating $\Phi (n)$ is practically impossible, unless you know its prime factorization.
 
-Some stuff from modular arithmetic were used in this note. You can read more about modular arithmetic [here](/notes/Cryptography/Modular arithmetic/).
-We have also said a few times that two random prime numbers must be chosen, and they better be as large as possible. But how do we know if a large number is prime or not? Read more about primality test [here](/notes/Cryptography/Primality Test/).
-If new to this field, you can start with [Introduction to Cryptography](/notes/Cryptography/Introduction to Cryptography/).
+Some stuff from modular arithmetic were used in this note. You can read more about modular arithmetic [here](/notes/Computer Science/Cryptography/Modular arithmetic/).
+We have also said a few times that two random prime numbers must be chosen, and they better be as large as possible. But how do we know if a large number is prime or not? Read more about primality test [here](/notes/Computer Science/Cryptography/Primality Test/).
+If new to this field, you can start with [Introduction to Cryptography](/notes/Computer Science/Cryptography/Introduction to Cryptography/).
 
-Most of the stuff on this page was from [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).
+Sources:
+1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

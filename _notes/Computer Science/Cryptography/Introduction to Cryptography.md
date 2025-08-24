@@ -1,10 +1,11 @@
 ---
 layout: note
 title: "Introduction to Cryptography"
-date: 2025-08-12
-excerpt: "From ancient Rome to modern times, cryptography has evolved to conceal secrets, but with each new technique, a weakness is revealed, and a new challenge arises, until the ultimate goal of perfect secrecy is achieved through the power of ran"
+date: 2025-08-23
+excerpt: "From ancient Rome to modern computers, the art of cryptography has evolved to outsmart codebreakers, but can perfect secrecy be achieved, and whats the secret to truly random sequences?"
 ---
 
+#cryptography #computer-science 
 # The Caesar Cipher
 One of the earliest examples of cryptography is when Julius Caesar used a type of cryptography to send letters to his commanders. He shifted each letter in the alphabet by a number, which was known in advance by both sides. For example, if it was 3, then _A_ would become _D_, _B_ would become _E_, etc. The receiver then deciphers this by shifting the message letters backward the same amount of times. This is known as the Caesar cipher.
 The weakness of this technique is that it can be broken down easily using language frequency analysis. Each language has a unique fingerprint in that which letters show up how much in a text. The ciphered text's frequency analysis could then be matched with the language frequency fingerprint to find the number of shifts.
@@ -33,6 +34,7 @@ Another important distinction between random and pseudo-random sequences is that
 
 A random walk is sometimes used to visualize a random sequence. The random walk for a seed eventually repeats itself, but the random walk of a truly random sequence doesn't. You can see this in effect [here](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/pi/random-walk-exploration).
 
-Continue learning about cryptography [here](/notes/Cryptography/Ciphers/).
+Continue learning about cryptography [here](/notes/Computer Science/Cryptography/Ciphers/).
 
-Most of the stuff on this page was from [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).
+Sources:
+1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

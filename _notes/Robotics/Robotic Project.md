@@ -2,7 +2,7 @@
 layout: note
 title: "Robotic Project"
 date: 2025-08-03
-excerpt: "Desgining a controller for a 2DoF robot single leg"
+excerpt: "As we embark on a robotic quest to control a 2DoF robot single leg, well delve into the intricate dance of mathematical modeling, system identification, and controller implementation, pushing the boundaries of whats possible. But what secre"
 ---
 
 Here, we will focus on controlling a 2DoF robot single leg.
