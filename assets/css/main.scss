@@ -4,3 +4,34 @@
 @import "moonwalk";
 @import "list";
 @import "syntax";
+
+/* === Parallax background (homepage) === */
+#parallax-bg {
+  position: fixed;
+  inset: 0;                 /* shorthand for top/right/bottom/left: 0 */
+  z-index: 0;               /* behind page content */
+  background-image: url('/assets/images/parallax-bg.jpg'); /* your image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0px; /* JS will adjust Y */
+  pointer-events: none;     /* let clicks pass through */
+  will-change: background-position;
+  transform: translateZ(0); /* performance boost */
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Optional: overlay to improve text readability */
+/*
+.parallax-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: -1;
+}
+*/
