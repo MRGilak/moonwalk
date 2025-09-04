@@ -29,13 +29,13 @@
 }
 
 /* Desktop dark */
-body.dark #parallax-bg {
+html.dark #parallax-bg {
   background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
 }
 
 /* Mobile light */
 @media (max-width: 768px) {
-  body:not(.dark) #parallax-bg {
+  html:not(.dark) #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-light.jpg" | relative_url }}');
     background-position: center top;
   }
@@ -43,9 +43,8 @@ body.dark #parallax-bg {
 
 /* Mobile dark */
 @media (max-width: 768px) {
-  body.dark #parallax-bg {
+  html.dark #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-dark.jpg" | relative_url }}');
     background-position: center top;
   }
 }
-
