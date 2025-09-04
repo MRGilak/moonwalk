@@ -33,6 +33,10 @@ html[data-theme="dark"] #parallax-bg {
   background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
 }
 
+html[data-theme="light"] #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-light.jpg" | relative_url }}');
+}
+
 /* Mobile light */
 @media (max-width: 768px) {
   html[data-theme="light"] #parallax-bg {
