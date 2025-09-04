@@ -5,33 +5,47 @@
 @import "list";
 @import "syntax";
 
-/* === Parallax background (homepage) === */
+/* === Parallax background handling === */
+
+/* Desktop light (default) */
 #parallax-bg {
   position: fixed;
-  inset: 0;                 /* shorthand for top/right/bottom/left: 0 */
-  z-index: 0;               /* behind page content */
-  background-image: url('/assets/images/parallax-bg.jpg'); /* your image */
+  inset: 0;
+  z-index: 0;
+  background-image: url('{{ "/assets/images/bg-desktop-light.jpg" | relative_url }}');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center 0px; /* JS will adjust Y */
-  pointer-events: none;     /* let clicks pass through */
+  background-position: center 0;
+  pointer-events: none;
   will-change: background-position;
-  transform: translateZ(0); /* performance boost */
+  transform: translateZ(0);
 }
 
+/* Ensure content sits above */
 .parallax-content {
   position: relative;
   z-index: 1;
   background: transparent;
 }
 
-/* Optional: overlay to improve text readability */
-/*
-.parallax-content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.15);
-  z-index: -1;
+/* Desktop dark */
+body.dark #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
 }
-*/
+
+/* Mobile light */
+@media (max-width: 768px) {
+  body:not(.dark) #parallax-bg {
+    background-image: url('{{ "/assets/images/bg-mobile-light.jpg" | relative_url }}');
+    background-position: center top;
+  }
+}
+
+/* Mobile dark */
+@media (max-width: 768px) {
+  body.dark #parallax-bg {
+    background-image: url('{{ "/assets/images/bg-mobile-dark.jpg" | relative_url }}');
+    background-position: center top;
+  }
+}
+
