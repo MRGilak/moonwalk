@@ -7,12 +7,13 @@
 
 /* === Parallax background handling === */
 
-/* Desktop light (default) */
+/* === Parallax background handling === */
+
+/* Base element setup (no image here!) */
 #parallax-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
@@ -21,11 +22,9 @@
   transform: translateZ(0);
 }
 
-/* Ensure content sits above */
-.parallax-content {
-  position: relative;
-  z-index: 1;
-  background: transparent;
+/* Desktop light */
+html[data-theme="light"] #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-light.jpg" | relative_url }}');
 }
 
 /* Desktop dark */
@@ -33,8 +32,11 @@ html[data-theme="dark"] #parallax-bg {
   background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
 }
 
-html[data-theme="light"] #parallax-bg {
-  background-image: url('{{ "/assets/images/bg-desktop-light.jpg" | relative_url }}');
+/* Ensure content sits above */
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
 }
 
 /* Mobile light */
