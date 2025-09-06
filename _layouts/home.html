@@ -2,12 +2,6 @@
 layout: default
 ---
 
-<!-- Parallax background element -->
-<div id="parallax-bg" aria-hidden="true"></div>
-
-<!-- Everything below sits above the background -->
-<div class="parallax-content">
-
 <header>
 {% if site.theme_config.show_navbar == true %}
   {% include horizontal_list.html collection=site.data.home.navbar_entries %}
@@ -55,5 +49,3 @@ layout: default
     {% include horizontal_list.html collection=site.data.home.footer_entries %}
   </footer>
 {% endif %}
-
-</div><!-- /.parallax-content -->
