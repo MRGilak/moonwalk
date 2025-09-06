@@ -3,11 +3,8 @@ layout: post
 title: About
 ---
 
-<div class="about-section">
-
-  <div class="about-text">
-
 Hi, I'm **Mohammadreza Gilak**. I'm a control engineering student at Sharif University of Technology.  
+
 My interests include:  
 - Control Systems Theory  
 - Mathematics  
@@ -22,10 +19,6 @@ I use this space to:
 
 You can find me on [GitHub](https://github.com/MRGilak) and [LinkedIn](https://www.linkedin.com/in/mohammadreza-gilak-7aa830226/).
 
-  </div>
-
-  <div class="about-image">
-    <img src="/assets/images/profile.jpg" alt="Mohammadreza Gilak">
-  </div>
-
+<div class="about-image">
+  <img src="/assets/images/profile.jpg" alt="Mohammadreza Gilak">
 </div>
