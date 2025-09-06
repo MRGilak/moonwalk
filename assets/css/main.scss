@@ -74,14 +74,12 @@ html[data-theme="dark"] #parallax-bg {
   }
 
   .about-image {
-    flex: 0 0 200px; /* fixed width for image */
-    
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+    float: right;
+    width: 200px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
   }
 }
 
