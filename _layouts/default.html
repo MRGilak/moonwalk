@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
-        {%- include head.html -%}
+  {%- include head.html -%}
   <body>
-    <main class="page-content" aria-label="Content">
-      <div class="w">
-        {{ content }}
-        {% if site.theme_config.appearance_toggle %}
-          {% include toggle_theme_button.html %}
-        {% endif %}
-        <div class="credits">
-          &copy; {{ "now" | date: "%Y" }} Mohammadreza Gilak
+    <!-- Parallax background element (shared across all pages) -->
+    <div id="parallax-bg" aria-hidden="true"></div>
+
+    <!-- Page content wrapper -->
+    <div class="parallax-content">
+      <main class="page-content" aria-label="Content">
+        <div class="w">
+          {{ content }}
+          {% if site.theme_config.appearance_toggle %}
+            {% include toggle_theme_button.html %}
+          {% endif %}
+          <div class="credits">
+            &copy; {{ "now" | date: "%Y" }} Mohammadreza Gilak
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div><!-- /.parallax-content -->
+
     <script src="{{ '/assets/js/parallax.js' | relative_url }}"></script>
   </body>
 </html>
