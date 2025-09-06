@@ -43,7 +43,7 @@ html[data-theme="dark"] #parallax-bg {
 @media (max-width: 768px) {
   html[data-theme="light"] #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-light.jpg" | relative_url }}');
-    background-repeat: repeat-y;  /* repeat vertically */
+    background-repeat: no-repeat;  /* repeat vertically */
     background-size: cover;   /* width auto, height 100% */
     background-position: top center; 
   }
@@ -53,7 +53,7 @@ html[data-theme="dark"] #parallax-bg {
 @media (max-width: 768px) {
   html[data-theme="dark"] #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-dark.jpg" | relative_url }}');
-    background-repeat: repeat-y;  /* repeat vertically */
+    background-repeat: no-repeat;  /* repeat vertically */
     background-size: cover;   /* width auto, height 100% */
     background-position: top center; 
   }
