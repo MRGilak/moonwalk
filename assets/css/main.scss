@@ -59,4 +59,40 @@ html[data-theme="dark"] #parallax-bg {
   }
 }
 
+/* === About page profile section === */
+.about-section {
+  display: flex;
+  flex-wrap: wrap; /* allows stacking on mobile */
+  align-items: center;
+  gap: 2rem; /* space between text and image */
+  margin-top: 2rem;
+
+  .about-text {
+    flex: 1 1 300px; /* text grows but has min width */
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .about-image {
+    flex: 0 0 200px; /* fixed width for image */
+    
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+/* Stack vertically on small screens */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    .about-image {
+      flex: 0 0 auto;
+    }
+  }
+}
+
 
