@@ -60,7 +60,6 @@ html[data-theme="dark"] #parallax-bg {
 }
 
 .about-section {
-  position: relative;
   max-width: 900px;
   margin: 2rem auto;
   font-size: 1.1rem;
@@ -69,14 +68,12 @@ html[data-theme="dark"] #parallax-bg {
   .about-image {
     float: right;
     width: 250px;
-    margin: 0 0 1rem 2rem; // space between image and text
-    border-radius: 10px;
-    shape-outside: circle(50%);
-    clip-path: circle(50%);
+    margin: 0 0 1rem 2rem; // right margin to separate from text
+    border-radius: 10px; // subtle rounding, can remove if you want fully rectangular
   }
 
   .about-text {
-    overflow: hidden; // ensures text wraps around floated image
+    overflow: hidden; // makes text wrap properly around floated image
   }
 }
 
@@ -88,8 +85,6 @@ html[data-theme="dark"] #parallax-bg {
       display: block;
       margin: 0 auto 1.5rem auto;
       width: 150px;
-      shape-outside: none;
-      clip-path: none;
     }
   }
 }
