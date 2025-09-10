@@ -1,6 +1,6 @@
 <div class="about-section">
   <div class="about-image">
-    <img src="/assets/images/profile.png" alt="Mohammadreza Gilak">
+    <img src="/assets/images/Mohammadreza Gilak.png" alt="Mohammadreza Gilak">
   </div>
 
   <div class="about-text" markdown="1">
