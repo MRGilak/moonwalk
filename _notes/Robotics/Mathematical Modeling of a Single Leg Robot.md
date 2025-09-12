@@ -1,8 +1,8 @@
 ---
 layout: note
 title: "Mathematical Modeling of a Single Leg Robot"
-date: 2025-08-20
-excerpt: "The mathematical modeling of a single leg robot involves determining the optimal inputs for hip and knee torques to achieve desired height and ground force, considering the robots dynamic behavior an"
+date: 2025-09-12
+excerpt: "The problem involves controlling a single leg robot by determining inputs to achieve desired height and force."
 ---
 
 #Robotics #Modeling
@@ -57,3 +57,10 @@ The motors used are brushless DC motors.
 In the early days of robotic, stepper motors were used. These motors have control over their angles, so they will go to any angle. The problem with those was that if you exerted enough pressure and force on them, they would turn and lose the right angle. They are also what gave the early robots their signature robot-like movements.
 Today, brushless DC motors (BLDC) are used. These motors have a permanent magnet inside a coiling. The voltage applied to the coil is directly related to the motor spinning speed in no load condition. The current applied is directly related to the torque the motor exerts when under load.
 The goal in [this project](/notes/Robotics/Robotic Project/) is to find the appropriate $V-I$ characteristics (by finding the appropriate $\tau - \dot{q}$ characteristic), so that the right type of motor can be selected.
+
+# Euler-Lagrange Dynamics
+I tried writing the Euler-Lagrange dynamics myself. Here is a sketch of the leg plus the equations:
+![2025_09_12 13_08 Office Lens.jpg](/assets/Robotics/2025_09_12 13_08 Office Lens.jpg)
+a
+
+To read more about what's in the literature, take a look at [Robot Leg Equations](/notes/Robotics/Robot Leg Equations/).

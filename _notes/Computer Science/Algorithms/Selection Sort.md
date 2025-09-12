@@ -2,7 +2,7 @@
 layout: note
 title: "Selection Sort"
 date: 2025-08-19
-excerpt: "Selection sort is a simple sorting algorithm that repeatedly finds the smallest element in an array and swaps it into its correct position."
+excerpt: "Selection sort is an algorithm that sorts arrays by repeatedly selecting the next-smallest element and swapping it into place. It has a running time of Θ(n^2) in all cases."
 ---
 
 #algorithm #computer-science 

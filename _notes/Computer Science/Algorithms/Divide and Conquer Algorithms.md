@@ -2,7 +2,7 @@
 layout: note
 title: "Divide and Conquer Algorithms"
 date: 2025-08-19
-excerpt: "Divide and conquer algorithms solve complex problems by breaking them down into smaller sub-problems, solving each sub-problem, and then combining the solutions."
+excerpt: "Divide and conquer algorithms solve problems by breaking them into smaller sub-problems. This approach is used in various algorithms, including merge sort."
 ---
 
 #algorithm #computer-science 

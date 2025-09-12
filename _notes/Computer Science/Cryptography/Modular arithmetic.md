@@ -2,7 +2,7 @@
 layout: note
 title: "Modular arithmetic"
 date: 2025-08-23
-excerpt: "Modular arithmetic is a system of arithmetic where numbers wrap around after reaching a certain value, defined by the modulus."
+excerpt: "Modular arithmetic is a system where numbers wrap around after reaching a certain value. It is used in cryptography and computer science."
 ---
 
 #cryptography #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "Primality Test"
 date: 2025-08-23
-excerpt: "A primality test is a method to determine whether a given number is prime or composite."
+excerpt: "A primality test determines whether a given number is prime or composite. Primality tests include trial division, the Sieve Algorithm, and probabilistic methods like the Fermat primality test."
 ---
 
 #cryptography #computer-science 

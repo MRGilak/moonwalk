@@ -2,7 +2,7 @@
 layout: note
 title: "Introduction to Cryptography"
 date: 2025-08-23
-excerpt: "Cryptography involves encrypting messages by shifting letters or using random sequences to obscure their meaning, with techniques ranging from the simple Caesar cipher to the theoretically unbreakable"
+excerpt: "Cryptography involves techniques like the Caesar cipher, polyalphabetic cipher, and one-time pad to secure messages."
 ---
 
 #cryptography #computer-science 

@@ -2,7 +2,7 @@
 layout: note
 title: "Robotic Project"
 date: 2025-08-03
-excerpt: "This project centers around controlling a 2-degree-of-freedom (2DoF) robot single leg, involving mathematical modeling, control methods, system identification, and testing."
+excerpt: "The Robotic Project involves controlling a 2DoF robot single leg. It consists of multiple parts, including modeling, control methods, and testing."
 ---
 
 Here, we will focus on controlling a 2DoF robot single leg.

@@ -1,17 +1,17 @@
 ---
 layout: note
 title: "Home"
-date: 2025-08-18
-excerpt: "Research on home technology encompasses various disciplines, including robotics, adaptive control, and cryptography."
+date: 2025-09-12
+excerpt: "Research areas include robotics, reinforcement learning, and algorithms. Focus is on robotics and reinforcement learning."
 ---
 
 For now, we're focusing on:
-[Robotics](/notes/Robotics/Robotics/)
+[Robotics](/notes/Robotics/Robotics/) and [Reinforcement Learning](/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/)
 
 
 General areas of research include:
-- [Adaptive Control](/notes/Control/Adaptive Control/Adaptive Control/)
+- [Adaptive Control](/notes/adaptive-control/)
 - [Robotics](/notes/Robotics/Robotics/)
 - [Cryptography](/notes/Computer Science/Cryptography/Cryptography/)
 - [Algorithms](/notes/Computer Science/Algorithms/Algorithms/)
-- [Steganography](/notes/Computer Science/Steganography/)
+- [Reinforcement Learning](/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/)

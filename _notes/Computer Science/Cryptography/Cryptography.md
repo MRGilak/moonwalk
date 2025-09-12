@@ -2,7 +2,7 @@
 layout: note
 title: "Cryptography"
 date: 2025-08-19
-excerpt: "Cryptography enables secure communication by using ciphers to encrypt and decrypt messages, protecting them from unauthorized access."
+excerpt: "Cryptography involves encrypting messages to secure communication. It uses ciphers to protect information from unauthorized access."
 ---
 
 #cryptography #computer-science 

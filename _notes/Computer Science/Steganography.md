@@ -2,7 +2,7 @@
 layout: note
 title: "Steganography"
 date: 2025-08-23
-excerpt: "Steganography is the practice of hiding information in plain sight, distinct from cryptography which involves encrypting information."
+excerpt: "Steganography hides information in plain sight by making it invisible. It differs from cryptography, which encrypts information using secret codes."
 ---
 
 Steganography refers to hiding information in plain sight.
