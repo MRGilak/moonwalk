@@ -86,40 +86,66 @@ html[data-theme="dark"] #parallax-bg {
   }
 }
 
-/* === Minimal fixed navbar === */
+/* === Centered boxed navbar === */
 .minimal-navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.6);   /* semi-transparent black */
-  backdrop-filter: blur(8px);     /* glass effect */
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  padding: 0.5rem 2rem;
+  border-radius: 12px;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff; /* default light mode */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 
   ul {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
     margin: 0;
     padding: 0;
     gap: 1.5rem;
 
     li a {
-      color: #fff;
+      color: #000; /* default light mode text */
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
 
       &:hover {
-        color: #00ffff;  /* accent color on hover */
+        color: #00ffff;
       }
     }
   }
 }
 
-/* Add some top margin to parallax content so navbar doesn't cover it */
-.parallax-content {
-  margin-top: 60px;  /* adjust if navbar height changes */
+/* Dark mode */
+html[data-theme="dark"] .minimal-navbar {
+  background-color: #111; /* dark background */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+  ul li a {
+    color: #fff; /* text in dark mode */
+  }
 }
+
+/* Adjust parallax-content so it doesn't get hidden behind navbar */
+.parallax-content {
+  margin-top: 80px; /* enough for navbar height */
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .minimal-navbar {
+    width: 90%;
+    padding: 0.5rem 1rem;
+    ul {
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
 
