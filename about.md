@@ -1,9 +1,12 @@
-<div class="about-section">
-  <div class="about-image">
-    <img src="/assets/images/Mohammadreza Gilak.jpg" alt="Mohammadreza Gilak">
-  </div>
+---
+layout: post
+title: About
+---
 
-  <div class="about-text" markdown="1">
+<div class="about-section">
+
+  <div class="about-text">
+
 Hi, I'm **Mohammadreza Gilak**. I'm a control engineering student at Sharif University of Technology.  
 
 My interests include:  
@@ -19,5 +22,11 @@ I use this space to:
 - Maintain a record of things I’m learning  
 
 You can find me on [GitHub](https://github.com/MRGilak) and [LinkedIn](https://www.linkedin.com/in/mohammadreza-gilak-7aa830226/).
+
   </div>
+
+  <div class="about-image">
+    <img src="/assets/images/profile.jpg" alt="Mohammadreza Gilak">
+  </div>
+
 </div>
