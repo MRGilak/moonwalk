@@ -1,3 +1,9 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
 <div class="about-section">
   <div class="about-image">
     <img src="/assets/images/Mohammadreza Gilak.jpg" alt="Mohammadreza Gilak">
