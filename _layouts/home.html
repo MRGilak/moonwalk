@@ -2,23 +2,17 @@
 layout: default
 ---
 
-<!-- load OGL (CDN) -->
-<script src="https://cdn.jsdelivr.net/npm/ogl@0.0.32/dist/ogl.min.js"></script>
-
-<!-- Parallax background image (bottom layer) -->
+<!-- Parallax background element (only on home page) -->
 <div id="parallax-bg" aria-hidden="true"></div>
 
-<!-- Particles container (above the image, below content) -->
-<div id="particles-container" aria-hidden="true"></div>
-
-<!-- Everything below sits above the background & particles -->
+<!-- Everything below sits above the background -->
 <div class="parallax-content">
 
   <header>
-    {% if site.theme_config.show_navbar == true %}
-      {% include horizontal_list.html collection=site.data.home.navbar_entries %}
-      <div class="dashed"></div>
-    {% endif %}
+  {% if site.theme_config.show_navbar == true %}
+    {% include horizontal_list.html collection=site.data.home.navbar_entries %}
+    <div class="dashed"></div>
+  {% endif %}
 
     <h1>{{ site.title }}</h1>
     {% if site.theme_config.show_description == true %}
@@ -63,6 +57,3 @@ layout: default
   {% endif %}
 
 </div><!-- /.parallax-content -->
-
-<!-- load your particles runtime (after OGL is available) -->
-<script src="{{ '/assets/js/particles.js' | relative_url }}"></script>
