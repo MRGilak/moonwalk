@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<!-- Load OGL library -->
+<!-- load OGL (CDN) -->
 <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.32/dist/ogl.min.js"></script>
 
-<!-- Particles container (background) -->
-<div id="particles-container"></div>
-
-<!-- If you still want a parallax background image behind, keep this -->
+<!-- Parallax background image (bottom layer) -->
 <div id="parallax-bg" aria-hidden="true"></div>
 
-<!-- Everything below sits above the background -->
+<!-- Particles container (above the image, below content) -->
+<div id="particles-container" aria-hidden="true"></div>
+
+<!-- Everything below sits above the background & particles -->
 <div class="parallax-content">
 
   <header>
@@ -64,5 +64,5 @@ layout: default
 
 </div><!-- /.parallax-content -->
 
-<!-- Load particle animation -->
+<!-- load your particles runtime (after OGL is available) -->
 <script src="{{ '/assets/js/particles.js' | relative_url }}"></script>
