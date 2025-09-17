@@ -11,9 +11,12 @@
   camera.position.set(0, 0, 20);
 
   function resize() {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
+    renderer.setSize(width, height);
+    camera.perspective({ aspect: width / height });
   }
+
   window.addEventListener('resize', resize);
   resize();
 
