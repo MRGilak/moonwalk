@@ -86,32 +86,27 @@ html[data-theme="dark"] #parallax-bg {
   }
 }
 
-/* === Centered blurred navbar === */
 .minimal-navbar {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
   display: flex;
   justify-content: center;
-  padding: 0.7rem 4rem; /* a little shorter but wider */
-  border-radius: 12px;
-  gap: 2.5rem;
+  gap: 2rem;
+  padding: 0.5rem 4rem; /* shorter height, wider horizontal padding */
+  border-radius: 10px;
+
+  /* Transparent background with blur */
+  background-color: rgba(255, 255, 255, 0.2); // light mode fallback
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: background-color 0.3s, box-shadow 0.3s;
 
   ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2.5rem;
+    gap: 2rem;
 
     li a {
-      color: #000;
+      color: #000; /* light mode */
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
@@ -121,19 +116,15 @@ html[data-theme="dark"] #parallax-bg {
       }
     }
   }
-}
 
-/* Dark mode */
-html[data-theme="dark"] .minimal-navbar {
-  background-color: rgba(0, 0, 0, 0.3);
-  ul li a {
-    color: #fff;
+  /* Dark mode */
+  html[data-theme="dark"] & {
+    background-color: rgba(0, 0, 0, 0.3);
+
+    ul li a {
+      color: #fff;
+    }
   }
-}
-
-/* Adjust parallax-content so it doesn't get hidden */
-.parallax-content {
-  margin-top: 90px; /* matches shorter navbar */
 }
 
 /* Mobile fallback */
@@ -141,6 +132,7 @@ html[data-theme="dark"] .minimal-navbar {
   .minimal-navbar {
     width: 90%;
     padding: 0.5rem 1rem;
+
     ul {
       gap: 1rem;
       flex-wrap: wrap;
@@ -148,7 +140,6 @@ html[data-theme="dark"] .minimal-navbar {
     }
   }
 }
-
 
 
 
