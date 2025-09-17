@@ -1,8 +1,19 @@
-/* === Parallax background === */
+---
+---
+
+@import "moonwalk";
+@import "list";
+@import "syntax";
+
+/* === Parallax background handling === */
+
+/* === Parallax background handling === */
+
+/* Base element setup (no image here!) */
 #parallax-bg {
   position: fixed;
   inset: 0;
-  z-index: 0;  /* bottom layer */
+  z-index: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
@@ -11,50 +22,72 @@
   transform: translateZ(0);
 }
 
-/* Particles layer */
-#particles-container {
-  position: fixed;
-  inset: 0;
-  z-index: 1;   /* above parallax, below content */
-  pointer-events: none;
-}
-#particles-container canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
+/* Desktop light */
+html[data-theme="light"] #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-light.jpg" | relative_url }}');
 }
 
-/* Content layer */
+/* Desktop dark */
+html[data-theme="dark"] #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
+}
+
+/* Ensure content sits above */
 .parallax-content {
   position: relative;
-  z-index: 2;   /* top layer */
+  z-index: 1;
   background: transparent;
 }
 
-/* === About page profile section === */
+/* Mobile light */
+@media (max-width: 768px) {
+  html[data-theme="light"] #parallax-bg {
+    background-image: url('{{ "/assets/images/bg-mobile-light.jpg" | relative_url }}');
+    background-repeat: no-repeat;  /* repeat vertically */
+    background-size: cover;   /* width auto, height 100% */
+    background-position: top center; 
+  }
+}
+
+/* Mobile dark */
+@media (max-width: 768px) {
+  html[data-theme="dark"] #parallax-bg {
+    background-image: url('{{ "/assets/images/bg-mobile-dark.jpg" | relative_url }}');
+    background-repeat: no-repeat;  /* repeat vertically */
+    background-size: cover;   /* width auto, height 100% */
+    background-position: top center; 
+  }
+}
+
 .about-section {
   max-width: 900px;
   margin: 2rem auto;
   font-size: 1.1rem;
   line-height: 1.6;
-}
 
-.about-section .about-image {
-  float: right;
-  width: 220px;          /* resize to taste */
-  margin: 0 0 1rem 2rem; /* gap between image & text */
-}
+  .about-image {
+    float: right;
+    width: 250px;
+    margin: 0 0 1rem 2rem; // right margin to separate from text
+    border-radius: 10px; // subtle rounding, can remove if you want fully rectangular
+  }
 
-.about-section .about-text {
-  overflow: hidden; /* ensures text wraps correctly */
-}
-
-/* Mobile: stack vertically */
-@media (max-width: 768px) {
-  .about-section .about-image {
-    float: none;
-    display: block;
-    margin: 0 auto 1.5rem auto;
-    width: 150px; /* smaller image on phones */
+  .about-text {
+    overflow: hidden; // makes text wrap properly around floated image
   }
 }
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .about-section {
+    .about-image {
+      float: none;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      width: 150px;
+    }
+  }
+}
+
+
+
