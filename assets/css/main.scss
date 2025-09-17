@@ -86,29 +86,32 @@ html[data-theme="dark"] #parallax-bg {
   }
 }
 
-/* === Centered boxed navbar === */
+/* === Centered blurred navbar === */
 .minimal-navbar {
   position: fixed;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  border-radius: 12px;
-  padding: 0.5rem 1.5rem;
   display: flex;
   justify-content: center;
-  background-color: #ffffff; /* default light mode */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  padding: 1rem 3rem;
+  border-radius: 12px;
+  gap: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2); // light mode fallback
+  transition: background-color 0.3s, box-shadow 0.3s;
 
   ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1.5rem;
+    gap: 2rem;
 
     li a {
-      color: #000; /* default light mode text */
+      color: #000;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
@@ -122,17 +125,15 @@ html[data-theme="dark"] #parallax-bg {
 
 /* Dark mode */
 html[data-theme="dark"] .minimal-navbar {
-  background-color: #111; /* dark background */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-
+  background-color: rgba(0, 0, 0, 0.3);
   ul li a {
-    color: #fff; /* text in dark mode */
+    color: #fff;
   }
 }
 
-/* Adjust parallax-content so it doesn't get hidden behind navbar */
+/* Ensure content doesn’t go behind navbar */
 .parallax-content {
-  margin-top: 80px; /* enough for navbar height */
+  margin-top: 100px; // enough for navbar height
 }
 
 /* Mobile fallback */
@@ -147,5 +148,6 @@ html[data-theme="dark"] .minimal-navbar {
     }
   }
 }
+
 
 
