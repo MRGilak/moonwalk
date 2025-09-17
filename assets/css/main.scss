@@ -1,32 +1,27 @@
-/* === Parallax background === */
-#parallax-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;  /* bottom layer */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 0;
-  pointer-events: none;
-  will-change: background-position;
-  transform: translateZ(0);
+/* === About page profile section === */
+.about-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* Particles layer */
-#particles-container {
-  position: fixed;
-  inset: 0;
-  z-index: 1;   /* above parallax, below content */
-  pointer-events: none;
-}
-#particles-container canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
+.about-section .about-image {
+  float: right;
+  width: 220px;          /* resize to taste */
+  margin: 0 0 1rem 2rem; /* gap between image & text */
 }
 
-/* Content layer */
-.parallax-content {
-  position: relative;
-  z-index: 2;   /* top layer */
-  background: transparent;
+.about-section .about-text {
+  overflow: hidden; /* ensures text wraps correctly */
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .about-section .about-image {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 150px; /* smaller image on phones */
+  }
 }
