@@ -8,6 +8,8 @@ layout: default
 <!-- Everything below sits above the background -->
 <div class="parallax-content">
 
+  {% include navbar.html %}
+
   <header>
     {% if site.theme_config.show_navbar == true %}
       {% include horizontal_list.html collection=site.data.home.navbar_entries %}
