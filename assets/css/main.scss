@@ -7,8 +7,6 @@
 
 /* === Parallax background handling === */
 
-/* === Parallax background handling === */
-
 /* Base element setup (no image here!) */
 #parallax-bg {
   position: fixed;
@@ -43,8 +41,8 @@ html[data-theme="dark"] #parallax-bg {
 @media (max-width: 768px) {
   html[data-theme="light"] #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-light.jpg" | relative_url }}');
-    background-repeat: no-repeat;  /* repeat vertically */
-    background-size: cover;   /* width auto, height 100% */
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: top center; 
   }
 }
@@ -53,41 +51,37 @@ html[data-theme="dark"] #parallax-bg {
 @media (max-width: 768px) {
   html[data-theme="dark"] #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-dark.jpg" | relative_url }}');
-    background-repeat: no-repeat;  /* repeat vertically */
-    background-size: cover;   /* width auto, height 100% */
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: top center; 
   }
 }
 
+/* === About section === */
 .about-section {
   max-width: 900px;
   margin: 2rem auto;
   font-size: 1.1rem;
   line-height: 1.6;
+}
 
-  .about-image {
-    float: right;
-    width: 250px;
-    margin: 0 0 1rem 2rem; // right margin to separate from text
-    border-radius: 10px; // subtle rounding, can remove if you want fully rectangular
-  }
+.about-section .about-image {
+  float: right;
+  width: 250px;
+  margin: 0 0 1rem 2rem; /* right margin to separate from text */
+  border-radius: 10px; /* subtle rounding */
+}
 
-  .about-text {
-    overflow: hidden; // makes text wrap properly around floated image
-  }
+.about-section .about-text {
+  overflow: hidden; /* makes text wrap properly around floated image */
 }
 
 /* Mobile fallback */
 @media (max-width: 768px) {
-  .about-section {
-    .about-image {
-      float: none;
-      display: block;
-      margin: 0 auto 1.5rem auto;
-      width: 150px;
-    }
+  .about-section .about-image {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 150px;
   }
 }
-
-
-
