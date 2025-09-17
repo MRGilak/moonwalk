@@ -89,5 +89,17 @@ html[data-theme="dark"] #parallax-bg {
   }
 }
 
+#particles-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* don't block clicks */
+}
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 
