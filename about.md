@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<p><a href="{{ "/" | relative_url }}">← Home</a></p>
+<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
 
 <div class="about-section">
   <div class="about-image">
