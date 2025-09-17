@@ -1,35 +1,32 @@
-/* layering: image (bottom) -> particles (middle) -> content (top) */
-
-/* Parallax background image (bottom layer) */
+/* === Parallax background === */
 #parallax-bg {
   position: fixed;
   inset: 0;
-  z-index: 0;                 /* bottom */
-  pointer-events: none;
+  z-index: 0;  /* bottom layer */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 0;
+  pointer-events: none;
   will-change: background-position;
+  transform: translateZ(0);
 }
 
-/* Particles canvas (middle layer) */
+/* Particles layer */
 #particles-container {
   position: fixed;
   inset: 0;
-  z-index: 1;                 /* above image, below content */
-  pointer-events: none;       /* allow clicks to pass */
+  z-index: 1;   /* above parallax, below content */
+  pointer-events: none;
 }
-
-/* Ensure the canvas fills the container */
 #particles-container canvas {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* Content sits on top */
+/* Content layer */
 .parallax-content {
   position: relative;
-  z-index: 2;                 /* top */
+  z-index: 2;   /* top layer */
   background: transparent;
 }
