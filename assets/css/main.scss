@@ -87,10 +87,16 @@ html[data-theme="dark"] #parallax-bg {
 }
 
 .minimal-navbar {
+  position: fixed;      // <-- stick to top
+  top: 1rem;            // distance from top
+  left: 50%;            // center horizontally
+  transform: translateX(-50%);
+  z-index: 1000;
+
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 0.5rem 4rem; /* shorter height, wider horizontal padding */
+  padding: 0.5rem 4rem; // shorter height, wider horizontal padding
   border-radius: 10px;
 
   /* Transparent background with blur */
@@ -125,11 +131,9 @@ html[data-theme="dark"] #parallax-bg {
       color: #fff;
     }
   }
-}
 
-/* Mobile fallback */
-@media (max-width: 768px) {
-  .minimal-navbar {
+  /* Mobile fallback */
+  @media (max-width: 768px) {
     width: 90%;
     padding: 0.5rem 1rem;
 
@@ -140,6 +144,8 @@ html[data-theme="dark"] #parallax-bg {
     }
   }
 }
+
+
 
 
 
