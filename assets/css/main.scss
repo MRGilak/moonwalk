@@ -85,3 +85,41 @@ html[data-theme="dark"] #parallax-bg {
     width: 150px;
   }
 }
+
+/* === Minimal fixed navbar === */
+.minimal-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);   /* semi-transparent black */
+  backdrop-filter: blur(8px);     /* glass effect */
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+
+    li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #00ffff;  /* accent color on hover */
+      }
+    }
+  }
+}
+
+/* Add some top margin to parallax content so navbar doesn't cover it */
+.parallax-content {
+  margin-top: 60px;  /* adjust if navbar height changes */
+}
+
