@@ -84,9 +84,13 @@ layout: default
     top: 0;
     z-index: 20;
     background: var(--bg);
-    text-align: center; /* center inline-flex UL */
-    overflow-x: auto;   /* allow horizontal scroll on narrow screens */
+  }
+  .minimal-navbar .nav-scroll {
+    text-align: center;           /* center inline-flex UL */
+    overflow-x: auto;             /* allow horizontal scroll on narrow screens */
     -webkit-overflow-scrolling: touch;
+    margin: 0 -2em;               /* cancel .w padding so centering is true full-width */
+    padding: 0 2em;               /* visually keep content aligned with container */
   }
   .minimal-navbar ul {
     display: inline-flex; /* allows centering via text-align */
