@@ -76,3 +76,27 @@ layout: default
     </script>
 
 </div><!-- /.parallax-content -->
+
+<style>
+  /* Navbar responsive tweaks to keep in a single row on mobile */
+  .minimal-navbar { position: sticky; top: 0; z-index: 20; background: var(--bg); }
+  .minimal-navbar ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 0.5rem 0;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    white-space: nowrap;
+  }
+  .minimal-navbar li { flex: 0 0 auto; }
+  .minimal-navbar a { text-decoration: none; color: var(--links); font-weight: 600; }
+
+  /* Ensure the header doesn't get covered on mobile */
+  @media (max-width: 640px) {
+    .parallax-content header { padding-top: 0.5rem; }
+  }
+</style>
