@@ -88,8 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Convert any literal fenced code blocks that failed markdown parsing into real <pre><code> blocks
   function renderFencedCode(container) {
     if (!container) return;
-    const paragraphs = Array.from(container.querySelectorAll('p'));
-    for (const p of paragraphs) {
+    if (container.getAttribute('data-fences-processed') === 'true') return;
+    const blocks = Array.from(container.querySelectorAll('p, li, blockquote'));
+    for (const p of blocks) {
       const text = p.textContent || '';
       if (!text.includes('```')) continue;
 
@@ -141,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         p.replaceWith(wrapper);
       }
     }
+    container.setAttribute('data-fences-processed', 'true');
   }
 
   renderFencedCode(document.querySelector('.content'));
