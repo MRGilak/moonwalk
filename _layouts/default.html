@@ -47,5 +47,66 @@
     </style>
 
 
+    <script>
+      // Global fallback: convert literal fenced code (``` ... ```) into <pre><code> blocks
+      (function(){
+        function renderFencedCode(container) {
+          if (!container) return;
+          if (container.getAttribute('data-fences-processed') === 'true') return;
+          const blocks = Array.from(container.querySelectorAll('p, li, blockquote'));
+          for (const p of blocks) {
+            const text = p.textContent || '';
+            if (!text.includes('```')) continue;
+            const lines = text.split(/\r?\n/);
+            const frag = document.createDocumentFragment();
+            let inCode = false;
+            let codeLang = '';
+            let codeLines = [];
+            let transformed = false;
+            for (const line of lines) {
+              const fence = line.match(/^```(.*)$/);
+              if (fence) {
+                if (!inCode) {
+                  inCode = true;
+                  transformed = true;
+                  const info = (fence[1] || '').trim();
+                  codeLang = (info.split(/\s+/)[0] || '').toLowerCase();
+                  codeLines = [];
+                } else {
+                  inCode = false;
+                  const pre = document.createElement('pre');
+                  pre.className = 'highlight';
+                  const code = document.createElement('code');
+                  code.className = (codeLang ? `language-${codeLang} ` : '') + 'highlighter-rouge';
+                  code.textContent = codeLines.join('\n');
+                  pre.appendChild(code);
+                  frag.appendChild(pre);
+                  codeLang = '';
+                  codeLines = [];
+                }
+                continue;
+              }
+              if (inCode) {
+                codeLines.push(line);
+              } else {
+                frag.appendChild(document.createTextNode(line));
+                frag.appendChild(document.createElement('br'));
+              }
+            }
+            if (transformed) {
+              const wrapper = document.createElement('div');
+              wrapper.appendChild(frag);
+              p.replaceWith(wrapper);
+            }
+          }
+          container.setAttribute('data-fences-processed', 'true');
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+          const content = document.querySelector('.content');
+          if (content) renderFencedCode(content);
+        });
+      })();
+    </script>
+
   </body>
 </html>
