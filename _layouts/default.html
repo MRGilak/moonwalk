@@ -50,7 +50,9 @@
     <script>
       // Global fallback: convert literal fenced code (``` ... ```) into <pre><code> blocks
       (function(){
+        function normalize(s){ return (s || '').replace(/\u00A0/g, ' '); }
         function parseInfoLang(line) {
+          line = normalize(line);
           const m = line.match(/^\s*```(.*)$/);
           if (!m) return '';
           const info = (m[1] || '').trim();
@@ -74,7 +76,7 @@
             const lines = text.split(/\r?\n/);
             let openLineIdx = -1;
             for (let li = 0; li < lines.length; li++) {
-              if (/^\s*```/.test(lines[li])) { openLineIdx = li; break; }
+              if (/^\s*```/.test(normalize(lines[li]))) { openLineIdx = li; break; }
             }
             if (openLineIdx === -1) continue;
 
@@ -83,7 +85,7 @@
             // See if closing fence is in the same element
             let closeInSame = -1;
             for (let li = openLineIdx + 1; li < lines.length; li++) {
-              if (/^\s*```\s*$/.test(lines[li])) { closeInSame = li; break; }
+              if (/^\s*```\s*$/.test(normalize(lines[li]))) { closeInSame = li; break; }
             }
 
             if (closeInSame !== -1) {
@@ -95,14 +97,23 @@
             // Find closing fence in subsequent siblings
             let endIdx = -1; // index in children where closing fence found
             let closeLineIdx = -1; // line index in that element
-            for (let k = i + 1; k < children.length; k++) {
+            const MAX_SIBLINGS = 12;
+            for (let k = i + 1; k < children.length && k - i <= MAX_SIBLINGS; k++) {
               const elt = children[k];
               if (!(elt instanceof HTMLElement)) continue;
+              // Abort if we encounter structural breaks before closing fence
+              const tn = (elt.tagName || '').toUpperCase();
+              if (tn === 'H1' || tn === 'H2' || tn === 'H3' || tn === 'H4' || tn === 'H5' || tn === 'H6' || tn === 'HR') {
+                endIdx = -1; break;
+              }
+              if (tn === 'PRE' || elt.classList.contains('highlighter-rouge') || elt.classList.contains('highlight')) {
+                endIdx = -1; break;
+              }
               const t = elt.textContent || '';
               if (!t.includes('```')) continue;
               const ls = t.split(/\r?\n/);
               for (let cj = 0; cj < ls.length; cj++) {
-                if (/^\s*```\s*$/.test(ls[cj])) { endIdx = k; closeLineIdx = cj; break; }
+                if (/^\s*```\s*$/.test(normalize(ls[cj]))) { endIdx = k; closeLineIdx = cj; break; }
               }
               if (endIdx !== -1) break;
             }
@@ -115,20 +126,20 @@
             // Build code text from i..endIdx
             const codeParts = [];
             // From opening element: lines after opening fence
-            codeParts.push(lines.slice(openLineIdx + 1).join('\n'));
+            codeParts.push(lines.slice(openLineIdx + 1).map(normalize).join('\n'));
             // Middle elements (i+1 .. endIdx-1)
             for (let m = i + 1; m < endIdx; m++) {
-              codeParts.push(children[m].textContent || '');
+              codeParts.push(normalize(children[m].textContent || ''));
             }
             // From closing element: lines before closing fence
-            const endLines = (children[endIdx].textContent || '').split(/\r?\n/);
+            const endLines = (children[endIdx].textContent || '').split(/\r?\n/).map(normalize);
             codeParts.push(endLines.slice(0, Math.max(0, closeLineIdx)).join('\n'));
 
             const pre = document.createElement('pre');
             pre.className = 'highlight';
             const code = document.createElement('code');
             code.className = (lang ? `language-${lang} ` : '') + 'highlighter-rouge';
-            code.textContent = codeParts.join('\n').replace(/\u00A0/g, ' '); // replace non-breaking spaces
+            code.textContent = codeParts.join('\n');
             pre.appendChild(code);
 
             // Replace nodes from i .. endIdx with single <pre>
