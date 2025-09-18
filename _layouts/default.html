@@ -103,7 +103,8 @@
               if (!(elt instanceof HTMLElement)) continue;
               // Abort if we encounter structural breaks before closing fence
               const tn = (elt.tagName || '').toUpperCase();
-              if (tn === 'H1' || tn === 'H2' || tn === 'H3' || tn === 'H4' || tn === 'H5' || tn === 'H6' || tn === 'HR') {
+              if (tn === 'H1' || tn === 'H2' || tn === 'H3' || tn === 'H4' || tn === 'H5' || tn === 'H6' || tn === 'HR' ||
+                  tn === 'BLOCKQUOTE' || tn === 'UL' || tn === 'OL' || tn === 'TABLE' || tn === 'FIGURE') {
                 endIdx = -1; break;
               }
               if (tn === 'PRE' || elt.classList.contains('highlighter-rouge') || elt.classList.contains('highlight')) {
