@@ -50,57 +50,102 @@
     <script>
       // Global fallback: convert literal fenced code (``` ... ```) into <pre><code> blocks
       (function(){
+        function parseInfoLang(line) {
+          const m = line.match(/^\s*```(.*)$/);
+          if (!m) return '';
+          const info = (m[1] || '').trim();
+          const tok = (info.split(/\s+/)[0] || '').toLowerCase();
+          // Normalize common variants (e.g., Python/PYTHON -> python)
+          return tok;
+        }
+
         function renderFencedCode(container) {
           if (!container) return;
           if (container.getAttribute('data-fences-processed') === 'true') return;
-          const blocks = Array.from(container.querySelectorAll('p, li, blockquote'));
-          for (const p of blocks) {
-            const text = p.textContent || '';
+
+          const children = Array.from(container.children);
+          // Walk through top-level children and replace multi-element fenced ranges
+          for (let i = 0; i < children.length; i++) {
+            const el = children[i];
+            if (!(el instanceof HTMLElement)) continue;
+            const text = el.textContent || '';
             if (!text.includes('```')) continue;
+
             const lines = text.split(/\r?\n/);
-            const frag = document.createDocumentFragment();
-            let inCode = false;
-            let codeLang = '';
-            let codeLines = [];
-            let transformed = false;
-            for (const line of lines) {
-              const fence = line.match(/^```(.*)$/);
-              if (fence) {
-                if (!inCode) {
-                  inCode = true;
-                  transformed = true;
-                  const info = (fence[1] || '').trim();
-                  codeLang = (info.split(/\s+/)[0] || '').toLowerCase();
-                  codeLines = [];
-                } else {
-                  inCode = false;
-                  const pre = document.createElement('pre');
-                  pre.className = 'highlight';
-                  const code = document.createElement('code');
-                  code.className = (codeLang ? `language-${codeLang} ` : '') + 'highlighter-rouge';
-                  code.textContent = codeLines.join('\n');
-                  pre.appendChild(code);
-                  frag.appendChild(pre);
-                  codeLang = '';
-                  codeLines = [];
-                }
-                continue;
-              }
-              if (inCode) {
-                codeLines.push(line);
-              } else {
-                frag.appendChild(document.createTextNode(line));
-                frag.appendChild(document.createElement('br'));
-              }
+            let openLineIdx = -1;
+            for (let li = 0; li < lines.length; li++) {
+              if (/^\s*```/.test(lines[li])) { openLineIdx = li; break; }
             }
-            if (transformed) {
-              const wrapper = document.createElement('div');
-              wrapper.appendChild(frag);
-              p.replaceWith(wrapper);
+            if (openLineIdx === -1) continue;
+
+            const lang = parseInfoLang(lines[openLineIdx]);
+
+            // See if closing fence is in the same element
+            let closeInSame = -1;
+            for (let li = openLineIdx + 1; li < lines.length; li++) {
+              if (/^\s*```\s*$/.test(lines[li])) { closeInSame = li; break; }
             }
+
+            if (closeInSame !== -1) {
+              // Same-element fence: let the per-paragraph converter in note.html handle it
+              // (keeps this pass focused on multi-element blocks which cause issues)
+              continue;
+            }
+
+            // Find closing fence in subsequent siblings
+            let endIdx = -1; // index in children where closing fence found
+            let closeLineIdx = -1; // line index in that element
+            for (let k = i + 1; k < children.length; k++) {
+              const elt = children[k];
+              if (!(elt instanceof HTMLElement)) continue;
+              const t = elt.textContent || '';
+              if (!t.includes('```')) continue;
+              const ls = t.split(/\r?\n/);
+              for (let cj = 0; cj < ls.length; cj++) {
+                if (/^\s*```\s*$/.test(ls[cj])) { endIdx = k; closeLineIdx = cj; break; }
+              }
+              if (endIdx !== -1) break;
+            }
+
+            if (endIdx === -1) {
+              // No closing fence found; skip
+              continue;
+            }
+
+            // Build code text from i..endIdx
+            const codeParts = [];
+            // From opening element: lines after opening fence
+            codeParts.push(lines.slice(openLineIdx + 1).join('\n'));
+            // Middle elements (i+1 .. endIdx-1)
+            for (let m = i + 1; m < endIdx; m++) {
+              codeParts.push(children[m].textContent || '');
+            }
+            // From closing element: lines before closing fence
+            const endLines = (children[endIdx].textContent || '').split(/\r?\n/);
+            codeParts.push(endLines.slice(0, Math.max(0, closeLineIdx)).join('\n'));
+
+            const pre = document.createElement('pre');
+            pre.className = 'highlight';
+            const code = document.createElement('code');
+            code.className = (lang ? `language-${lang} ` : '') + 'highlighter-rouge';
+            code.textContent = codeParts.join('\n').replace(/\u00A0/g, ' '); // replace non-breaking spaces
+            pre.appendChild(code);
+
+            // Replace nodes from i .. endIdx with single <pre>
+            el.parentNode.insertBefore(pre, el);
+            for (let r = i; r <= endIdx; r++) {
+              if (children[r] && children[r].parentNode) children[r].parentNode.removeChild(children[r]);
+            }
+
+            // Adjust iteration: children list is stale; re-query and reset i
+            // to continue after the inserted pre element
+            const newChildren = Array.from(container.children);
+            i = newChildren.indexOf(pre);
           }
+
           container.setAttribute('data-fences-processed', 'true');
         }
+
         document.addEventListener('DOMContentLoaded', function(){
           const content = document.querySelector('.content');
           if (content) renderFencedCode(content);
