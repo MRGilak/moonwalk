@@ -71,3 +71,14 @@
 .highlight .vi { color: #f2777a } /* Name.Variable.Instance */
 .highlight .vm { color: #f2777a } /* Name.Variable.Magic */
 .highlight .il { color: #f99157 } /* Literal.Number.Integer.Long */
+
+/* Light theme adjustment so code is readable in light mode too */
+html[data-theme="light"] .highlight {
+	background: #f5f7ff;
+	color: #1f2937;
+	border: 1px solid #e5e7eb;
+}
+html[data-theme="light"] pre code,
+html[data-theme="light"] code.highlighter-rouge {
+	color: #1f2937;
+}

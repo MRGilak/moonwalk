@@ -49,6 +49,12 @@ div.highlighter-rouge pre code, pre code.highlighter-rouge {
   overflow-x: auto;
   padding: 1em;
 }
+/* Ensure base pre/code have proper background depending on theme */
+pre code,
+code.highlighter-rouge {
+  background-color: var(--bg-secondary);
+  border-radius: 0.5em;
+}
 
 blockquote {
   font-style: italic;

@@ -60,6 +60,15 @@ theme_config:
 
 highlighter: rouge
 
+# Ensure fenced code blocks render correctly (with or without language) and use Rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    guess_lang: true        # try to detect language if not specified or non-standard
+    default_lang: plaintext # fallback so unlabeled fences still render nicely
+
 sass:
   style: :compressed
 
