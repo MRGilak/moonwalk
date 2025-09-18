@@ -8,10 +8,8 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>
 
-    <!-- Top-right note about AI summary -->
-    <div style="position: absolute; top: 0; right: 0; font-size: 1.1rem; color: #555;">
-      AI summary available at the end of the page
-    </div>
+    <!-- Note about AI summary -->
+    <div class="ai-summary-note">AI summary available at the end of the page</div>
   </header>
 
   <div class="content">
@@ -37,24 +35,51 @@ layout: default
 </article>
 
 <style>
+  /* Top note styles */
+  .ai-summary-note {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+  html[data-theme="dark"] .ai-summary-note { color: var(--links); opacity: 0.9; }
+  @media (max-width: 640px) {
+    .ai-summary-note {
+      position: static;
+      display: block;
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+  }
+
+  /* Button styles with theme-aware colors */
   #ai-summary-btn {
-    background-color: #4CAF50;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 12px;
     padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: filter 0.2s ease, background-color 0.2s ease;
+    background-color: #4CAF50; /* Light theme default */
   }
-  #ai-summary-btn:hover { background-color: #45a049; }
+  #ai-summary-btn:hover { filter: brightness(0.95); }
+  html[data-theme="dark"] #ai-summary-btn { background-color: var(--links); }
+  html[data-theme="dark"] #ai-summary-btn:hover { filter: brightness(1.1); }
+
+  /* Result box */
   #ai-summary-result {
-    background-color: #f9f9f9;
-    border-left: 4px solid #4CAF50;
+    background-color: var(--bg-secondary);
+    border-left: 4px solid #4CAF50; /* Light theme default */
     padding: 12px;
     margin-top: 1rem;
     border-radius: 6px;
     font-style: italic;
+    white-space: pre-wrap; /* preserve newlines */
+  }
+  html[data-theme="dark"] #ai-summary-result {
+    border-left-color: var(--links);
   }
 </style>
 
@@ -88,7 +113,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (response.ok && data.summary) {
-        resultDiv.textContent = data.summary;
+        // Insert summary safely as text and optionally include first image from the note
+        resultDiv.innerHTML = "";
+        const firstImg = document.querySelector('.content img');
+        if (firstImg) {
+          try {
+            const clone = firstImg.cloneNode(true);
+            clone.loading = 'lazy';
+            clone.decoding = 'async';
+            clone.style.marginBottom = '0.5rem';
+            resultDiv.appendChild(clone);
+          } catch (e) { /* ignore */ }
+        }
+        const textEl = document.createElement('div');
+        textEl.textContent = data.summary;
+        resultDiv.appendChild(textEl);
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          window.MathJax.typesetPromise([resultDiv]).catch(e => console.error('MathJax typeset error', e));
+        }
       } else {
         resultDiv.textContent = "Error generating summary: " + (data.error || "Unknown");
         console.error("AI summary error", { status: response.status, data });
