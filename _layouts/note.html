@@ -85,6 +85,66 @@ layout: default
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // Convert any literal fenced code blocks that failed markdown parsing into real <pre><code> blocks
+  function renderFencedCode(container) {
+    if (!container) return;
+    const paragraphs = Array.from(container.querySelectorAll('p'));
+    for (const p of paragraphs) {
+      const text = p.textContent || '';
+      if (!text.includes('```')) continue;
+
+      const lines = text.split(/\r?\n/);
+      const frag = document.createDocumentFragment();
+      let inCode = false;
+      let codeLang = '';
+      let codeLines = [];
+      let transformed = false;
+
+      for (const line of lines) {
+        const fence = line.match(/^```(.*)$/);
+        if (fence) {
+          // Toggle code block
+          if (!inCode) {
+            inCode = true;
+            transformed = true;
+            const info = (fence[1] || '').trim();
+            codeLang = (info.split(/\s+/)[0] || '').toLowerCase(); // first token as language
+            codeLines = [];
+          } else {
+            // closing fence -> emit block
+            inCode = false;
+            const pre = document.createElement('pre');
+            pre.className = 'highlight';
+            const code = document.createElement('code');
+            code.className = (codeLang ? `language-${codeLang} ` : '') + 'highlighter-rouge';
+            code.textContent = codeLines.join('\n');
+            pre.appendChild(code);
+            frag.appendChild(pre);
+            codeLang = '';
+            codeLines = [];
+          }
+          continue;
+        }
+
+        if (inCode) {
+          codeLines.push(line);
+        } else {
+          // normal text outside code
+          frag.appendChild(document.createTextNode(line));
+          frag.appendChild(document.createElement('br'));
+        }
+      }
+
+      if (transformed) {
+        const wrapper = document.createElement('div');
+        wrapper.appendChild(frag);
+        p.replaceWith(wrapper);
+      }
+    }
+  }
+
+  renderFencedCode(document.querySelector('.content'));
+
   const btn = document.getElementById("ai-summary-btn");
   const resultDiv = document.getElementById("ai-summary-result");
 
