@@ -1,0 +1,11 @@
+[build]
+  publish = "_site"
+  command = "bundle exec jekyll build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  directory = "netlify/functions"
+  # node_bundler can be set if needed (esbuild/zisi). Default is fine for Node 18+
+  # node_bundler = "esbuild"

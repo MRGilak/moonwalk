@@ -71,7 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
     resultDiv.textContent = "";
 
     try {
-      const response = await fetch("/.netlify/functions/summarize", {
+      // Determine function base. If hosted on Netlify, /.netlify/functions works.
+      // If hosted on GitHub Pages (with a subpath), the function must be absolute via your Netlify site URL.
+      // You can set window.NETLIFY_FUNCTIONS_BASE in _includes/custom_head.html to override when needed.
+      const base = window.NETLIFY_FUNCTIONS_BASE || "";
+      const fnUrl = (base ? base.replace(/\/$/, "") : "") + "/.netlify/functions/summarize";
+
+      const response = await fetch(fnUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -85,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDiv.textContent = data.summary;
       } else {
         resultDiv.textContent = "Error generating summary: " + (data.error || "Unknown");
+        console.error("AI summary error", { status: response.status, data });
       }
     } catch (err) {
       console.error(err);

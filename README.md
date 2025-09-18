@@ -20,6 +20,38 @@
 * Auto-generated share images for social media (using [Soopr](https://www.soopr.co))
 * Share & like buttons (using [Soopr](https://www.soopr.co))
 
+## AI Summary (Optional)
+
+Notes pages can show an AI-generated summary at the bottom. This is powered by a Netlify Function at `/.netlify/functions/summarize` which calls an AI provider.
+
+Setup steps:
+
+1. Deploy on Netlify (recommended) so serverless functions work alongside your static site.
+2. In your Netlify Site settings → Environment variables, add one of:
+  - `GROQ_API_KEY` (preferred; uses Groq `llama3-70b-8192`)
+  - or `OPENAI_API_KEY` (uses OpenAI `gpt-4o-mini`)
+3. If you host the HTML on GitHub Pages but functions on Netlify, set an absolute base URL by editing `_includes/custom_head.html`:
+  - `window.NETLIFY_FUNCTIONS_BASE = "https://<your-site>.netlify.app";`
+
+Local development:
+
+- Install Ruby deps and build Jekyll as usual.
+- For functions, using Netlify CLI gives the best experience:
+
+```powershell
+npm -g install netlify-cli
+# In PowerShell, set your env var for the session
+$env:GROQ_API_KEY = "<your-key>"
+netlify dev
+```
+
+This will proxy `/.netlify/functions/summarize` locally and build Jekyll via `bundle exec jekyll build`.
+
+Troubleshooting:
+
+- If you see "Error generating summary.", open the browser console for details (we log response status and error from the function).
+- Ensure one of the API keys is present in Netlify environment variables and redeploy.
+- If hosting pages on GitHub Pages, ensure `window.NETLIFY_FUNCTIONS_BASE` is set to your Netlify domain in `_includes/custom_head.html`.
 
 #### Lighthouse
 
