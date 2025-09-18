@@ -77,36 +77,4 @@ layout: default
 
 </div><!-- /.parallax-content -->
 
-<style>
-  /* Navbar responsive tweaks to keep in a single row on mobile */
-  .minimal-navbar {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--bg);
-  }
-  .minimal-navbar .nav-scroll {
-    text-align: center;           /* center inline-flex UL */
-    overflow-x: auto;             /* allow horizontal scroll on narrow screens */
-    -webkit-overflow-scrolling: touch;
-    margin: 0 -2em;               /* cancel .w padding so centering is true full-width */
-    padding: 0 2em;               /* visually keep content aligned with container */
-  }
-  .minimal-navbar ul {
-    display: inline-flex; /* allows centering via text-align */
-    list-style: none;
-    padding-left: 0;
-    margin: 0 auto 0.5rem auto;
-    gap: 0.75rem;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    align-items: center;
-  }
-  .minimal-navbar li { flex: 0 0 auto; }
-  .minimal-navbar a { text-decoration: none; color: var(--links); font-weight: 600; }
-
-  /* Ensure the header doesn't get covered on mobile */
-  @media (max-width: 640px) {
-    .parallax-content header { padding-top: 0.5rem; }
-  }
-</style>
+<!-- navbar styles removed; controlled by assets/css/main.scss -->
