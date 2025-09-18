@@ -28,8 +28,11 @@ Setup steps:
 
 1. Deploy on Netlify (recommended) so serverless functions work alongside your static site.
 2. In your Netlify Site settings → Environment variables, add one of:
-  - `GROQ_API_KEY` (preferred; uses Groq `llama3-70b-8192`)
-  - or `OPENAI_API_KEY` (uses OpenAI `gpt-4o-mini`)
+  - `GROQ_API_KEY` (preferred)
+  - or `OPENAI_API_KEY`
+  - Optional model overrides:
+    - `GROQ_MODEL` (default: `llama-3.3-70b-versatile`)
+    - `OPENAI_MODEL` (default: `gpt-4o-mini`)
 3. If you host the HTML on GitHub Pages but functions on Netlify, set an absolute base URL by editing `_includes/custom_head.html`:
   - `window.NETLIFY_FUNCTIONS_BASE = "https://<your-site>.netlify.app";`
 

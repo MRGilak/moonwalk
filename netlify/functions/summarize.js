@@ -47,8 +47,8 @@ exports.handler = async (event, context) => {
       return json(500, { error: "No AI provider configured. Set GROQ_API_KEY or OPENAI_API_KEY." });
     }
 
-    let provider = groqKey ? "groq" : "openai";
-    let endpoint, headers, payload;
+  let provider = groqKey ? "groq" : "openai";
+  let endpoint, headers, payload;
 
     if (provider === "groq") {
       endpoint = "https://api.groq.com/openai/v1/chat/completions";
@@ -57,7 +57,7 @@ exports.handler = async (event, context) => {
         Authorization: `Bearer ${groqKey}`,
       };
       payload = {
-        model: "llama3-70b-8192",
+        model: process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
         temperature: 0.2,
         messages: [
           {
@@ -78,7 +78,7 @@ exports.handler = async (event, context) => {
         Authorization: `Bearer ${openaiKey}`,
       };
       payload = {
-        model: "gpt-4o-mini",
+        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
         temperature: 0.2,
         messages: [
           {
