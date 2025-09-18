@@ -78,7 +78,7 @@ html[data-theme="dark"] #parallax-bg {
 
 /* Mobile fallback */
 @media (max-width: 768px) {
-  .about-section .about-image {
+    .about-section .about-image {
     float: none;
     display: block;
     margin: 0 auto 1.5rem auto;
@@ -132,15 +132,20 @@ html[data-theme="dark"] #parallax-bg {
     }
   }
 
-  /* Mobile fallback */
+  /* Mobile navbar: keep in one line */
   @media (max-width: 768px) {
-    width: 90%;
-    padding: 0.5rem 1rem;
+    width: auto;
+    padding: 0.35rem 0.5rem;
 
     ul {
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 0.6rem;
+      flex-wrap: nowrap;          /* force single line */
       justify-content: center;
+      white-space: nowrap;        /* prevent breaking link text */
+    }
+
+    ul li a {
+      font-size: 0.9rem;          /* slightly smaller to fit */
     }
   }
 }
