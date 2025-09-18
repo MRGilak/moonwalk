@@ -56,6 +56,24 @@ code.highlighter-rouge {
   border-radius: 0.5em;
 }
 
+/* Code "box" styling similar to AI summary box (accent bar and spacing) */
+div.highlighter-rouge {
+  border-left: 4px solid #4CAF50; /* light accent */
+  padding-left: 12px;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+pre.highlight {
+  border-left: 4px solid #4CAF50; /* for client-side converted blocks not wrapped by Rouge */
+  padding-left: 12px;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+html[data-theme="dark"] div.highlighter-rouge,
+html[data-theme="dark"] pre.highlight {
+  border-left-color: var(--links);
+}
+
 blockquote {
   font-style: italic;
   border: thin solid black;
