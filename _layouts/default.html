@@ -19,5 +19,33 @@
     {% if page.layout == "home" %}
       <script src="{{ '/assets/js/parallax.js' | relative_url }}"></script>
     {% endif %}
+
+    <style>
+      #ai-summary-btn {
+        background-color: #4CAF50; /* green */
+        color: white;
+        border: none;
+        border-radius: 12px;        /* rounded corners */
+        padding: 12px 24px;         /* bigger than default */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #ai-summary-btn:hover {
+        background-color: #45a049;  /* slightly darker green on hover */
+      }
+
+      #ai-summary-result {
+        background-color: #f9f9f9;
+        border-left: 4px solid #4CAF50;
+        padding: 12px;
+        margin-top: 1rem;
+        border-radius: 6px;
+        font-style: italic;
+      }
+    </style>
+
+
   </body>
 </html>
