@@ -8,8 +8,8 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>
 
-    <!-- Note about AI summary -->
-    <div class="ai-summary-note">AI summary available at the end of the page</div>
+  <!-- Note about AI summary (click to smooth-scroll to summary) -->
+  <div class="ai-summary-note"><a href="#ai-summary-section">AI summary available at the end of the page</a></div>
   </header>
 
   <div class="content">
@@ -28,7 +28,7 @@ layout: default
   {% endif %}
 
   <!-- AI Summary Button -->
-  <div class="ai-summary-container" style="margin: 2rem 0;">
+  <div id="ai-summary-section" class="ai-summary-container" style="margin: 2rem 0;">
     <button id="ai-summary-btn">Click to get AI summary</button>
     <div id="ai-summary-result"></div>
   </div>
@@ -44,6 +44,8 @@ layout: default
     color: var(--text-secondary);
   }
   html[data-theme="dark"] .ai-summary-note { color: var(--links); opacity: 0.9; }
+  .ai-summary-note a { color: inherit; text-decoration: none; }
+  .ai-summary-note a:hover { text-decoration: underline; }
   @media (max-width: 640px) {
     .ai-summary-note {
       position: static;
@@ -68,10 +70,11 @@ layout: default
   html[data-theme="dark"] #ai-summary-btn { background-color: var(--links); }
   html[data-theme="dark"] #ai-summary-btn:hover { filter: brightness(1.1); }
 
-  /* Result box */
+  /* Result box (theme-aware) */
   #ai-summary-result {
     background-color: var(--bg-secondary);
-    border-left: 4px solid #4CAF50; /* Light theme default */
+    color: var(--text);
+    border-left: 4px solid #4CAF50; /* Light theme accent */
     padding: 12px;
     margin-top: 1rem;
     border-radius: 6px;
@@ -79,12 +82,26 @@ layout: default
     white-space: pre-wrap; /* preserve newlines */
   }
   html[data-theme="dark"] #ai-summary-result {
-    border-left-color: var(--links);
+    background-color: var(--bg-secondary);
+    color: var(--text);
+    border-left-color: var(--links); /* Dark theme accent */
   }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // Smooth-scroll from header note to AI summary section
+  const jumpLink = document.querySelector('.ai-summary-note a');
+  if (jumpLink) {
+    jumpLink.addEventListener('click', (e) => {
+      const target = document.getElementById('ai-summary-section');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
   // Convert any literal fenced code blocks that failed markdown parsing into real <pre><code> blocks
   function renderFencedCode(container) {
     if (!container) return;
