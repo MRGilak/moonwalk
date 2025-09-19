@@ -1,6 +1,12 @@
 [build]
-  publish = "_site"
-  command = "bundle exec jekyll build"
+  # Do not build the Jekyll site on Netlify (site is hosted on GitHub Pages)
+  # Publish a tiny placeholder directory just to satisfy Netlify deploys
+  publish = "netlify/placeholder"
+  command = ""
+
+  # Skip Netlify builds unless serverless functions (or this file) changed
+  # If this command exits 0, Netlify will ignore the build.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- netlify/functions netlify.toml"
 
 [build.environment]
   NODE_VERSION = "18"
