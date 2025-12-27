@@ -2,11 +2,11 @@
 layout: note
 title: "Kinematics"
 date: 2025-12-27
-excerpt: "#Robotics"
+excerpt: "Kinematics studies the relationship between joint and end effector motion. It is used to derive equations describing robot movement."
 ---
 
 #Robotics 
-The [single leg project](single-leg-control) requires working with frames, defining angles and deriving dinematics and dynamics. Dynamics of the robot are derived [here](single-leg-robot-numerical-model). Kinematics will be derived here.
+The [single leg project](/notes/Robotics/Single Leg Project/Single Leg Control/) requires working with frames, defining angles and deriving dinematics and dynamics. Dynamics of the robot are derived [here](/notes/Robotics/Single Leg Project/Single Leg Robot Numerical Model/). Kinematics will be derived here.
 We define the hip angle and the knee angle as in the image below.
 ![kinematics.jpg](/assets/Robotics/Single Leg Project/images/kinematics.jpg)
 It is now easy to write

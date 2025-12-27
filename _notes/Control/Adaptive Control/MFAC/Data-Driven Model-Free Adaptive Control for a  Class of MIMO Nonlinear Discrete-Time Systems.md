@@ -2,13 +2,13 @@
 layout: note
 title: "Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems"
 date: 2025-07-20
-excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
+excerpt: "Data-driven model-free adaptive control is applied to MIMO nonlinear discrete-time systems. A general system is considered with input and output of the same length."
 ---
 
 #AdaptiveControl #MFAC #IEEE #IEEE2011 
 #IEEEControlSystemsTechnology #MIMO
 >[!summary] Summary
->This paper introduces (and contributes to) [MFAC](mfac).
+>This paper introduces (and contributes to) [MFAC](/notes/Control/Adaptive Control/MFAC/MFAC/).
 >A general MIMO nonlinear system is considered as:
 >$$
 > y(k+1)=f(y(k),...,y(k-n_y),u(k),...,u(k-n_u))
@@ -19,4 +19,4 @@ excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
 >$$
 >Parameter $\Phi$ is then estimated online and used for calculating the control input that minimizes a one-step-ahead cost function.
  
-This paper introduces and contributes to [MFAC](mfac), especially PFDL and CFDL.
+This paper introduces and contributes to [MFAC](/notes/Control/Adaptive Control/MFAC/MFAC/), especially PFDL and CFDL.

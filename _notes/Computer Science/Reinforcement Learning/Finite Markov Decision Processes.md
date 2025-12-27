@@ -2,7 +2,7 @@
 layout: note
 title: "Finite Markov Decision Processes"
 date: 2025-09-17
-excerpt: "#RL #Learning #computer-science #Control"
+excerpt: "Finite Markov decision processes involve an agent and environment interacting at discrete time steps. The agent receives a state representation and selects actions to maximize a reward signal."
 ---
 
 #RL #Learning #computer-science #Control
@@ -52,7 +52,7 @@ $$
 In reality, due to presence of noise, disturbances and other random events that cannot necessarily be considered, it is useful to think of the state at each time step as an approximation to a Markov state, although it may not fully satisfy the Markov property.
 
 ## Markov Decision Processes
-A reinforcement learning task that satisfies the Markov property is called a _Markov decision process_, or _MDP_. If the state and action spaces are finite, then it is called a _finite Markov decision process_ (finite MDP). By specifying the dynamics of the environment as we did [here](#markov-property), one can compute anything else one might want to know about the environment, such as the _expected rewards_ for state-action pairs:
+A reinforcement learning task that satisfies the Markov property is called a _Markov decision process_, or _MDP_. If the state and action spaces are finite, then it is called a _finite Markov decision process_ (finite MDP). By specifying the dynamics of the environment as we did [here](/notes//#markov-property), one can compute anything else one might want to know about the environment, such as the _expected rewards_ for state-action pairs:
 $$
 r(s, a) = \mathbb{E} \{ R_{t + 1} \ | \ S_t = s, A_t = a  \} = \sum_{r \ in \mathcal{R}} r \sum_{s' \ in \mathcal{S}} p(s', r \ | \ s, a)
 $$
@@ -111,7 +111,7 @@ Therefore, many RL algorithms approximate the solution to the Bellman optimality
 Any policy that is _greedy_ with respect to the optimal evaluation function $v_\ast$ is an optimal policy. 
 
 
-Continue reading about reinforcement learning [here](dynamic-programming).
+Continue reading about reinforcement learning [here](/notes/Computer Science/Reinforcement Learning/Dynamic Programming/).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

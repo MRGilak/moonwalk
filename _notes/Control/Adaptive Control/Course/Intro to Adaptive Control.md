@@ -2,10 +2,10 @@
 layout: note
 title: "Intro to Adaptive Control"
 date: 2025-08-12
-excerpt: "This note is closely related to [[Adaptive Control]]."
+excerpt: "Adaptive control addresses incomplete or imprecise system models. It aims to achieve stability, robustness, and tracking despite uncertainties."
 ---
 
-This note is closely related to [Adaptive Control](adaptive-control).
+This note is closely related to [Adaptive Control](/notes/Control/Adaptive Control/Adaptive Control/).
 Control is used for these purposes:
 - Closed-loop Stability
 - Closed-loop Robustness

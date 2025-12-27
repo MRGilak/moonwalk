@@ -2,7 +2,7 @@
 layout: note
 title: "Single Leg Motors"
 date: 2025-12-27
-excerpt: "#Robotics  #Single_Leg_Project #Motors"
+excerpt: "Single leg robots use Permanent Magnet Synchronous Motors (PMSMs). PMSMs control torque through a rotating magnetic field."
 ---
 
 #Robotics  #Single_Leg_Project #Motors 

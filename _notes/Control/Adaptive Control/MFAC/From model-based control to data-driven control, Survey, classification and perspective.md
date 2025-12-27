@@ -2,12 +2,12 @@
 layout: note
 title: "From model-based control to data-driven control, Survey, classification and perspective"
 date: 2025-07-16
-excerpt: "#AdaptiveControl #DataDrivenControl"
+excerpt: "Data-driven control methods are categorized into three main categories. They include online data-based, offline data-based, and iterative data-based methods, such as SPSA, MFAC, and UC."
 ---
 
 #AdaptiveControl #DataDrivenControl
 
-This paper is a survey of [Data-driven Control](data-driven-control).
+This paper is a survey of [Data-driven Control](/notes/Control/Data-Driven Control/Data-driven Control/).
 >[! summary] Summary
 >The paper starts with model-based controllers (MBC) and points out their need for an accurate or at least a good-enough model and proceeds to draw attention to the difficulty of deriving such a model. Four classes of systems are defined based on the accuracy of their model and data-driven control is then suggested as the solution to the most difficult classes to deal with.
 >Different DDC (data-driven control) methods are categorized into 3 main catogories:
@@ -27,7 +27,7 @@ This paper is a survey of [Data-driven Control](data-driven-control).
 >		$$
 >		\hat{\theta}_k=\hat{\theta_{k-1}}-a_k \hat{g_k (\hat{\theta-{k-1}})} 
 >		$$
->		where $\hat{g_k (\hat{\theta-{k-1}})}$ is the estimation of simultaneous perturbation which is explained in [this survey](from-model-based-control-to-data-driven-control-survey-classification-and-perspective).
+>		where $\hat{g_k (\hat{\theta-{k-1}})}$ is the estimation of simultaneous perturbation which is explained in [this survey](/notes/Control/Adaptive Control/MFAC/From model-based control to data-driven control, Survey, classification and perspective/).
 >		
 >	2. ___MFAC___
 >		A general SISO nonlinear system is considered as:

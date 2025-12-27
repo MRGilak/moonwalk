@@ -2,19 +2,19 @@
 layout: note
 title: "Mathematical Modeling of a Single Leg Robot"
 date: 2025-12-27
-excerpt: "#Robotics #Single_Leg_Project #Modeling"
+excerpt: "The mathematical model of a single leg robot can be written using the Newtonian or Lagrangian method. The Lagrangian method derives equations of motion by defining kinetic and potential energies."
 ---
 
 #Robotics #Single_Leg_Project #Modeling
 
 >[!note] this note is still being completed
 
-The mathematical model of a single leg robot can be written both by using the Newtonian method and by using the Lagrangian method. For now, the Lagrangian method is explained below. The Newtonian method will also be added later, but for now you can take a look at [this](robot-leg-equations) to read about it.
+The mathematical model of a single leg robot can be written both by using the Newtonian method and by using the Lagrangian method. For now, the Lagrangian method is explained below. The Newtonian method will also be added later, but for now you can take a look at [this](/notes/Robotics/Single Leg Project/Robot Leg Equations/) to read about it.
 # Euler-Lagrange Dynamics of the System
 When systems of bodies get very complicated, it is often easier to work with Lagrangian dynamics rather than Newtonian dynamics. To write the equations of motion for any system, this is what we should do:
 1. Write the kinetic energy of the system, $T$. This includes all the translational and rotational kinetic energy of all the bodies in the system.
 2. Write the potential energy of the system, $P$. This includes the potential energy of all the bodies.
-3. Define $\mathcal{L} := T - P + \lambda^T c$. This is called the Lagrangian. $\lambda$ is the vector of Lagrange multipliers and $c$ is the vector of equality constraint ($c = 0$). Any constraint can be added to the Lagrangian like this. If the constraint is an inequality constraint, for example $c \geq 0$, then we will have a [complementarity problem](linear-complementarity-problem), meaning we should have $\lambda \geq 0,  c \geq 0, \lambda c = 0$.
+3. Define $\mathcal{L} := T - P + \lambda^T c$. This is called the Lagrangian. $\lambda$ is the vector of Lagrange multipliers and $c$ is the vector of equality constraint ($c = 0$). Any constraint can be added to the Lagrangian like this. If the constraint is an inequality constraint, for example $c \geq 0$, then we will have a [complementarity problem](/notes/Robotics/Single Leg Project/Linear Complementarity Problem/), meaning we should have $\lambda \geq 0,  c \geq 0, \lambda c = 0$.
 4. For any variable $x$, you can now solve the equation below to derive its dynamics:
 	$$
 		\frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{x}} = 0
@@ -43,7 +43,7 @@ $$
 	P = P_M + P_H + P_S.
 $$
 All the parameters used in calculating the kinetic and potential energy, like $d_i$ and $h_i$ and their derivatives can be calculated using the link lengths $l_1$ and $l_2$ and joints angles and angular velocities $q_i$ and $\dot{q}_i$.  
-Finally, the constraint on the system is that its foot cannot penetrate the ground, which can be added as $Fh$, where $F$ is the Lagrange multiplier and $h$ is shown in the image above. This leads to a [linear complementarity problem](linear-complementarity-problem), meaning we have $Fh = 0, F \geq 0, h \geq 0$. 
+Finally, the constraint on the system is that its foot cannot penetrate the ground, which can be added as $Fh$, where $F$ is the Lagrange multiplier and $h$ is shown in the image above. This leads to a [linear complementarity problem](/notes/Robotics/Single Leg Project/Linear Complementarity Problem/), meaning we have $Fh = 0, F \geq 0, h \geq 0$. 
 If we want to be more precise, we have to add two more constraints to prevent the knee and the hip joints from penetrating the ground as well, but that makes the problem exponentially more difficult, without adding that much value. If the knee or hip joint contact the ground, we have far worse problems to deal with in control rather than modelling.
 There is a very interesting intuition behind the constraint. $Fh = 0, F \geq 0, h \geq 0$ means that at any given time, both $F$ and $h$ cannot be zero, meaning the foot cannot be on the ground without any force being exerted on it. The foot is either in the air with $h > 0$, at which time it doesn't experience any force, or it is on the ground with $F > 0$ and thus $h = 0$.
 The Lagrangian can now be written as
@@ -62,7 +62,7 @@ $$
 		\frac{\partial \mathcal{L}}{\partial h} - \frac{\mathrm{d}}{\mathrm{d} t} \frac{\partial \mathcal{L}}{\partial \dot{h}} = 0
 $$
 When the foot is on the ground, the force $F$ can be calculated.
-(#todo: add simulation figures. For now you can take a look at [this](single-leg-robot-numerical-model))
+(#todo: add simulation figures. For now you can take a look at [this](/notes/Robotics/Single Leg Project/Single Leg Robot Numerical Model/))
 
 
-To read more about what's in the literature, take a look at [Robot Leg Equations](robot-leg-equations).
+To read more about what's in the literature, take a look at [Robot Leg Equations](/notes/Robotics/Single Leg Project/Robot Leg Equations/).

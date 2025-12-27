@@ -2,7 +2,7 @@
 layout: note
 title: "Linear Complementarity Problem"
 date: 2025-12-27
-excerpt: "The Linear Complementarity Problem (LCP) can be stated as follows:"
+excerpt: "The Linear Complementarity Problem (LCP) seeks vectors that satisfy specific constraints. It involves a matrix and vector to find non-negative vectors satisfying a complementarity condition."
 ---
 
 The Linear Complementarity Problem (LCP) can be stated as follows:

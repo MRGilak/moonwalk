@@ -2,7 +2,7 @@
 layout: note
 title: "Robot Leg Equations"
 date: 2025-12-27
-excerpt: "#Robotics #Single_Leg_Project #Modeling"
+excerpt: "Robot leg motion is governed by equations such as Newtons and Eulers. These equations simplify during flight and stance phases."
 ---
 
 #Robotics #Single_Leg_Project #Modeling 
@@ -64,12 +64,12 @@ There are several ways to model how a legged robot contacts the ground.
 	$$
 	f_i^z \geq 0 \, \ p_i^z \geq 0 \, \ f_i^z p_i^z = 0
 	$$
-	This is called a _complementarity condition_ (take a look at [this](linear-complementarity-problem) to read more about linear complementarity problems).
+	This is called a _complementarity condition_ (take a look at [this](/notes/Robotics/Single Leg Project/Linear Complementarity Problem/) to read more about linear complementarity problems).
 With rigid contacts, the dynamics of legged robots appears to switch, depending on the contact situations. Discontinuities of the state of the robot also occur at impacts. A classical way to combine these different aspects is with a _hybrid_ dynamical system. This approach has however some limitations, the most obvious one being its incapacity to handle properly _Zeno behaviors_, infinite accumulations of impacts in finite time.
 Impacts with multiple contacts and Zeno behaviors are not the only difficulties with rigid contact models: there is also the _Painleve paradox_, tangential impacts, impacts without collisions, etc.
-By conservatively approximating the friction cone as a polyhedron, forward dynamics can be cast as a [linear complementarity problem (LCP)](linear-complementarity-problem).
+By conservatively approximating the friction cone as a polyhedron, forward dynamics can be cast as a [linear complementarity problem (LCP)](/notes/Robotics/Single Leg Project/Linear Complementarity Problem/).
 
-To read more, you can continue to [Stability of Legged Robots](stability-of-legged-robots).
+To read more, you can continue to [Stability of Legged Robots](/notes/Robotics/Single Leg Project/Stability of Legged Robots/).
 
 Source:
 - [Modeling and Control of Legged Robots](https://link.springer.com/chapter/10.1007/978-3-319-32552-1_48)

@@ -2,13 +2,13 @@
 layout: note
 title: "A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems"
 date: 2025-07-20
-excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
+excerpt: "This paper introduces a novel control approach for discrete-time nonlinear systems. It proposes an equivalent PFDL description and estimates parameter Φ online."
 ---
 
 #AdaptiveControl #MFAC #IEEE #IEEE2011 
 #IEEEControlSystemsTechnology 
 >[!summary] Summary
->This paper introduces (and contributes to) [MFAC](mfac).
+>This paper introduces (and contributes to) [MFAC](/notes/Control/Adaptive Control/MFAC/MFAC/).
 >A general SISO nonlinear system is considered as:
 >$$
 > y(k+1)=f(y(k),...,y(k-n_y),u(k),...,u(k-n_u))
@@ -19,4 +19,4 @@ excerpt: "#AdaptiveControl #MFAC #IEEE #IEEE2011"
 >$$
 >Parameter $\Phi$ is then estimated online and used for calculating the control input that minimizes a one-step-ahead cost function.
  
-This paper introduces and contributes to [MFAC](mfac), especially PFDL and CFDL.
+This paper introduces and contributes to [MFAC](/notes/Control/Adaptive Control/MFAC/MFAC/), especially PFDL and CFDL.

@@ -2,7 +2,7 @@
 layout: note
 title: "Lambert W function"
 date: 2025-10-16
-excerpt: "#Control #delay"
+excerpt: "The Lambert W function is used to study linear time-delayed systems. It helps analyze systems with infinitely many eigenvalues."
 ---
 
 #Control #delay 
