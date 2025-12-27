@@ -2,7 +2,7 @@
 layout: note
 title: "Modern Cryptography"
 date: 2025-08-23
-excerpt: "Modern cryptography relies on mathematical concepts like prime factorization and modular arithmetic."
+excerpt: "Modern cryptography relies on mathematical concepts like the fundamental theorem of arithmetic. It uses one-sided functions, such as modular arithmetic, to secure data."
 ---
 
 #cryptography #computer-science 

@@ -2,10 +2,10 @@
 layout: note
 title: "Intro to Adaptive Control"
 date: 2025-08-12
-excerpt: "Adaptive control is a methodology used to achieve control objectives, such as stability and disturbance rejection, in systems with incomplete or uncertain models."
+excerpt: "This note is closely related to [[Adaptive Control]]."
 ---
 
-This note is closely related to [Adaptive Control](/notes/Control/Adaptive Control/Adaptive Control/).
+This note is closely related to [Adaptive Control](adaptive-control).
 Control is used for these purposes:
 - Closed-loop Stability
 - Closed-loop Robustness

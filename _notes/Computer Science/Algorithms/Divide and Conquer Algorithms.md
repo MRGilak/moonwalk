@@ -2,7 +2,7 @@
 layout: note
 title: "Divide and Conquer Algorithms"
 date: 2025-08-19
-excerpt: "Divide and conquer algorithms solve problems by breaking them into smaller sub-problems. This approach is used in various algorithms, including merge sort."
+excerpt: "Divide and conquer algorithms solve problems by breaking them into smaller sub-problems. This approach is used in merge sort and other efficient algorithms."
 ---
 
 #algorithm #computer-science 

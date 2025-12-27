@@ -2,7 +2,7 @@
 layout: note
 title: "Insertion Sort"
 date: 2025-08-19
-excerpt: "Insertion sort is a sorting algorithm that iteratively inserts elements into a sorted array. It runs in O(n^2) time, with a best-case time complexity of Θ(n)."
+excerpt: "Insertion sort arranges elements by comparing and inserting each into a sorted portion. It runs in O(n^2) time, with a best-case time of Θ(n)."
 ---
 
 #algorithm #computer-science 

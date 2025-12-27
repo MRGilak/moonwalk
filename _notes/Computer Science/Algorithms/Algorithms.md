@@ -2,7 +2,7 @@
 layout: note
 title: "Algorithms"
 date: 2025-08-19
-excerpt: "An algorithm is a set of steps for a computer program to accomplish a task. Key topics in algorithms include sorting, searching, and notation."
+excerpt: "Algorithms are sets of steps for computer programs to accomplish tasks. They include methods like binary search, sorting, and recursive techniques."
 ---
 
 #algorithm #computer-science 

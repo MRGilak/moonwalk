@@ -2,7 +2,7 @@
 layout: note
 title: "Binary Search"
 date: 2025-08-19
-excerpt: "Binary search is an efficient algorithm for finding an item in a sorted list. It works by repeatedly dividing the list in half until the items location is found."
+excerpt: "Binary search is an algorithm for finding an item in a sorted list. It works by repeatedly dividing the list in half until the item is found."
 ---
 
 #algorithm #computer-science 

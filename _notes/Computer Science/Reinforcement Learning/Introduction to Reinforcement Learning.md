@@ -2,7 +2,7 @@
 layout: note
 title: "Introduction to Reinforcement Learning"
 date: 2025-09-12
-excerpt: "Reinforcement learning involves learning to maximize a reward signal through trial and error."
+excerpt: "#RL #Learning #computer-science"
 ---
 
 #RL #Learning #computer-science 
@@ -25,7 +25,7 @@ The four main subelements of a reinforcement learning systems are a _policy_, a 
 4. The final element of some RL systems is a _model of the environment_. This is something that mimics the behavior of the environment, or more generally, that allows inferences to be made about how the environment will behave. Models are used for planning, by which we mean any way of deciding on a course of action by considering possible future situations before they are actually experienced.
 	RL methods that use models and planning are called _model-based_ methods, as opposed to _model-free_ methods that are explicitly trial-and-error learners.
 
-You can continue to learn about reinforcement learning by taking a look at the classic multi-arm bandit example [here](/notes/Computer Science/Reinforcement Learning/Multi-arm Bandits/).
+You can continue to learn about reinforcement learning by taking a look at the classic multi-arm bandit example [here](multi-arm-bandits).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

@@ -1,8 +1,8 @@
 ---
 layout: note
 title: "Multi-arm Bandits"
-date: 2025-09-12
-excerpt: "The multi-arm bandit problem is a classic example of reinforcement learning. It involves choosing among multiple options to maximize the expected total reward over time."
+date: 2025-09-14
+excerpt: "#RL #Learning #computer-science"
 ---
 
 #RL #Learning #computer-science 
@@ -138,7 +138,7 @@ Up to this point, we have considered only _nonassociative tasks_, in which there
 As an example, suppose there are several different $n$-armed bandit tasks, and that on each play you confront one of these chosen at random. Thus, the bandit task changes randomly from play to play. You could try using one of the methods described in this chapter that can handle nonstationarity, but unless the true action values change slowly, these methods will not work very well. Now suppose, however, that when a bandit task is selected for you, you are given some distinctive clue about its identity (but not its action values). Maybe you are facing an actual slot machine that changes the color of its display as it changes its action values. Now you can learn a policy associating each task, signaled by the color you see, with the best action to take when facing that task—for instance, if red, play arm $1$; if green, play arm $2$. 
 This is an example of an _associative search_ task, so called because it involves both _trial-and-error learning_ in the form of search for the best actions and _association_ of these actions with the situations in which they are best.
 
-
+To learn more about reinforcement learning, continue to [Finite Markov Decision Processes](finite-markov-decision-processes).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

@@ -2,7 +2,7 @@
 layout: note
 title: "Ciphers"
 date: 2025-08-23
-excerpt: "Ciphers are mechanical operations that perform algorithms on individual letters or small chunks of letters."
+excerpt: "Ciphers are mechanical operations that transform individual symbols according to an algorithm. They operate on syntax, unlike codes, which operate on semantics and meaning."
 ---
 
 #cryptography #computer-science 

@@ -1,10 +1,11 @@
 ---
 layout: note
 title: "Robotics"
-date: 2025-08-02
-excerpt: "Robotics projects involve single leg control. Robotics encompasses various technical fields."
+date: 2025-12-27
+excerpt: "The robotic projects I am working on include:"
 ---
 
-Projects include:
-- [Single Leg Control](/notes/Robotics/Robotic Project/)
-That's it for now :)
+The robotic projects I am working on include:
+- [Single Leg Control](single-leg-control)
+- Quadrupedal Robot Simulation
+- Autonomous Driving Vehicle

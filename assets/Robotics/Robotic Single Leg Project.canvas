@@ -1,7 +1,0 @@
-{
-	"nodes":[
-		{"id":"67ff4f63ac756429","type":"file","file":"Robotics/Mathematical Modeling of a Single Leg Robot.md","x":-720,"y":-360,"width":420,"height":300,"color":"5"},
-		{"id":"17c372ecb26e891c","x":-640,"y":0,"width":260,"height":150,"type":"file","file":"Robotics/Robot Leg Equations.md"}
-	],
-	"edges":[]
-}

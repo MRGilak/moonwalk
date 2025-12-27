@@ -2,7 +2,7 @@
 layout: note
 title: "Asymptotic Notation"
 date: 2025-08-19
-excerpt: "Asymptotic notation is used to compare the efficiency of algorithms. It includes notations like Big-Theta, Big-O, and Big-Omega to describe running times."
+excerpt: "Asymptotic notation measures algorithm efficiency. It includes notations like Big-Theta, Big-O, and Big-Omega."
 ---
 
 #algorithm #computer-science 

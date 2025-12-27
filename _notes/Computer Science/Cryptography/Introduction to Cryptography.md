@@ -2,7 +2,7 @@
 layout: note
 title: "Introduction to Cryptography"
 date: 2025-08-23
-excerpt: "Cryptography involves techniques like the Caesar cipher, polyalphabetic cipher, and one-time pad to secure messages."
+excerpt: "Cryptography involves techniques like the Caesar cipher and one-time pad to secure messages. These methods use shifting and random sequences to encrypt data."
 ---
 
 #cryptography #computer-science 

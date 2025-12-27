@@ -2,7 +2,7 @@
 layout: note
 title: "Recursive Algorithms"
 date: 2025-08-19
-excerpt: "Recursive algorithms solve problems by breaking them down into smaller instances of the same problem. This technique, called recursion, repeats until the problem is small enough to be solved directly."
+excerpt: "Recursive algorithms solve problems by breaking them down into smaller instances of the same problem."
 ---
 
 #algorithm #computer-science 

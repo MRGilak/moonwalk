@@ -2,7 +2,7 @@
 layout: note
 title: "Cryptography"
 date: 2025-08-19
-excerpt: "Cryptography involves encrypting messages to secure communication. It uses ciphers to protect information from unauthorized access."
+excerpt: "Cryptography involves using ciphers to securely communicate messages. It is a key field in modern world communication."
 ---
 
 #cryptography #computer-science 
