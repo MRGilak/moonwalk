@@ -17,6 +17,7 @@ project_entries:
   - title: Inverse Optimal Control
     url: /projects/inverse-optimal-control
     desc: Notes on our conference paper on Inverse Optimal Control.
+    highlight: Published
 
   - title: Learning
     url: /projects/learning
