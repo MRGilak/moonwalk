@@ -14,7 +14,7 @@ Several simulations have been conducted in different simulators:
 - Simulating the system in Isaac Sim for more realistic results
 # Numerical Model in MATLAB
 
-The dynamics of the system were derived [here](/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/). MATLAB symbolic toolbox was used to convert the dynamics to _.m_ functions. These functions take the current state of the system along with applied torques as input and simulate the system for one timestep. They can be used in a _for_ loop can simulate the whole system. You can take a look at the simulation and the code behind it on [Github]().
+The dynamics of the system were derived [here](/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/). MATLAB symbolic toolbox was used to convert the dynamics to _.m_ functions. These functions take the current state of the system along with applied torques as input and simulate the system for one timestep. They can be used in a _for_ loop can simulate the whole system. You can take a look at the simulation and the code behind it on [Github](https://github.com/MRGilak/2DoF-Single-Leg-Dynamics).
 
 A simple demo of this simulation is shown below:
 
