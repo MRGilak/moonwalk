@@ -2,7 +2,7 @@
 layout: note
 title: "Robotics"
 date: 2025-12-27
-excerpt: "Robotic projects involve single leg control and quadrupedal robot simulation. Autonomous driving vehicle development is also underway."
+excerpt: "current robotic projects."
 ---
 
 The robotic projects I am working on include:
