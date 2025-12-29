@@ -11,8 +11,4 @@ excerpt: "The Single Leg Robot Controller utilizes Go-M8010-6 motors. Basic test
 
 The motors used in this project are [Go-M8010-6 motors](https://www.unitree.com/go1/motor). You can read more about them [here](/notes/Robotics/Single Leg Project/Single Leg Motors/). 
 
-We are currently running basic tests on the motor. Full SLIP tests will be conducted later. Below are the videos of testing the hip and the knee joints of the leg.
-Hip demo:
-[hip demo.mp4](/assets/Robotics/Single Leg Project/hip demo.mp4)
-Knee demo:
-[knee demo.mp4](/assets/Robotics/Single Leg Project/knee demo.mp4)
+We are currently running basic tests on the motor. Full SLIP tests will be conducted later.
