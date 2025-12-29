@@ -84,7 +84,10 @@ $$
 
 When the foot is on the ground, the force $F$ can be calculated.
 
-(#todo: add simulation figures. For now you can take a look at [this](/notes/Robotics/Single Leg Project/Single Leg Robot Numerical Model/))
+A video of an implementation of this in MATLAB along a PD controller is shown below:
 
+[symbolic demo.mp4](/assets/Robotics/Single Leg Project/symbolic demo.gif)
+
+You can find the codes along with more detailed information on [Github](https://github.com/MRGilak/2DoF-Single-Leg-Dynamics).
 
 To read more about what's in the literature, take a look at [Robot Leg Equations](/notes/Robotics/Single Leg Project/Robot Leg Equations/).
