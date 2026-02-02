@@ -27,16 +27,20 @@ old_project_entries:
   - title: Model Predictive Control
     url: https://github.com/MRGilak/Model-Predictive-Control
     desc: MATLAB codes for a DMC and an EPFC controller
-    highlight: NEW
 
   - title: Optimal Control
     url: https://github.com/MRGilak/Optimal-Control
     desc: MATLAB codes for solving the general nonlinear optimal control problem
+
+  - title: Active Disturbance Rejection Control
+    url: https://github.com/MRGilak/Active-Disturbance-Rejection-Controller
+    desc: Simulink and MATLAB implementation of Active Disturbance Rejection Control (ADRC)
     highlight: NEW
 
-  - title: Java Hspice
-    url: https://github.com/MRGilak/ProjectPhase1
-    desc: A Java implementation of Hspice for simulating electrical circuits
+  - title: Manipulator Simulation
+    url: https://github.com/MRGilak/manipulator
+    desc: An object-oriented MATLAB implementation of manipulator kinematics, dynamics and control 
+    hightlight: NEW
 
 footer_entries:
   - title: Linkedin
