@@ -68,39 +68,69 @@ html[data-theme="dark"] #parallax-bg {
 .about-section .about-image {
   float: right;
   width: 250px;
-  margin: 0 0 1rem 2rem; /* right margin to separate from text */
-  border-radius: 10px; /* subtle rounding */
+  margin: 0 0 1rem 2rem;
+}
+
+/* 🎨 CUSTOMIZE IMAGE STYLE: Change border-radius for different shapes */
+.about-section .about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* 50% = circular, 10px = rounded corners, 0 = sharp rectangle */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+/* Optional: Hover effect (remove if you don't want it) */
+.about-section .about-image img:hover {
+  transform: scale(1.05); /* slightly enlarges on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
 }
 
 .about-section .about-text {
-  overflow: hidden; /* makes text wrap properly around floated image */
+  overflow: hidden;
+  text-align: justify;
+}
+
+/* Better link styling in about section */
+.about-section a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Experiences section styling */
+.about-section + hr + h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 /* Mobile fallback */
 @media (max-width: 768px) {
-    .about-section .about-image {
+  .about-section .about-image {
     float: none;
     display: block;
     margin: 0 auto 1.5rem auto;
-    width: 150px;
+    width: 180px; /* slightly larger on mobile for better visibility */
+  }
+  
+  .about-section .about-text {
+    text-align: left; /* left-align on mobile for better readability */
   }
 }
 
 .minimal-navbar {
   position: fixed;      // <-- stick to top
   top: 1rem;            // distance from top
-  left: 50%;            // center horizontally
+  left: 48.2%;            // center horizontally
   transform: translateX(-50%);
   z-index: 1000;
 
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0.3rem 6rem; // shorter height, wider horizontal padding
-  border-radius: 10px;
+  padding: 0.5rem 6rem; // vertical, horizontal (change these to resize navbar)
+  border-radius: 10px;  // (change this for corner roundness)
 
-  /* Transparent background with blur */
-  background-color: rgba(255, 255, 255, 0.2); // light mode fallback
+  background-color: rgba(255, 255, 255, 0.2); // (last number = opacity)
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -109,7 +139,7 @@ html[data-theme="dark"] #parallax-bg {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem;
+    gap: 2rem; // 🎨 CUSTOMIZE: Space between menu items
 
     li a {
       color: #000; /* light mode */
@@ -125,7 +155,7 @@ html[data-theme="dark"] #parallax-bg {
 
   /* Dark mode */
   html[data-theme="dark"] & {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3); // 🎨 CUSTOMIZE: Dark mode opacity (last number)
 
     ul li a {
       color: #fff;
@@ -149,6 +179,35 @@ html[data-theme="dark"] #parallax-bg {
     }
   }
 }
+
+/* === Text Justification for Notes and Pages === */
+/* Applies clean justified alignment to all note content */
+article.note .content,
+article.post .content,
+.page-content {
+  text-align: justify;
+  text-justify: inter-word; /* Better word spacing */
+}
+
+/* Keep headings left-aligned */
+article.note .content h1,
+article.note .content h2,
+article.note .content h3,
+article.note .content h4,
+article.note .content h5,
+article.note .content h6 {
+  text-align: left;
+}
+
+/* On mobile, switch to left-align for better readability */
+@media (max-width: 768px) {
+  article.note .content,
+  article.post .content,
+  .page-content {
+    text-align: left;
+  }
+}
+
 
 
 

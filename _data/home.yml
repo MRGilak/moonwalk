@@ -6,9 +6,9 @@ navbar_entries:
     url: blog
 
 project_entries:
-  - title: Robot Single Leg
-    url: /projects/robot-single-leg
-    desc: Notes and development updates on the design and control of a single robotic leg.
+  - title: Quadrupedal Robotics
+    url: /projects/robot-quadrupedal
+    desc: Notes and development updates on the design and control of a quadrupedal robotic platform.
 
   - title: Path Planning
     url: /projects/path-planning
@@ -18,10 +18,6 @@ project_entries:
     url: /projects/inverse-optimal-control
     desc: Notes on our conference paper on Inverse Optimal Control.
     highlight: Published
-
-  - title: Learning
-    url: /projects/learning
-    desc: Exploring learning algorithms applied to robotics and dynamic systems.
 
 old_project_entries:
   - title: Model Predictive Control
