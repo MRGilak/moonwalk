@@ -36,7 +36,7 @@ old_project_entries:
   - title: Manipulator Simulation
     url: https://github.com/MRGilak/manipulator
     desc: An object-oriented MATLAB implementation of manipulator kinematics, dynamics and control 
-    hightlight: NEW
+    highlight: NEW
 
 footer_entries:
   - title: Linkedin

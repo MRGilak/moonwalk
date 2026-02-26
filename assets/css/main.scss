@@ -148,7 +148,7 @@ html[data-theme="dark"] #parallax-bg {
       transition: color 0.3s;
 
       &:hover {
-        color: #00ffff;
+        color: #333; // Darker on hover for light mode
       }
     }
   }
@@ -159,6 +159,10 @@ html[data-theme="dark"] #parallax-bg {
 
     ul li a {
       color: #fff;
+      
+      &:hover {
+        color: #ccc; // Slightly dimmer on hover for dark mode
+      }
     }
   }
 
@@ -208,8 +212,515 @@ article.note .content h6 {
   }
 }
 
+/* === AOS Animation Enhancements === */
+/* Add smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Enhance header animations */
+header[data-aos] h1 {
+  display: inline-block;
+}
 
+/* Ensure AOS animations don't conflict with theme transitions */
+[data-aos] {
+  transition-property: transform, opacity;
+}
 
+/* Custom fade animation for better visual flow */
+[data-aos="fade-up"] {
+  transform: translate3d(0, 40px, 0);
+}
 
+[data-aos="fade-down"] {
+  transform: translate3d(0, -40px, 0);
+}
 
+[data-aos="fade-left"] {
+  transform: translate3d(30px, 0, 0);
+}
+
+/* Reduce motion for users who prefer it (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* === Typing Animation Effect === */
+.typing-text {
+  display: inline;
+}
+
+.typing-cursor {
+  display: inline-block;
+  color: var(--links);
+  font-weight: bold;
+  animation: cursor-blink 0.9s step-end infinite;
+  margin-left: 3px;
+  font-size: 1em;
+  vertical-align: baseline;
+}
+
+/* Cursor blink animation */
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* 🎨 OPTIONAL: Enable for terminal/code style (uncomment to use) */
+/*
+header h1 {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.05em;
+}
+*/
+
+/* Smooth appearance for header elements during typing */
+header h1 {
+  min-height: 2em; /* Prevents layout shift */
+}
+
+header p {
+  transition: opacity 0.8s ease-in;
+}
+
+/* Ensure typing effect works with dark/light mode */
+html[data-theme="dark"] .typing-cursor {
+  color: var(--links);
+  text-shadow: 0 0 5px var(--links);
+}
+
+html[data-theme="light"] .typing-cursor {
+  color: var(--links);
+}
+
+/* Disable typing animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .typing-cursor {
+    animation: none;
+    opacity: 1;
+  }
+  
+  header p {
+    opacity: 1 !important;
+  }
+}
+
+/* Faster cursor on mobile for better performance */
+@media (max-width: 768px) {
+  .typing-cursor {
+    animation: cursor-blink 0.7s step-end infinite;
+  }
+}
+
+/* === Reading Progress Bar === */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show progress bar when user starts scrolling */
+.reading-progress-bar.started {
+  opacity: 1;
+}
+
+/* Progress fill - animated gradient */
+.reading-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, 
+    var(--links),
+    #00d4ff,
+    var(--links)
+  );
+  background-size: 200% 100%;
+  animation: gradient-flow 3s ease infinite;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+}
+
+/* Gradient animation for extra visual interest */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulse effect when completed */
+.reading-progress-bar.completed .reading-progress-fill {
+  animation: gradient-flow 3s ease infinite, pulse-complete 0.5s ease;
+}
+
+@keyframes pulse-complete {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.8);
+  }
+}
+
+/* 🎨 CUSTOMIZATION: Different color themes */
+/* Uncomment one of these for different colors: */
+
+/* Green theme */
+/*
+.reading-progress-fill {
+  background: linear-gradient(90deg, #10b981, #34d399, #10b981);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+*/
+
+/* Purple theme */
+/*
+.reading-progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa, #8b5cf6);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+*/
+
+/* Pink theme */
+/*
+.reading-progress-fill {
+  background: linear-gradient(90deg, #ec4899, #f472b6, #ec4899);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+}
+*/
+
+/* Orange theme */
+/*
+.reading-progress-fill {
+  background: linear-gradient(90deg, #f97316, #fb923c, #f97316);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+*/
+
+/* Ensure progress bar works above navbar */
+.minimal-navbar {
+  z-index: 1000;
+}
+
+.reading-progress-bar {
+  z-index: 9999;
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress-fill {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ========================================
+   🎨 SMOOTH COLOR TRANSITIONS ON LINKS
+   ======================================== */
+
+/* Enhanced link styling with smooth transitions */
+a {
+  position: relative;
+  transition: color 0.3s ease;
+  
+  /* Animated underline effect */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--text-color), var(--meta));
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+/* Navigation links - different style */
+.navbar a {
+  transition: all 0.3s ease;
+  
+  &::after {
+    display: none;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Card links - remove underline effect */
+.card a,
+.post-item a,
+.note-item a {
+  &::after {
+    display: none;
+  }
+}
+
+/* Social links with icon animation */
+.social-links a {
+  transition: all 0.3s ease;
+  
+  &::after {
+    display: none;
+  }
+  
+  &:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+/* Footer links */
+footer a {
+  transition: color 0.3s ease, opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* ========================================
+   ✨ ICON ANIMATIONS
+   ======================================== */
+
+/* Theme toggle button animation */
+.theme-toggle {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: rotate(180deg) scale(1.1);
+  }
+  
+  &:active {
+    transform: rotate(180deg) scale(0.95);
+  }
+  
+  svg {
+    transition: all 0.3s ease;
+  }
+}
+
+/* Social footer links - bounce on hover */
+footer .horizontal-list {
+  li {
+    display: inline-block;
+    
+    a {
+      display: inline-block;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        animation: icon-bounce 0.6s ease;
+      }
+    }
+  }
+}
+
+/* Tags animation */
+.tag {
+  display: inline-block;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Card highlight badges */
+.card {
+  .highlight {
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Bounce animation for icons */
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Pulse animation for special elements */
+@keyframes icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Navbar icons/links with subtle scale */
+.navbar a {
+  svg, img {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    svg, img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* ========================================
+   ✨ FINAL POLISH & ENHANCEMENTS
+   ======================================== */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: var(--text-color);
+  color: var(--background);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.visible {
+  opacity: 0.7;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:active {
+  transform: translateY(-3px);
+}
+
+/* Enhanced button styling */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--text-color);
+  color: var(--background);
+  opacity: 0.99;
+}
+
+/* Enhanced focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Smooth transitions for theme switching */
+body,
+header,
+footer,
+.card,
+.navbar {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Enhanced code blocks */
+pre {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+  opacity: 0;
+}
+
+/* Enhanced hr styling */
+hr {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Mobile enhancements */
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}

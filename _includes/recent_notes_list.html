@@ -3,7 +3,7 @@
 
 <ul class="post-list">
   {% for note in recent_notes %}
-    <li class="post-list-item">
+    <li class="post-list-item" data-aos="fade-left" data-aos-delay="{{ forloop.index0 | times: 80 }}">
       <p class="post-meta">
         {{ note.date | date: site.theme_config.date_format }}
         • <a href="{{ note.url | relative_url }}">{{ note.title }}</a>

@@ -32,7 +32,7 @@ permalink: /about/
 
 ---
 
-## Experiences
+## Experience
 
 **Teaching Assistant** - Sharif University of Technology  
 *September 2024 - February 2025*

@@ -1,7 +1,7 @@
 <ul class="horizontal-list">
   {% for item in include.collection %}
 
-    <li class="card">
+    <li class="card" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
       <a href="{{ item.url }}">
         <span class="header">
           {{ item.title }}

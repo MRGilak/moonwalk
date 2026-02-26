@@ -27,6 +27,10 @@
   <!-- Favicon -->
 
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+  
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   {% if site.theme_config.appearance_toggle %}
     {% include toggle_theme_js.html %}
   {% endif %}
@@ -47,6 +51,21 @@
   </script>
   <script type="text/javascript" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  <!-- AOS (Animate On Scroll) JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,        // Animation duration in ms
+        easing: 'ease-out-cubic',  // Smooth easing
+        once: false,          // Animation happens every time (set to true for only once)
+        offset: 100,          // Offset from original trigger point
+        delay: 0,            // Delay animations
+        anchorPlacement: 'top-bottom'  // When to trigger
+      });
+    });
   </script>
 
   <meta name="author" content="Mohammadreza Gilak, محمدرضا گیلک">

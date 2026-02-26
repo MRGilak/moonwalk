@@ -19,28 +19,158 @@ ul.horizontal-list {
 
 .card {
   padding: 1em;
-  border: 1px var(--text) solid;
+  border: 2px solid transparent;
+  background: var(--bg-secondary);
+  background-clip: padding-box;
   width: 11em;
   height: auto;
   text-align: center;
   font-size: 1em;
   align-items: center;
-  background-color: var(--bg-secondary);
   margin-bottom: 0.8em;
-  border-radius: 0.5em;
+  border-radius: 0.8em;
+  position: relative;
+  overflow: hidden;
+  
+  /* Enable 3D transforms */
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Animated gradient border using pseudo-element */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 0.8em;
+    padding: 2px;
+    background: linear-gradient(135deg, 
+      var(--links), 
+      transparent, 
+      var(--links)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                  linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Glossy shine effect */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  /* Hover effects */
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--links);
+    
+    &::before {
+      opacity: 1;
+      animation: gradient-rotate 3s linear infinite;
+    }
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+  
+  /* Active/Click effect */
+  &:active {
+    transform: translateY(-8px) scale(0.98);
+  }
 
   .header {
     color: var(--links);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+    
+    /* Highlight badge animation */
+    mark {
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  }
+  
+  &:hover .header {
+    transform: translateZ(20px);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    
+    mark {
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 
   .body {
     font-size: 0.8em;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 3;
+  }
+  
+  &:hover .body {
+    color: var(--text);
   }
 
   hr {
     margin: 0.5em 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--text-secondary), 
+      transparent
+    );
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
   }
+  
+  &:hover hr {
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--links), 
+      transparent
+    );
+    height: 2px;
+  }
+}
 
+/* Gradient border rotation animation */
+@keyframes gradient-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Add subtle glow in dark mode */
+html[data-theme="dark"] .card:hover {
+  box-shadow: 0 15px 40px rgba(0, 200, 255, 0.3);
 }
 
 /* Responsive cards - one column layout on small screens */
