@@ -56,7 +56,7 @@ theme_config:
     title_misc_list: Details
     title_notes: My Notes
     title_blog: My Blog
-    title_old_projects: Archive
+    title_old_projects: Open Source Projects
 
 highlighter: rouge
 

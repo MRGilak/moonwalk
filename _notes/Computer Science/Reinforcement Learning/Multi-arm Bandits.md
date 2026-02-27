@@ -6,6 +6,7 @@ excerpt: "The multi-arm bandit problem involves choosing among multiple options 
 ---
 
 #RL #Learning #computer-science 
+
 Multi-arm bandit is a classic RL example that teaches the basic algorithms. In this note, we take a closer look at this example.
 The most important feature distinguishing reinforcement learning from other types of learning is that it uses training information that _evaluates_ the actions taken, instead of _instructing_ the learner. Purely _evaluative_ feedback indicates how good the action taken is, but not whether it is the best or the worst action possible. Purely _instructive_ feedback, on the other hand, indicates the correct action to take, independently of the action actually taken. This kind of feedback is the basis of supervised learning.
 
@@ -31,6 +32,7 @@ The results can be seen in the image below.
 ![reward.png](/assets/Computer Science/Reinforcement Learning/reward.png)
  You can see that in the long run, the greedy method performs worse. There might be situations where greedy actions yield better results, because it can just find the optimal action and keep selecting that. But in more realistic scenarios, for example when the task is nonstationary, non-greedy actions are usually better, because they keep exploring the options.
 Here is the Python code used for the example above:
+
 ```Python title:'10-arm bandit' fold 
 import numpy as np
 import matplotlib.pyplot as plt

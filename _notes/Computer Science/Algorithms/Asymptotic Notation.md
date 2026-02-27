@@ -6,6 +6,7 @@ excerpt: "Asymptotic notation measures algorithm efficiency. It includes notatio
 ---
 
 #algorithm #computer-science 
+
 Running time of two different algorithms cannot be compared directly as a measure of their efficiency, because running time depends on a lot of factors, including the speed of the computer, the programming language, the compiler, etc. Therefore, to compare the efficiency of algorithms, some notations are defined.
 
 # Big-Theta $\Theta$ Notation 

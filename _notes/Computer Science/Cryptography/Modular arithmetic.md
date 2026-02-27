@@ -6,6 +6,7 @@ excerpt: "Modular arithmetic involves operations on integers where only the rema
 ---
 
 #cryptography #computer-science 
+
 When we divide two integers, we have an equation that looks like this:
 $$
 \frac{A}{B} = Q\ remainder\ R

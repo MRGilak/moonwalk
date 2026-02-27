@@ -6,6 +6,7 @@ excerpt: "Finite Markov decision processes involve an agent and environment inte
 ---
 
 #RL #Learning #computer-science #Control
+
 The reinforcement learning problem is meant to be a straightforward framing of the problem of learning from interaction to achieve a goal. The learner and decision-maker is called the _agent_. The thing it interacts with, comprising everything outside the agent, is called the _environment_. 
 A complete specification of an environment defines a task , one instance of the reinforcement learning problem.  More specifically, the agent and environment interact at each of a sequence of discrete time steps, $t = 0, 1, 2, 3, \cdot\cdot\cdot$ , the agent receives some representation of the environment’s state, $S_t \in \mathcal{S}$, where $\mathcal{S}$ is the set of possible states, and on that basis selects an action, $A_t \in \mathcal{A} (S_t)$, where $\mathcal{A} (S_t)$ is the set of actions available in state $S_t$. One time step later, in part as a consequence of its action, the agent receives a numerical reward , $R_{t + 1} \in \mathcal{R} \subset \mathbb{R}$ , and finds itself in a new state, $S_{t + 1}$.
 ![Pasted image 20250914165007.png](/assets/Computer Science/Reinforcement Learning/Pasted image 20250914165007.png)

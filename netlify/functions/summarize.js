@@ -58,18 +58,18 @@ exports.handler = async (event, context) => {
       };
       payload = {
         model: process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
-        temperature: 0.2,
+        temperature: 0.3,
         messages: [
           {
             role: "system",
-            content: "You are a concise technical summarizer. Produce a short, readable summary (3-6 bullet points or 1 short paragraph).",
+            content: "You are an expert academic summarizer specializing in technical and educational content. Your summaries are comprehensive yet concise, highlighting the main concepts, key insights, and practical takeaways. Format your response with clear structure using bullet points or short paragraphs.",
           },
           {
             role: "user",
-            content: `Summarize the following content for a note page. Focus on key points and keep it brief.\n\n${inputText}`,
+            content: `Please provide a comprehensive summary of the following educational note. Include:\n\n1. Main topic and purpose\n2. Key concepts explained\n3. Important formulas, definitions, or findings (if any)\n4. Practical applications or takeaways\n\nBe informative and structured, but keep it readable.\n\nContent:\n${inputText}`,
           },
         ],
-        max_tokens: 220,
+        max_tokens: 400,
       };
     } else {
       endpoint = "https://api.openai.com/v1/chat/completions";
@@ -79,18 +79,18 @@ exports.handler = async (event, context) => {
       };
       payload = {
         model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-        temperature: 0.2,
+        temperature: 0.3,
         messages: [
           {
             role: "system",
-            content: "You are a concise technical summarizer. Produce a short, readable summary (3-6 bullet points or 1 short paragraph).",
+            content: "You are an expert academic summarizer specializing in technical and educational content. Your summaries are comprehensive yet concise, highlighting the main concepts, key insights, and practical takeaways. Format your response with clear structure using bullet points or short paragraphs.",
           },
           {
             role: "user",
-            content: `Summarize the following content for a note page. Focus on key points and keep it brief.\n\n${inputText}`,
+            content: `Please provide a comprehensive summary of the following educational note. Include:\n\n1. Main topic and purpose\n2. Key concepts explained\n3. Important formulas, definitions, or findings (if any)\n4. Practical applications or takeaways\n\nBe informative and structured, but keep it readable.\n\nContent:\n${inputText}`,
           },
         ],
-        max_tokens: 220,
+        max_tokens: 400,
       };
     }
 

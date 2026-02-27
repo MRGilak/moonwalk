@@ -115,8 +115,9 @@ html[data-theme="dark"] #parallax-bg {
     width: 180px; /* slightly larger on mobile for better visibility */
   }
   
+  /* Keep text justified on mobile */
   .about-section .about-text {
-    text-align: left; /* left-align on mobile for better readability */
+    text-align: justify;
   }
 }
 
@@ -203,12 +204,12 @@ article.note .content h6 {
   text-align: left;
 }
 
-/* On mobile, switch to left-align for better readability */
+/* Keep text justified on mobile for consistent experience */
 @media (max-width: 768px) {
   article.note .content,
   article.post .content,
   .page-content {
-    text-align: left;
+    text-align: justify;
   }
 }
 
@@ -665,9 +666,12 @@ button {
 
 /* Selection styling */
 ::selection {
-  background-color: var(--text-color);
-  color: var(--background);
-  opacity: 0.99;
+  background-color: rgba(100, 150, 255, 0.3);
+  color: inherit;
+}
+
+html[data-theme="dark"] ::selection {
+  background-color: rgba(150, 200, 255, 0.25);
 }
 
 /* Enhanced focus states for accessibility */
@@ -722,5 +726,115 @@ hr {
     width: 45px;
     height: 45px;
     font-size: 1.3rem;
+  }
+}
+/* === Enhanced Code Block Styling === */
+
+/* Code blocks with syntax highlighting */
+.highlight {
+  position: relative;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlight pre {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-radius: 8px;
+}
+
+/* Inline code */
+code.highlighter-rouge {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 0.9em;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+html[data-theme="dark"] code.highlighter-rouge {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e06c75;
+}
+
+html[data-theme="light"] code.highlighter-rouge {
+  background-color: #f0f0f0;
+  color: #c7254e;
+}
+
+/* Better scrollbar for code blocks */
+.highlight pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.highlight pre::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.highlight pre::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.highlight pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="light"] .highlight pre::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="light"] .highlight pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Code font improvements */
+pre, code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent code blocks from becoming too wide */
+.highlight {
+  max-width: 100%;
+}
+
+/* Add subtle animation when code blocks come into view */
+.highlight {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure code blocks don't break the layout on small screens */
+@media (max-width: 768px) {
+  .highlight pre {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  code.highlighter-rouge {
+    font-size: 0.85em;
   }
 }

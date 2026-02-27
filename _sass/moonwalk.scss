@@ -220,6 +220,8 @@ p code, li code {
   margin-bottom: 0.8rem;
 }
 .credits {
+  position: relative;
+  z-index: 1;
   font-size: 0.8em;
   color: var(--text);
   margin: 8em auto -4em auto;

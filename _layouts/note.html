@@ -29,7 +29,10 @@ layout: default
 
   <!-- AI Summary Button -->
   <div id="ai-summary-section" class="ai-summary-container" style="margin: 2rem 0;">
-    <button id="ai-summary-btn">Click to get AI summary</button>
+    <button id="ai-summary-btn">
+      <span class="btn-icon">✨</span>
+      <span class="btn-text">Generate AI Summary</span>
+    </button>
     <div id="ai-summary-result"></div>
   </div>
 </article>
@@ -55,36 +58,89 @@ layout: default
     }
   }
 
-  /* Button styles with theme-aware colors */
+  /* Enhanced button styles with theme-aware colors */
   #ai-summary-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: #fff;
     border: none;
     border-radius: 12px;
-    padding: 12px 24px;
+    padding: 14px 28px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: filter 0.2s ease, background-color 0.2s ease;
-    background-color: #4CAF50; /* Light theme default */
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
   }
-  #ai-summary-btn:hover { filter: brightness(0.95); }
-  html[data-theme="dark"] #ai-summary-btn { background-color: var(--links); }
-  html[data-theme="dark"] #ai-summary-btn:hover { filter: brightness(1.1); }
+  
+  #ai-summary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+  
+  #ai-summary-btn:active {
+    transform: translateY(0);
+  }
+  
+  #ai-summary-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  #ai-summary-btn .btn-icon {
+    font-size: 1.2em;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+  }
+  
+  html[data-theme="dark"] #ai-summary-btn {
+    background: linear-gradient(135deg, var(--links) 0%, #667eea 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+  }
+  
+  html[data-theme="dark"] #ai-summary-btn:hover {
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.35);
+  }
 
-  /* Result box (theme-aware) */
+  /* Enhanced result box (theme-aware) */
   #ai-summary-result {
-    background-color: var(--bg-secondary);
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.05), transparent);
     color: var(--text);
-    border-left: 4px solid #4CAF50; /* Light theme accent */
-    padding: 12px;
-    margin-top: 1rem;
-    border-radius: 6px;
-    font-style: italic;
-    white-space: pre-wrap; /* preserve newlines */
+    border-left: 4px solid #667eea;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
+  
+  #ai-summary-result.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  #ai-summary-result:empty {
+    display: none;
+  }
+  
   html[data-theme="dark"] #ai-summary-result {
-    background-color: var(--bg-secondary);
-    color: var(--text);
-    border-left-color: var(--links); /* Dark theme accent */
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.08), transparent);
+    border-left-color: var(--links);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 </style>
 
@@ -171,8 +227,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btn.addEventListener("click", async () => {
     btn.disabled = true;
-    btn.textContent = "Generating summary...";
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Generating...</span>';
     resultDiv.textContent = "";
+    resultDiv.classList.remove('loaded');
 
     try {
       // Determine function base. If hosted on Netlify, /.netlify/functions works.
@@ -207,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const textEl = document.createElement('div');
         textEl.textContent = data.summary;
         resultDiv.appendChild(textEl);
+        setTimeout(() => resultDiv.classList.add('loaded'), 10);
         if (window.MathJax && window.MathJax.typesetPromise) {
           window.MathJax.typesetPromise([resultDiv]).catch(e => console.error('MathJax typeset error', e));
         }
@@ -219,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resultDiv.textContent = "Error generating summary.";
     } finally {
       btn.disabled = false;
-      btn.textContent = "Click to get AI summary";
+      btn.innerHTML = originalHTML;
     }
   });
 });

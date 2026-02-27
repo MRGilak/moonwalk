@@ -6,6 +6,7 @@ excerpt: "A primality test determines if a number is prime or composite. It chec
 ---
 
 #cryptography #computer-science 
+
 To test whether a given number $n$ is prime or not, we can check all the integers from $1$ to $n - 1$ to see if $n$ is divisible to any of them. But to make this more efficient, we can think of it as this: a composite number can be thought of as $n = p_1 * p_2\ * ...$, where $p_i$ are prime numbers. The largest case for $p_i$ happens when there is only 2 of them and they are equal to each other, so it is sufficient to look through $1$ to  $\sqrt{n}$ to see if it is a prime number or not.
 
 # The Sieve Algorithm

@@ -6,6 +6,7 @@ excerpt: "Dynamic programming is a collection of algorithms that compute optimal
 ---
 
 #RL #Learning #computer-science #Control
+
 The term _dynamic programming (DP)_ refers to a collection of algorithms that can be used to compute optimal policies given a perfect model of the environment as a Markov decision process (MDP).
 In this note we learn how DP algorithms use the value function to search for better policies.
 

@@ -6,6 +6,7 @@ excerpt: "A numerical model for a single leg robot was developed using Lagrangia
 ---
 
 #Robotics #Modeling 
+
 To obtain a numerical model for the robotic leg, Lagrangian dynamics were first written [here](/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/). The dynamics were then written in MATLAB to solve the equations symbolically. The final equations turned out to be much more complex than I initially assumed. The final equations of motion were then turned to several _.m_ functions to be later used for simulation.
 ## Final Dynamics 
 After solving the Lagrangian dynamics equations, we obtain the final dynamics for $\ddot{q_1}$, $\ddot{q_2}$ and $\ddot{h}$, as well as their Lagrange multipliers $\lambda_h$, $\lambda_{q_1}$ and $\lambda_{q_2}$.
