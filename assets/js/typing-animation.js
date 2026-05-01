@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Store the original texts
   const originalTitle = headerTitle.textContent;
   const originalDesc = headerDesc ? headerDesc.textContent : '';
+  const phrases = [originalTitle, 'Robotics Control Engineer'].filter(Boolean);
   
   // Clear the title text and add typing cursor
   headerTitle.textContent = '';
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const cursor = headerTitle.querySelector('.typing-cursor');
   
   let charIndex = 0;
+  let phraseIndex = 0;
   let isDeleting = false;
   let isFirstCycle = true; // Track first cycle for description fade-in
   
@@ -46,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }, pauseBeforeStart);
   
   function animateText() {
-    const currentText = typingText.textContent;
+    const currentPhrase = phrases[phraseIndex];
     
     if (!isDeleting) {
       // TYPING MODE
-      if (charIndex < originalTitle.length) {
-        typingText.textContent += originalTitle.charAt(charIndex);
+      if (charIndex < currentPhrase.length) {
+        typingText.textContent += currentPhrase.charAt(charIndex);
         charIndex++;
         
         // Randomize speed for natural feel
@@ -74,11 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       // DELETING MODE
       if (charIndex > 0) {
-        typingText.textContent = originalTitle.substring(0, charIndex - 1);
+        typingText.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
         setTimeout(animateText, deletingSpeed);
       } else {
-        // Finished deleting - pause, then start typing again
+        // Finished deleting - move to next phrase, then start typing again
+        phraseIndex = (phraseIndex + 1) % phrases.length;
         isDeleting = false;
         setTimeout(animateText, pauseAfterDeleting);
       }
