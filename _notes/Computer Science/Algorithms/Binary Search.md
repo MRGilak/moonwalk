@@ -2,11 +2,10 @@
 layout: note
 title: "Binary Search"
 date: 2025-08-19
-excerpt: "Binary search is an algorithm for finding an item in a sorted list. It works by repeatedly dividing the list in half until the item is found."
+excerpt: "#algorithm #computer-science"
 ---
 
 #algorithm #computer-science 
-
 Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
 An example of this algorithm can be used when you're trying to find a number that someone else has in mind. You take a guess and they tell you if the goal number is higher or lower. Here is the general process of the algorithm:
 1. Let $min = 1$ and $max = n$.
@@ -16,7 +15,6 @@ An example of this algorithm can be used when you're trying to find a number tha
 5. If the guess was too high, set $max$ to be one smaller than the guess.
 6. Go back to step two.
 Here is a Python implementation of the algorithm above:
-
 ```python
 def binary_search(arr, goal):
     low = 1
@@ -34,7 +32,7 @@ def binary_search(arr, goal):
 
 While finding a number in a sorted array of length $n$ using _linear search_ takes at most $n$ guesses, using _binary search_ needs at most $log_2 \ n + 1$ guesses. If $n$ is not a power of $2$ you can use the closest power of $2$ that is less than $n$ instead. For example, for an array of length $1000$, the closest power of $2$ that is less than $1000$ is $512 = 2^9$; therefore, at most $9 + 1 = 10$ guesses are needed.
 
-Continue reading about algorithms by learning about [asymptotic notation](/notes/Computer Science/Algorithms/Asymptotic Notation/), [selection sort](/notes/Computer Science/Algorithms/Selection Sort/) or [recursive algorithms](/notes/Computer Science/Algorithms/Recursive Algorithms/).
+Continue reading about algorithms by learning about [asymptotic notation](asymptotic-notation), [selection sort](selection-sort) or [recursive algorithms](recursive-algorithms).
 
 Sources:
 1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search)

@@ -1,15 +1,13 @@
 ---
 layout: note
 title: "Dynamic Programming"
-date: 2025-09-18
-excerpt: "Dynamic programming is a collection of algorithms that compute optimal policies given a perfect model of the environment. It uses the value function to search for better policies."
+date: 2026-03-06
+excerpt: "#RL #Learning #computer-science #Control"
 ---
 
 #RL #Learning #computer-science #Control
-
 The term _dynamic programming (DP)_ refers to a collection of algorithms that can be used to compute optimal policies given a perfect model of the environment as a Markov decision process (MDP).
 In this note we learn how DP algorithms use the value function to search for better policies.
-
 ## Policy Evaluation
 Assume you are given an arbitrary policy $\pi$. How would you compute the state-value function $v_\pi (s)$? This is called _policy evaluation_ in the DP literature. We also refer to it as _the prediction problem_.
 Remember that for all $s \in \mathcal{S}$, we have
@@ -56,20 +54,19 @@ $$
 $$
 arg \max_a \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_\pi (s')]
 $$
-The process of making a new policy that improves on an original policy, by making it greedy with respect to the value function of the original policy, is called _policy improvement_. Policy improvement  gives a strictly better policy except when the original policy is already optimal.
+The process of making a new policy that improves on an original policy, by making it greedy with respect to the value function of the original policy, is called _policy improvement_. Policy improvement gives a strictly better policy except when the original policy is already optimal.
 If there are ties in policy improvement steps ,that is, if there are several actions at which the maximum is achieved, then in the stochastic case we need not select a single action from among them. Instead, each maximizing action can be given a portion of the probability of being selected in the new greedy policy. Any apportioning scheme is allowed as long as all submaximal actions are given zero probability.
 
 ## Policy Iteration
 _Policy iteration_ is a way of finding an optimal policy. For a policy $\pi$, we use policy evaluation to find $v_\pi$ and then we use policy improvement to find a better policy $\pi'$. Then, again, we use policy evaluation to find $v_{\pi'}$ and so on.
 ![Pasted image 20250917123630.png](/assets/Computer Science/Reinforcement Learning/Pasted image 20250917123630.png)
-
 This process must converge to an optimal policy and optimal value function in a finite number of iterations.
 Also, the policy evaluation step is usually started with the value function for the previous policy. This typically results in a great increase in the speed of convergence of policy evaluation.
 
 ## Value Iteration
 Each step of the policy iteration method is an iterative procedure itself, which could cause the algorithm to be computationally exhaustive. The policy evaluation step of policy iteration can be truncated in several ways without losing the convergence guarantees of policy iteration. One important special case is when policy evaluation is stopped after just one sweep (one backup of each state). This algorithm is called _value iteration_. Value iteration can be shown in a single mathematical equation as
 $$
-v_{k + 1} (s) = \max_a \mathbb{E} [R_{t + 1} + \gamma v_\k (S_{t + 1}) \ | \ S_t = s, A_t = a] = \max_a \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_k (s')], 
+v_{k + 1} (s) = \max_a \mathbb{E} [R_{t + 1} + \gamma v_k (S_{t + 1}) \ | \ S_t = s, A_t = a] = \max_a \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_k (s')], 
 $$
 for all $s \in \mathcal{S}$. For arbitrary $v_0$, the sequence $\{ v_k \}$ can be shown to converge to $v_\ast$ under the same conditions that guarantee the existence of $v_\ast$. Note that value iteration is obtained simply by turning the Bellman optimality equation into an update rule. Value iteration effectively combines, in each of its sweeps, one sweep of policy evaluation and one sweep of policy improvement.
 
@@ -84,17 +81,14 @@ Policy iteration consists of two simultaneous, interacting processes:
 We use the term _generalized policy iteration (GPI)_ to refer to the general idea of letting policy evaluation and policy improvement processes interact. 
 Note that if both the evaluation process and the improvement process stabilize, that is, no longer produce changes, then the value function and policy must be optimal. The value function stabilizes only when it is consistent with the current policy, and the policy stabilizes only when it is greedy with respect to the current value function. Thus, both processes stabilize only when a policy has been found that is greedy with respect to its own evaluation function. This implies that the Bellman optimality equation holds.
 The evaluation and improvement processes in GPI can be viewed as both competing and cooperating. They compete in the sense that they pull in opposing directions. Making the policy greedy with respect to the value function typically makes the value function incorrect for the changed policy, and making the value function consistent with the policy typically causes that policy no longer to be greedy. In the long run, however, these two processes interact to find a single joint solution: the optimal value function and an optimal policy.
-![200](/assets/Computer Science/Reinforcement Learning/Pasted image 20250917124851.png)
-![500](/assets/Computer Science/Reinforcement Learning/Pasted image 20250917124917.png)
 
 ## Efficiency of Dynamic Programming
-A DP method is guaranteed to find an optimal policy in polynomial time even though the total number of (deterministic) policies is $m^n$ ($n$ and $m$ denote the number of states and actions).. In this sense, DP is exponentially faster than any direct search in policy space could be.
+A DP method is guaranteed to find an optimal policy in polynomial time even though the total number of (deterministic) policies is $m^n$ ($n$ and $m$ denote the number of states and actions). In this sense, DP is exponentially faster than any direct search in policy space could be.
 DP is sometimes thought to be of limited applicability because of the curse of dimensionality. Large state sets do create difficulties, but these are inherent difficulties of the problem, not of DP as a solution method. 
-
 
 Finally note that all DP methods update estimates of the values of states based on estimates of the values of successor states. That is, they update estimates on the basis of other estimates. This general idea is called _bootstrapping_.
 
-Continue reading about reinforcement learning [here](/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/).
+Continue reading about reinforcement learning [here](monte-carlo-methods).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

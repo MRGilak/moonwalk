@@ -2,11 +2,10 @@
 layout: note
 title: "Modular arithmetic"
 date: 2025-08-23
-excerpt: "Modular arithmetic involves operations on integers where only the remainder is considered. It has properties and applications in cryptography and computer science."
+excerpt: "#cryptography #computer-science"
 ---
 
 #cryptography #computer-science 
-
 When we divide two integers, we have an equation that looks like this:
 $$
 \frac{A}{B} = Q\ remainder\ R

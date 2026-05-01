@@ -24,7 +24,7 @@ permalink: /about/
   I use this space to:  
   - Share projects and notes  
   - Publish blog posts  
-  - Maintain a record of things I’m learning  
+  - Maintain a record of the things I’m learning  
   
   You can find me on [GitHub](https://github.com/MRGilak) and [LinkedIn](https://www.linkedin.com/in/mohammadreza-gilak-7aa830226/).
   </div>

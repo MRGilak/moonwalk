@@ -21,11 +21,11 @@ Run one of the scripts:
 
 The following shows the manipulator in action in different cases.
 
-![Slotine Controller](https://raw.githubusercontent.com/MRGilak/manipulator/main/images/Slotine.gif)
+![Slotine Controller](/assets/Projects/manipulator-simulation/Slotine.gif)
 
-![Circle Trajectory](https://raw.githubusercontent.com/MRGilak/manipulator/main/images/circle.gif)
+![Circle Trajectory](/assets/Projects/manipulator-simulation/circle.gif)
 
-![Circle Trajectory 2](https://raw.githubusercontent.com/MRGilak/manipulator/main/images/circle2.gif)
+![Circle Trajectory 2](/assets/Projects/manipulator-simulation/circle2.gif)
 
 ## Units and conventions
 
@@ -58,11 +58,11 @@ where $R_1^0$ is a rotation matrix and $d_1^0$ is a translation vector.
 
 For the 6DoF robot that's being used in the codes, the DH frames are shown here:
 
-<img width="500" alt="forward-kinematics" src="https://github.com/MRGilak/manipulator/blob/main/images/forward_kinematics.jpg" />
+<img width="500" alt="forward-kinematics" src="/assets/Projects/manipulator-simulation/forward_kinematics.jpg" />
 
 And the parameters here:
 
-<img width="500" alt="dh-params" src="https://github.com/MRGilak/manipulator/blob/main/images/DH_parameters.jpg" />
+<img width="500" alt="dh-params" src="/assets/Projects/manipulator-simulation/DH_parameters.jpg" />
 
 In the code:
 

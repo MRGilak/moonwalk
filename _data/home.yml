@@ -12,7 +12,7 @@ project_entries:
 
   - title: Path Planning
     url: /projects/path-planning
-    desc: An ADRC approach to autonomous vehicles path planning in complex environments.
+    desc: An approach to autonomous vehicles path planning in complex environments.
 
   - title: Inverse Optimal Control
     url: /projects/inverse-optimal-control
@@ -30,7 +30,7 @@ old_project_entries:
 
   - title: Active Disturbance Rejection Control
     url: /projects/active-disturbance-rejection-control
-    desc: Simulink and MATLAB implementation of Active Disturbance Rejection Control (ADRC)
+    desc: Simulink, MATLAB, and Python implementation of Active Disturbance Rejection Control (ADRC)
     highlight: NEW
 
   - title: Manipulator Simulation

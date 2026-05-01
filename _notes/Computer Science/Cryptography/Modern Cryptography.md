@@ -2,7 +2,7 @@
 layout: note
 title: "Modern Cryptography"
 date: 2025-08-23
-excerpt: "Modern cryptography relies on mathematical concepts like the fundamental theorem of arithmetic. It uses one-sided functions, such as modular arithmetic, to secure data."
+excerpt: "#cryptography #computer-science"
 ---
 
 #cryptography #computer-science 
@@ -84,9 +84,9 @@ c^d\ mod\ N = m
 $$
 No one else with $c$, $n$ and $e$ can figure out $m$, unless they know $\Phi (n)$. If $n$ is sufficiently large, calculating $\Phi (n)$ is practically impossible, unless you know its prime factorization.
 
-Some stuff from modular arithmetic were used in this note. You can read more about modular arithmetic [here](/notes/Computer Science/Cryptography/Modular arithmetic/).
-We have also said a few times that two random prime numbers must be chosen, and they better be as large as possible. But how do we know if a large number is prime or not? Read more about primality test [here](/notes/Computer Science/Cryptography/Primality Test/).
-If new to this field, you can start with [Introduction to Cryptography](/notes/Computer Science/Cryptography/Introduction to Cryptography/).
+Some stuff from modular arithmetic were used in this note. You can read more about modular arithmetic [here](modular-arithmetic).
+We have also said a few times that two random prime numbers must be chosen, and they better be as large as possible. But how do we know if a large number is prime or not? Read more about primality test [here](primality-test).
+If new to this field, you can start with [Introduction to Cryptography](introduction-to-cryptography).
 
 Sources:
 1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

@@ -2,11 +2,10 @@
 layout: note
 title: "Primality Test"
 date: 2025-08-23
-excerpt: "A primality test determines if a number is prime or composite. It checks divisibility from 1 to the square root of the number."
+excerpt: "#cryptography #computer-science"
 ---
 
 #cryptography #computer-science 
-
 To test whether a given number $n$ is prime or not, we can check all the integers from $1$ to $n - 1$ to see if $n$ is divisible to any of them. But to make this more efficient, we can think of it as this: a composite number can be thought of as $n = p_1 * p_2\ * ...$, where $p_i$ are prime numbers. The largest case for $p_i$ happens when there is only 2 of them and they are equal to each other, so it is sufficient to look through $1$ to  $\sqrt{n}$ to see if it is a prime number or not.
 
 # The Sieve Algorithm
@@ -53,7 +52,7 @@ Our strategy now can be to pick some other $a$'s in hope that we don't pick fool
 It has been proven that the number of fools divides the total size of the group we select from. This means at most half of the choices could be fools. So since $a$ is chosen randomly, the chance of finding a composite witness is at least $50 \%$. So by doing more and more trials, we can be almost sure that this method works.
 
 To read more about primality tests, take a look at [AKS primality test](https://en.wikipedia.org/wiki/AKS_primality_test)or [Miller-Rabin primality test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
-You can also take a look at [Introduction to Cryptography](/notes/Computer Science/Cryptography/Introduction to Cryptography/), [Ciphers](/notes/Computer Science/Cryptography/Ciphers/), [Modern Cryptography](/notes/Computer Science/Cryptography/Modern Cryptography/), [Modular arithmetic](/notes/Computer Science/Cryptography/Modular arithmetic/).
+You can also take a look at [Introduction to Cryptography](introduction-to-cryptography), [Ciphers](ciphers), [Modern Cryptography](modern-cryptography), [Modular arithmetic](modular-arithmetic).
 
 Sources:
 1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

@@ -1,20 +1,21 @@
 ---
 layout: note
 title: "Home"
-date: 2025-12-27
-excerpt: "Overview of all the notes and projects"
+date: 2026-03-02
+excerpt: "Welcome to the _home_ note. Here I've categorized my notes."
 ---
 
-This is the _home_ note. Here I've categorized my notes and projects.
-
-As of now, there are three main categories in my notes:
-- [Robotics](/notes/Robotics/Robotics): This category contains my notes on my robotics-related projects, including [Single Leg Control](/notes/Robotics/Single Leg Project/Single Leg Control/) and hopefully my other robotics-related works in the future.
-- Computer Science: This category is home to my notes on algorithms, cryptography and reinforcement learning.
-- Control: Here is where I keep my control-related notes.
+Welcome to the _home_ note. Here I've categorized my notes.
+There are three main categories in my notes now:
+- [Robotics](robotics): This category contains my notes on my robotics-related projects, including [Quadrupedal Robot Project](quadrupedal-robot-project) and [Single Leg Project](single-leg-project) and hopefully later more robotics-related topics.
+- Computer Science: This category is home to my notes on [Algorithms](algorithms), [Cryptography](cryptography) and [Reinforcement Learning](reinforcement-learning).
+- [Control.base](/assets/Control.base): Here is where I keep my control-related notes.
 - 
-For now, I am focusing on [Robotics](/notes/Robotics/Robotics). General areas of research interest include:
-- [Robotics](/notes/Robotics/Robotics)
+For now, I am focusing on [Robotics](robotics), [Reinforcement Learning](reinforcement-learning) and going over the basics of [control](/assets/Control.base) theory again. 
+
+My general areas of research interest include:
+- [Robotics](robotics)
 - Nonlinear Control
-- [Adaptive Control](/notes/Control/Adaptive Control/adaptive-control)
+- [Adaptive Control](adaptive-control)
 - Optimal Control
-- Active Disturbance Rejection Control
+- [Active Disturbance Rejection Control](active-disturbance-rejection-control)

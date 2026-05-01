@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
   
   <!-- AOS (Animate On Scroll) Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
   
   {% if site.theme_config.appearance_toggle %}
     {% include toggle_theme_js.html %}
@@ -50,11 +50,11 @@
     };
   </script>
   <script type="text/javascript" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    src="/assets/vendor/mathjax/es5/tex-svg.js">
   </script>
 
   <!-- AOS (Animate On Scroll) JavaScript -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({

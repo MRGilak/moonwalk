@@ -2,7 +2,7 @@
 layout: note
 title: "Introduction to Cryptography"
 date: 2025-08-23
-excerpt: "Cryptography involves techniques like the Caesar cipher and one-time pad to secure messages. These methods use shifting and random sequences to encrypt data."
+excerpt: "#cryptography #computer-science"
 ---
 
 #cryptography #computer-science 
@@ -34,7 +34,7 @@ Another important distinction between random and pseudo-random sequences is that
 
 A random walk is sometimes used to visualize a random sequence. The random walk for a seed eventually repeats itself, but the random walk of a truly random sequence doesn't. You can see this in effect [here](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/pi/random-walk-exploration).
 
-Continue learning about cryptography [here](/notes/Computer Science/Cryptography/Ciphers/).
+Continue learning about cryptography [here](ciphers).
 
 Sources:
 1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

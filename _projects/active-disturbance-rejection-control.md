@@ -57,7 +57,7 @@ y &= x_1
 
 Basically, Active Disturbance Rejection Controller (ADRC) sees the whole system as a multi-integrator plus disturbance. The states are estimated using an observer. Because the total disturbance is estimated as well, the observer is referred to as Extended State Observer (ESO). The diagram below shows the block diagram of ADRC.
 
-![ADRC Block Diagram](https://raw.githubusercontent.com/MRGilak/Active-Disturbance-Rejection-Controller/main/images/ADRC%20Diagram.jpg)
+![ADRC Block Diagram](/assets/Projects/active-disturbance-rejection-control/ADRC%20Diagram.jpg)
 
 ### Extended State Observer (ESO)
 
@@ -322,11 +322,11 @@ The saturated control signal $u$ is fed back to the ESO to maintain consistency 
 ---
 Here are some figures showing the controller in action, in presence of time-varying referece signal, input delay, input saturation, etc.
 
-![ADRC Demo 1](https://raw.githubusercontent.com/MRGilak/Active-Disturbance-Rejection-Controller/main/images/ADRC_demo1.jpg)
+![ADRC Demo 1](/assets/Projects/active-disturbance-rejection-control/ADRC_demo1.jpg)
 
-![ADRC Demo 2](https://raw.githubusercontent.com/MRGilak/Active-Disturbance-Rejection-Controller/main/images/ADRC_demo2.jpg)
+![ADRC Demo 2](/assets/Projects/active-disturbance-rejection-control/ADRC_demo2.jpg)
 
-![ADRC Demo 3](https://raw.githubusercontent.com/MRGilak/Active-Disturbance-Rejection-Controller/main/images/ADRC_demo3.jpg)
+![ADRC Demo 3](/assets/Projects/active-disturbance-rejection-control/ADRC_demo3.jpg)
 
 ---
 

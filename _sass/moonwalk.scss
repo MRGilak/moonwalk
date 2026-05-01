@@ -1,5 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* -------------------------------------- */
+/* Local offline fonts – Inter + Roboto Mono */
+/* -------------------------------------- */
+
+/* Inter Regular (400) */
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter/latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter Bold (700) */
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter/latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto Mono Regular (400) */
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/assets/fonts/roboto-mono/latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 html { height: 100%; }
 

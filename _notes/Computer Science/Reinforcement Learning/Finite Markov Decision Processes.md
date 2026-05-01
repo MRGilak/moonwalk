@@ -1,14 +1,15 @@
 ---
 layout: note
 title: "Finite Markov Decision Processes"
-date: 2025-09-17
-excerpt: "Finite Markov decision processes involve an agent and environment interacting at discrete time steps. The agent receives a state representation and selects actions to maximize a reward signal."
+date: 2026-03-06
+excerpt: "#RL #Learning #computer-science #Control"
 ---
 
 #RL #Learning #computer-science #Control
+This note is almost entirely based on the book [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7). I highly encourage reading the book itself for more detailed information and clear explanations. 
 
-The reinforcement learning problem is meant to be a straightforward framing of the problem of learning from interaction to achieve a goal. The learner and decision-maker is called the _agent_. The thing it interacts with, comprising everything outside the agent, is called the _environment_. 
-A complete specification of an environment defines a task , one instance of the reinforcement learning problem.  More specifically, the agent and environment interact at each of a sequence of discrete time steps, $t = 0, 1, 2, 3, \cdot\cdot\cdot$ , the agent receives some representation of the environment’s state, $S_t \in \mathcal{S}$, where $\mathcal{S}$ is the set of possible states, and on that basis selects an action, $A_t \in \mathcal{A} (S_t)$, where $\mathcal{A} (S_t)$ is the set of actions available in state $S_t$. One time step later, in part as a consequence of its action, the agent receives a numerical reward , $R_{t + 1} \in \mathcal{R} \subset \mathbb{R}$ , and finds itself in a new state, $S_{t + 1}$.
+The reinforcement learning problem is meant to be a straightforward framing of the problem of learning from interaction to achieve a goal. The learner is called the _agent_. The thing it interacts with, comprising everything outside the agent, is called the _environment_. 
+A complete specification of an environment defines a task , one instance of the reinforcement learning problem. More specifically, the agent and environment interact at each of a sequence of discrete time steps, $t = 0, 1, 2, 3, \cdot\cdot\cdot$ , the agent receives some representation of the environment’s state, $S_t \in \mathcal{S}$, where $\mathcal{S}$ is the set of possible states, and on that basis selects an action, $A_t \in \mathcal{A} (S_t)$, where $\mathcal{A} (S_t)$ is the set of actions available in state $S_t$. One time step later, in part as a consequence of its action, the agent receives a numerical reward , $R_{t + 1} \in \mathcal{R} \subset \mathbb{R}$ , and finds itself in a new state, $S_{t + 1}$.
 ![Pasted image 20250914165007.png](/assets/Computer Science/Reinforcement Learning/Pasted image 20250914165007.png)
 At each time step, the agent implements a mapping from states to probabilities of selecting each possible action. This mapping is called the agent’s policy and is denoted $\pi_t$, where $\pi_t (a | s)$ is the probability that $A_t = a$ if $S_t = s$.
 The boundary between the agent and the environment is important. As a general rule, anything that cannot be changed arbitrarily by the agent is considered to be outside of it and thus part of its environment. The agent-environment boundary represents the limit of the agent’s absolute control, not of its knowledge.
@@ -28,7 +29,7 @@ But what aspect of the reward are we trying to maximize? Because we know that in
 $$
 G_t = R_{t + 1} + R_{t + 2} + \cdot\cdot\cdot  +R_T
 $$
-where $T$ is a final time step. This approach makes sense in applications in which there is a natural notion of final time step, that is, when the agent-environment interaction breaks naturally into subsequences, which we call _episodes_, Each episode ends in a special state called the _terminal state_, followed by a reset to a standard starting state or to a sample from a standard distribution of starting states. Tasks with episodes of this kind are called _episodic tasks_. In episodic tasks we sometimes need to distinguish the set of all nonterminal states, denoted $\mathcal{S}$, from the set of all states plus the terminal state, denoted $\mathcal{S}^+$.
+where $T$ is a final time step. This approach makes sense in applications in which there is a natural notion of final time step, that is, when the agent-environment interaction breaks naturally into subsequences, which we call _episodes_. Each episode ends in a special state called the _terminal state_, followed by a reset to a standard starting state or to a sample from a standard distribution of starting states. Tasks with episodes of this kind are called _episodic tasks_. In episodic tasks we sometimes need to distinguish the set of all nonterminal states, denoted $\mathcal{S}$, from the set of all states plus the terminal state, denoted $\mathcal{S}^+$.
 On the other hand, in many cases the agent–environment interaction does not break naturally into identifiable episodes, but goes on continually without limit. These are called _continuous tasks_.
 The return function we defined earlier would pose problems where $T \rightarrow \infty$. Therefore, we define the notion of _discounting_. In particular, the agent can be though to be choosing $A_t$ to maximize
 $$
@@ -43,6 +44,7 @@ including the possibility that $T = \infty$ or $\gamma = 1$, but not both.
 
 ## Markov Property
 In the field of RL, unlike in control theory, _state_ refers to whatever information that is available to the agent. A state signal that succeeds in retaining all relevant information is said to be _Markov_, or to have the _Markov property_. 
+_Note_: The above sentence comes directly from Sutton's book and I've kept it like that, but the notion of state, in its true definition, does not refer to any information available to the agent. Rather, state is exactly the same thing we have in control theory. The states of the system are variables that define the system completely. The information available to the agent is called _observation_, again, similar to control theory. However, in RL state and observation are used interchangeably most of the time (reference: Sergey Levine, CS285).
 In the general case, the dynamics of the environment can be defined by specifying the complete probability distribution
 $$
 Pr \{ R_{t + 1} = r, S_{t + 1} = s' \ | \ S_0, A_0, R_1, \cdot\cdot\cdot S_{t - 1}, A_{t - 1}, R_t, S_t, A_t \}
@@ -53,7 +55,7 @@ $$
 In reality, due to presence of noise, disturbances and other random events that cannot necessarily be considered, it is useful to think of the state at each time step as an approximation to a Markov state, although it may not fully satisfy the Markov property.
 
 ## Markov Decision Processes
-A reinforcement learning task that satisfies the Markov property is called a _Markov decision process_, or _MDP_. If the state and action spaces are finite, then it is called a _finite Markov decision process_ (finite MDP). By specifying the dynamics of the environment as we did [here](/notes//#markov-property), one can compute anything else one might want to know about the environment, such as the _expected rewards_ for state-action pairs:
+A reinforcement learning task that satisfies the Markov property is called a _Markov decision process_, or _MDP_. If the state and action spaces are finite, then it is called a _finite Markov decision process_ (finite MDP). By specifying the dynamics of the environment as we did [here](#markov-property), one can compute anything else. One might want to know about the environment, such as the _expected rewards_ for state-action pairs:
 $$
 r(s, a) = \mathbb{E} \{ R_{t + 1} \ | \ S_t = s, A_t = a  \} = \sum_{r \ in \mathcal{R}} r \sum_{s' \ in \mathcal{S}} p(s', r \ | \ s, a)
 $$
@@ -84,7 +86,7 @@ $$
 The value function $v_\pi$ is the unique solution to its Bellman equation.
 
 ## Optimal Value Functions
-A policy $\pi$ is defined to be better than or equal to a policy $\pi'$ if its expected return is greater than or equal to that of $\pi'$ for all states. In other words, $\pi \geq \pi'$ if and only if $v_\pi (s) \geq v_\pi' (s)$ for all $s \in \mathcal{S}$. There is always at least one policy that is better than or equal to all other policies. This is an _optimal policy_. The optimal policy may not be unique. All optimal policies share the same state-value function, called the _optimal state-value function_, denoted by $v_{\pi^\ast}$, and defined as
+A policy $\pi$ is defined to be better than or equal to a policy $\pi'$ if its expected return is greater than or equal to that of $\pi'$ for all states. In other words, $\pi \geq \pi'$ if and only if $v_\pi (s) \geq v_\pi' (s)$ for all $s \in \mathcal{S}$. There is always at least one policy that is better than or equal to all other policies. This is an _optimal policy_. The optimal policy may not be unique. All optimal policies share the same state-value function, called the _optimal state-value function_, denoted by $v_{\ast}$, and defined as
 $$
 v_\ast (s) = \max_\pi v_\pi (s)
 $$
@@ -112,7 +114,7 @@ Therefore, many RL algorithms approximate the solution to the Bellman optimality
 Any policy that is _greedy_ with respect to the optimal evaluation function $v_\ast$ is an optimal policy. 
 
 
-Continue reading about reinforcement learning [here](/notes/Computer Science/Reinforcement Learning/Dynamic Programming/).
+Continue reading about reinforcement learning [here](dynamic-programming).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

@@ -64,7 +64,7 @@ An extended PFC controller is implemented to control a nonlinear system. The exe
     width="500"
     height="400"
     alt="cart-with-spring"
-    src="https://github.com/user-attachments/assets/05ea10e7-072e-4275-8c02-80a70bdfcb7c"
+    src="/assets/Projects/model-predictive-control/cart-with-spring.png"
   />
 </div>
 
