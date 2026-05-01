@@ -10,9 +10,9 @@ project_entries:
     url: /projects/robot-quadrupedal
     desc: Notes and development updates on the design and control of a quadrupedal robotic platform.
 
-  - title: Path Planning
-    url: /projects/path-planning
-    desc: An approach to autonomous vehicles path planning in complex environments.
+  - title: Quadrupedal Robotics Contact Detection
+    url: /projects/contact-detection
+    desc: Contact detection for quadrupedal locomotion gait planning.
 
   - title: Inverse Optimal Control
     url: /projects/inverse-optimal-control
