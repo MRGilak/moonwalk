@@ -10,7 +10,7 @@ excerpt: "Data-driven control methods are categorized into three main categories
 This paper is a survey of [Data-driven Control](/notes/Control/Data-Driven Control/Data-driven Control/).
 >[! summary] Summary
 >The paper starts with model-based controllers (MBC) and points out their need for an accurate or at least a good-enough model and proceeds to draw attention to the difficulty of deriving such a model. Four classes of systems are defined based on the accuracy of their model and data-driven control is then suggested as the solution to the most difficult classes to deal with.
->Different DDC (data-driven control) methods are categorized into 3 main catogories:
+>Different DDC (data-driven control) methods are categorized into 3 main categories:
 >1. Online data-based DDC
 >	Several famous DDC methods in this category are mentioned:
 >	1. ___SPSA___

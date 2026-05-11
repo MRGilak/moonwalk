@@ -2,10 +2,11 @@
 layout: note
 title: "Asymptotic Notation"
 date: 2025-08-19
-excerpt: "#algorithm #computer-science"
+excerpt: 'Asymptotic notation measures algorithm efficiency. It uses notations like $\Theta$, $O$, and $\Omega$ to describe running time.'
 ---
 
 #algorithm #computer-science 
+
 Running time of two different algorithms cannot be compared directly as a measure of their efficiency, because running time depends on a lot of factors, including the speed of the computer, the programming language, the compiler, etc. Therefore, to compare the efficiency of algorithms, some notations are defined.
 
 # Big-Theta $\Theta$ Notation 
@@ -14,9 +15,11 @@ When we use big-$\Theta$ notation, we're saying that we have an _**asymptotical
 
 A few things should be taken into account here:
 1. The base of the $log$ function doesn't matter if the running time is logarithmic. For example, you can say an algorithm has a running time of $\Theta (log_a\ n)$ instead of $\Theta (log_b\ n)$, because
+
 		$$
 			log_a\ n = \frac{\log_b\ n}{log_b\ a}
 		$$
+
 2. Here's a list of functions in asymptotic notation that we often encounter when analyzing algorithms, ordered by slowest to fastest growing:
 	1. $\Theta(1)$
 	2. $\Theta(\log_2 n)$
@@ -34,7 +37,7 @@ If a running time is $\Omega(f(n))$, then for large enough $n$, the running tim
 
 $\Theta (f(n))$ automatically implies both $O (f(n))$ and $\Omega (f(n))$.
 
-To read more about algorithms, continue here to learn about [selection sort](selection-sort).
+To read more about algorithms, continue here to learn about [selection sort](/notes/Computer Science/Algorithms/Selection Sort/).
 
 Sources:
 1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation)

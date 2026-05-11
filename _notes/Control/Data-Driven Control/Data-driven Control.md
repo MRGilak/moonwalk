@@ -2,7 +2,7 @@
 layout: note
 title: "Data-driven Control"
 date: 2026-03-02
-excerpt: "Data-driven control is the branch of control that tries to eliminate the need for a proper plant model by using only the input/output data of plant to tune the controller parameters. A definition is presented in 'From model-based control to data-driven control, Survey, classification and perspective|this paper':"
+excerpt: "Data-driven control uses input/output data to tune controller parameters. It designs controllers without needing a mathematical plant model."
 ---
 
 Data-driven control is the branch of control that tries to eliminate the need for a proper plant model by using only the input/output data of plant to tune the controller parameters. A definition is presented in 'From model-based control to data-driven control, Survey, classification and perspective|this paper':

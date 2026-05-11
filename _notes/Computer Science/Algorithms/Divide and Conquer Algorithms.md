@@ -2,10 +2,11 @@
 layout: note
 title: "Divide and Conquer Algorithms"
 date: 2025-08-19
-excerpt: "#algorithm #computer-science"
+excerpt: "Divide and conquer algorithms solve problems by breaking them into smaller sub-problems. They are a fundamental concept in computer science."
 ---
 
 #algorithm #computer-science 
+
 a
 
 

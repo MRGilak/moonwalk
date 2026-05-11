@@ -2,13 +2,14 @@
 layout: note
 title: "Contact Detection"
 date: 2026-03-28
-excerpt: "#Robotics #Control #Contact-detection #Estimation"
+excerpt: "Contact detection is crucial for stable locomotion in legged robots. Accurate contact state estimation is typically achieved by estimating the force exerted on the ground and applying a threshold."
 ---
 
 #Robotics #Control #Contact-detection #Estimation
+
 Accurate contact state estimation is fundamental to achieving stable locomotion in legged robots. 
 We often hear that force estimators are unreliable; that they drift over time and are prone to damage because of the constant impulses resulted by the walking of the robot. However, I didn't believe these until I saw it with my own eyes. 
-As a part of our [single leg project](single-leg-project), we installed a pneumatic force sensor on the foot of the robot (well, it was actually a pitot pressure sensor, but it's all the same). We went for this particular sensor, because it was more accurate than any other sensor we tested. At first, it seemed like a good sensor, but over time we got to know its problems:
+As a part of our [single leg project](/notes/Robotics/Single Leg Project/Single Leg Project/), we installed a pneumatic force sensor on the foot of the robot (well, it was actually a pitot pressure sensor, but it's all the same). We went for this particular sensor, because it was more accurate than any other sensor we tested. At first, it seemed like a good sensor, but over time we got to know its problems:
 - It would drift over time
 - It would become looser every time we put the robot on the ground
 - It needed recalibration every time the communication to the motors or to the Arduino board was lost

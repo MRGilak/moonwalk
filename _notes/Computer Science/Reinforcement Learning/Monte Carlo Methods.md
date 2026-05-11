@@ -2,11 +2,12 @@
 layout: note
 title: "Monte Carlo Methods"
 date: 2026-03-07
-excerpt: "#RL #Learning #computer-science #Control"
+excerpt: "Monte Carlo methods are ways of solving reinforcement learning problems based on averaging sample returns. They require only experience, not complete knowledge of the environment."
 ---
 
 #RL #Learning #computer-science #Control
-We want to go one step further than [DP](dynamic-programming) algorithms. Here, we do not assume complete knowledge of the environment. Monte Carlo methods require only _experience_. Monte Carlo methods are ways of solving the reinforcement learning problem based on averaging sample returns. Monte Carlo methods sample and average returns for each state-action pair and average rewards for each action.
+
+We want to go one step further than [DP](/notes/Computer Science/Reinforcement Learning/Dynamic Programming/) algorithms. Here, we do not assume complete knowledge of the environment. Monte Carlo methods require only _experience_. Monte Carlo methods are ways of solving the reinforcement learning problem based on averaging sample returns. Monte Carlo methods sample and average returns for each state-action pair and average rewards for each action.
 ## Monte Carlo Prediction
 Suppose we have a policy $\pi$ and we want to estimate the value $v_{\pi} (s)$. We start by actually running the controller. Each time we go through a state is called a _visit_. Monte Carlo methods can be _first-visit_ or _every-visit_, which determines which visits they consider for calculating the return. First-visit Monte Carlo methods only consider the first time a state is visited in an episode for calculating the return of that state. Both methods converge to $v_{\pi} (s)$ as the number of visits goes to infinity.
 One important feature of Monte Carlo methods is that they do not bootstrap. This means that they do not use the estimated value of other states for estimating the value of a state.
@@ -17,7 +18,7 @@ The problem may seem to be solved now, but one issue still exists. Many state-ac
 One method we can use is called _exploring starts_. We can specify the episodes to be started in a state-action pair and give all the pairs a non-zero probability of being chosen. However, this method can only be implemented in some scenarios, such as simulations. In scenarios like real-world problems, this is probably not possible.
 Another solution is to have a _soft_ policy. A soft policy is a policy which gives all actions a non-zero probability of being chosen in a given state. An example of these policies is $\epsilon$-greedy policies. We'll talk more about these in the next sections.
 ## Monte Carlo Control
-We can now completely solve the RL problem using Monte Carlo methods. We start with an initial policy. Using [#Monte Carlo Estimation of Action Values](#monte-carlo-estimation-of-action-values) we calculate the action value of our policy. After that, we perform one step of policy improvement by making the new policy greedy with respect to the estimated action value.
+We can now completely solve the RL problem using Monte Carlo methods. We start with an initial policy. Using [#Monte Carlo Estimation of Action Values](/notes//#monte-carlo-estimation-of-action-values) we calculate the action value of our policy. After that, we perform one step of policy improvement by making the new policy greedy with respect to the estimated action value.
 One issue is that we know that Monte Carlo estimations of action values only converge to the true value in an infinite number of steps. This is not feasible for implementation. One solution is to actually move one to the _policy improvement_ step before the _policy evaluation_ step is completely converged. An extreme case of this is the _value iteration_ technique, which only performs one iteration of policy evaluation.
 
 ## Monte Carlo Control without Exploring Starts
@@ -28,23 +29,31 @@ Suppose that we wish to estimate the value of a policy, but our samples are gene
 To ensure convergence, we have to ensure that any action taken under $\pi$ is also occasionally taken under $\mu$. This is called the assumption of _coverage_. We basically require that $\pi (a | s) > 0$ indicate $\mu (a | s)$. 
 The technique we are going to use here is called _importance sampling_. Importance sampling is a general method for estimating expected values under one distribution given samples from another. 
 The probability of a state-action trajectory is given as
+
 $$
 	\Pi_{k = t}^{T - 1} \pi (A_k | S_k) p (S_{k + 1} | S_k, A_k) .
 $$
+
 The importance sampling ratio is defined as
+
 $$
 	\rho _t^T = \frac{\Pi_{k = t}^{T - 1} \pi (A_k | S_k) p (S_{k + 1} | S_k, A_k)}{\Pi_{k = t}^{T - 1} \mu (A_k | S_k) p (S_{k + 1} | S_k, A_k)} = 
 	\Pi_{k = t}^{T - 1} \frac{\pi (A_k | S_k)}{\mu (A_k | S_k)} .
 $$
+
 An interesting property of the importance sampling ratio is that it does not depend on the MDP ($p(S_{k + 1} | S_k, A_k)$) at all.
 To estimate the value we can now simply scale the return by the importance sampling ratio and average the result:
+
 $$
 	V (s) = \frac{\sum_{t \in \mathcal{T} (s)} \rho_t^{T (t)} G_t}{| \mathcal{T} (s) |} ,
 $$
+
 where $\mathcal{T} (s)$ is the set of all timesteps in which state $s$ is visited and $T(t)$ is the first termination time following $t$. The equation above is called _ordinary importance sampling_. There is another type of importance sampling that calculates
+
 $$
 	V (s) = \frac{\sum_{t \in \mathcal{T} (s)} \rho_t^{T (t)} G_t}{\sum_{t \in \mathcal{T} (s)} \rho_t^{T (t)}} .
 $$
+
 This is called _weighted importance sampling_. Weighted importance sampling is actually biased in the statistical sense, but it usually has dramatically lower variance and is generally preferred. 
 We saw that for the on-policy Monte Carlo method to be effective, the policy has to be $\epsilon$-soft (actually it doesn't _have to be_ $\epsilon$-soft, but this is the simplest and most straight-forward solution). We can now see the benefit of off-policy methods. We can require the behavior policy to be $\epsilon$-soft and then have a greedy policy as our actual main policy so that it is more optimal.
 

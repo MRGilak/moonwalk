@@ -2,58 +2,75 @@
 layout: note
 title: "Dynamic Programming"
 date: 2026-03-06
-excerpt: "#RL #Learning #computer-science #Control"
+excerpt: "Dynamic programming refers to a collection of algorithms for computing optimal policies given a perfect model of the environment. It uses the value function to search for better policies."
 ---
 
 #RL #Learning #computer-science #Control
+
 The term _dynamic programming (DP)_ refers to a collection of algorithms that can be used to compute optimal policies given a perfect model of the environment as a Markov decision process (MDP).
 In this note we learn how DP algorithms use the value function to search for better policies.
 ## Policy Evaluation
 Assume you are given an arbitrary policy $\pi$. How would you compute the state-value function $v_\pi (s)$? This is called _policy evaluation_ in the DP literature. We also refer to it as _the prediction problem_.
 Remember that for all $s \in \mathcal{S}$, we have
+
 $$
 v_\pi (s) = \mathbb{E}_\pi \{ R_{t + 1} + \gamma R_{t + 2} + \gamma^2 R_{t + 3} + \ldots \ | \ S_t = s \} = 
 $$
+
 $$
 \mathbb{E}_\pi \{ R_{t + 1} + \gamma v_\pi (S_{t + 1}) \ | \ S_t = s \}
 $$
+
 $$
  \sum_a \pi (a \ | \ s) \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_\pi (s')]
 $$
+
 If the environment’s dynamics are completely known, then this is a system of $|\mathcal{S}|$ simultaneous linear equations in $|\mathcal{S}|$ unknowns, but this is very computationally exhaustive. Iterative solution methods also exist. Consider a sequence of approximate value functions $v_0, v_1, v_2, \ldots$, each mapping $\mathcal{S}^+$ to $\mathbb{R}$. The initial approximation, $v_0$, is chosen arbitrarily (except that the terminal state, if any ,must be given value $0$), and each successive approximation is obtained by using the Bellman equation for $v_\pi$ as an update rule:
+
 $$
 v_{k + 1} (s) = \mathbb{E}_\pi [R_{t + 1} + \gamma v_k (S_{t + 1}) \ | \ S_t = s] = 
 $$
+
 $$
 \sum_a \pi (a \ | \ s) \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_k (s')]
 $$
+
 for all $s \in \mathcal{S}$. Clearly, $v_k = v_\pi$ is a fixed point for this update rule.
 The sequence $\{ v_k \}$ can be shown in general to converge to $v_\pi$ as $k \rightarrow \infty$ under the same conditions that guarantee the existence of $v_\pi$. This algorithm is called _iterative policy evaluation_.  Note that this algorithm applies the same operation to each state $s$ and replaces it with a new value obtained from the old values of the successor states of $s$. This is called a _full backup_. Also, instead of using the old values on the right, we could update the states in a sweep and use new values on the right, wherever they are available. This method can be shown to also converge to $v_\pi$, and is usually faster. The iterative procedure only stops in the limit. A typical stopping condition for iterative policy evaluation is to test the quantity $\max_{s \in \mathcal{S}} |v_{k + 1} (s) - v_k (s)|$after each sweep and stop when it is sufficiently small.
 
 ## Policy Improvement
 Assume that you have a policy $\pi$ and you would like to know if for a state $s$, there is an action $a \neq \pi(s)$ that performs better than policy $\pi$ would have. One way to answer that would be to check the action-value function:
+
 $$
 q_\pi (s, a) = \mathbb{E}_\pi [R_{t + 1} + \gamma v_\pi (S_{t + 1}) \ | \ S_t = s , A_t = a] = \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_\pi (s')]
 $$
+
 The key criterion is whether this is greater than or less than $v_\pi (s)$. This is a special case of the _policy improvement theorem_.
 
 __policy improvement theorem__: Let $\pi$ and $\pi'$ be any pair of deterministic policies such that, for all $s \in \mathcal{S}$,
+
 $$
 q_\pi (s, \pi' (S)) \geq v_\pi (s)
 $$
+
 Then the policy $\pi'$ must be as good as or better than policy $\pi$. That is, it must obtain greater or equal expected return from all states $s \in \mathcal{S}$:
+
 $$
 v_{\pi'} (s) \geq v_\pi (s)
 $$
+
 Moreover, if there is strict inequality in the first equation at any state, then there must be strict inequality in the second equation at at least one state.
 
 We can use the policy improvement theorem to construct a policy $\pi'$ given policy $\pi$, ensuring that $\pi' \geq \pi$.
+
 $$
 \pi' (s) = arg \max_a q_\pi (s, a) = arg \max_a \mathbb{E} [R_{t + 1} + \gamma v_\pi (S_{t + 1}) \ | \ s_t = s, A_t = a] = 
 $$
+
 $$
 arg \max_a \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_\pi (s')]
 $$
+
 The process of making a new policy that improves on an original policy, by making it greedy with respect to the value function of the original policy, is called _policy improvement_. Policy improvement gives a strictly better policy except when the original policy is already optimal.
 If there are ties in policy improvement steps ,that is, if there are several actions at which the maximum is achieved, then in the stochastic case we need not select a single action from among them. Instead, each maximizing action can be given a portion of the probability of being selected in the new greedy policy. Any apportioning scheme is allowed as long as all submaximal actions are given zero probability.
 
@@ -65,9 +82,11 @@ Also, the policy evaluation step is usually started with the value function for 
 
 ## Value Iteration
 Each step of the policy iteration method is an iterative procedure itself, which could cause the algorithm to be computationally exhaustive. The policy evaluation step of policy iteration can be truncated in several ways without losing the convergence guarantees of policy iteration. One important special case is when policy evaluation is stopped after just one sweep (one backup of each state). This algorithm is called _value iteration_. Value iteration can be shown in a single mathematical equation as
+
 $$
 v_{k + 1} (s) = \max_a \mathbb{E} [R_{t + 1} + \gamma v_k (S_{t + 1}) \ | \ S_t = s, A_t = a] = \max_a \sum_{s', r} p(s', r \ | \ s, a) [r + \gamma v_k (s')], 
 $$
+
 for all $s \in \mathcal{S}$. For arbitrary $v_0$, the sequence $\{ v_k \}$ can be shown to converge to $v_\ast$ under the same conditions that guarantee the existence of $v_\ast$. Note that value iteration is obtained simply by turning the Bellman optimality equation into an update rule. Value iteration effectively combines, in each of its sweeps, one sweep of policy evaluation and one sweep of policy improvement.
 
 ## Asynchronous Dynamic Programming
@@ -88,7 +107,7 @@ DP is sometimes thought to be of limited applicability because of the curse of d
 
 Finally note that all DP methods update estimates of the values of states based on estimates of the values of successor states. That is, they update estimates on the basis of other estimates. This general idea is called _bootstrapping_.
 
-Continue reading about reinforcement learning [here](monte-carlo-methods).
+Continue reading about reinforcement learning [here](/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

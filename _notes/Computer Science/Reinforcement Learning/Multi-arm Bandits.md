@@ -2,10 +2,11 @@
 layout: note
 title: "Multi-arm Bandits"
 date: 2026-01-22
-excerpt: "#RL #Learning #computer-science"
+excerpt: "Multi-arm bandits are a classic reinforcement learning example. They involve choosing among multiple options to maximize expected total reward."
 ---
 
 #RL #Learning #computer-science 
+
 This note is almost entirely based on the book [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7). I highly encourage reading the book itself for more detailed information and clear explanations. 
 
 Multi-arm bandit is a classic RL example that teaches the basic algorithms. In this note, we take a closer look at this example.
@@ -21,19 +22,24 @@ The need to balance exploration and exploitation is a distinctive challenge that
 
 ## Action-Value Methods
 Denote the true value of action $a$ as $q(a)$, and the estimated value on the $t$th time step as $Q_t (a)$. One natural way to estimate the value of an action is by averaging the rewards actually received when the action was selected. In other words, if by the $t$th time step action a has been chosen $N_t (a)$ times prior to $t$, yielding rewards $R_1$, $R_2$, . . . , $R_{N_t} (a)$, then its value is estimated to be
+
 $$
 Q_t (a) = \frac{R_1 + R_2 + \cdot \cdot \cdot + R_{N_t (a)}}{N_t (a)}
 $$
+
 As  $N_t (a) \rightarrow \infty$, by the law of large numbers, $Q_t (a) \rightarrow q(a)$. This is called a _sample-average_ method. The greedy action selection can be written as
+
 $$
 A_t = arg \max_a Q_t (a)
 $$
+
 A simple alternative is to behave greedily most of the time, but every once in a while, with small probability $\varepsilon$, instead to select randomly from amongst all the actions with equal probability independently of the action-value estimates. We call methods using this near-greedy action selection rule _$\varepsilon$-greedy_ methods.
 The 10-arm bandit problem over $1000$ timesteps has been solved. The simulation has been repeated $50$ times to ensure different random initial guesses have been explored. The 10 bandits produce a reward with a preset mean and with variance $1$. The preset means for the bandits is randomly set with a mean of $0$ and variance of $1$. Also some noise with mean of $0$ and variance of $1$ is added to the reward every time.
 The results can be seen in the image below.
 ![reward.png](/assets/Computer Science/Reinforcement Learning/reward.png)
  You can see that in the long run, the greedy method performs worse. There might be situations where greedy actions yield better results, because it can just find the optimal action and keep selecting that. But in more realistic scenarios, for example when the task is nonstationary, non-greedy actions are usually better, because they keep exploring the options.
 Here is the Python code used for the example above (written by me, so it might contain mistakes):
+
 ```Python title:'10-arm bandit' fold 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -95,18 +101,24 @@ if __name__ == "__main__":
 ```
 
 Note that in practice, updating the estimates as introduced earlier usus a lot of memory. Instead incremental implementation is used.
+
 $$
 Q_{k + 1} = Q_k\ +\ \frac{1}{k} (R_k\ -\ Q_k) 
 $$
-Instead of $\frac{1}{k}$, other step sizes could also be used. For example, in a nonstationary problem, it makes sense to weight recent rewards more heavily than the older ones. One of the most popular methods of doing this is using a constant step-size parameter (similar to a forgetting factor used in recursive least square estimation in system identification or [adaptive control](adaptive-control)).
+
+Instead of $\frac{1}{k}$, other step sizes could also be used. For example, in a nonstationary problem, it makes sense to weight recent rewards more heavily than the older ones. One of the most popular methods of doing this is using a constant step-size parameter (similar to a forgetting factor used in recursive least square estimation in system identification or [adaptive control](/notes/Control/Adaptive Control/Adaptive Control/)).
+
 $$
 Q_{k + 1} = Q_k\ +\ \alpha (R_k\ -\ Q_k) = (1 - \alpha)^k \ Q_1 + \sum_{i = 1}^{k} \alpha \ (1 \ -\ alpha)^{k - i} R_i
 $$
+
 This is sometimes called an exponential, recency-weighted average. 
 A well-known result in stochastic approximation theory gives us the conditions required to assure convergence with probability 1:
+
 $$
 \sum_{k = 1}^{\infty} \alpha_k (a) = \infty \quad\quad\quad \sum_{k = 1}^{\infty} \alpha_k^2 (a) < \infty 
 $$
+
 The first condition is required to guarantee that the steps are large enough to eventually overcome any initial condition. The second condition guarantees that eventually the steps become small enough to assure convergence. 
 
 ## Optimistic Initial Values
@@ -115,24 +127,31 @@ Initial action values not only can be used to some prior knowledge about what le
 
 ## Upper-Confidence-Bound Action Selection
 As we saw, $\varepsilon$-greedy action selection forces the non-greedy actions to be tried, but indiscriminately. It would be better to select among the non-greedy actions according to their potential for actually being optimal. One effective way of doing this is to select the action as
+
 $$
 A_t = arg \max_a \ (Q_t (a) + c \sqrt{\frac{\ln t}{N_t (a)}})
 $$
+
 The idea of this _upper confidence bound (UCB)_ action selection is that the square-root term is a measure of the uncertainty or variance in the estimate of $a$’s value. Each time $a$ is selected the uncertainty is presumably reduced; $N_t (a)$ is incremented and, as it appears in the denominator of the uncertainty term, the term is decreased. UCB generally performs better that $\varepsilon$-greedy action selection, except in the first $n$ plays, when it selects randomly among the as-yet unplayed actions.
 
 ## Gradient Bandits
 Instead of estimating values and using those estimations to select actions, we can directly estimate _preferences_. The preference has no interpretation in terms of reward. Only the relative preference of one action over another is important; if we add $1000$ to all the preferences there is no affect on the action probabilities, which are determined according to a _soft-max distribution_ as follows:
+
 $$
 Pr \{ A_t = a \} = \frac{e^{H_t (a)}}{\sum_{b = 1}^{n} e^{H_t (b)}} = \pi_t (a)
 $$
+
 where $\pi_t (a)$ denotes the probability of selecting action $a$. Initially all preferences are the same. 
 There is a natural learning algorithm for this setting based on the idea of _stochastic gradient ascent_. On each step, after selecting the action $A_t$ and receiving the reward $R_t$, the preferences are updated by:
+
 $$
 H_{t + 1} (A_t) = H_t (A_t) + \alpha (R_t - \bar{R}_t) (1 - \pi_t (A_t))
 $$
+
 $$
 H_{t + 1} (a) = H_t (a) - \alpha (R_t - \bar{R}_t) \pi_t (a) \,\ \forall a \neq A_t  
 $$
+
 $\bar{R}_t$ is the average of all the rewards up through and including time $t$ and is called the _baseline_. The choice of the baseline does not affect the expected update of the algorithm, but it does affect the variance of the update and thus the rate of convergence. Choosing it as the average of the rewards may not be the very best, but it is simple and works well in practice.
 The expected update of the gradient-bandit algorithm is equal to the gradient of expected reward, and thus that the algorithm is an instance of stochastic gradient ascent.
 
@@ -140,7 +159,7 @@ The expected update of the gradient-bandit algorithm is equal to the gradient of
 Up to this point, we have considered only _nonassociative tasks_, in which there is no need to associate different actions with different situations. However, in a general reinforcement learning task there is more than one situation, and the goal is to learn a _policy_: a mapping from situations to the actions that are best in those situations.
 An _associative search_ task includes remembering the situation you are facing and remembering different mappings for them. It is so called because it involves both _trial-and-error learning_ in the form of search for the best actions and _association_ of these actions with the situations in which they are best.
 
-To learn more about reinforcement learning, continue to [Finite Markov Decision Processes](finite-markov-decision-processes).
+To learn more about reinforcement learning, continue to [Finite Markov Decision Processes](/notes/Computer Science/Reinforcement Learning/Finite Markov Decision Processes/).
 
 Sources:
 1. [Reinforcement Learning: An Introduction by Sutton](https://epubs.siam.org/doi/pdf/10.1137/21N975254#page=7)

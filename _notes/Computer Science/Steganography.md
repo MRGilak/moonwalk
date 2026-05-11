@@ -2,11 +2,11 @@
 layout: note
 title: "Steganography"
 date: 2025-08-23
-excerpt: "Steganography refers to hiding information in plain sight."
+excerpt: "Steganography hides information in plain sight, distinct from cryptography. It involves concealing data, often in images."
 ---
 
 Steganography refers to hiding information in plain sight.
-In the family of covert communications, steganography has a more well-known sibling in [Cryptography](cryptography). Distinguishing the two from the drop is key. Cryptography is the science of writing in secret code, or encrypting information, while steganography is concerned with making information invisible entirely, or hiding it in plain sight.
+In the family of covert communications, steganography has a more well-known sibling in [Cryptography](/notes/Computer Science/Cryptography/Cryptography/). Distinguishing the two from the drop is key. Cryptography is the science of writing in secret code, or encrypting information, while steganography is concerned with making information invisible entirely, or hiding it in plain sight.
 Steganography has been used since at least $440\ BC$ by many, including even the Mona Lisa. When computers emerged, a door was opened to hide even more information inside images, like never before. 
 To evaluate different methods, the steganography community developed a risk matrix of sorts, calling it the ___trade-off tetrahedron___. The four points represent the key requirements for incognito payload transmission. The _trade-off_ implies that favoring one of the requirements always compromises the other three in some way.
 1. **Robustness**: The characteristics of a hidden message that ensure it survives any non-malicious data processing while in transit from sender to recipient.

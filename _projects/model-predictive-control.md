@@ -116,7 +116,7 @@ A considerably smaller step size (compared to control sample time) should be con
     - `u_min`, `u_max` control input saturation lower and higher limits. Note that no saturation is actually applied to the input, but these are passed to the MPC controller which then calculates the control input as to not violate these constraints.
     - `x0` initial condition of the system
     - `u0` initial control input
-    - `beta`, `Ni` and `TOL` are used when finding `D_nonlinar`. 
+    - `beta`, `Ni` and `TOL` are used when finding `D_nonlinear`. 
     - `method` determines the linearization method: 'jacobian' or 'perturbation'
     - `is_programmed_ref`: if set to true, the reference will be considered programmed, meaning that the controller is aware of the future values of the reference signal.
     - `noise_power` power of white noise on the output

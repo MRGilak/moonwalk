@@ -2,10 +2,11 @@
 layout: note
 title: "Introduction to Cryptography"
 date: 2025-08-23
-excerpt: "#cryptography #computer-science"
+excerpt: "Cryptography involves techniques like the Caesar cipher and one-time pad to secure messages. These methods use shifting and randomness to encrypt messages."
 ---
 
 #cryptography #computer-science 
+
 # The Caesar Cipher
 One of the earliest examples of cryptography is when Julius Caesar used a type of cryptography to send letters to his commanders. He shifted each letter in the alphabet by a number, which was known in advance by both sides. For example, if it was 3, then _A_ would become _D_, _B_ would become _E_, etc. The receiver then deciphers this by shifting the message letters backward the same amount of times. This is known as the Caesar cipher.
 The weakness of this technique is that it can be broken down easily using language frequency analysis. Each language has a unique fingerprint in that which letters show up how much in a text. The ciphered text's frequency analysis could then be matched with the language frequency fingerprint to find the number of shifts.
@@ -34,7 +35,7 @@ Another important distinction between random and pseudo-random sequences is that
 
 A random walk is sometimes used to visualize a random sequence. The random walk for a seed eventually repeats itself, but the random walk of a truly random sequence doesn't. You can see this in effect [here](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/pi/random-walk-exploration).
 
-Continue learning about cryptography [here](ciphers).
+Continue learning about cryptography [here](/notes/Computer Science/Cryptography/Ciphers/).
 
 Sources:
 1. [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography).

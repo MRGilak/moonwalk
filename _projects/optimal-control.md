@@ -10,7 +10,7 @@ title: Optimal Control
  # Optimal-Control
 This repo contains MATLAB codes for solving a general nonlinear optimal control problem using the gradient descent approach.
 
-In optimal contorl theory a standard optimal control is defined as
+In optimal control theory a standard optimal control is defined as
 
 $$
    \begin{align}
@@ -25,7 +25,7 @@ $$
    \mathcal{H} = g(x,u) + p^T f(x,u)
 $$
 
-And the optimal control input, in absence of input limits, can be calcuated using the relationships below:
+And the optimal control input, in absence of input limits, can be calculated using the relationships below:
 
 $$
    \begin{align}
@@ -34,7 +34,7 @@ $$
       \frac{\partial \mathcal{H}}{\partial u} = 0 
    \end{align}
 $$
-Here `p` denotes the costates. This set of equations is generally hard to solve, because they are two point boundary nonlinear equations. The initial values of `x` and the final values of `p` are known.
+Here `p` denotes the co-states. This set of equations is generally hard to solve, because they are two point boundary nonlinear equations. The initial values of `x` and the final values of `p` are known.
 One way to solve this set of equations is using the gradient descent algorithm. An initial guess of the control input `u` is selected and the equations are solved for `x` and `p`, given the boundary values. Then `u` is corrected using the gradient of the Hamiltonian. 
 
 ## Free Final Time Problems
@@ -100,7 +100,7 @@ Outputs:
 - sol.t   : time grid [N x 1]
 - sol.X   : state trajectory along tGrid [N x n]
 - sol.U   : control trajectory along tGrid [N x m]
-- sol.P   : costate trajectory along tGrid [N x n]
+- sol.P   : co-state trajectory along tGrid [N x n]
 - sol.J   : final cost value at solution
 - sol.J_hist : cost history per iteration
 - sol.grad_norm_hist : gradient-norm history per iteration

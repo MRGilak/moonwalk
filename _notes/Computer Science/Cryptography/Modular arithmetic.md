@@ -2,42 +2,57 @@
 layout: note
 title: "Modular arithmetic"
 date: 2025-08-23
-excerpt: "#cryptography #computer-science"
+excerpt: "Modular arithmetic involves integer operations with remainders. It has properties and modular inverses, used in cryptography and computer science."
 ---
 
 #cryptography #computer-science 
+
 When we divide two integers, we have an equation that looks like this:
+
 $$
 \frac{A}{B} = Q\ remainder\ R
 $$
+
 $A$ is called the dividend, $B$ is the divisor, $Q$ is the quotient and $R$ is the remainder.
 Sometimes we are only interested in the remainder. This is why the modulo operator is defined:
+
 $$
 A\ mod\ B = R
 $$
+
 A property of the modulo operator is:
+
 $$
 A\ mod\ B = (A + BK)\ mod\ B
 $$
+
 Another way of writing that would be
+
 $$
 A \equiv A+BK\ (mod\ B)
 $$
+
 or $A$ is __congruent__ to $A + BK$ modulo $B$.
 Some other properties of the modulo operator are:
+
 $$
 (A + B)\ mod\ C = (A\ mod\ C + B\ mod\ C)\ mod\ C
 $$
+
 $$
 (A * B)\ mod\ C = (A\ mod\ C * B\ mod\ C)\ mod\ C
 $$
+
 $$
 A^B \ mod\ C = ((A\ mod\ C)^B)\ mod\ C
 $$
+
 In modular arithmetic there is no division. Instead, a modular inverse is defined. The modular inverse of $A$ ($mod\ C$) is $A^{-1}$ if 
+
 $$
 (A * A^{-1})\ mod\ C = 1
 $$
+
 # Euclidean Algorithm
 Recall that the Greatest Common Divisor (GCD) of two integers A and B is the largest integer that divides both A and B.
 The Euclidean Algorithm is a technique for quickly finding the GCD of two integers.

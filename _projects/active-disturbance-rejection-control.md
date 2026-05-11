@@ -7,23 +7,63 @@ title: Active Disturbance Rejection Control
 
 ---
 
-# Active Disturbance Rejection Control (ADRC)
+This repository contains Python, C++, MATLAB, and Simulink implementation of Active Disturbance Rejection Control with Extended State Observer (ESO), Tracking Differentiator (TD), input delay compensation, control saturation, and support for optional use of the cascaded structure.
 
-MATLAB, Simulink and Python implementation of Active Disturbance Rejection Control with Extended State Observer, Tracking Differentiator, input delay compensation, and control saturation.
+I've summarized a comprehensive note on the theoretical background of _actve disturbance rejection controller_ and _tracking differentiators_. You can find it in [this section](#theoretical-background) (I'll add the cascaded ADRC documentation as soon as possible).
 
-__Note__: You can install the Python implementation using
+__Note__: The Python version on Pypi (which can be installed with `pip install adrc`) is currently not the latest version. This is because access to the global internet has been cut off in Iran for the past two months! I'll update that as soon as possible. For now, I highly recommend using the implementation available on Github.
+
+__Note__: Important notes for the Python, C++, Matlab, and Simulink implementations are given after the introduction!
+
+__New__: _Cascaded ADRC_ is now supported for all the environments as well.
+ 
+---
+# Demo
+
+Here are some figures showing the controller in action, in presence of time-varying referece signal, input delay, input saturation, etc.
+
+![ADRC Demo 1](/assets/Projects/active-disturbance-rejection-control/ADRC_demo1.jpg)
+
+![ADRC Demo 2](/assets/Projects/active-disturbance-rejection-control/ADRC_demo2.jpg)
+
+![ADRC Demo 3](/assets/Projects/active-disturbance-rejection-control/ADRC_demo3.jpg)
+
+![ADRC Demo 3](/assets/Projects/active-disturbance-rejection-control/ADRC_app.png)
+
+---
+Please pay attention to the following:
+
+# Python
+__Note__: Good news! You can install the Python implementation using
 ``` bash
 pip install adrc
 ```
-You can look at [the project page on Pypi](https://pypi.org/project/adrc/) for more information.
+You can look at [the project page on Pypi](https://pypi.org/project/adrc/) for more information. (**_Note_**: I recommend using the version on Github for now until I update the Pypi version)
 
 __Note__: To be able to use all the Python codes, especially the demo script, you need to have the following packages installed:
 - numpy
-- scipy
-- matplotlib
-- python-control
+- scipy          (only needed for the demo)
+- matplotlib     (only needed for the demo)
+- python-control (only needed for the demo)
 
----
+# Simulink
+Discrete controller implementations are available for first and second-order systems in simulink. There is also a continuous-time implementation for second-order systems. Continuous-time first-order systems will be added as well.
+Please pay attention to the following:
+- The model settings in all cases is set to _variable step_ solver. I do encourage using this option, unless there is a specfic system you are working with and you know what you are doing.
+- In discrete-time simulations, it is necessary that you change the sample time not only where you pass it to the controller, but also in the two or three (depending on the system order) delay blocks that are present in the observer block. I am looking into a way to circumvent this, but for now, you have to change them manually.
+- I have added support for first-order and second-order _cascaded ADRC_ as well. You can compare their performance against the standard ADRC in the two simulink files.
+- The Simulink files are generated using MATLAB 2025b. If you have an older version and need the files, you can contact me to export them for you. I will add automatic support for older versions as well in the future. You can caontact me via email at _mrgilak02@gmail.com_, but I might not be able to respond quickly due to frequent internet shutdowns in Iran :)
+
+# MATLAB
+You can take a look at [this file](/docs/matlab_docs.md) to see how the code works. 
+
+**_Note_**: I have tried to use the same names in MATLAB, Python, and C++; however, I still feel it's necessary to add proper documentation for each. This is in the [TODOs](#todos).
+
+1. **Sample Time**: Controller sample time `dT` can differ from simulation time step `dt`. The controller should be called at rate `dT`.
+2. **Delay Compensation**: Input delay is specified in seconds and internally converted to discrete steps. Delay buffer maintains control history.
+3. **Initialization**: Always call `initialize()` before `step()`. The controller will throw an error if used uninitialized.
+4. **TD Integration**: When TD is enabled, it is automatically updated within `step()`. Manual reference derivatives can still be provided via `varargin` to override TD estimates.
+5. **State Estimation**: Access estimated states via `getEstimatedStates()` for monitoring or additional processing.
 
 ## Theoretical Background
 
@@ -320,288 +360,22 @@ u_0 & \text{otherwise}
 The saturated control signal $u$ is fed back to the ESO to maintain consistency between the ESO's prediction and the actual plant input.
 
 ---
-Here are some figures showing the controller in action, in presence of time-varying referece signal, input delay, input saturation, etc.
+# TODOs
 
-![ADRC Demo 1](/assets/Projects/active-disturbance-rejection-control/ADRC_demo1.jpg)
-
-![ADRC Demo 2](/assets/Projects/active-disturbance-rejection-control/ADRC_demo2.jpg)
-
-![ADRC Demo 3](/assets/Projects/active-disturbance-rejection-control/ADRC_demo3.jpg)
-
----
-
-## Code Documentation
-
-Below, the MATLAB implementation has been explained. The Python implementation is very similar and hence its explanation has been skipped here. 
-
-### TD Class
-
-**File:** [TD.m](https://github.com/MRGilak/Active-Disturbance-Rejection-Controller/blob/main/TD.m)
-
-Object-oriented implementation of Tracking Differentiator with multiple methods.
-
-#### Properties
-
-**Private:**
-- `method` (char): TD method ('euler', 'tod', 'ld', 'red', 'intd')
-- `dT` (double): Sample time
-- `params` (cell): Method-specific parameters
-- `state` (struct): Internal state variables
-
-**Public (Read-only):**
-- `y` (double): Filtered output
-- `yd` (double): First derivative estimate
-- `ydd` (double): Second derivative estimate
-
-#### Constructor
-
-```matlab
-obj = TD(method, dT, varargin)
-```
-
-**Parameters:**
-- `method`: String specifying TD method
-- `dT`: Sample time in seconds
-- `varargin`: Method-specific tuning parameters
-  - `'euler'`: a (filter coefficient, default 0.9)
-  - `'tod'`: r (convergence rate, default 1)
-  - `'ld'`: lambda (bandwidth, default 1)
-  - `'red'`: lambda1, lambda2 (defaults 1, 1)
-  - `'intd'`: alpha, beta, gamma, r (defaults 1, 1, 1, 1)
-
-**Example:**
-```matlab
-td = TD('tod', 0.01, 20);  % TOD with r=20, dT=0.01s
-```
-
-#### Methods
-
-**`update(ref)`**
-
-Update TD with new reference value.
-
-**Parameters:**
-- `ref`: Current reference signal value
-
-**Updates:** `y`, `yd`, `ydd` properties
-
-**Example:**
-```matlab
-td.update(1.0);
-filtered_ref = td.y;
-ref_dot = td.yd;
-```
-
-**`reset(initialValue)`**
-
-Reset TD to initial state.
-
-**Parameters:**
-- `initialValue`: Initial value (default: 0)
-
-**`setParameters(varargin)`**
-
-Update tuning parameters without recreating object.
-
-**`setSampleTime(dT)`**
-
-Update sample time.
+ - [ ] add proper documentation for the Python and C++ versions as well
+ - [ ] add theoretical background for cascaded ADRC
+ - [ ] update Pypi
+ - [ ] add a script to compare MATLAB and Simulink's output for any possible differences
+ - [ ] add support for multiple generations of older Simulink versions (distant future!)
+ - [ ] update the project website
 
 ---
-
-### ADRC Class
-
-**File:** [ADRC.m](https://github.com/MRGilak/Active-Disturbance-Rejection-Controller/blob/main/ADRC.m)
-
-Comprehensive ADRC controller with ESO, optional TD, delay compensation, and saturation.
-
-#### Properties
-
-**Private:**
-- `n` (double): System order (1-4)
-- `dT` (double): Sample time
-- `Ld`, `K` (double): Observer and controller gains
-- `Ad`, `Bd`, `Cd` (double): Discrete ESO matrices
-- `b0` (double): Control gain estimate
-- `Tsettle`, `kob` (double): Tuning parameters
-- `Ke` (double): Error scaling gain
-- `Xhat` (double): Extended state estimates [x₁...xₙ, f]
-- `uPrev` (double): Previous control input
-- `uMin`, `uMax` (double): Saturation limits
-- `inputDelaySteps` (double): Delay in controller steps
-- `uHistory` (double): Control history buffer
-- `useTD` (logical): TD enable flag
-- `TD_obj` (TD): TD object instance
-
-**Public (Read-only):**
-- `isInitialized` (logical): Initialization status
-- `controllerOrder` (double): n+1 (extended state dimension)
-
-#### Constructor
-
-```matlab
-obj = ADRC(systemOrder)
-```
-
-**Parameters:**
-- `systemOrder`: System order (1-4)
-
-**Example:**
-```matlab
-controller = ADRC(2);  % For 2nd-order system
-```
-
-#### Methods
-
-**`initialize(varargin)`**
-
-Initialize controller with name-value pairs.
-
-**Name-Value Parameters:**
-- `'Tsettle'`: Settling time (default: 1.0)
-- `'kob'`: Observer bandwidth multiplier (default: 10)
-- `'b0'`: Control gain estimate (default: 1.0)
-- `'uMin'`: Lower saturation limit (default: -inf)
-- `'uMax'`: Upper saturation limit (default: inf)
-- `'dT'`: Sample time (default: 0.01)
-- `'XhatInit'`: Initial extended state (default: zeros)
-- `'uInit'`: Initial control input (default: 0)
-- `'Ke'`: Error scaling gain (default: 1)
-- `'inputDelay'`: Input delay in seconds (default: 0)
-- `'TD_method'`: TD method or 'none' (default: 'none')
-- `'TD_params'`: Cell array of TD parameters (default: {})
-
-**Example:**
-```matlab
-controller.initialize('Tsettle', 1.0, 'kob', 10, 'b0', 1.6, ...
-                     'dT', 0.01, 'uMin', -10, 'uMax', 10, ...
-                     'inputDelay', 0.05, ...
-                     'TD_method', 'tod', 'TD_params', {20});
-```
-
-**`u = step(reference, output, varargin)`**
-
-Execute one control step.
-
-**Parameters:**
-- `reference`: Reference signal value
-- `output`: System output (measurement)
-- `varargin`: Optional reference derivatives [r', r'', ...] (vector or individual arguments)
-
-**Returns:**
-- `u`: Control signal
-
-**Example:**
-```matlab
-u = controller.step(ref, y);  % Without derivatives
-u = controller.step(ref, y, ref_dot, ref_dotdot);  % With derivatives
-```
-
-**`reset(XhatInit, uInit)`**
-
-Reset controller state.
-
-**Parameters:**
-- `XhatInit`: Initial extended state (optional)
-- `uInit`: Initial control input (optional)
-
-**`setTD(method, varargin)`**
-
-Configure or update tracking differentiator.
-
-**Parameters:**
-- `method`: TD method or 'none'
-- `varargin`: TD parameters
-
-**Example:**
-```matlab
-controller.setTD('tod', 15);  % Enable TOD with r=15
-controller.setTD('none');     % Disable TD
-```
-
-**`setSaturation(uMin, uMax)`**
-
-Update saturation limits.
-
-**`setInputDelay(delaySec)`**
-
-Update input delay setting.
-
-**`updateTuning(Tsettle, kob)`**
-
-Update controller tuning parameters and recompute gains.
-
-**`Xhat = getEstimatedStates()`**
-
-Get current extended state estimates [x₁, ..., xₙ, f]ᵀ.
-
-**`f = getEstimatedDisturbance()`**
-
-Get estimated total disturbance (last element of Xhat).
-
----
-
-## Scripts
-
-### ADRC_app.m
-
-Interactive GUI application for ADRC simulation.
-
-**Features:**
-- System transfer function input (numerator/denominator)
-- Controller tuning sliders (Tsettle, kob, b0)
-- Input delay configuration (matched/unmatched)
-- Control saturation limits
-- Reference signal generator (Step, Sinusoid, Sawtooth)
-- TD method selection with parameter adjustment
-- Real-time plotting
-
-**Usage:**
-```matlab
-ADRC_app
-```
-
-### demo.m
-
-Comprehensive demonstration script with three examples:
-
-1. **Basic ADRC**: Step response without TD
-2. **ADRC with TD**: Sinusoidal tracking with TOD
-3. **Input Delay Compensation**: Step response with input delay
-
----
-
-## Implementation Notes
-
-1. **Sample Time**: Controller sample time `dT` can differ from simulation time step `dt`. The controller should be called at rate `dT`.
-
-2. **Delay Compensation**: Input delay is specified in seconds and internally converted to discrete steps. Delay buffer maintains control history.
-
-3. **Initialization**: Always call `initialize()` before `step()`. The controller will throw an error if used uninitialized.
-
-4. **TD Integration**: When TD is enabled, it is automatically updated within `step()`. Manual reference derivatives can still be provided via `varargin` to override TD estimates.
-
-5. **State Estimation**: Access estimated states via `getEstimatedStates()` for monitoring or additional processing.
-
-6. **Tuning Guidelines**:
-   - Start with `Tsettle` = desired settling time
-   - Set `kob` = 5-20 (higher = faster observer, more noise sensitivity)
-   - Ensure `b0` matches nominal plant gain
-   - Adjust `Ke` if using non-unity error scaling
-
+This repo is maintained by [me](https://github.com/MRGilak). Contributions are welcome as well. 
 ---
 
 ## References
-
 1. Han, J. (2009). "From PID to Active Disturbance Rejection Control". IEEE Transactions on Industrial Electronics.
-
 2. Gao, Z. (2006). "Active Disturbance Rejection Control: A Paradigm Shift in Feedback Control System Design". American Control Conference.
-
 3. Herbst, G. (2013). "A Simulative Study on Active Disturbance Rejection Control (ADRC) as a Control Tool for Practitioners". Electronics.
-
 4. Zheng, Q., Gao, Z. (2010). "On Practical Applications of Active Disturbance Rejection Control". Chinese Control Conference.
-
 5. Madoński, R., & Herman, P. (2015). Survey on methods of increasing the efficiency of extended state disturbance observers. ISA transactions, 56, 18-27.
-
-6. Madoński, R., & Herman, P. (2015). Survey on methods of increasing the efficiency of extended state disturbance observers. ISA transactions, 56, 18-27.
-
