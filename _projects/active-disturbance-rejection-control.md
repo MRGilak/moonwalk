@@ -11,8 +11,6 @@ This repository contains Python, C++, MATLAB, and Simulink implementation of Act
 
 I've summarized a comprehensive note on the theoretical background of _active disturbance rejection controller_ and _tracking differentiators_. You can find it in [this section](#theoretical-background) (I'll add the cascaded ADRC documentation as soon as possible).
 
-__Note__: The Python version on Pypi (which can be installed with `pip install adrc`) is currently not the latest version. This is because access to the global internet has been cut off in Iran for the past two months! I'll update that as soon as possible. For now, I highly recommend using the implementation available on Github.
-
 __Note__: Important notes for the Python, C++, Matlab, and Simulink implementations are given after the introduction!
 
 __New__: _Cascaded ADRC_ is now supported for all the environments as well.
@@ -38,7 +36,11 @@ __Note__: Good news! You can install the Python implementation using
 ``` bash
 pip install adrc
 ```
-You can look at [the project page on Pypi](https://pypi.org/project/adrc/) for more information. (**_Note_**: I recommend using the version on Github for now until I update the Pypi version)
+You can look at [the project page on Pypi](https://pypi.org/project/adrc/) for more information.
+
+[![PyPI Downloads (Daily)](https://img.shields.io/pypi/dd/adrc.svg)](https://pypi.org/project/adrc/)
+
+_Disclaimer_: This badge is provided by shields.io. Source analytics dashboard: [clickhouse-analytics.metabaseapp.com](https://clickhouse-analytics.metabaseapp.com/public/dashboard/8d516106-3a9f-4674-aafc-aa39d6380ee2?project_name=adrc#&theme=night).
 
 __Note__: To be able to use all the Python codes, especially the demo script, you need to have the following packages installed:
 - numpy
@@ -358,16 +360,6 @@ u_0 & \text{otherwise}
 \end{cases}$$
 
 The saturated control signal $u$ is fed back to the ESO to maintain consistency between the ESO's prediction and the actual plant input.
-
----
-# TODOs
-
- - [ ] add proper documentation for the Python and C++ versions as well
- - [ ] add theoretical background for cascaded ADRC
- - [ ] update Pypi
- - [ ] add a script to compare MATLAB and Simulink's output for any possible differences
- - [ ] add support for multiple generations of older Simulink versions (distant future!)
- - [ ] update the project website
 
 ---
 This repo is maintained by [me](https://github.com/MRGilak). Contributions are welcome as well. 
