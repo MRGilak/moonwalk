@@ -168,7 +168,8 @@
     "milli",
     "Alikhan",
     "Thevenin",
-    "ddot"
+    "ddot",
+    "timesteps"
   ],
   "ignorePaths": [
     "_site/**",
