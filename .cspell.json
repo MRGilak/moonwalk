@@ -169,7 +169,9 @@
     "Alikhan",
     "Thevenin",
     "ddot",
-    "timesteps"
+    "timesteps",
+    "metabaseapp",
+    "clickhouse"
   ],
   "ignorePaths": [
     "_site/**",
