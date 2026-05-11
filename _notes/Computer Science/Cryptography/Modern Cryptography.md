@@ -37,7 +37,7 @@ c^b\ mod\ m = (3^{15}\ mod\ 17)^{13}\ mod\ 17 = (3^{15})^{13}\ mod\ 17 = 10
 $$
 
 Note that $c$ and $d$ are both public, but knowing only $g$, $m$, $c$, $d$, no one can't find $a$ and $b$.
-This is the discrete logarithm problem. For large enough numbers, it is practically secure. Note that usually a prime modulus is used, because it reduces the number of possible outputs. Nonprime moduli generally result in certain numbers way more than others.
+This is the discrete logarithm problem. For large enough numbers, it is practically secure. Note that usually a prime modulus is used, because it reduces the number of possible outputs. Non-prime moduli generally result in certain numbers way more than others.
 
 # RSA Encryption
 To introduce the RSA encryption, we first need to learn about a special type of one-way function, called the trapdoor one-way function. This is a function that is easy to compute in one direction, yet difficult to reverse, unless you have special information called the trapdoor.

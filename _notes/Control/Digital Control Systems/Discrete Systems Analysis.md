@@ -5,7 +5,7 @@ date: 2026-03-30
 excerpt: "Discrete systems analysis involves tools for designing digital controllers. Difference equations model discrete-time systems, describing the relationship between past and current inputs and outputs."
 ---
 
-#Control #DigitallControlSystems 
+#Control #SignalControlSystems 
 
 This note is primarily based on chapter 4 of  the book _Digital Control of Dynamic Systems_ by Franklin, Powell, and Workman.
 
@@ -21,7 +21,7 @@ $$
 	u_k = - a_1 u_{k - 1} - a_2 u_{k - 2} - \cdots - a_n u_{k - n} + b_0 e_k + b_1 e_{k - 1} + \cdots + b_m e_{k - m} .
 $$
 
-This is called a _linear recuurence equation_ or _difference equation_. The reason behind it is actually pretty cool. Much like how _differential equations_ have derivatives of different orders in them, this equation can be written in a way to have different orders of _differences_, which are defined as
+This is called a _linear recurrence equation_ or _difference equation_. The reason behind it is actually pretty cool. Much like how _differential equations_ have derivatives of different orders in them, this equation can be written in a way to have different orders of _differences_, which are defined as
 
 $$
 	\begin{align}

@@ -167,7 +167,8 @@
     "ICCIA",
     "milli",
     "Alikhan",
-    "Thevenin"
+    "Thevenin",
+    "ddot"
   ],
   "ignorePaths": [
     "_site/**",

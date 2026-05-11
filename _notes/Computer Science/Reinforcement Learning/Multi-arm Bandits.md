@@ -37,7 +37,7 @@ A simple alternative is to behave greedily most of the time, but every once in a
 The 10-arm bandit problem over $1000$ timesteps has been solved. The simulation has been repeated $50$ times to ensure different random initial guesses have been explored. The 10 bandits produce a reward with a preset mean and with variance $1$. The preset means for the bandits is randomly set with a mean of $0$ and variance of $1$. Also some noise with mean of $0$ and variance of $1$ is added to the reward every time.
 The results can be seen in the image below.
 ![reward.png](/assets/Computer Science/Reinforcement Learning/reward.png)
- You can see that in the long run, the greedy method performs worse. There might be situations where greedy actions yield better results, because it can just find the optimal action and keep selecting that. But in more realistic scenarios, for example when the task is nonstationary, non-greedy actions are usually better, because they keep exploring the options.
+ You can see that in the long run, the greedy method performs worse. There might be situations where greedy actions yield better results, because it can just find the optimal action and keep selecting that. But in more realistic scenarios, for example when the task is non-stationary, non-greedy actions are usually better, because they keep exploring the options.
 Here is the Python code used for the example above (written by me, so it might contain mistakes):
 
 ```Python title:'10-arm bandit' fold 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(7, 4))
     for eps, lbl in labels_eps:
         avg_rewards = sums[eps] / num_runs
-        running_avg = np.cumsum(avg_rewards) / np.arange(1, steps + 1)
+        running_avg = np.cumsum(avg_rewards) / np.arrange(1, steps + 1)
         plt.plot(running_avg, lw=1.5, label=lbl) 
     plt.xlabel("Step")
     plt.ylabel("Average reward")
@@ -106,7 +106,7 @@ $$
 Q_{k + 1} = Q_k\ +\ \frac{1}{k} (R_k\ -\ Q_k) 
 $$
 
-Instead of $\frac{1}{k}$, other step sizes could also be used. For example, in a nonstationary problem, it makes sense to weight recent rewards more heavily than the older ones. One of the most popular methods of doing this is using a constant step-size parameter (similar to a forgetting factor used in recursive least square estimation in system identification or [adaptive control](/notes/Control/Adaptive Control/Adaptive Control/)).
+Instead of $\frac{1}{k}$, other step sizes could also be used. For example, in a non-stationary problem, it makes sense to weight recent rewards more heavily than the older ones. One of the most popular methods of doing this is using a constant step-size parameter (similar to a forgetting factor used in recursive least square estimation in system identification or [adaptive control](/notes/Control/Adaptive Control/Adaptive Control/)).
 
 $$
 Q_{k + 1} = Q_k\ +\ \alpha (R_k\ -\ Q_k) = (1 - \alpha)^k \ Q_1 + \sum_{i = 1}^{k} \alpha \ (1 \ -\ alpha)^{k - i} R_i
@@ -123,7 +123,7 @@ The first condition is required to guarantee that the steps are large enough to 
 
 ## Optimistic Initial Values
 The methods discuss so far depend on their initial values. These methods are _biased_ by their initial estimates. For the sample-average methods, the bias disappears once all actions have been selected at least once, but for methods with constant $\alpha$, the bias is permanent, though decreasing over time.
-Initial action values not only can be used to some prior knowledge about what level of rewards can be expected, but can also be used as a simple way of encouraging exploration. When the initial action values are way too optimistically high, the agent starts by trying an action and gets disappointed after the actual reward it gets is lower than its estimate, so it goes on to try the other bandits, and so on. This method of encouraging exploration is called _optimistic initial values_. Note that this is just a simple trick. For example, it is not well suited to nonstationary problems because its drive for exploration is temporary.
+Initial action values not only can be used to some prior knowledge about what level of rewards can be expected, but can also be used as a simple way of encouraging exploration. When the initial action values are way too optimistically high, the agent starts by trying an action and gets disappointed after the actual reward it gets is lower than its estimate, so it goes on to try the other bandits, and so on. This method of encouraging exploration is called _optimistic initial values_. Note that this is just a simple trick. For example, it is not well suited to non-stationary problems because its drive for exploration is temporary.
 
 ## Upper-Confidence-Bound Action Selection
 As we saw, $\varepsilon$-greedy action selection forces the non-greedy actions to be tried, but indiscriminately. It would be better to select among the non-greedy actions according to their potential for actually being optimal. One effective way of doing this is to select the action as
@@ -156,7 +156,7 @@ $\bar{R}_t$ is the average of all the rewards up through and including time $t$ 
 The expected update of the gradient-bandit algorithm is equal to the gradient of expected reward, and thus that the algorithm is an instance of stochastic gradient ascent.
 
 ## Associative Search
-Up to this point, we have considered only _nonassociative tasks_, in which there is no need to associate different actions with different situations. However, in a general reinforcement learning task there is more than one situation, and the goal is to learn a _policy_: a mapping from situations to the actions that are best in those situations.
+Up to this point, we have considered only _non-associative tasks_, in which there is no need to associate different actions with different situations. However, in a general reinforcement learning task there is more than one situation, and the goal is to learn a _policy_: a mapping from situations to the actions that are best in those situations.
 An _associative search_ task includes remembering the situation you are facing and remembering different mappings for them. It is so called because it involves both _trial-and-error learning_ in the form of search for the best actions and _association_ of these actions with the situations in which they are best.
 
 To learn more about reinforcement learning, continue to [Finite Markov Decision Processes](/notes/Computer Science/Reinforcement Learning/Finite Markov Decision Processes/).

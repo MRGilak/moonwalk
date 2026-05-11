@@ -15,4 +15,4 @@ As a part of our [single leg project](/notes/Robotics/Single Leg Project/Single 
 - It needed recalibration every time the communication to the motors or to the Arduino board was lost
 That's when I truly understood what all these papers meant :)
 To solve the problem, I got into reading some contact detection papers and we implemented several of them on the actual robot.
-Generally, the typical approach to contact estimation is to first estimate the force that the foot is exerting on the ground and then by putting some form of a threshold on this force, contact can be detected. This threshold is where most papers introduce novelty in the form of double-thresholds, hysteresis and Schmitt trigger-like thresholds, etc.
+Generally, the typical approach to contact estimation is to first estimate the force that the foot is exerting on the ground and then by putting some form of a threshold on this force, contact can be detected. This threshold is where most papers introduce novelty in the form of double-thresholds, hysteresis and Schmidtt trigger-like thresholds, etc.

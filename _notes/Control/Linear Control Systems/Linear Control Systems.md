@@ -37,7 +37,7 @@ $$
 $$
 
 # Block Diagrams
-It is customary to show systems and the connections among them in a _block diagram_. A block diagram can be turned into a _Singal Flow Graph (SFG)_. Mason's formula can then be used to find the input-output relationship between any arbitrary input and output port.
+It is customary to show systems and the connections among them in a _block diagram_. A block diagram can be turned into a _Signal Flow Graph (SFG)_. Mason's formula can then be used to find the input-output relationship between any arbitrary input and output port.
 TODO: Add Mason's formula
 
 Learn more about control systems by reading about [First and Second-order Systems](/notes/Control/Linear Control Systems/First and Second-order Systems/) or [Steady-state Behavior of Linear Systems](/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/).

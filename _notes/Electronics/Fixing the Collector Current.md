@@ -52,7 +52,7 @@ $$
 Therefore, $I_B$ is indeed negligible compared to $I'$.
 We can also take a look at the small signal model of our transistor:
 ![600](/assets/Electronics/collector current fix-small signal.jpg)
-We replace the left part with the _Thevenen_ equivalent. We have assumed $R_s = 25 \text{k}\Omega$ in this problem whose effect can be neglected compared to the $1 \text{k}\Omega$ resistor (both in $V_{in}$ and in the equivalent resistor). The gain of our system is
+We replace the left part with the _Thevenin_ equivalent. We have assumed $R_s = 25 \text{k}\Omega$ in this problem whose effect can be neglected compared to the $1 \text{k}\Omega$ resistor (both in $V_{in}$ and in the equivalent resistor). The gain of our system is
 
 $$
 	A_v = - \frac{R_c}{R_E + \frac{r_{\pi}}{\beta} + \frac{R_s}{\beta}} .

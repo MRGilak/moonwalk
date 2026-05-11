@@ -8,7 +8,7 @@ excerpt: "Differential geometry studies vectors and covectors in nonlinear syste
 #Control #NonlinearControl 
 
 In this note, I am going to go over the basics of differential geometry. I have not gone in detail anywhere and have tried to focus on giving intuition rather than dealing with the math right away. 
-Linear Algebra is a prequisite to this note.
+Linear Algebra is a prerequisite to this note.
 
 # Vectors and Covectors
 In general, in nonlinear control we want to study and analyze the system of the form

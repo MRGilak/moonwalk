@@ -9,7 +9,7 @@ title: Active Disturbance Rejection Control
 
 This repository contains Python, C++, MATLAB, and Simulink implementation of Active Disturbance Rejection Control with Extended State Observer (ESO), Tracking Differentiator (TD), input delay compensation, control saturation, and support for optional use of the cascaded structure.
 
-I've summarized a comprehensive note on the theoretical background of _actve disturbance rejection controller_ and _tracking differentiators_. You can find it in [this section](#theoretical-background) (I'll add the cascaded ADRC documentation as soon as possible).
+I've summarized a comprehensive note on the theoretical background of _active disturbance rejection controller_ and _tracking differentiators_. You can find it in [this section](#theoretical-background) (I'll add the cascaded ADRC documentation as soon as possible).
 
 __Note__: The Python version on Pypi (which can be installed with `pip install adrc`) is currently not the latest version. This is because access to the global internet has been cut off in Iran for the past two months! I'll update that as soon as possible. For now, I highly recommend using the implementation available on Github.
 
@@ -20,7 +20,7 @@ __New__: _Cascaded ADRC_ is now supported for all the environments as well.
 ---
 # Demo
 
-Here are some figures showing the controller in action, in presence of time-varying referece signal, input delay, input saturation, etc.
+Here are some figures showing the controller in action, in presence of time-varying reference signal, input delay, input saturation, etc.
 
 ![ADRC Demo 1](/assets/Projects/active-disturbance-rejection-control/ADRC_demo1.jpg)
 
@@ -49,10 +49,10 @@ __Note__: To be able to use all the Python codes, especially the demo script, yo
 # Simulink
 Discrete controller implementations are available for first and second-order systems in simulink. There is also a continuous-time implementation for second-order systems. Continuous-time first-order systems will be added as well.
 Please pay attention to the following:
-- The model settings in all cases is set to _variable step_ solver. I do encourage using this option, unless there is a specfic system you are working with and you know what you are doing.
+- The model settings in all cases is set to _variable step_ solver. I do encourage using this option, unless there is a specific system you are working with and you know what you are doing.
 - In discrete-time simulations, it is necessary that you change the sample time not only where you pass it to the controller, but also in the two or three (depending on the system order) delay blocks that are present in the observer block. I am looking into a way to circumvent this, but for now, you have to change them manually.
 - I have added support for first-order and second-order _cascaded ADRC_ as well. You can compare their performance against the standard ADRC in the two simulink files.
-- The Simulink files are generated using MATLAB 2025b. If you have an older version and need the files, you can contact me to export them for you. I will add automatic support for older versions as well in the future. You can caontact me via email at _mrgilak02@gmail.com_, but I might not be able to respond quickly due to frequent internet shutdowns in Iran :)
+- The Simulink files are generated using MATLAB 2025b. If you have an older version and need the files, you can contact me to export them for you. I will add automatic support for older versions as well in the future. You can contact me via email at _mrgilak02@gmail.com_, but I might not be able to respond quickly due to frequent internet shutdowns in Iran :)
 
 # MATLAB
 You can take a look at [this file](/docs/matlab_docs.md) to see how the code works. 

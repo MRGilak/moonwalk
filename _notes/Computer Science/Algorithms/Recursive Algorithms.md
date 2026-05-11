@@ -113,14 +113,14 @@ def fibonacci_bottom_up(n):
 
 # Dynamic Programming
 Memoization and bottom-up are both techniques from _**dynamic programming**_, a problem-solving strategy used in mathematics and computer science.
-Dynamic programming can be used when a problem has _**optimal substructure**_ and _**overlapping subproblems**_. Optimal substructure means that the optimal solution to the problem can be created from optimal solutions of its subproblems. Overlapping subproblems happen whenever a subproblem is solved multiple times.
+Dynamic programming can be used when a problem has _**optimal substructure**_ and _**overlapping sub-problems**_. Optimal substructure means that the optimal solution to the problem can be created from optimal solutions of its sub-problems. Overlapping sub-problems happen whenever a subproblem is solved multiple times.
 
 # Towers of Hanoi
 Towers of Hanoi is a classic example of recursive algorithms.
 You are given a set of three pegs and $n$ disks, with each disk a different size. Let's name the pegs A, B, and C, and let's number the disks from $1$, the smallest disk, to $n$, the largest disk. At the beginning, all $n$ disks are on peg A, in order of decreasing size from bottom to top. The goal is to move all $n$ disks from peg A to peg B. Here is what the problem looks like for $n = 5$:
 ![Pasted image 20250819225537.png](/assets/Computer Science/Algorithms/Pasted image 20250819225537.png)
 To solve the problem, we first start with the base case. This is easy. When $n = 1$, we should just move $1$ disk from peg A to peg B. Moving a single disk between any two pegs is very basic. For the case of $n = 2$, we can first move disk $1$ to peg C. Then we can move disk $2$ to peg B. Finally we move disk $1$ from peg C to peg B. The whole process takes $3$ steps.
-For the case of $n = 3$, we can first move disks $1$ and $2$ to peg C. Note that we had previously shown that moving two disks from any peg to any peg is feasible. Now we just move disk $3$ to peg B and move disks $1$ and $2$ to peg B, using the three steps like before. So three disks can be transferred from any peg to any peg. The total prcoess for $n = 3$ takes $7$  steps. 
+For the case of $n = 3$, we can first move disks $1$ and $2$ to peg C. Note that we had previously shown that moving two disks from any peg to any peg is feasible. Now we just move disk $3$ to peg B and move disks $1$ and $2$ to peg B, using the three steps like before. So three disks can be transferred from any peg to any peg. The total process for $n = 3$ takes $7$  steps. 
 In general, the process takes $2^n - 1$ steps for $n$ disks.
 
 Continue learning about algorithms by reading about [divide and conquer algorithms](/notes/Computer Science/Algorithms/Divide and Conquer Algorithms/), [binary search](/notes/Computer Science/Algorithms/Binary Search/) or [insertion sort](/notes/Computer Science/Algorithms/Insertion Sort/). 

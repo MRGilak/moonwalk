@@ -20,7 +20,7 @@ $$
 	y = y_{\text{foot}} - y_{\text{hip}} = - l_1 \sin (q_1) - l_2 \sin (\pi - (q_1 + q_2)) = - l_1 \sin (q_1) - l_2 \sin (q_1 + q_2)
 $$
 
-The Jacobian matrix of a robot is the matrix that relates the angular or linear velocities of the joints (revolute or prismatic joints) to the angular and linear velocity of the end effecetor. Here, we consider the foot to be our EF and since we don't care about its orientation, we can write
+The Jacobian matrix of a robot is the matrix that relates the angular or linear velocities of the joints (revolute or prismatic joints) to the angular and linear velocity of the end effector. Here, we consider the foot to be our EF and since we don't care about its orientation, we can write
 
 $$
 	\dot{x} = l_1 \dot{q}_1 \sin (q_1) + l_2 (\dot{q}_1 + \dot{q}_2) \sin (q_1 + q_2)
