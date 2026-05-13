@@ -169,7 +169,8 @@
     "Alikhan",
     "Thevenin",
     "ddot",
-    "timesteps"
+    "timesteps",
+    "sympy"
   ],
   "ignorePaths": [
     "_site/**",
