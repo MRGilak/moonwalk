@@ -170,7 +170,9 @@
     "Thevenin",
     "ddot",
     "timesteps",
-    "sympy"
+    "sympy",
+    "metabaseapp",
+    "clickhouse"
   ],
   "ignorePaths": [
     "_site/**",
