@@ -12,6 +12,12 @@ In this repository, MATLAB and Python functions are provided for solving a gener
 
 You can define your optimal control problem symbolically using MATLAB symbolic or Python sympy and the functions will solve the problem. Several demos are provided alongside the main functions. 
 
+**_Note_**: Good news! You can now install the Python version using
+```bash
+pip install symocp
+```
+(I have not yet fully tested it myself due to the internet condition in Iran, but I'll get to it as fast as I can).
+
 ## Theoretical Background
 
 In optimal control theory a standard optimal control is defined as

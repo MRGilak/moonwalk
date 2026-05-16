@@ -172,7 +172,8 @@
     "timesteps",
     "sympy",
     "metabaseapp",
-    "clickhouse"
+    "clickhouse",
+    "symocp"
   ],
   "ignorePaths": [
     "_site/**",
