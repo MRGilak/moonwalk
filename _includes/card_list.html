@@ -1,23 +1,31 @@
 <ul class="horizontal-list">
   {% for item in include.collection %}
 
-    <li class="card" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+    <li class="card{% if item.image %} card--media{% endif %}" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
       <a href="{{ item.url }}">
-        <span class="header">
-          {{ item.title }}
+        <div class="card__content">
+          <span class="header">
+            {{ item.title }}
 
-          {% if item.highlight %}
-            <mark>{{ item.highlight }}</mark>
+            {% if item.highlight %}
+              <mark>{{ item.highlight }}</mark>
+            {% endif %}
+
+          </span>
+
+          <hr />
+
+          {% if item.desc != false %}
+          <p class="body">
+            {{ item.desc }}
+          </p>
           {% endif %}
+        </div>
 
-        </span>
-
-        <hr />
-
-        {% if item.desc != false %}
-        <p class="body">
-          {{ item.desc }}
-        </p>
+        {% if item.image %}
+          <div class="card__media">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.title }}" loading="lazy" />
+          </div>
         {% endif %}
       </a>
     </li>

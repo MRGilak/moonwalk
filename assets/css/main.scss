@@ -20,14 +20,22 @@
   transform: translateZ(0);
 }
 
-/* Desktop light */
-html[data-theme="light"] #parallax-bg {
+/* Home page background */
+html[data-theme="light"] body[data-page-background="home"] #parallax-bg {
   background-image: url('{{ "/assets/images/bg-desktop-light.jpg" | relative_url }}');
 }
 
-/* Desktop dark */
-html[data-theme="dark"] #parallax-bg {
+html[data-theme="dark"] body[data-page-background="home"] #parallax-bg {
   background-image: url('{{ "/assets/images/bg-desktop-dark.jpg" | relative_url }}');
+}
+
+/* Notes and other non-home pages */
+html[data-theme="light"] body[data-page-background="notes"] #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-notes-light.jpg" | relative_url }}');
+}
+
+html[data-theme="dark"] body[data-page-background="notes"] #parallax-bg {
+  background-image: url('{{ "/assets/images/bg-desktop-notes-dark.jpg" | relative_url }}');
 }
 
 /* Ensure content sits above */
@@ -39,7 +47,7 @@ html[data-theme="dark"] #parallax-bg {
 
 /* Mobile light */
 @media (max-width: 768px) {
-  html[data-theme="light"] #parallax-bg {
+  html[data-theme="light"] body[data-page-background="home"] #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-light.jpg" | relative_url }}');
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,11 +57,29 @@ html[data-theme="dark"] #parallax-bg {
 
 /* Mobile dark */
 @media (max-width: 768px) {
-  html[data-theme="dark"] #parallax-bg {
+  html[data-theme="dark"] body[data-page-background="home"] #parallax-bg {
     background-image: url('{{ "/assets/images/bg-mobile-dark.jpg" | relative_url }}');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center; 
+  }
+}
+
+@media (max-width: 768px) {
+  html[data-theme="light"] body[data-page-background="notes"] #parallax-bg {
+    background-image: url('{{ "/assets/images/bg-mobile-notes-light.jpg" | relative_url }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+@media (max-width: 768px) {
+  html[data-theme="dark"] body[data-page-background="notes"] #parallax-bg {
+    background-image: url('{{ "/assets/images/bg-mobile-notes-dark.jpg" | relative_url }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
   }
 }
 
@@ -174,14 +200,83 @@ html[data-theme="dark"] #parallax-bg {
 
     ul {
       gap: 0.6rem;
-      flex-wrap: nowrap;          /* force single line */
+      flex-wrap: wrap;            /* allow items to wrap to multiple lines on small screens */
       justify-content: center;
-      white-space: nowrap;        /* prevent breaking link text */
+      white-space: normal;        /* allow wrapping so items can flow to next line */
+      max-width: calc(100% - 1.5rem); /* prevent overflow at screen edges */
     }
 
     ul li a {
       font-size: 0.9rem;          /* slightly smaller to fit */
     }
+  }
+}
+
+/* Mobile: prevent typing animation from shifting layout by reserving space */
+@media (max-width: 768px) {
+  header h1 {
+    min-height: 3.2rem; /* reserve ~2 lines of heading space on mobile */
+    line-height: 1.2;
+  }
+
+  /* Ensure typing cursor remains inline and doesn't change flow */
+  .typing-text {
+    display: inline;
+    word-break: break-word; /* allow long phrases to wrap within available width */
+  }
+
+  .typing-cursor {
+    vertical-align: text-bottom;
+  }
+}
+
+/* Mobile-specific vertical navbar on left side */
+@media (max-width: 768px) {
+  .minimal-navbar {
+    /* Move navbar to left vertical bar for mobile */
+    left: 0.6rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    padding: 0.4rem 0.45rem !important;
+    border-radius: 10px !important;
+    background-color: rgba(255,255,255,0.18) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: auto;
+
+    ul {
+      display: flex;
+      flex-direction: column; /* stack items vertically */
+      gap: 0.45rem;
+      margin: 0;
+      padding: 0.25rem 0;
+      align-items: flex-start;
+      white-space: normal;
+    }
+
+    ul li a {
+      display: block;
+      padding: 0.12rem 0.28rem;
+      font-size: 0.95rem;
+      writing-mode: vertical-rl; /* render link text vertically */
+      text-orientation: mixed;
+      transform: rotate(180deg); /* read top-to-bottom */
+      line-height: 1;
+      text-align: center;
+      max-width: 2.6rem; /* narrow bar */
+    }
+  }
+
+  /* Dark mode tweak for left navbar */
+  html[data-theme="dark"] .minimal-navbar {
+    background-color: rgba(0,0,0,0.28) !important;
+  }
+
+  /* header and typing elements remain static so typing stays at top horizontally */
+  header {
+    position: static;
   }
 }
 
@@ -553,32 +648,7 @@ footer .horizontal-list {
 }
 
 /* Card highlight badges */
-.card {
-  .highlight {
-    display: inline-block;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-}
 
-/* Bounce animation for icons */
-@keyframes icon-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-8px);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-  75% {
-    transform: translateY(-6px);
-  }
-}
 
 /* Pulse animation for special elements */
 @keyframes icon-pulse {
@@ -602,10 +672,6 @@ footer .horizontal-list {
     }
   }
 }
-
-/* ========================================
-   ✨ FINAL POLISH & ENHANCEMENTS
-   ======================================== */
 
 /* Smooth scroll behavior */
 html {

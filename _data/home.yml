@@ -6,37 +6,49 @@ navbar_entries:
     url: blog
 
 project_entries:
+  - title: Quadrupedal Robotics Contact and Collision Detection
+    url: /projects/contact-detection
+    desc: Contact and collision detection for quadrupedal locomotion gait planning.
+    image: /assets/Projects/project-thumbnails/contact-detection.gif
+    image_alt: Contact Detection
+
   - title: Quadrupedal Robotics
     url: /projects/robot-quadrupedal
     desc: Notes and development updates on the design and control of a quadrupedal robotic platform.
-
-  - title: Quadrupedal Robotics Contact Detection
-    url: /projects/contact-detection
-    desc: Contact detection for quadrupedal locomotion gait planning.
-
+  
   - title: Inverse Optimal Control
     url: /projects/inverse-optimal-control
     desc: Notes on our conference paper on Inverse Optimal Control.
     highlight: Published
+
+  - title: Quadrupedal Locomotion
+    url: /projects/quadrupedal-locomotion
+    desc: Model Predictive Control for quadrupedal locomotion.
+    image: /assets/Projects/project-thumbnails/quadrupedal-locomotion.gif
+    image_alt: Model Predictive Control for quadrupedal locomotion
 
 old_project_entries:
   - title: Model Predictive Control
     url: /projects/model-predictive-control
     desc: MATLAB codes for a DMC and an EPFC controller
 
-  - title: Optimal Control
-    url: /projects/optimal-control
-    desc: MATLAB codes for solving the general nonlinear optimal control problem
-
   - title: Active Disturbance Rejection Control
     url: /projects/active-disturbance-rejection-control
     desc: Simulink, MATLAB, and Python implementation of Active Disturbance Rejection Control (ADRC)
     highlight: NEW
+    image: /assets/Projects/project-thumbnails/adrc-app.png
+    image_alt: ADRC App
 
   - title: Manipulator Simulation
     url: /projects/manipulator-simulation
     desc: An object-oriented MATLAB implementation of manipulator kinematics, dynamics and control 
     highlight: NEW
+    image: /assets/Projects/project-thumbnails/manipulator-circle.gif
+    image_alt: Manipulator Simulation
+
+  - title: Optimal Control
+    url: /projects/optimal-control
+    desc: MATLAB codes for solving the general nonlinear optimal control problem
 
 footer_entries:
   - title: Linkedin

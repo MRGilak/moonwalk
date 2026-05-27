@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
   {%- include head.html -%}
-  <body>
-    <!-- Page content wrapper (no parallax here) -->
-    <main class="page-content" aria-label="Content">
+  <body{% if page.layout == "home" %} data-page-background="home"{% else %} data-page-background="notes"{% endif %}>
+    {% if page.layout != "home" %}
+      <div id="parallax-bg" aria-hidden="true"></div>
+    {% endif %}
+
+    <main{% if site.theme_config.smooth_scroll %} id="butter"{% endif %} class="page-content{% if page.layout != "home" %} parallax-content{% endif %}" aria-label="Content">
       <div class="w">
         {{ content }}
         {% if site.theme_config.appearance_toggle %}
@@ -14,6 +17,11 @@
         </div>
       </div>
     </main>
+
+    {% if site.theme_config.smooth_scroll %}
+      <!-- butter-style smooth scroll script -->
+      <script src="{{ '/assets/js/butter.js' | relative_url }}"></script>
+    {% endif %}
 
     <!-- Only load parallax script on home page -->
     {% if page.layout == "home" %}

@@ -7,7 +7,7 @@ excerpt: "#computer-science"
 
 #computer-science 
 
-Git is a _version control_ program. Its intended use is to keep a track of the history of a project. Although it is often associated with [github](www.github.com) or [gitlab](www.gitlab.com), it can actually be used offline as well to manage any project. Note that the project doesn't even have to be a programming project per se; it can be used for any project in general.
+Git is a _version control_ program. Its intended use is to keep a track of the history of a project. Although it is often associated with [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com), it can actually be used offline as well to manage any project. Note that the project doesn't even have to be a programming project per se; it can be used for any project in general.
 In this note, I am going to explain the basics of git and how to use it.
 # Set Up Git
 As I said before, git is used to keep track of changes in a project. All of this information is stored in a `.git` folder in the project's path (The dot is used because folders starting with `.` are hidden on Linux OS).
@@ -64,17 +64,17 @@ git log
 ```
 
 # Git Remote
-As I stated at the beginning, git is usually used in pair with [github](www.github.com) or [gitlab](www.gitlab.com). These are websites that not only store the changes, so you can work on multiple devices, but also enable multiple people to work together on a single project. Basically, one project is defined and everyone works on the same project and can make changes and commit.
+As I stated at the beginning, git is usually used in pair with [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com). These are websites that not only store the changes, so you can work on multiple devices, but also enable multiple people to work together on a single project. Basically, one project is defined and everyone works on the same project and can make changes and commit.
 _Side Note_: Funny story, git is actually developed by _Linus Torvalds_, the guy who created Linux. Apparently, as the project grew bigger and bigger, he got frustrated and decided to dedicate some time to create git to organize his project :)
 Git remote refers to using a remote server for the purpose of storing or sharing the project. The fundamental commands related to this topic are `remote`, `push`, `pull` and `clone`.
-As its name suggests, _cloning_ refers to creating an exact copy of a _git repository_ (often called a _repo_ for short) for yourself. You might find a project on [github](www.github.com) that you would like to have. Well, you could just download the `.zip` file and unzip it and use the files, but an easier and cleaner approach it to just clone it for yourself with
+As its name suggests, _cloning_ refers to creating an exact copy of a _git repository_ (often called a _repo_ for short) for yourself. You might find a project on [GitHub](https://www.github.com) that you would like to have. Well, you could just download the `.zip` file and unzip it and use the files, but an easier and cleaner approach it to just clone it for yourself with
 
 ```bash
 git clone remote_address foldername
 ```
 
-where `remote_address` refers to the address of the project, for example `www.github.com/...` and `foldername` is the destination folder.
-Now let's say you have created a github page for your own project. You might want to work on that project with several devices or with other people. How do you sync your local device with the version on [github](www.github.com)? That's where _pulling_ and _pushing_ come in. To _pull_ means to get the latest version from the remote address and update your local project.
+where `remote_address` refers to the address of the project, for example `https://github.com/...` and `foldername` is the destination folder.
+Now let's say you have created a github page for your own project. You might want to work on that project with several devices or with other people. How do you sync your local device with the version on [GitHub](https://www.github.com)? That's where _pulling_ and _pushing_ come in. To _pull_ means to get the latest version from the remote address and update your local project.
 
 ```bash
 git pull
@@ -88,7 +88,7 @@ You can see the list of the remote copies of a project with
 git remote -v
 ```
 
-If you want to add [github](www.github.com) as a remote for your local project, you can use
+If you want to add [GitHub](https://www.github.com) as a remote for your local project, you can use
 
 ```bash
 git remote add origin remote_address

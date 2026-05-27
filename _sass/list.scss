@@ -23,7 +23,7 @@ ul.horizontal-list {
   background: var(--bg-secondary);
   background-clip: padding-box;
   width: 11em;
-  height: auto;
+  min-height: 11em;
   text-align: center;
   font-size: 1em;
   align-items: center;
@@ -99,6 +99,21 @@ ul.horizontal-list {
     transform: translateY(-8px) scale(0.98);
   }
 
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    height: 100%;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+  }
+
   .header {
     color: var(--links);
     font-weight: 600;
@@ -156,6 +171,51 @@ ul.horizontal-list {
     );
     height: 2px;
   }
+
+  &.card--media {
+    width: 24em;
+    text-align: left;
+
+    a {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 9em;
+      align-items: stretch;
+      gap: 0.85em;
+    }
+
+    .card__content {
+      min-width: 0;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card__media {
+      border-radius: 0.65em;
+      overflow: hidden;
+      align-self: stretch;
+      background: var(--bg);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+    }
+
+    &:hover .card__media {
+      transform: translateY(-1px) scale(1.015);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.12);
+
+      img {
+        transform: scale(1.04);
+      }
+    }
+  }
 }
 
 /* Gradient border rotation animation */
@@ -182,6 +242,20 @@ html[data-theme="dark"] .card:hover {
     margin-left: 1em;
     a, .header {
       font-size: 1em;
+    }
+  }
+
+  ul.horizontal-list li.card.card--media {
+    width: 100%;
+
+    a {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card__media {
+      width: 100%;
+      height: 10em;
     }
   }
 }
