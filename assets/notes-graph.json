@@ -1,0 +1,917 @@
+{
+  "nodes": [
+    {
+      "id": "/notes/Computer Science/Algorithms/Algorithms/",
+      "title": "Algorithms",
+      "path": "_notes\\Computer Science\\Algorithms\\Algorithms.md"
+    },
+    {
+      "id": "/notes/Computer Science/Algorithms/Asymptotic Notation/",
+      "title": "Asymptotic Notation",
+      "path": "_notes\\Computer Science\\Algorithms\\Asymptotic Notation.md"
+    },
+    {
+      "id": "/notes/Computer Science/Algorithms/Binary Search/",
+      "title": "Binary Search",
+      "path": "_notes\\Computer Science\\Algorithms\\Binary Search.md"
+    },
+    {
+      "id": "/notes/Computer Science/Algorithms/Divide and Conquer Algorithms/",
+      "title": "Divide and Conquer Algorithms",
+      "path": "_notes\\Computer Science\\Algorithms\\Divide and Conquer Algorithms.md"
+    },
+    {
+      "id": "/notes/Computer Science/Algorithms/Insertion Sort/",
+      "title": "Insertion Sort",
+      "path": "_notes\\Computer Science\\Algorithms\\Insertion Sort.md"
+    },
+    {
+      "id": "/notes/Computer Science/Algorithms/Recursive Algorithms/",
+      "title": "Recursive Algorithms",
+      "path": "_notes\\Computer Science\\Algorithms\\Recursive Algorithms.md"
+    },
+    {
+      "id": "/notes/Computer Science/Algorithms/Selection Sort/",
+      "title": "Selection Sort",
+      "path": "_notes\\Computer Science\\Algorithms\\Selection Sort.md"
+    },
+    {
+      "id": "/notes/Computer Science/Cryptography/Ciphers/",
+      "title": "Ciphers",
+      "path": "_notes\\Computer Science\\Cryptography\\Ciphers.md"
+    },
+    {
+      "id": "/notes/Computer Science/Cryptography/Cryptography/",
+      "title": "Cryptography",
+      "path": "_notes\\Computer Science\\Cryptography\\Cryptography.md"
+    },
+    {
+      "id": "/notes/Computer Science/Cryptography/Introduction to Cryptography/",
+      "title": "Introduction to Cryptography",
+      "path": "_notes\\Computer Science\\Cryptography\\Introduction to Cryptography.md"
+    },
+    {
+      "id": "/notes/Computer Science/Cryptography/Modern Cryptography/",
+      "title": "Modern Cryptography",
+      "path": "_notes\\Computer Science\\Cryptography\\Modern Cryptography.md"
+    },
+    {
+      "id": "/notes/Computer Science/Cryptography/Modular arithmetic/",
+      "title": "Modular arithmetic",
+      "path": "_notes\\Computer Science\\Cryptography\\Modular arithmetic.md"
+    },
+    {
+      "id": "/notes/Computer Science/Cryptography/Primality Test/",
+      "title": "Primality Test",
+      "path": "_notes\\Computer Science\\Cryptography\\Primality Test.md"
+    },
+    {
+      "id": "/notes/Computer Science/Git/",
+      "title": "Git",
+      "path": "_notes\\Computer Science\\Git.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Dynamic Programming/",
+      "title": "Dynamic Programming",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Dynamic Programming.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Finite Markov Decision Processes/",
+      "title": "Finite Markov Decision Processes",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Finite Markov Decision Processes.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Introduction to Reinforcement Learning/",
+      "title": "Introduction to Reinforcement Learning",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Introduction to Reinforcement Learning.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/",
+      "title": "Monte Carlo Methods",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Monte Carlo Methods.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Multi-arm Bandits/",
+      "title": "Multi-arm Bandits",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Multi-arm Bandits.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Policy Gradients/",
+      "title": "Policy Gradients",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Policy Gradients.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/",
+      "title": "Reinforcement Learning",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Reinforcement Learning.md"
+    },
+    {
+      "id": "/notes/Computer Science/Reinforcement Learning/Temporal-Difference Learning/",
+      "title": "Temporal-Difference Learning",
+      "path": "_notes\\Computer Science\\Reinforcement Learning\\Temporal-Difference Learning.md"
+    },
+    {
+      "id": "/notes/Computer Science/Steganography/",
+      "title": "Steganography",
+      "path": "_notes\\Computer Science\\Steganography.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/Adaptive Control/",
+      "title": "Adaptive Control",
+      "path": "_notes\\Control\\Adaptive Control\\Adaptive Control.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/Course/Intro to Adaptive Control/",
+      "title": "Intro to Adaptive Control",
+      "path": "_notes\\Control\\Adaptive Control\\Course\\Intro to Adaptive Control.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/MFAC/A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems/",
+      "title": "A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems",
+      "path": "_notes\\Control\\Adaptive Control\\MFAC\\A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/MFAC/Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems/",
+      "title": "Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems",
+      "path": "_notes\\Control\\Adaptive Control\\MFAC\\Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/MFAC/From model-based control to data-driven control, Survey, classification and perspective/",
+      "title": "From model-based control to data-driven control, Survey, classification and perspective",
+      "path": "_notes\\Control\\Adaptive Control\\MFAC\\From model-based control to data-driven control, Survey, classification and perspective.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/MFAC/MFAC/",
+      "title": "MFAC",
+      "path": "_notes\\Control\\Adaptive Control\\MFAC\\MFAC.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/MFAC/Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks/",
+      "title": "Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks",
+      "path": "_notes\\Control\\Adaptive Control\\MFAC\\Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks.md"
+    },
+    {
+      "id": "/notes/Control/Adaptive Control/MRAC/MRAC/",
+      "title": "MRAC",
+      "path": "_notes\\Control\\Adaptive Control\\MRAC\\MRAC.md"
+    },
+    {
+      "id": "/notes/Control/Data-Driven Control/Data-driven Control/",
+      "title": "Data-driven Control",
+      "path": "_notes\\Control\\Data-Driven Control\\Data-driven Control.md"
+    },
+    {
+      "id": "/notes/Control/Digital Control Systems/Digital Control Systems/",
+      "title": "Digital Control Systems",
+      "path": "_notes\\Control\\Digital Control Systems\\Digital Control Systems.md"
+    },
+    {
+      "id": "/notes/Control/Digital Control Systems/Discrete Systems Analysis/",
+      "title": "Discrete Systems Analysis",
+      "path": "_notes\\Control\\Digital Control Systems\\Discrete Systems Analysis.md"
+    },
+    {
+      "id": "/notes/Control/Digital Control Systems/Introduction to Digital Control/",
+      "title": "Introduction to Digital Control",
+      "path": "_notes\\Control\\Digital Control Systems\\Introduction to Digital Control.md"
+    },
+    {
+      "id": "/notes/Control/General Research in Control/Active Disturbance Rejection Control/",
+      "title": "Active Disturbance Rejection Control",
+      "path": "_notes\\Control\\General Research in Control\\Active Disturbance Rejection Control.md"
+    },
+    {
+      "id": "/notes/Control/General Research in Control/Lambert W function/",
+      "title": "Lambert W function",
+      "path": "_notes\\Control\\General Research in Control\\Lambert W function.md"
+    },
+    {
+      "id": "/notes/Control/General Research in Control/Linear Time-Delayed Systems/",
+      "title": "Linear Time-Delayed Systems",
+      "path": "_notes\\Control\\General Research in Control\\Linear Time-Delayed Systems.md"
+    },
+    {
+      "id": "/notes/Control/Linear Control Systems/First and Second-order Systems/",
+      "title": "First and Second-order Systems",
+      "path": "_notes\\Control\\Linear Control Systems\\First and Second-order Systems.md"
+    },
+    {
+      "id": "/notes/Control/Linear Control Systems/Frequency Analysis/",
+      "title": "Frequency Analysis",
+      "path": "_notes\\Control\\Linear Control Systems\\Frequency Analysis.md"
+    },
+    {
+      "id": "/notes/Control/Linear Control Systems/Linear Control Systems/",
+      "title": "Linear Control Systems",
+      "path": "_notes\\Control\\Linear Control Systems\\Linear Control Systems.md"
+    },
+    {
+      "id": "/notes/Control/Linear Control Systems/Polar Diagrams/",
+      "title": "Polar Diagrams",
+      "path": "_notes\\Control\\Linear Control Systems\\Polar Diagrams.md"
+    },
+    {
+      "id": "/notes/Control/Linear Control Systems/Root Locus/",
+      "title": "Root Locus",
+      "path": "_notes\\Control\\Linear Control Systems\\Root Locus.md"
+    },
+    {
+      "id": "/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/",
+      "title": "Steady-state Behavior of Linear Systems",
+      "path": "_notes\\Control\\Linear Control Systems\\Steady-state Behavior of Linear Systems.md"
+    },
+    {
+      "id": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Basics of Differential Geometry/",
+      "title": "Basics of Differential Geometry",
+      "path": "_notes\\Control\\Nonlinear Control\\Geometric Approach to Nonlinear Control\\Basics of Differential Geometry.md"
+    },
+    {
+      "id": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Change of Coordinates/",
+      "title": "Change of Coordinates",
+      "path": "_notes\\Control\\Nonlinear Control\\Geometric Approach to Nonlinear Control\\Change of Coordinates.md"
+    },
+    {
+      "id": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Geometric Approach to Nonlinear Control/",
+      "title": "Geometric Approach to Nonlinear Control",
+      "path": "_notes\\Control\\Nonlinear Control\\Geometric Approach to Nonlinear Control\\Geometric Approach to Nonlinear Control.md"
+    },
+    {
+      "id": "/notes/Control/Nonlinear Control/Nonlinear Control/",
+      "title": "Nonlinear Control",
+      "path": "_notes\\Control\\Nonlinear Control\\Nonlinear Control.md"
+    },
+    {
+      "id": "/notes/Electronics/Basics of Electronics/",
+      "title": "Basics of Electronics",
+      "path": "_notes\\Electronics\\Basics of Electronics.md"
+    },
+    {
+      "id": "/notes/Electronics/Biased PN Junction/",
+      "title": "Biased PN Junction",
+      "path": "_notes\\Electronics\\Biased PN Junction.md"
+    },
+    {
+      "id": "/notes/Electronics/Biasing the Transistor/",
+      "title": "Biasing the Transistor",
+      "path": "_notes\\Electronics\\Biasing the Transistor.md"
+    },
+    {
+      "id": "/notes/Electronics/Bipolar Transistors/",
+      "title": "Bipolar Transistors",
+      "path": "_notes\\Electronics\\Bipolar Transistors.md"
+    },
+    {
+      "id": "/notes/Electronics/Characteristics of a Transistor/",
+      "title": "Characteristics of a Transistor",
+      "path": "_notes\\Electronics\\Characteristics of a Transistor.md"
+    },
+    {
+      "id": "/notes/Electronics/Common Base Structure/",
+      "title": "Common Base Structure",
+      "path": "_notes\\Electronics\\Common Base Structure.md"
+    },
+    {
+      "id": "/notes/Electronics/Common Collector Structure/",
+      "title": "Common Collector Structure",
+      "path": "_notes\\Electronics\\Common Collector Structure.md"
+    },
+    {
+      "id": "/notes/Electronics/Electronics/",
+      "title": "Electronics",
+      "path": "_notes\\Electronics\\Electronics.md"
+    },
+    {
+      "id": "/notes/Electronics/Fixing the Base Current/",
+      "title": "Fixing the Base Current",
+      "path": "_notes\\Electronics\\Fixing the Base Current.md"
+    },
+    {
+      "id": "/notes/Electronics/Fixing the Collector Current/",
+      "title": "Fixing the Collector Current",
+      "path": "_notes\\Electronics\\Fixing the Collector Current.md"
+    },
+    {
+      "id": "/notes/Electronics/Four-Element Model of a Transistor/",
+      "title": "Four-Element Model of a Transistor",
+      "path": "_notes\\Electronics\\Four-Element Model of a Transistor.md"
+    },
+    {
+      "id": "/notes/Electronics/Multi-Stage AC-Coupled Amplifiers/",
+      "title": "Multi-Stage AC-Coupled Amplifiers",
+      "path": "_notes\\Electronics\\Multi-Stage AC-Coupled Amplifiers.md"
+    },
+    {
+      "id": "/notes/Electronics/PN Junction/",
+      "title": "PN Junction",
+      "path": "_notes\\Electronics\\PN Junction.md"
+    },
+    {
+      "id": "/notes/Electronics/Semi-Conductors/",
+      "title": "Semi-Conductors",
+      "path": "_notes\\Electronics\\Semi-Conductors.md"
+    },
+    {
+      "id": "/notes/Home/",
+      "title": "Home",
+      "path": "_notes\\Home.md"
+    },
+    {
+      "id": "/notes/Robotics/Quadrupedal Robot/Contact Detection/Contact Detection/",
+      "title": "Contact Detection",
+      "path": "_notes\\Robotics\\Quadrupedal Robot\\Contact Detection\\Contact Detection.md"
+    },
+    {
+      "id": "/notes/Robotics/Quadrupedal Robot/Quadrupedal Robot Project/",
+      "title": "Quadrupedal Robot Project",
+      "path": "_notes\\Robotics\\Quadrupedal Robot\\Quadrupedal Robot Project.md"
+    },
+    {
+      "id": "/notes/Robotics/Robotics/",
+      "title": "Robotics",
+      "path": "_notes\\Robotics\\Robotics.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/2DoF Robot Control Literature/",
+      "title": "2DoF Robot Control Literature",
+      "path": "_notes\\Robotics\\Single Leg Project\\2DoF Robot Control Literature.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Impedance Control in Robotics/",
+      "title": "Impedance Control in Robotics",
+      "path": "_notes\\Robotics\\Single Leg Project\\Impedance Control in Robotics.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Kinematics/",
+      "title": "Kinematics",
+      "path": "_notes\\Robotics\\Single Leg Project\\Kinematics.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Linear Complementarity Problem/",
+      "title": "Linear Complementarity Problem",
+      "path": "_notes\\Robotics\\Single Leg Project\\Linear Complementarity Problem.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/",
+      "title": "Mathematical Modeling of a Single Leg Robot",
+      "path": "_notes\\Robotics\\Single Leg Project\\Mathematical Modeling of a Single Leg Robot.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Robot Leg Equations/",
+      "title": "Robot Leg Equations",
+      "path": "_notes\\Robotics\\Single Leg Project\\Robot Leg Equations.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Single Leg Control/",
+      "title": "Single Leg Control",
+      "path": "_notes\\Robotics\\Single Leg Project\\Single Leg Control.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Single Leg Dynamics/",
+      "title": "Single Leg Dynamics",
+      "path": "_notes\\Robotics\\Single Leg Project\\Single Leg Dynamics.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Single Leg Motors/",
+      "title": "Single Leg Motors",
+      "path": "_notes\\Robotics\\Single Leg Project\\Single Leg Motors.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Single Leg Project/",
+      "title": "Single Leg Project",
+      "path": "_notes\\Robotics\\Single Leg Project\\Single Leg Project.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Single Leg Robot Controller Real-world Implementation/",
+      "title": "Single Leg Robot Controller Real-world Implementation",
+      "path": "_notes\\Robotics\\Single Leg Project\\Single Leg Robot Controller Real-world Implementation.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Single Leg Robot Simulations/",
+      "title": "Single Leg Robot Simulations",
+      "path": "_notes\\Robotics\\Single Leg Project\\Single Leg Robot Simulations.md"
+    },
+    {
+      "id": "/notes/Robotics/Single Leg Project/Spring-Loaded Inverted Pendulum (SLIP)/",
+      "title": "Spring-Loaded Inverted Pendulum (SLIP)",
+      "path": "_notes\\Robotics\\Single Leg Project\\Spring-Loaded Inverted Pendulum (SLIP).md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "/notes/Computer Science/Algorithms/Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Asymptotic Notation/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Binary Search/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Insertion Sort/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Recursive Algorithms/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Selection Sort/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Asymptotic Notation/",
+      "target": "/notes/Computer Science/Algorithms/Selection Sort/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Binary Search/",
+      "target": "/notes/Computer Science/Algorithms/Asymptotic Notation/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Binary Search/",
+      "target": "/notes/Computer Science/Algorithms/Recursive Algorithms/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Binary Search/",
+      "target": "/notes/Computer Science/Algorithms/Selection Sort/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Insertion Sort/",
+      "target": "/notes/Computer Science/Algorithms/Recursive Algorithms/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Recursive Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Binary Search/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Recursive Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Divide and Conquer Algorithms/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Recursive Algorithms/",
+      "target": "/notes/Computer Science/Algorithms/Insertion Sort/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Selection Sort/",
+      "target": "/notes/Computer Science/Algorithms/Insertion Sort/"
+    },
+    {
+      "source": "/notes/Computer Science/Algorithms/Selection Sort/",
+      "target": "/notes/Computer Science/Algorithms/Recursive Algorithms/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Ciphers/",
+      "target": "/notes/Computer Science/Cryptography/Introduction to Cryptography/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Ciphers/",
+      "target": "/notes/Computer Science/Cryptography/Modern Cryptography/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Introduction to Cryptography/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Modular arithmetic/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Primality Test/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Introduction to Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Ciphers/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Modern Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Introduction to Cryptography/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Modern Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Modular arithmetic/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Modern Cryptography/",
+      "target": "/notes/Computer Science/Cryptography/Primality Test/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Primality Test/",
+      "target": "/notes/Computer Science/Cryptography/Ciphers/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Primality Test/",
+      "target": "/notes/Computer Science/Cryptography/Introduction to Cryptography/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Primality Test/",
+      "target": "/notes/Computer Science/Cryptography/Modern Cryptography/"
+    },
+    {
+      "source": "/notes/Computer Science/Cryptography/Primality Test/",
+      "target": "/notes/Computer Science/Cryptography/Modular arithmetic/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Dynamic Programming/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Finite Markov Decision Processes/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Dynamic Programming/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Introduction to Reinforcement Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Multi-arm Bandits/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Dynamic Programming/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Multi-arm Bandits/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Finite Markov Decision Processes/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Multi-arm Bandits/",
+      "target": "/notes/Control/Adaptive Control/Adaptive Control/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Dynamic Programming/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Finite Markov Decision Processes/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Introduction to Reinforcement Learning/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Multi-arm Bandits/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Temporal-Difference Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Dynamic Programming/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Temporal-Difference Learning/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Monte Carlo Methods/"
+    },
+    {
+      "source": "/notes/Computer Science/Reinforcement Learning/Temporal-Difference Learning/",
+      "target": "/notes/Control/Adaptive Control/Adaptive Control/"
+    },
+    {
+      "source": "/notes/Computer Science/Steganography/",
+      "target": "/notes/Computer Science/Cryptography/Cryptography/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/Adaptive Control/",
+      "target": "/notes/Control/Adaptive Control/MFAC/MFAC/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/Adaptive Control/",
+      "target": "/notes/Control/Adaptive Control/MRAC/MRAC/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/Course/Intro to Adaptive Control/",
+      "target": "/notes/Control/Adaptive Control/Adaptive Control/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems/",
+      "target": "/notes/Control/Adaptive Control/MFAC/MFAC/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems/",
+      "target": "/notes/Control/Adaptive Control/MFAC/MFAC/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/From model-based control to data-driven control, Survey, classification and perspective/",
+      "target": "/notes/Control/Adaptive Control/MFAC/From model-based control to data-driven control, Survey, classification and perspective/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/From model-based control to data-driven control, Survey, classification and perspective/",
+      "target": "/notes/Control/Data-Driven Control/Data-driven Control/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/MFAC/",
+      "target": "/notes/Control/Adaptive Control/Adaptive Control/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/MFAC/",
+      "target": "/notes/Control/Data-Driven Control/Data-driven Control/"
+    },
+    {
+      "source": "/notes/Control/Adaptive Control/MFAC/Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks/",
+      "target": "/notes/Control/Adaptive Control/MFAC/MFAC/"
+    },
+    {
+      "source": "/notes/Control/Digital Control Systems/Digital Control Systems/",
+      "target": "/notes/Control/Digital Control Systems/Introduction to Digital Control/"
+    },
+    {
+      "source": "/notes/Control/Digital Control Systems/Introduction to Digital Control/",
+      "target": "/notes/Control/Digital Control Systems/Discrete Systems Analysis/"
+    },
+    {
+      "source": "/notes/Control/General Research in Control/Linear Time-Delayed Systems/",
+      "target": "/notes/Control/General Research in Control/Lambert W function/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Linear Control Systems/",
+      "target": "/notes/Control/Digital Control Systems/Digital Control Systems/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Linear Control Systems/",
+      "target": "/notes/Control/Linear Control Systems/First and Second-order Systems/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Linear Control Systems/",
+      "target": "/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Root Locus/",
+      "target": "/notes/Control/Linear Control Systems/Frequency Analysis/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Root Locus/",
+      "target": "/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/",
+      "target": "/notes/Control/Linear Control Systems/First and Second-order Systems/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/",
+      "target": "/notes/Control/Linear Control Systems/Linear Control Systems/"
+    },
+    {
+      "source": "/notes/Control/Linear Control Systems/Steady-state Behavior of Linear Systems/",
+      "target": "/notes/Control/Linear Control Systems/Root Locus/"
+    },
+    {
+      "source": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Basics of Differential Geometry/",
+      "target": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Change of Coordinates/"
+    },
+    {
+      "source": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Geometric Approach to Nonlinear Control/",
+      "target": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Basics of Differential Geometry/"
+    },
+    {
+      "source": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Geometric Approach to Nonlinear Control/",
+      "target": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Change of Coordinates/"
+    },
+    {
+      "source": "/notes/Control/Nonlinear Control/Nonlinear Control/",
+      "target": "/notes/Control/Nonlinear Control/Geometric Approach to Nonlinear Control/Geometric Approach to Nonlinear Control/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Biased PN Junction/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Biasing the Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Bipolar Transistors/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Characteristics of a Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Common Base Structure/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Common Collector Structure/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Fixing the Base Current/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Fixing the Collector Current/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Four-Element Model of a Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Multi-Stage AC-Coupled Amplifiers/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/PN Junction/"
+    },
+    {
+      "source": "/notes/Electronics/Basics of Electronics/",
+      "target": "/notes/Electronics/Semi-Conductors/"
+    },
+    {
+      "source": "/notes/Electronics/Biased PN Junction/",
+      "target": "/notes/Electronics/Bipolar Transistors/"
+    },
+    {
+      "source": "/notes/Electronics/Biasing the Transistor/",
+      "target": "/notes/Electronics/Biased PN Junction/"
+    },
+    {
+      "source": "/notes/Electronics/Biasing the Transistor/",
+      "target": "/notes/Electronics/Fixing the Base Current/"
+    },
+    {
+      "source": "/notes/Electronics/Bipolar Transistors/",
+      "target": "/notes/Electronics/Biased PN Junction/"
+    },
+    {
+      "source": "/notes/Electronics/Bipolar Transistors/",
+      "target": "/notes/Electronics/Characteristics of a Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Common Base Structure/",
+      "target": "/notes/Electronics/Multi-Stage AC-Coupled Amplifiers/"
+    },
+    {
+      "source": "/notes/Electronics/Common Collector Structure/",
+      "target": "/notes/Electronics/Common Base Structure/"
+    },
+    {
+      "source": "/notes/Electronics/Common Collector Structure/",
+      "target": "/notes/Electronics/Fixing the Base Current/"
+    },
+    {
+      "source": "/notes/Electronics/Common Collector Structure/",
+      "target": "/notes/Electronics/Fixing the Collector Current/"
+    },
+    {
+      "source": "/notes/Electronics/Electronics/",
+      "target": "/notes/Electronics/Basics of Electronics/"
+    },
+    {
+      "source": "/notes/Electronics/Fixing the Base Current/",
+      "target": "/notes/Electronics/Fixing the Collector Current/"
+    },
+    {
+      "source": "/notes/Electronics/Fixing the Base Current/",
+      "target": "/notes/Electronics/Four-Element Model of a Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Fixing the Collector Current/",
+      "target": "/notes/Electronics/Biasing the Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Fixing the Collector Current/",
+      "target": "/notes/Electronics/Common Collector Structure/"
+    },
+    {
+      "source": "/notes/Electronics/Fixing the Collector Current/",
+      "target": "/notes/Electronics/Fixing the Base Current/"
+    },
+    {
+      "source": "/notes/Electronics/Four-Element Model of a Transistor/",
+      "target": "/notes/Electronics/Biasing the Transistor/"
+    },
+    {
+      "source": "/notes/Electronics/Multi-Stage AC-Coupled Amplifiers/",
+      "target": "/notes/Electronics/Basics of Electronics/"
+    },
+    {
+      "source": "/notes/Electronics/PN Junction/",
+      "target": "/notes/Electronics/Biased PN Junction/"
+    },
+    {
+      "source": "/notes/Electronics/Semi-Conductors/",
+      "target": "/notes/Electronics/PN Junction/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Computer Science/Algorithms/Algorithms/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Computer Science/Cryptography/Cryptography/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Computer Science/Reinforcement Learning/Reinforcement Learning/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Control/Adaptive Control/Adaptive Control/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Control/General Research in Control/Active Disturbance Rejection Control/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Robotics/Quadrupedal Robot/Quadrupedal Robot Project/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Robotics/Robotics/"
+    },
+    {
+      "source": "/notes/Home/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    },
+    {
+      "source": "/notes/Robotics/Quadrupedal Robot/Contact Detection/Contact Detection/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    },
+    {
+      "source": "/notes/Robotics/Quadrupedal Robot/Quadrupedal Robot Project/",
+      "target": "/notes/Robotics/Quadrupedal Robot/Contact Detection/Contact Detection/"
+    },
+    {
+      "source": "/notes/Robotics/Quadrupedal Robot/Quadrupedal Robot Project/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    },
+    {
+      "source": "/notes/Robotics/Quadrupedal Robot/Quadrupedal Robot Project/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Robot Controller Real-world Implementation/"
+    },
+    {
+      "source": "/notes/Robotics/Robotics/",
+      "target": "/notes/Robotics/Quadrupedal Robot/Quadrupedal Robot Project/"
+    },
+    {
+      "source": "/notes/Robotics/Robotics/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Impedance Control in Robotics/",
+      "target": "/notes/Control/Adaptive Control/MFAC/MFAC/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Impedance Control in Robotics/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Kinematics/",
+      "target": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Kinematics/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/",
+      "target": "/notes/Robotics/Single Leg Project/Linear Complementarity Problem/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/",
+      "target": "/notes/Robotics/Single Leg Project/Robot Leg Equations/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Robot Leg Equations/",
+      "target": "/notes/Robotics/Single Leg Project/Linear Complementarity Problem/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Control/",
+      "target": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Control/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Robot Controller Real-world Implementation/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Control/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Robot Simulations/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Project/",
+      "target": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Project/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Robot Controller Real-world Implementation/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Project/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Robot Simulations/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Robot Controller Real-world Implementation/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Motors/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Single Leg Robot Simulations/",
+      "target": "/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/"
+    },
+    {
+      "source": "/notes/Robotics/Single Leg Project/Spring-Loaded Inverted Pendulum (SLIP)/",
+      "target": "/notes/Robotics/Single Leg Project/Single Leg Project/"
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Notes Graph</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/logo-256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon/logo-512.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/images/favicon/logo-256.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/images/favicon/logo-128.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/favicon/logo-64.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/logo-32.png">
+  <link rel="icon" type="image/png" sizes="24x24" href="/assets/images/favicon/logo-24.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/logo-16.png">
+  <style>
+    html,body{height:100%;width:100%;margin:0;padding:0}
+    html{
+      --bg: #FFF;
+      --bg-secondary: #f3f4f6;
+      --headings: #1e293b;
+      --text: #374151;
+      --text-secondary: #6b7280;
+      --links: #6366f1;
+    }
+    html{
+      --notes-graph-bg: url('/assets/images/bg-desktop-notes-light.jpg');
+      --notes-graph-node: #6366f1;
+      --notes-graph-node-border: #1e293b;
+      --notes-graph-node-text: #0f172a;
+      --notes-graph-edge: rgba(30, 41, 59, 0.18);
+      --notes-graph-edge-arrow: rgba(30, 41, 59, 0.45);
+      --notes-graph-panel: rgba(255, 255, 255, 0.28);
+      --notes-graph-panel-border: rgba(255, 255, 255, 0.35);
+    }
+    html[data-theme="dark"]{
+      --bg: #1f242A;
+      --bg-secondary: #323945;
+      --headings: #74c0fc;
+      --text: #adb5bd;
+      --text-secondary: #9CA3AF;
+      --links: #91A7FF;
+      --notes-graph-bg: url('/assets/images/bg-desktop-notes-dark.jpg');
+      --notes-graph-node: #91A7FF;
+      --notes-graph-node-border: #74c0fc;
+      --notes-graph-node-text: #f8fafc;
+      --notes-graph-edge: rgba(255, 255, 255, 0.18);
+      --notes-graph-edge-arrow: rgba(255, 255, 255, 0.42);
+      --notes-graph-panel: rgba(31, 36, 42, 0.84);
+      --notes-graph-panel-border: rgba(145, 167, 255, 0.28);
+    }
+    body{
+      background-color: var(--bg);
+      background-image: var(--notes-graph-bg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--text);
+      overflow: hidden;
+      font-family: "Inter", -apple-system, "avenir next", avenir, roboto, noto, ubuntu, "helvetica neue", helvetica, sans-serif;
+    }
+    html[data-theme="dark"] body{color:var(--text)}
+    #cy{position:absolute;inset:0}
+    .graph-hud{
+      position:fixed;
+      left:16px;
+      top:16px;
+      z-index:20;
+      max-width:min(420px, calc(100vw - 32px));
+      padding:12px 14px;
+      border:1px solid var(--notes-graph-panel-border);
+      border-radius:14px;
+      background:var(--notes-graph-panel);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .graph-hud h1{
+      margin:0 0 4px 0;
+      font-size:1rem;
+      line-height:1.2;
+      color: var(--headings);
+    }
+    .graph-hud p{
+      margin:0;
+      font-size:0.85rem;
+      line-height:1.5;
+      color: var(--text-secondary);
+    }
+    .graph-controls{
+      position:fixed;
+      right:16px;
+      top:16px;
+      z-index:20;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .graph-button{
+      appearance:none;
+      border:1px solid var(--notes-graph-panel-border);
+      background:var(--bg-secondary);
+      color:var(--headings);
+      border-radius:999px;
+      padding:10px 14px;
+      cursor:pointer;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+      font: inherit;
+      line-height:1;
+    }
+    .graph-button:hover,
+    .graph-button:focus-visible{
+      outline:none;
+      border-color: var(--links);
+      color: var(--links);
+    }
+    .theme-toggle{
+      appearance:none;
+      border:2px solid var(--links);
+      background:var(--bg-secondary);
+      color:var(--headings);
+      border-radius:999px;
+      width:48px;
+      height:48px;
+      padding:0;
+      cursor:pointer;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      display:grid;
+      place-items:center;
+    }
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible{
+      color: var(--links);
+      outline:none;
+      box-shadow: 0 0 0 3px rgba(145, 167, 255, 0.25), 0 10px 30px rgba(0,0,0,0.18);
+    }
+    .theme-toggle svg{display:block}
+    .graph-hint{
+      position:fixed;
+      left:16px;
+      bottom:16px;
+      z-index:20;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--notes-graph-panel-border);
+      background:var(--notes-graph-panel);
+      backdrop-filter: blur(14px);
+      color:var(--text-secondary);
+      font-size:0.8rem;
+    }
+    html[data-theme="dark"] .graph-hud h1,
+    html[data-theme="dark"] .graph-button,
+    html[data-theme="dark"] .theme-toggle{
+      color: var(--text);
+    }
+    html[data-theme="dark"] .graph-hud p,
+    html[data-theme="dark"] .graph-hint{
+      color: var(--text-secondary);
+    }
+    html[data-theme="dark"] .graph-button:hover,
+    html[data-theme="dark"] .graph-button:focus-visible,
+    html[data-theme="dark"] .theme-toggle:hover,
+    html[data-theme="dark"] .theme-toggle:focus-visible{
+      color: var(--links);
+    }
+    @media (max-width: 700px){
+      .graph-hud{right:16px; max-width:none}
+      .graph-controls{top:auto; bottom:16px; right:16px}
+      .graph-hint{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="graph-hud">
+    <h1>Notes Graph</h1>
+    <p>Drag nodes to rearrange, click to open, or right-click a node to open it in a new tab.</p>
+  </div>
+  <div class="graph-controls">
+    <button id="reset-layout" class="graph-button" type="button" aria-label="Reset layout">Reset layout</button>
+    <button title="Toggle Theme" class="theme-toggle" type="button" aria-label="Toggle Theme">
+      <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+        <path d="M 16 0 A 16 16 0 0 0 16 32 z"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="graph-hint">Scroll to zoom · drag to pan · drag nodes to move them</div>
+  <div id="cy"></div>
+  <script>
+    function getPreferredTheme(){
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') return stored;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme){
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    function layoutStorageKey(){
+      return 'notes-graph-layout-v1';
+    }
+
+    function loadSavedLayout(){
+      try {
+        return JSON.parse(localStorage.getItem(layoutStorageKey()) || 'null');
+      } catch (err) {
+        return null;
+      }
+    }
+
+    applyTheme(getPreferredTheme());
+
+    function loadCytoscape(cb){
+      if(window.cytoscape){ cb(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://unpkg.com/cytoscape@3.25.1/dist/cytoscape.min.js';
+      s.onload = cb;
+      s.onerror = function(){ document.getElementById('cy').innerText = 'Failed to load cytoscape.js from CDN.'; };
+      document.head.appendChild(s);
+    }
+
+    function loadFcose(cb){
+      if (window.fcose) { cytoscape.use(window.fcose); cb(true); return; }
+      var s = document.createElement('script');
+      s.src = 'https://unpkg.com/cytoscape-fcose@2.2.0/cytoscape-fcose.js';
+      s.onload = function(){
+        if (window.fcose) cytoscape.use(window.fcose);
+        cb(!!window.fcose);
+      };
+      s.onerror = function(){ cb(false); };
+      document.head.appendChild(s);
+    }
+
+    function initGraph(){
+      fetch('/assets/notes-graph.json').then(r=>r.json()).then(data=>{
+        const idFor = u => encodeURIComponent(u);
+        const elements = [];
+        const nodeMap = new Map();
+        const savedLayout = loadSavedLayout();
+        const themeStyles = getComputedStyle(document.documentElement);
+        const nodeColor = themeStyles.getPropertyValue('--notes-graph-node').trim();
+        const nodeBorder = themeStyles.getPropertyValue('--notes-graph-node-border').trim();
+        const nodeText = themeStyles.getPropertyValue('--notes-graph-node-text').trim();
+        const edgeColor = themeStyles.getPropertyValue('--notes-graph-edge').trim();
+        const edgeArrow = themeStyles.getPropertyValue('--notes-graph-edge-arrow').trim();
+
+        data.nodes.forEach(n=>{
+          const id = idFor(n.id);
+          nodeMap.set(n.id,id);
+          const element = {data:{id:id,label:n.title,url:n.id}};
+          if (savedLayout && savedLayout[n.id]) {
+            element.position = savedLayout[n.id];
+          }
+          elements.push(element);
+        });
+        data.edges.forEach(e=>{
+          const s = nodeMap.get(e.source) || idFor(e.source);
+          const t = nodeMap.get(e.target) || idFor(e.target);
+          elements.push({data:{id: s+'-'+t, source:s, target:t}});
+        });
+
+        const layoutOptions = {
+          name: savedLayout ? 'preset' : (window.fcose ? 'fcose' : 'cose'),
+          fit:true,
+          padding:60,
+          randomize:true,
+          animate:true,
+          quality:'proof',
+          idealEdgeLength:170,
+          nodeRepulsion:14000,
+          gravity:0.08,
+          numIter:2500,
+          componentSpacing:60,
+          packComponents:true,
+          nodeDimensionsIncludeLabels:true
+        };
+
+        const cy = cytoscape({
+          container: document.getElementById('cy'),
+          elements: elements,
+          motionBlur: true,
+          textureOnViewport: true,
+          style: [
+            {selector:'node', style:{
+              'label':'data(label)',
+              'text-valign':'bottom',
+              'text-halign':'center',
+              'text-margin-y':10,
+              'font-size':13,
+              'font-family':'Inter, -apple-system, avenir next, avenir, roboto, noto, ubuntu, helvetica neue, helvetica, sans-serif',
+              'color':nodeText,
+              'background-color':nodeColor,
+              'border-color':nodeBorder,
+              'border-width':2.5,
+              'width':44,
+              'height':44,
+              'shape':'ellipse'
+            }},
+            {selector:'edge', style:{'width':5,'line-color':edgeColor,'target-arrow-color':edgeArrow,'source-arrow-color':edgeArrow,'curve-style':'bezier','target-arrow-shape':'triangle','arrow-scale':0.85,'opacity':0.98}}
+          ],
+          layout: layoutOptions,
+          userPanningEnabled:true,
+          userZoomingEnabled:true,
+          selectionType:'single'
+        });
+        window.__notesGraphCy = cy;
+
+        // Make nodes easier to grab and move with the mouse
+        cy.ready(()=>{
+          cy.nodes().grabify();
+        });
+
+        cy.on('tap', 'node', e=>{
+          const evt = e.originalEvent || {};
+          const url = e.target.data('url');
+          if(!url) return;
+          if(evt.metaKey || evt.ctrlKey || evt.button === 1){
+            window.open(url, '_blank', 'noopener');
+            return;
+          }
+          window.location.href = url;
+        });
+
+        cy.on('cxttap', 'node', e=>{
+          const url = e.target.data('url');
+          if(url){
+            window.open(url, '_blank', 'noopener');
+          }
+        });
+      }).catch(err=>{document.getElementById('cy').innerText='Error loading graph: '+err});
+    }
+
+    document.getElementById('reset-layout').addEventListener('click', ()=>{
+      window.location.reload();
+    });
+
+    document.querySelector('.theme-toggle').addEventListener('click', ()=>{
+      const current = document.documentElement.getAttribute('data-theme') || getPreferredTheme();
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      window.location.reload();
+    });
+
+    loadCytoscape(()=>loadFcose(initGraph));
+  </script>
+</body>
+</html>
