@@ -173,7 +173,14 @@
     "sympy",
     "metabaseapp",
     "clickhouse",
-    "symocp"
+    "symocp",
+    "Fcose",
+    "Cytoscape",
+    "cxttap",
+    "grabify",
+    "avenir",
+    "halign",
+    ""
   ],
   "ignorePaths": [
     "_site/**",
