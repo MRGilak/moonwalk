@@ -12,21 +12,27 @@ permalink: /about/
   </div>
 
   <div class="about-text" markdown="1">
-  Hi, I'm **Mohammadreza Gilak**. I'm a control engineering student at the Electrical Engineering department in Sharif University of Technology.  
+  Hi, I'm **Mohammadreza Gilak**.
+
+  I am a control engineering student at Sharif University of Technology. My interests include:
+  - Control Systems Theory
+  - Estimation Theory
+  - Mathematics
+  - Robotics
   
-  My interests include:  
-  - Control Systems Theory  
-  - Mathematics  
-  - Robotics  
-  
-  My hobbies are playing chess and learning languages.  
-  
-  I use this space to:  
-  - Share projects and notes  
-  - Publish blog posts  
-  - Maintain a record of the things I’m learning  
-  
-  You can find me on [GitHub](https://github.com/MRGilak) and [LinkedIn](https://www.linkedin.com/in/mohammadreza-gilak-7aa830226/).
+  I spend most of my time around control, estimation, robotics, and the math that connects them.
+
+  This site is where I keep a quieter record of what I'm working on: notes, projects, and the occasional post when I have something worth sharing.
+
+  A few things I keep coming back to are:
+  - Nonlinear and optimal control
+  - Model predictive control
+  - Legged robotics
+  - Chess and learning languages
+
+  A couple of recent papers I have been part of are *An Energy Conservation Approach to Variable Stiffness Single Leg Jumping* and [*Model-Free Inverse Optimal Control Based on Dynamic Linearization*](https://doi.org/10.1109/ICCIA69223.2025.11285957).
+
+  If you'd like to reach me, you can find me on [GitHub](https://github.com/MRGilak), [LinkedIn](https://www.linkedin.com/in/mohammadreza-gilak-7aa830226/), or [Google Scholar](https://scholar.google.com/citations?user=sAYdpEwAAAAJ&hl=en).
   </div>
 </div>
 
@@ -34,34 +40,13 @@ permalink: /about/
 
 ## Experience
 
-**Teaching Assistant** - Sharif University of Technology  
-*September 2024 - February 2025*
-- Linear Control Systems TA
-- Under supervision of Prof. Tavazoei
+**Teaching and lab work** - Sharif University of Technology  
+*2024 - Present*
+- I've helped with several control courses and labs, including Linear Control, Industrial Control, Optimal Control, and Simulation in Control Lab.
+- Most of my time there has been spent supporting students, preparing material, and learning from the process.
 
-**Teaching Assistant** - Sharif University of Technology  
-*September 2024 - February 2025*
-- Linear Control Lab TA
-- Under supervision of Prof. Ahi
-
-**Teaching Assistant** - Sharif University of Technology  
-*February 2025 - June 2025*
-- Industrial Control TA
-- Under supervision of Prof. Ahi
-
-**Teaching Assistant** - Sharif University of Technology  
-*February 2025 - June 2025*
-- Linear Control Lab Instructor
-- Under supervision of Prof. Ahi
-
-**Teaching Assistant** - Sharif University of Technology  
-*September 2025 - Now*
-- Optimal Control TA
-- Under supervision of Prof. Ahi
-
-**Teaching Assistant** - Sharif University of Technology  
-*September 2025 - Now*
-- Simulation in Control Lab TA
-- Under supervision of Prof. Ahi
+**Robotics work** - Fasta Robotics  
+*2025 - Present*
+- I've been involved in work on a quadruped robot platform, mostly around control, estimation, and contact detection.
 
 ---

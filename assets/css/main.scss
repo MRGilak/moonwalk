@@ -94,15 +94,20 @@ html[data-theme="dark"] body[data-page-background="notes"] #parallax-bg {
 .about-section .about-image {
   float: right;
   width: 250px;
+  aspect-ratio: 1 / 1;
   margin: 0 0 1rem 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* 🎨 CUSTOMIZE IMAGE STYLE: Change border-radius for different shapes */
 .about-section .about-image img {
   width: 100%;
-  height: auto;
-  border-radius: 50%; /* 50% = circular, 10px = rounded corners, 0 = sharp rectangle */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
 }
@@ -110,7 +115,6 @@ html[data-theme="dark"] body[data-page-background="notes"] #parallax-bg {
 /* Optional: Hover effect (remove if you don't want it) */
 .about-section .about-image img:hover {
   transform: scale(1.05); /* slightly enlarges on hover */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
 }
 
 .about-section .about-text {
@@ -139,6 +143,7 @@ html[data-theme="dark"] body[data-page-background="notes"] #parallax-bg {
     display: block;
     margin: 0 auto 1.5rem auto;
     width: 180px; /* slightly larger on mobile for better visibility */
+    aspect-ratio: 1 / 1;
   }
   
   /* Keep text justified on mobile */
