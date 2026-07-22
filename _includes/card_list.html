@@ -1,7 +1,7 @@
 <ul class="horizontal-list">
   {% for item in include.collection %}
 
-    <li class="card{% if item.image %} card--media{% endif %}" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+    <li class="card{% if item.image %} card--media{% endif %}{% if item.media_wide == true %} card--media-wide{% endif %}" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
       <a href="{{ item.url }}">
         <div class="card__content">
           <span class="header">

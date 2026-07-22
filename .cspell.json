@@ -180,7 +180,8 @@
     "grabify",
     "avenir",
     "halign",
-    "Fasta"
+    "Fasta",
+    "Mujoco"
   ],
   "ignorePaths": [
     "_site/**",

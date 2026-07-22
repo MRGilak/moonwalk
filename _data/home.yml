@@ -6,6 +6,13 @@ navbar_entries:
     url: blog
 
 project_entries:
+  - title: Quadrupedal Locomotion
+    url: /projects/quadrupedal-locomotion
+    desc: Model Predictive Control for quadrupedal locomotion.
+    image: /assets/Projects/project-thumbnails/quadrupedal-locomotion-isaac.gif
+    image_alt: Model Predictive Control for quadrupedal locomotion
+    media_wide: true
+
   - title: Quadrupedal Robotics Contact and Collision Detection
     url: /projects/contact-detection
     desc: Contact and collision detection for quadrupedal locomotion gait planning.
@@ -21,11 +28,14 @@ project_entries:
     desc: Notes on our conference paper on Inverse Optimal Control.
     highlight: Published
 
-  - title: Quadrupedal Locomotion
-    url: /projects/quadrupedal-locomotion
-    desc: Model Predictive Control for quadrupedal locomotion.
-    image: /assets/Projects/project-thumbnails/quadrupedal-locomotion.gif
-    image_alt: Model Predictive Control for quadrupedal locomotion
+  - title: Active Disturbance Rejection Control
+    url: /projects/active-disturbance-rejection-control
+    desc: A multi-language implementation of Active Disturbance Rejection Control.
+    highlight: Open-source
+    image: /assets/Projects/project-thumbnails/adrc-app.png
+    image_alt: ADRC App
+
+  
 
 old_project_entries:
   - title: Model Predictive Control
