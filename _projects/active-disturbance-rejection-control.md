@@ -361,6 +361,10 @@ u_0 & \text{otherwise}
 
 The saturated control signal $u$ is fed back to the ESO to maintain consistency between the ESO's prediction and the actual plant input.
 
+## Cascaded ADRC
+
+By cascaded ADRC in this repo, I mean cascaded ESO ADRC, which has two observers in series with each other. The first observer estimates the bulk of the total disturbance, and the second observer tries to estimate the remaining disturbance. In the code, the states of the first and second observer are shown by $z$ and $m$, respectively.
+
 ---
 This repo is maintained by [me](https://github.com/MRGilak). Contributions are welcome as well. 
 ---
