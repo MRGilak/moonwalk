@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Contact Detection
+title: Quadruped Locomotion
 ---
 
-I will shortly add my studies related to Model Predictive Control (MPC) in quadrupedal robots, and the simulations we have done.
+I will shortly add my studies related to Model Predictive Control (MPC) in quadrupedal robots, and the simulations I have done.
 
 ![Isaac Demo](/assets/Projects/project-thumbnails/quadrupedal-locomotion-isaac.gif)
 

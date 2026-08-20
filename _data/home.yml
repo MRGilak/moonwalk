@@ -22,6 +22,12 @@ project_entries:
   - title: Quadrupedal Robotics
     url: /projects/robot-quadrupedal
     desc: Notes and development updates on the design and control of a quadrupedal robotic platform.
+
+  - title: Quadrupedal Identification
+    url: /projects/quadruped-identification
+    desc: Notes on Quadrupedal robots' parameter identification
+    image: /assets/Projects/project-thumbnails/system_identification.gif
+    media_wide: true
   
   - title: Inverse Optimal Control
     url: /projects/inverse-optimal-control
