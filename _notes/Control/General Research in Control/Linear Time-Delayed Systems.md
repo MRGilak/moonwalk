@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "General Research in Control"
 title: "Linear Time-Delayed Systems"
 date: 2025-10-16
 excerpt: "Linear time-delayed systems have infinitely many eigenvalues. Their stability depends on parameters A, Ad, and τ."

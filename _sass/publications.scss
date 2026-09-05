@@ -1,0 +1,257 @@
+/* === Search (notes) === */
+
+.notes-search-box {
+  margin: 1rem 0 1.5rem;
+
+  input[type="search"] {
+    width: 100%;
+    max-width: 26rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--bg-secondary, rgba(128, 128, 128, 0.3));
+    background: rgba(128, 128, 128, 0.08);
+    color: var(--text);
+    font-size: 0.95rem;
+
+    &:focus {
+      outline: 2px solid var(--links);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.search-results {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.75rem 0 0;
+
+  li {
+    margin-bottom: 0.6rem;
+
+    a {
+      font-weight: 600;
+    }
+  }
+
+  &.empty { display: none; }
+
+  &.no-results li {
+    font-style: italic;
+    color: var(--text-secondary, #6b7280);
+  }
+
+  .search-count {
+    font-size: 0.8rem;
+    color: var(--text-secondary, #6b7280);
+    margin-bottom: 0.5rem;
+  }
+
+  .search-meta {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary, #6b7280);
+  }
+
+  .search-excerpt {
+    margin: 0.15rem 0 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary, #6b7280);
+  }
+}
+
+.search-note-tip {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* === Publications page === */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.publication {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--bg-secondary, rgba(128, 128, 128, 0.2));
+  border-radius: 10px;
+  background: rgba(128, 128, 128, 0.06);
+
+  .pub-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .pub-authors {
+    margin: 0 0 0.35rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary, #6b7280);
+  }
+
+  .pub-meta {
+    margin: 0 0 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .pub-note {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary, #6b7280);
+    font-style: italic;
+  }
+
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+.pub-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &--published {
+    color: #065f46;
+    background: #d1fae5;
+  }
+
+  &--presented {
+    color: #3730a3;
+    background: #e0e7ff;
+  }
+
+  &--preprint {
+    color: #92400e;
+    background: #fef3c7;
+  }
+}
+
+html[data-theme="dark"] {
+  .pub-badge--published { color: #a7f3d0; background: rgba(5, 150, 105, 0.25); }
+  .pub-badge--presented { color: #c7d2fe; background: rgba(79, 70, 229, 0.25); }
+  .pub-badge--preprint  { color: #fde68a; background: rgba(217, 119, 6, 0.25); }
+}
+
+.pub-link {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--links);
+  color: var(--links);
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--links);
+    color: var(--background, #fff);
+  }
+}
+
+.bibtex-btn.is-copied {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+/* === CV page === */
+
+.cv-actions {
+  margin-bottom: 1rem;
+}
+
+.cv-embed {
+  margin: 1rem 0 2rem;
+  border: 1px solid var(--bg-secondary, rgba(128, 128, 128, 0.2));
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* === Tags (note tag pages) === */
+
+.breadcrumbs {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #6b7280);
+
+  a {
+    color: var(--links);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .bc-folder {
+    color: var(--text-secondary, #6b7280);
+  }
+
+  span[aria-current="page"] {
+    color: var(--text);
+  }
+}
+
+.note-tags {
+  margin: 0.25rem 0 1rem;
+}
+
+.tag-chip {
+  display: inline-block;
+  margin: 0 0.35rem 0.25rem 0;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--links);
+  border: 1px solid var(--links);
+  text-decoration: none;
+
+  &:hover {
+    background: var(--links);
+    color: var(--background, #fff);
+  }
+}
+
+.tag-note-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}

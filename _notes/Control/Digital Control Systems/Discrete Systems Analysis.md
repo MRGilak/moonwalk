@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Digital Control Systems"
 title: "Discrete Systems Analysis"
 date: 2026-03-30
 excerpt: "Discrete systems analysis involves tools for designing digital controllers. Difference equations model discrete-time systems, describing the relationship between past and current inputs and outputs."

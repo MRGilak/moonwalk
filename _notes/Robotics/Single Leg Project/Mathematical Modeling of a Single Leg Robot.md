@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Mathematical Modeling of a Single Leg Robot"
 date: 2026-03-01
 excerpt: "A single leg robots mathematical model can be developed using the Lagrangian method. The Lagrangian method involves calculating kinetic and potential energies to derive the systems dynamics."

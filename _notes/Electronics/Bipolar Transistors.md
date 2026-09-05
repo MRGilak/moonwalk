@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Bipolar Transistors"
 date: 2026-03-12
 excerpt: "Bipolar transistors consist of two PN junctions, forming an N-P-N structure. They operate by controlling the flow of electrons between the emitter and collector."

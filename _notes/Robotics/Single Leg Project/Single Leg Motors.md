@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Single Leg Motors"
 date: 2025-12-27
 excerpt: "Single leg robots use Permanent Magnet Synchronous Motors (PMSMs). PMSMs work by rotating a permanent magnet to align with a rotating magnetic field."

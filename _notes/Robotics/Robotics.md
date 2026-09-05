@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Robotics"
 title: "Robotics"
 date: 2026-03-26
 excerpt: "Robotics involves various projects, including single leg, quadrupedal, and humanoid robots. These projects explore autonomous systems and robotic technologies."

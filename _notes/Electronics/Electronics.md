@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Electronics"
 date: 2026-03-12
 excerpt: "Electronics involves the study of electronic devices and systems. This note covers the basics of electronics."

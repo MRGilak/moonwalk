@@ -1,0 +1,31 @@
+name: Link Checker
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    name: lychee
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --no-progress
+            --config .lychee.toml
+            "./**/*.md"
+            "./*.html"
+            "./*.yml"
+            "./*.xml"
+          fail: true

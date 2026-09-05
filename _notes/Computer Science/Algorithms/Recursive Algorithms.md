@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Algorithms"
 title: "Recursive Algorithms"
 date: 2025-08-19
 excerpt: "Recursive algorithms solve problems by breaking them down into smaller instances of the same problem."

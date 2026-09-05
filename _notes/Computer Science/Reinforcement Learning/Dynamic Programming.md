@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Dynamic Programming"
 date: 2026-03-06
 excerpt: "Dynamic programming refers to a collection of algorithms for computing optimal policies given a perfect model of the environment. It uses the value function to search for better policies."

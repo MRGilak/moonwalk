@@ -10,5 +10,8 @@ _site
 # Local Netlify folder
 .netlify
 
+# Local env secrets (never commit API keys)
+.env
+
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/

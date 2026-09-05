@@ -1,0 +1,40 @@
+- id: gilak2025ioc
+  type: conference
+  status: published
+  title: "Model-Free Inverse Optimal Control Based on Dynamic Linearization"
+  authors:
+    - name: "Mohammadreza Gilak"
+      me: true
+    - name: "Raziyeh Mehraban"
+    - name: "Behzad Ahi"
+    - name: "Mohammad Saleh Tavazoei"
+  venue: "11th International Conference on Control, Instrumentation and Automation (ICCIA)"
+  year: 2025
+  doi: "10.1109/ICCIA69223.2025.11285957"
+  bibtex: |
+    @inproceedings{gilak2025ioc,
+      author    = {Gilak, Mohammadreza and Mehraban, Raziyeh and Ahi, Behzad and Tavazoei, Mohammad Saleh},
+      title     = {Model-Free Inverse Optimal Control Based on Dynamic Linearization},
+      booktitle = {11th International Conference on Control, Instrumentation and Automation (ICCIA)},
+      year      = {2025},
+      doi       = {10.1109/ICCIA69223.2025.11285957},
+      publisher = {IEEE}
+    }
+
+- id: gilak2026energy
+  type: conference
+  status: presented
+  title: "An Energy Conservation Approach to Variable Stiffness Single Leg Jumping"
+  authors:
+    - name: "Mohammadreza Gilak"
+      me: true
+  venue: "34th Iranian Conference on Electrical Engineering (ICEE)"
+  year: 2026
+  note: "Presented at ICEE 2026; DOI to be added once indexed."
+  bibtex: |
+    @inproceedings{gilak2026energy,
+      author    = {Gilak, Mohammadreza},
+      title     = {An Energy Conservation Approach to Variable Stiffness Single Leg Jumping},
+      booktitle = {34th Iranian Conference on Electrical Engineering (ICEE)},
+      year      = {2026}
+    }

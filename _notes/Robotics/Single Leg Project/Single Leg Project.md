@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Single Leg Project"
 date: 2026-03-01
 excerpt: "The Single Leg Project aims to control a single leg robot with two degrees of freedom. Its goal is to lay the groundwork for building legged robots that can move in uneven environments."

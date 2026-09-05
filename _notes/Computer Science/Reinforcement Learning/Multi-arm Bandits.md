@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Multi-arm Bandits"
 date: 2026-01-22
 excerpt: "Multi-arm bandits are a classic reinforcement learning example. They involve choosing among multiple options to maximize expected total reward."

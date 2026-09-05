@@ -54,20 +54,68 @@ exports.handler = async (event, context) => {
       ? textToSummarize.slice(0, MAX_CHARS) + "\n\n[Text truncated for summary]"
       : textToSummarize;
 
-    // Choose provider based on available keys (Priority: Gemini > Groq > OpenAI)
+    // Choose provider based on available keys (Priority: OpenCode Zen > Gemini > Groq > OpenAI)
+    const zenKey = process.env.OPENCODE_ZEN_API_KEY;
     const geminiKey = process.env.GEMINI_API_KEY;
     const groqKey = process.env.GROQ_API_KEY;
     const openaiKey = process.env.OPENAI_API_KEY;
 
-    if (!geminiKey && !groqKey && !openaiKey) {
-      return json(500, { error: "No AI provider configured. Set GEMINI_API_KEY, GROQ_API_KEY, or OPENAI_API_KEY." }, event)
+    if (!zenKey && !geminiKey && !groqKey && !openaiKey) {
+      return json(500, { error: "No AI provider configured. Set OPENCODE_ZEN_API_KEY, GEMINI_API_KEY, GROQ_API_KEY, or OPENAI_API_KEY." }, event)
     }
 
-    let provider = geminiKey ? "gemini" : (groqKey ? "groq" : "openai");
+    let provider = zenKey ? "opencode-zen" : (geminiKey ? "gemini" : (groqKey ? "groq" : "openai"));
     let endpoint, headers, payload;
 
+    // ==================== OPENCODE ZEN PROVIDER ====================
+    // OpenAI-compatible chat/completions. Free models (e.g. mimo-v2.5-free)
+    // and low-cost models (e.g. deepseek-v4-flash) are served here.
+    if (provider === "opencode-zen") {
+      endpoint = "https://opencode.ai/zen/v1/chat/completions";
+      headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${zenKey}`,
+      };
+      payload = {
+        model: process.env.OPENCODE_ZEN_MODEL || "mimo-v2.5-free",
+        temperature: 0.3,
+        messages: [
+          {
+            role: "system",
+            content: "You are an expert academic summarizer specializing in technical and educational content. Your summaries are comprehensive yet concise, highlighting the main concepts, key insights, and practical takeaways. Format your response with clear structure using bullet points or short paragraphs.",
+          },
+          {
+            role: "user",
+            content: `Please provide a comprehensive summary of the following educational note. Include:\n\n1. Main topic and purpose\n2. Key concepts explained\n3. Important formulas, definitions, or findings (if any)\n4. Practical applications or takeaways\n\nBe informative and structured, but keep it readable.\n\nContent:\n${inputText}`,
+          },
+        ],
+        max_tokens: 400,
+      };
+
+      const resp = await fetch(endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload),
+      });
+
+      const data = await resp.json().catch(() => ({}));
+
+      if (!resp.ok) {
+        return json(resp.status, {
+          error: data.error?.message || data.error || `Upstream error (${resp.status})`,
+          provider,
+        }, event)
+      }
+
+      const summary = data.choices?.[0]?.message?.content?.trim();
+      if (!summary) {
+        return json(500, { error: "No summary returned from AI provider.", provider }, event)
+      }
+
+      return json(200, { summary, provider }, event)
+
     // ==================== GEMINI PROVIDER ====================
-    if (provider === "gemini") {
+    } else if (provider === "gemini") {
       const model = process.env.GEMINI_MODEL || "gemini-1.5-flash"; // or "gemini-1.5-pro"
       
       // Gemini uses a different endpoint structure

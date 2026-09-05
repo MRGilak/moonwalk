@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Impedance Control in Robotics"
 date: 2026-03-01
 excerpt: "Impedance control is a solution to the problem of controlling robot-environment interaction. It involves regulating a robots dynamic behavior at its interaction ports with the environment."

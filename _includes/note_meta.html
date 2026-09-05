@@ -1,0 +1,10 @@
+<!-- Editorial meta under a note's title: tag chips linking to each tag's page (/notes/tag/<slug>.html). -->
+<!-- Slugs match bin/autotag_notes.py: lowercase, spaces -> hyphens. -->
+{% if page.tags and page.tags.size > 0 %}
+<p class="note-tags">
+  {% for tag in page.tags %}
+  {%- assign slug = tag | downcase | replace: ' ', '-' -%}
+  <a class="tag-chip" href="{{ '/notes/tag/' | append: slug | append: '.html' | relative_url }}">#{{ tag }}</a>
+  {% endfor %}
+</p>
+{% endif %}

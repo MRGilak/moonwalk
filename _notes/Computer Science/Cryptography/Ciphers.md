@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Cryptography"
 title: "Ciphers"
 date: 2025-08-23
 excerpt: "Ciphers are mechanical operations that perform on individual letters or symbols. They operate on syntax, using algorithms and keys to transform symbols."

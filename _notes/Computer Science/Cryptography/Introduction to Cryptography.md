@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Cryptography"
 title: "Introduction to Cryptography"
 date: 2025-08-23
 excerpt: "Cryptography involves techniques like the Caesar cipher and one-time pad to secure messages. These methods use shifting and randomness to encrypt messages."

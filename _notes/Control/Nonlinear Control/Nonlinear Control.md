@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Nonlinear Control"
 title: "Nonlinear Control"
 date: 2026-04-01
 excerpt: "Nonlinear control involves designing systems that handle complex, nonlinear relationships. It incorporates techniques from differential geometry."

@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
 title: "Adaptive Control"
 date: 2025-07-13
 excerpt: "Adaptive control involves systems with time-varying parameters. It addresses uncertainties in system models using indirect or direct methods."

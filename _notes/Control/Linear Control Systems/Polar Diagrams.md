@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Linear Control Systems"
 title: "Polar Diagrams"
 date: 2026-03-05
 excerpt: 'Polar diagrams are plotted by substituting $j \omega$ into a systems transfer function. The resulting complex values are then plotted in the complex plane.'

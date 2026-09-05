@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Linear Control Systems"
 title: "First and Second-order Systems"
 date: 2026-03-03
 excerpt: "First-order systems have one pole, while second-order systems have two poles. These systems are characterized by their transfer functions and impulse responses."

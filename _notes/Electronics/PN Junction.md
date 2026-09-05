@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "PN Junction"
 date: 2026-03-12
 excerpt: "A PN junction forms when a P-type and an N-type semiconductor are combined. This creates a depletion region with an electric field that resists electron movement."

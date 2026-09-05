@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Single Leg Control"
 date: 2025-12-27
 excerpt: "Single leg control is a fundamental aspect of legged robotics. Controlling a single leg with multiple degrees of freedom is a key step in developing more complex legged robots."

@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Nonlinear Control"
+  - "Geometric Approach to Nonlinear Control"
 title: "Geometric Approach to Nonlinear Control"
 date: 2026-04-02
 excerpt: "The geometric approach to nonlinear control utilizes differential geometry. It involves applying geometric principles to analyze and control nonlinear systems."

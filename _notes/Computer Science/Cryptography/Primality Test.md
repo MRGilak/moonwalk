@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Cryptography"
 title: "Primality Test"
 date: 2025-08-23
 excerpt: "#cryptography #computer-science"

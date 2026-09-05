@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Basics of Electronics"
 date: 2026-03-26
 excerpt: "Electronics involves the study of semi-conductors and transistors. Key topics include PN junctions, bipolar transistors, and transistor characteristics."

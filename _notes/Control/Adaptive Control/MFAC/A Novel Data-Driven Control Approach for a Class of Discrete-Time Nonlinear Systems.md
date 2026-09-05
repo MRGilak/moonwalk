@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
+  - "MFAC"
 title: "A Novel Data-Driven Control Approach for a Class of Discrete-Time Nonlinear Systems"
 date: 2025-07-20
 excerpt: "This paper introduces a novel control approach for discrete-time nonlinear systems. It proposes an equivalent PFDL description and estimates parameter Φ online."

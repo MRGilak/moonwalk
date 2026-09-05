@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Finite Markov Decision Processes"
 date: 2026-03-06
 excerpt: "Finite Markov decision processes involve an agent interacting with an environment in discrete time steps."

@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Common Collector Structure"
 date: 2026-03-25
 excerpt: "The common collector structure has a gain close to 1 and high input resistance."

@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Digital Control Systems"
 title: "Digital Control Systems"
 date: 2026-03-30
 excerpt: "Digital control systems regulate processes using digital signals. They are based on discrete-time control theory."

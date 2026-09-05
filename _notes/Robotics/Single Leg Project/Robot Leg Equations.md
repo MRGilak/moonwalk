@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Robot Leg Equations"
 date: 2026-03-01
 excerpt: "#Robotics #Single_Leg_Project #Modeling"

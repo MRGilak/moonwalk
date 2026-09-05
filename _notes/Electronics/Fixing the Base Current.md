@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Fixing the Base Current"
 date: 2026-03-12
 excerpt: "The base current can be fixed using a resistor. A non-ideal voltage source is modeled with a source resistor."

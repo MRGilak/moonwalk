@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Common Base Structure"
 date: 2026-03-26
 excerpt: "The common base structure is a type of amplifier configuration. Its gain is given by the ratio of output voltage to input voltage, and is significantly affected by the source resistance."

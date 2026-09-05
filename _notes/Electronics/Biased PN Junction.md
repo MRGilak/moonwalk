@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Biased PN Junction"
 date: 2026-03-12
 excerpt: "Applying an external electric field to a PN junction creates two states: reverse-biased, where current is blocked, and forward-biased, where current flows."

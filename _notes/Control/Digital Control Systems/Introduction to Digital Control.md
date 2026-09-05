@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Digital Control Systems"
 title: "Introduction to Digital Control"
 date: 2026-03-30
 excerpt: "Digital control systems use digital computers to implement controllers, which requires converting between analog and digital signals. Digital control primarily involves working with discrete signals."

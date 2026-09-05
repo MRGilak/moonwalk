@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="note note-tag" data-aos="fade-up" data-aos-duration="1000">
+  <header>
+    <a href="{{ "/notes/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+    <h1>#{{ page.tag }}</h1>
+    <p class="meta">{{ page.count }} note{% if page.count != 1 %}s{% endif %}</p>
+  </header>
+
+  <div class="content">
+    <ul class="tag-note-list">
+      {% for note in site.notes %}
+        {% if note.tags contains page.tag %}
+        <li><a href="{{ note.url | relative_url }}">{{ note.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</article>

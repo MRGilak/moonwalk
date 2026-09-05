@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
+  - "MFAC"
 title: "Model-Free Adaptive Resilient Control for Nonlinear CPSs With Aperiodic Jamming Attacks"
 date: 2025-07-13
 excerpt: "Model-free adaptive control is used to predict and control nonlinear systems. It adapts to aperiodic jamming attacks by modifying system estimation and control laws."

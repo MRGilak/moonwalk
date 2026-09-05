@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Multi-Stage AC-Coupled Amplifiers"
 date: 2026-03-26
 excerpt: "Multi-stage AC-coupled amplifiers consist of multiple amplifiers cascaded to achieve higher gain. They can be designed with or without buffers to increase gain and input resistance."

@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Biasing the Transistor"
 date: 2026-03-12
 excerpt: "To use a transistor as an amplifier, a suitable collector current must be chosen. The base-emitter voltage is then determined using the transistors current and thermal voltage."

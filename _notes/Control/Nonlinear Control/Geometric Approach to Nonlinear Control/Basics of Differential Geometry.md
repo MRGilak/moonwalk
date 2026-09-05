@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Nonlinear Control"
+  - "Geometric Approach to Nonlinear Control"
 title: "Basics of Differential Geometry"
 date: 2026-04-02
 excerpt: "Differential geometry studies vectors and covectors in nonlinear systems. It involves tangent and cotangent spaces, and concepts like Lie derivatives and brackets."

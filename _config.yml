@@ -4,7 +4,9 @@ author:
   alternate_name: "محمدرضا گیلک"
 url: https://mgilak.ir
 description: > # description of the site (multiple lines allowed)
-  Welcome to my personal site, where I write about my projects and share my notes. 
+  Welcome to my personal site, where I write about my projects and share my notes.
+
+image: /assets/images/og-cover.png # Open Graph / social share preview (regenerate via bin/generate_og_cover.py) 
 
 permalink: /:slug
 

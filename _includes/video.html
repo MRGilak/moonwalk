@@ -1,0 +1,7 @@
+<figure class="video-figure">
+  <video class="video-responsive" controls preload="metadata" playsinline{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}>
+    <source src="{{ include.src | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

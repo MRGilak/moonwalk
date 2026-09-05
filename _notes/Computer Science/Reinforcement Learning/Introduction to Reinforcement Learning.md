@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Introduction to Reinforcement Learning"
 date: 2026-03-06
 excerpt: "Reinforcement Learning (RL) involves learning to maximize a numerical reward signal."

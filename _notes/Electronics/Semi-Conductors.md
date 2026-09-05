@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Semi-Conductors"
 date: 2026-03-12
 excerpt: "Semi-conductors are materials with a variable number of free charges, controlled by a process called doping. They have properties between conductors and insulators."

@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Quadrupedal Robot"
+  - "Contact Detection"
 title: "Contact Detection"
 date: 2026-03-28
 excerpt: "Contact detection is crucial for stable locomotion in legged robots. Accurate contact state estimation is typically achieved by estimating the force exerted on the ground and applying a threshold."

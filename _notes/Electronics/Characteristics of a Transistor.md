@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Characteristics of a Transistor"
 date: 2026-03-12
 excerpt: "A transistors characteristics are described by exponential functions. The $I_C-V_{BE}$ and $I_C-V_{CE}$ plots exhibit behaviors influenced by the Early effect."

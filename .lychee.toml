@@ -1,0 +1,24 @@
+# lychee link-checker configuration
+# See https://lychee.cli.rs/configuration/ for all options.
+
+# Paths to skip entirely (repo-local plugins, generated output).
+exclude_path = [
+  ".git",
+  "_site",
+  "graft",
+  "vendor",
+  "assets/Projects",
+]
+
+# Do not check links that point at private/local addresses.
+exclude_all_private = true
+
+# Skip checking HTML files inside the upstream theme (already upstream-vetted is not
+# assumed; only speed: the vendored theme is checked by upstream).
+include = ["*.md"]
+
+# HTTP tuning for unreliable public hosts.
+max_conns = 10
+timeout = 20
+retry_wait_time = 2
+max_retries = 2

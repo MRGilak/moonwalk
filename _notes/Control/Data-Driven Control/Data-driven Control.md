@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Data-Driven Control"
 title: "Data-driven Control"
 date: 2026-03-02
 excerpt: "Data-driven control uses input/output data to tune controller parameters. It designs controllers without needing a mathematical plant model."

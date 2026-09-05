@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Algorithms"
 title: "Asymptotic Notation"
 date: 2025-08-19
 excerpt: 'Asymptotic notation measures algorithm efficiency. It uses notations like $\Theta$, $O$, and $\Omega$ to describe running time.'

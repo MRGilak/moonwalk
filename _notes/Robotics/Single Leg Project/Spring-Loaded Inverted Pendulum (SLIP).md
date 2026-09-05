@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Spring-Loaded Inverted Pendulum (SLIP)"
 date: 2026-03-01
 excerpt: "The Spring-Loaded Inverted Pendulum (SLIP) model simplifies legged robot control by mimicking the mass-spring behavior of animals."

@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
+  - "Course"
 title: "Intro to Adaptive Control"
 date: 2025-08-12
 excerpt: "Adaptive control addresses challenges in system modeling. It ensures stability and performance despite incomplete or imprecise system models."

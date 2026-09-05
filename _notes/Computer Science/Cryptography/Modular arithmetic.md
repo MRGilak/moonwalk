@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Cryptography"
 title: "Modular arithmetic"
 date: 2025-08-23
 excerpt: "Modular arithmetic involves integer operations with remainders. It has properties and modular inverses, used in cryptography and computer science."

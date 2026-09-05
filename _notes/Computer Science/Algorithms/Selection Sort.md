@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Algorithms"
 title: "Selection Sort"
 date: 2025-08-19
 excerpt: "Selection sort is an algorithm that sorts arrays by iteratively finding and swapping the smallest element. It has a running time of Θ(n^2) in all cases."

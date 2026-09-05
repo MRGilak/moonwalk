@@ -1,6 +1,10 @@
 ---
 layout: page
 title: Model Predictive Control
+desc: MATLAB codes for a DMC and an EPFC controller.
+open_source_order: 1
+home_sections:
+  - open-source
 ---
 
 **GitHub Repository:** [MRGilak/Model-Predictive-Control](https://github.com/MRGilak/Model-Predictive-Control)

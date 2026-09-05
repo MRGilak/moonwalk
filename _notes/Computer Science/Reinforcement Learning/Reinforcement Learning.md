@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Reinforcement Learning"
 date: 2025-09-19
 excerpt: "Reinforcement learning involves maximizing a numerical reward signal. It is a field that studies problems and solution methods for learning optimal actions."

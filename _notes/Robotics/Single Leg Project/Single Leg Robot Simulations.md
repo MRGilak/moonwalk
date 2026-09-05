@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Single Leg Robot Simulations"
 date: 2026-03-01
 excerpt: "Single leg robot simulations were conducted using various tools. Simulations utilized MATLAB, Simscape, Pybullet, and Isaac Sim."

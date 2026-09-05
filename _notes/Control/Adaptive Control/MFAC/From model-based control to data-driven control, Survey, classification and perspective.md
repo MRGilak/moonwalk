@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
+  - "MFAC"
 title: "From model-based control to data-driven control, Survey, classification and perspective"
 date: 2025-07-16
 excerpt: "Data-driven control methods are categorized into three main categories. They include online data-based, offline data-based, and iterative data-based methods, such as SPSA, MFAC, and UC."

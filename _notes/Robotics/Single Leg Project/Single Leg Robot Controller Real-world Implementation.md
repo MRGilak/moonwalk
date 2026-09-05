@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Single Leg Robot Controller Real-world Implementation"
 date: 2026-03-01
 excerpt: "The Single Leg Robot Controller utilizes Go-M8010-6 motors. These motors are designed for robotic applications."

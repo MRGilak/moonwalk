@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Linear Control Systems"
 title: "Linear Control Systems"
 date: 2026-03-30
 excerpt: "Linear control systems are based on differential equations, either Ordinary Differential Equations (ODEs) or Partial Differential Equations (PDEs)."

@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Linear Control Systems"
 title: "Root Locus"
 date: 2026-03-03
 excerpt: "The root locus method describes the behavior of polynomial roots when a coefficient is changed continuously. It is used in control theory to analyze closed-loop system stability."

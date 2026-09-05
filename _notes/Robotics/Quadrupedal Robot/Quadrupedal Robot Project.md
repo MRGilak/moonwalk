@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Quadrupedal Robot"
 title: "Quadrupedal Robot Project"
 date: 2026-03-01
 excerpt: "The Quadrupedal Robot Project involves designing and controlling a robot with four legs. Researchers are addressing challenges such as leg control and contact detection."

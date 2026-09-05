@@ -6,6 +6,10 @@
       <div id="parallax-bg" aria-hidden="true"></div>
     {% endif %}
 
+    {% if site.theme_config.show_navbar %}
+      {% include navbar.html %}
+    {% endif %}
+
     <main{% if site.theme_config.smooth_scroll %} id="butter"{% endif %} class="page-content{% if page.layout != "home" %} parallax-content{% endif %}" aria-label="Content">
       <div class="w">
         {{ content }}
@@ -40,5 +44,10 @@
     <!-- Back to Top Button -->
     <script src="{{ '/assets/js/back-to-top.js' | relative_url }}"></script>
 
+    <!-- Publications "Copy BibTeX" buttons (no-op on pages without them) -->
+    <script src="{{ '/assets/js/copy-citation.js' | relative_url }}"></script>
+
+    <!-- Lazy-load content images site-wide -->
+    <script src="{{ '/assets/js/lazy-images.js' | relative_url }}"></script>
   </body>
 </html>

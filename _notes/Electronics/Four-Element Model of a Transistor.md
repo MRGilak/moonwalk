@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Four-Element Model of a Transistor"
 date: 2026-03-12
 excerpt: "A transistor can be modeled using four key elements: transconductance, input resistance, output resistance, and feedback resistance."

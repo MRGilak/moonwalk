@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Temporal-Difference Learning"
 date: 2026-03-07
 excerpt: "Temporal-difference learning combines elements of dynamic programming and Monte Carlo methods. It bootstraps, learning from experience without requiring a model of the environment."

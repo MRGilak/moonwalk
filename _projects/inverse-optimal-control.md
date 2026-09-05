@@ -1,6 +1,11 @@
 ---
 layout: page
 title: Inverse Optimal Control
+desc: Notes on our conference paper on inverse optimal control.
+highlight: Published
+featured_order: 5
+home_sections:
+  - featured
 ---
 
 This page includes explanations related to our inverse optimal control paper in ICCIA 2025.

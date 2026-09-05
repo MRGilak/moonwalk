@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Electronics"
 title: "Fixing the Collector Current"
 date: 2026-03-13
 excerpt: "Fixing the collector current reduces device dependence. It involves fixing the emitter current by placing a resistor in the emitter."

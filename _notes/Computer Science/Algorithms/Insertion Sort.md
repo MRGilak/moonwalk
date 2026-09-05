@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Algorithms"
 title: "Insertion Sort"
 date: 2025-08-19
 excerpt: "Insertion sort is a simple sorting algorithm that works by iterating through an array and inserting each element into its proper position. It runs in O(n^2) time."

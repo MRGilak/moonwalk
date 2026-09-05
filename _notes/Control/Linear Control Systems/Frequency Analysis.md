@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Linear Control Systems"
 title: "Frequency Analysis"
 date: 2026-03-05
 excerpt: "Frequency analysis studies how linear systems respond to sinusoidal inputs. The output is a sinusoidal signal with the same frequency, but altered amplitude and phase."

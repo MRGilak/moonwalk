@@ -1,6 +1,12 @@
 ---
 layout: page
 title: Manipulator Simulation
+desc: An object-oriented MATLAB implementation of manipulator kinematics, dynamics and control.
+image: /assets/Projects/project-thumbnails/manipulator-circle.gif
+image_alt: Manipulator Simulation
+open_source_order: 3
+home_sections:
+  - open-source
 ---
 
 **GitHub Repository:** [MRGilak/manipulator](https://github.com/MRGilak/manipulator)

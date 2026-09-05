@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Kinematics"
 date: 2026-03-01
 excerpt: "Kinematics involves defining joint angles and deriving equations of motion. It relates joint velocities to end effector velocities through the Jacobian matrix."

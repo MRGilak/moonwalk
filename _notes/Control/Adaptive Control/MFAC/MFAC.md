@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
+  - "MFAC"
 title: "MFAC"
 date: 2026-03-02
 excerpt: "MFAC is a data-driven approach to adaptive control using pseudo-partial derivatives. It builds a dynamical linearization model from I/O measurement data."

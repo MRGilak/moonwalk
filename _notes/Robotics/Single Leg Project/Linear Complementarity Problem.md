@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Linear Complementarity Problem"
 date: 2025-12-27
 excerpt: "The Linear Complementarity Problem (LCP) involves finding vectors that satisfy specific constraints given a matrix and vector. It can be stated as a quadratic optimization problem with constraints."

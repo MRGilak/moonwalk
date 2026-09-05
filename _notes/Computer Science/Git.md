@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
 title: "Git"
 date: 2026-04-10
 excerpt: "#computer-science"

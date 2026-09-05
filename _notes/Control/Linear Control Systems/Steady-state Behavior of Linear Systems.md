@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Linear Control Systems"
 title: "Steady-state Behavior of Linear Systems"
 date: 2026-03-03
 excerpt: "Steady-state behavior of linear systems is analyzed using the final value theorem. The systems response to different inputs is characterized by position, velocity, and acceleration constants."

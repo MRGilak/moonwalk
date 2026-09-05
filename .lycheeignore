@@ -1,0 +1,8 @@
+# External hosts that commonly block bot link checkers (403/999).
+# The site is flagged by the author when a target is added/removed.
+^https://www\.linkedin\.com/
+^https://scholar\.google\.com/
+^https://orcid\.org/
+^https://www\.mathworks\.com/
+^https://x\.com/
+^https://twitter\.com/

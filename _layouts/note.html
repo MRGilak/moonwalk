@@ -4,9 +4,20 @@ layout: default
 
 <article class="note" data-aos="fade-up" data-aos-duration="1000">
   <header style="position: relative;">
-    <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="{{ "/" | relative_url }}">Home</a>
+      {% assign rel = page.path | remove_first: "_notes/" | split: "/" %}
+      {% for seg in rel %}
+      {%- if forloop.last -%}
+      › <span aria-current="page">{{ page.title }}</span>
+      {%- else -%}
+      › <span class="bc-folder">{{ seg }}</span>
+      {%- endif -%}
+      {% endfor %}
+    </nav>
     <h1>{{ page.title }}</h1>
     <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>
+    {% include note_meta.html %}
 
   <!-- Note about AI summary (click to smooth-scroll to summary) -->
   <div class="ai-summary-note"><a href="#ai-summary-section">AI summary available at the end of the page</a></div>

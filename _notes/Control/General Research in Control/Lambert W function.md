@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "General Research in Control"
 title: "Lambert W function"
 date: 2026-03-02
 excerpt: "The Lambert W function aids in analyzing linear time-delayed systems. It helps study systems with infinitely many eigenvalues."

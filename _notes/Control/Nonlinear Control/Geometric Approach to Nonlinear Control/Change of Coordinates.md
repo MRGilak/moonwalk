@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Nonlinear Control"
+  - "Geometric Approach to Nonlinear Control"
 title: "Change of Coordinates"
 date: 2026-04-02
 excerpt: "Change of coordinates involves transforming a system using a diffeomorphism. This transformation can simplify the systems representation and reveal hidden features."

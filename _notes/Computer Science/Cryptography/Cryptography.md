@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Cryptography"
 title: "Cryptography"
 date: 2025-08-19
 excerpt: "Cryptography involves encrypting messages to secure communication. It uses ciphers to protect information from unauthorized access."

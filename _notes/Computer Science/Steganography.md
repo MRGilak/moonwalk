@@ -1,5 +1,7 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
 title: "Steganography"
 date: 2025-08-23
 excerpt: "Steganography hides information in plain sight, distinct from cryptography. It involves concealing data, often in images."

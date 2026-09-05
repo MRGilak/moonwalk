@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Reinforcement Learning"
 title: "Monte Carlo Methods"
 date: 2026-03-07
 excerpt: "Monte Carlo methods are ways of solving reinforcement learning problems based on averaging sample returns. They require only experience, not complete knowledge of the environment."

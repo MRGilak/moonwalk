@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Algorithms"
 title: "Algorithms"
 date: 2025-08-19
 excerpt: "Algorithms are sets of steps for computer programs to accomplish tasks. They include techniques like sorting and searching."

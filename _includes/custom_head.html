@@ -5,5 +5,13 @@
 {% endcomment %}
 
 <script>
-  window.NETLIFY_FUNCTIONS_BASE = "https://mgilak.netlify.app";
+  // When running local dev (netlify dev), the function is served on the same
+  // origin (localhost:8888/.netlify/functions/summarize), so use a relative
+  // path. In production the static site (GitHub Pages) and the Netlify
+  // function live on different hosts, so point at the Netlify origin.
+  var host = location.hostname;
+  window.NETLIFY_FUNCTIONS_BASE =
+    (host === "localhost" || host === "127.0.0.1")
+      ? ""
+      : "https://mgilak.netlify.app";
 </script>

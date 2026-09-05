@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Robotics"
+  - "Single Leg Project"
 title: "Single Leg Dynamics"
 date: 2026-03-28
 excerpt: "The dynamics of a single leg are equivalent to those of an n-link manipulator. The dynamics are represented by the equation M(q)	ddot{q} + C(q, dot{q}) dot{q} + G = tau."

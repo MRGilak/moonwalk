@@ -1,5 +1,8 @@
 ---
 layout: note
+tags:
+  - "Computer Science"
+  - "Cryptography"
 title: "Modern Cryptography"
 date: 2025-08-23
 excerpt: "Modern cryptography relies on mathematical concepts like prime factorization and modular arithmetic. It involves using one-way functions to securely encrypt and decrypt messages."

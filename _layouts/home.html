@@ -8,8 +8,6 @@ layout: default
 <!-- Everything below sits above the background -->
 <div class="parallax-content">
 
-  {% include navbar.html %}
-
   <header data-aos="fade-down" data-aos-duration="1000">
     <h1>{{ site.title }}</h1>
     {% if site.theme_config.show_description == true %}
@@ -21,7 +19,8 @@ layout: default
 
   {% if site.theme_config.show_projects == true %}
     <h2 id="projects" data-aos="fade-up">{{ site.theme_config.home.title_projects }}</h2>
-    {% include card_list.html collection=site.data.home.project_entries %}
+    {% assign featured = site.projects | where_exp: "item", "item.home_sections contains 'featured'" | sort: "featured_order" %}
+    {% include card_list.html collection=featured %}
   {% endif %}
 
   {% if site.theme_config.show_notes == true %}
@@ -43,7 +42,8 @@ layout: default
 
   {% if site.theme_config.show_old_projects == true %}
     <h2 id="old-projects" data-aos="fade-up">{{ site.theme_config.home.title_old_projects }}</h2>
-    {% include card_list.html collection=site.data.home.old_project_entries %}
+    {% assign open_source = site.projects | where_exp: "item", "item.home_sections contains 'open-source'" | sort: "open_source_order" %}
+    {% include card_list.html collection=open_source %}
   {% endif %}
 
   {% if site.theme_config.show_footer == true %}
@@ -58,18 +58,21 @@ layout: default
     document.querySelectorAll('.minimal-navbar a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        if(href.startsWith("#")) {
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+        // Only smooth-scroll when the target is an anchor on this same page;
+        // otherwise fall through to normal navigation (e.g. jump to /#projects).
+        if (location.pathname !== '/' || (href.slice(0, hashIndex) && href.slice(0, hashIndex) !== '/')) return;
+        const target = document.querySelector('#' + href.slice(hashIndex + 1));
+        if(target) {
           e.preventDefault();
-          const target = document.querySelector(href);
-          if(target) {
-            const navbarHeight = document.querySelector('.minimal-navbar').offsetHeight;
-            const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - navbarHeight - 10; // extra 10px padding
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });
-          }
+          const navbarHeight = document.querySelector('.minimal-navbar').offsetHeight || 0;
+          const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - navbarHeight - 10; // extra 10px padding
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
         }
       });
     });

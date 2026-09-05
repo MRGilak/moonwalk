@@ -1,5 +1,9 @@
 ---
 layout: note
+tags:
+  - "Control"
+  - "Adaptive Control"
+  - "MFAC"
 title: "Data-Driven Model-Free Adaptive Control for a  Class of MIMO Nonlinear Discrete-Time Systems"
 date: 2025-07-20
 excerpt: "Data-driven model-free adaptive control is applied to MIMO nonlinear discrete-time systems. A general system is considered with input and output of the same length."

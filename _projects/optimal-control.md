@@ -1,6 +1,10 @@
 ---
 layout: page
 title: Optimal Control
+desc: MATLAB codes for solving the general nonlinear optimal control problem.
+open_source_order: 4
+home_sections:
+  - open-source
 ---
 
 **GitHub Repository:** [MRGilak/Optimal-Control](https://github.com/MRGilak/Optimal-Control)
