@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>
     {% if page.title %}
@@ -37,7 +37,9 @@
 
   {%- include custom_head.html -%}
 
-    <!-- MathJax support -->
+    <!-- MathJax support (lazy-loaded only when the page contains math) -->
+  {%- assign _math_hint = page.content | strip_html -%}
+  {%- if _math_hint contains '$' or _math_hint contains '\(' or _math_hint contains '$$' -%}
   <script>
     window.MathJax = {
       tex: {
@@ -52,9 +54,10 @@
   <script type="text/javascript" async
     src="/assets/vendor/mathjax/es5/tex-svg.js">
   </script>
+  {%- endif -%}
 
   <!-- AOS (Animate On Scroll) JavaScript -->
-  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/aos/aos.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({

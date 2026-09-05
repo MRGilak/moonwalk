@@ -31,13 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         rotateY(${rotateY}deg) 
         scale(1.02)
       `;
-      
-      // Add shine effect based on mouse position
-      const shine = card.querySelector('.card-shine');
-      if (shine) {
-        shine.style.left = `${x}px`;
-        shine.style.top = `${y}px`;
-      }
     });
     
     card.addEventListener('mouseleave', function() {

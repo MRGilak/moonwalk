@@ -1,97 +1,5 @@
 <!-- Recursive Collapsible Notes Accordion -->
-
-<style>
-  .notes-accordion {
-    list-style: none;
-    padding: 0;
-  }
-
-  .accordion-item {
-    margin-bottom: 0.5rem;
-  }
-
-  .accordion-header {
-    cursor: pointer;
-    padding: 0.75rem 1rem;
-    background-color: var(--bg-secondary);
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .accordion-header:hover {
-    filter: brightness(0.95);
-  }
-
-  html[data-theme="dark"] .accordion-header:hover {
-    filter: brightness(1.2);
-  }
-
-  .accordion-arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    font-size: 0.8em;
-    min-width: 1em;
-  }
-
-  .accordion-arrow.expanded {
-    transform: rotate(90deg);
-  }
-
-  .accordion-title {
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding-left: 1.5rem;
-  }
-
-  .accordion-content.expanded {
-    max-height: 10000px; /* Large enough for nested content */
-    padding-top: 0.5rem;
-  }
-
-  .accordion-content ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .accordion-content li {
-    padding: 0.3rem 0;
-  }
-
-  /* Nested folder styling */
-  .nested-accordion {
-    margin-top: 0.5rem;
-  }
-
-  .nested-accordion .accordion-header {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.95em;
-  }
-
-  .nested-accordion .accordion-title {
-    font-size: 1em;
-    font-weight: 600;
-  }
-
-  /* Note links */
-  .note-link {
-    padding: 0.2rem 0;
-    display: block;
-  }
-
-  .overview-section {
-    margin-bottom: 1.5rem;
-  }
-</style>
+<!-- Styles live in _sass/notes-accordion.scss (imported by main.scss) -->
 
 <!-- Overview (Home.md) -->
 {% assign overview = site.notes | where: "path", "_notes/Home.md" | first %}
@@ -126,20 +34,21 @@
     },
     {% endfor %}
   ];
+  let accordionId = 0;
 
   function buildTree(notes) {
     const tree = {};
-    
+
     notes.forEach(note => {
       const parts = note.path.split('/').slice(1); // Remove '_notes'
-      
+
       // Skip if this is Home.md at root level
       if (parts.length === 1 && parts[0] === 'Home.md') {
         return;
       }
-      
+
       let current = tree;
-      
+
       parts.forEach((part, index) => {
         if (index === parts.length - 1) {
           // It's a file
@@ -153,79 +62,90 @@
         }
       });
     });
-    
+
     return tree;
   }
 
   function renderTree(obj, container, level = 0) {
     const ul = document.createElement('ul');
     ul.className = level === 0 ? 'notes-accordion' : 'nested-accordion';
-    
+
     // Get sorted folder names
     const folders = Object.keys(obj).filter(k => k !== '_files').sort();
-    
+
     // Render folders first
     folders.forEach(folderName => {
       const li = document.createElement('li');
       li.className = 'accordion-item';
-      
+
+      const content = document.createElement('div');
+      content.className = 'accordion-content';
+      content.id = 'accordion-panel-' + (++accordionId);
+
       const header = document.createElement('div');
       header.className = 'accordion-header';
+      header.setAttribute('role', 'button');
+      header.setAttribute('tabindex', '0');
+      header.setAttribute('aria-expanded', 'false');
+      header.setAttribute('aria-controls', content.id);
       header.onclick = function() { toggleAccordion(this); };
-      
+      header.onkeydown = function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleAccordion(this);
+        }
+      };
+
       const arrow = document.createElement('span');
       arrow.className = 'accordion-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
       arrow.textContent = '▶';
-      
+
       const title = document.createElement('span');
       title.className = 'accordion-title';
       title.textContent = folderName;
-      
+
       header.appendChild(arrow);
       header.appendChild(title);
-      
-      const content = document.createElement('div');
-      content.className = 'accordion-content';
-      
+
       // Recursively render subfolders and files
       renderTree(obj[folderName], content, level + 1);
-      
+
       li.appendChild(header);
       li.appendChild(content);
       ul.appendChild(li);
     });
-    
+
     // Render files in this folder
     if (obj._files) {
       obj._files.sort((a, b) => a.title.localeCompare(b.title)).forEach(note => {
         const li = document.createElement('li');
         li.className = 'note-link';
-        
+
         const meta = document.createElement('p');
         meta.className = 'post-meta';
-        
+
         const link = document.createElement('a');
         link.href = note.url;
         link.textContent = note.title;
         meta.appendChild(link);
-        
+
         li.appendChild(meta);
-        
+
         if (note.excerpt && note.excerpt !== "") {
           const excerpt = document.createElement('p');
           excerpt.className = 'post-excerpt';
           excerpt.textContent = note.excerpt;
           li.appendChild(excerpt);
         }
-        
+
         ul.appendChild(li);
       });
     }
-    
+
     container.appendChild(ul);
   }
 
-  // Initialize tree on page load
   document.addEventListener('DOMContentLoaded', function() {
     const tree = buildTree(notes);
     const root = document.getElementById('notes-tree-root');
@@ -237,19 +157,11 @@
   function toggleAccordion(header) {
     const arrow = header.querySelector('.accordion-arrow');
     const content = header.nextElementSibling;
-    
-    // Toggle expanded class
-    arrow.classList.toggle('expanded');
-    content.classList.toggle('expanded');
-  }
+    const expanded = header.getAttribute('aria-expanded') === 'true';
 
-  // Optional: Expand all by default on load
-  // Remove these lines if you want them collapsed by default
-  document.addEventListener('DOMContentLoaded', function() {
-    const allHeaders = document.querySelectorAll('.accordion-header');
-    allHeaders.forEach(header => {
-      // Uncomment next line to expand all by default:
-      // toggleAccordion(header);
-    });
-  });
+    // Toggle expanded state
+    arrow.classList.toggle('expanded', !expanded);
+    content.classList.toggle('expanded', !expanded);
+    header.setAttribute('aria-expanded', String(!expanded));
+  }
 </script>

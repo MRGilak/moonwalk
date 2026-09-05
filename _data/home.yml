@@ -1,10 +1,3 @@
-navbar_entries:
-  - title: about
-    url: about
-
-  - title: blog
-    url: blog
-
 project_entries:
   - title: Quadrupedal Locomotion
     url: /projects/quadrupedal-locomotion

@@ -1,31 +1,35 @@
 <script type="text/javascript">
-  window.addEventListener('load', themeChange);
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-  if (currentTheme)
-    document.documentElement.setAttribute('data-theme', currentTheme);
+  (function () {
+    // Apply saved theme immediately to avoid flash-of-wrong-theme (FOUC)
+    var currentTheme = localStorage.getItem('theme');
+    if (currentTheme)
+      document.documentElement.setAttribute('data-theme', currentTheme);
 
-  function themeChange() {
-    let button = document.querySelector('.theme-toggle');
-
-    button.addEventListener('click', function (e) {
-      let currentTheme = document.documentElement.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        transition();
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      } else {
-        transition();
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-
-    let transition = () => {
+    function transition() {
       document.documentElement.classList.add('transition');
-      window.setTimeout(() => {
+      window.setTimeout(function () {
         document.documentElement.classList.remove('transition');
       }, 1000);
     }
-  }
+
+    // Attach the toggle handler once the button exists (it is rendered in the body)
+    window.addEventListener('load', function () {
+      var button = document.querySelector('.theme-toggle');
+      if (!button) return;
+
+      button.addEventListener('click', function () {
+        var theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+          transition();
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        } else {
+          transition();
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    });
+  })();
 </script>
 

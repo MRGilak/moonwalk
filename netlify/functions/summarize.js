@@ -1,16 +1,31 @@
 // Netlify Function: netlify/functions/summarize.js
 // CommonJS export for broad Netlify compatibility; uses native fetch (Node 18+)
 
-const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*", // Consider restricting this to your domain
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
+// Origins allowed to call this function. The static site lives on GitHub Pages
+// (mgilak.ir), the function is hosted on Netlify, and localhost covers dev.
+const ALLOWED_ORIGINS = new Set([
+  "https://mgilak.ir",
+  "https://www.mgilak.ir",
+  "https://mgilak.netlify.app",
+]);
 
-function json(statusCode, body) {
+// Resolve the CORS Allow-Origin based on the request's Origin header so we
+// never return a wildcard "*" (which would let any site burn our AI quota).
+function corsHeaders(event) {
+  const origin = (event.headers && (event.headers["origin"] || event.headers["Origin"])) || "";
+  const allowed = ALLOWED_ORIGINS.has(origin) ? origin : "";
+  return {
+    "Access-Control-Allow-Origin": allowed,
+    "Vary": "Origin",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+  };
+}
+
+function json(statusCode, body, event) {
   return {
     statusCode,
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    headers: { "Content-Type": "application/json", ...corsHeaders(event) },
     body: JSON.stringify(body),
   };
 }
@@ -18,11 +33,11 @@ function json(statusCode, body) {
 exports.handler = async (event, context) => {
   // Handle CORS preflight
   if (event.httpMethod === "OPTIONS") {
-    return { statusCode: 204, headers: CORS_HEADERS, body: "" };
+    return { statusCode: 204, headers: corsHeaders(event), body: "" };
   }
 
   if (event.httpMethod !== "POST") {
-    return json(405, { error: "Method not allowed. Use POST." });
+    return json(405, { error: "Method not allowed. Use POST." }, event)
   }
 
   try {
@@ -30,7 +45,7 @@ exports.handler = async (event, context) => {
     const textToSummarize = (body.text || "").toString();
 
     if (!textToSummarize.trim()) {
-      return json(400, { error: "No text provided to summarize." });
+      return json(400, { error: "No text provided to summarize." }, event)
     }
 
     // Trim to a reasonable size to avoid huge payloads
@@ -45,7 +60,7 @@ exports.handler = async (event, context) => {
     const openaiKey = process.env.OPENAI_API_KEY;
 
     if (!geminiKey && !groqKey && !openaiKey) {
-      return json(500, { error: "No AI provider configured. Set GEMINI_API_KEY, GROQ_API_KEY, or OPENAI_API_KEY." });
+      return json(500, { error: "No AI provider configured. Set GEMINI_API_KEY, GROQ_API_KEY, or OPENAI_API_KEY." }, event)
     }
 
     let provider = geminiKey ? "gemini" : (groqKey ? "groq" : "openai");
@@ -100,16 +115,16 @@ ${inputText}`
         return json(resp.status, {
           error: data.error?.message || data.error || `Upstream error (${resp.status})`,
           provider,
-        });
+        }, event)
       }
 
       // Extract summary from Gemini response
       const summary = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
       if (!summary) {
-        return json(500, { error: "No summary returned from Gemini.", provider });
+        return json(500, { error: "No summary returned from Gemini.", provider }, event)
       }
 
-      return json(200, { summary, provider });
+      return json(200, { summary, provider }, event)
 
     // ==================== GROQ PROVIDER ====================
     } else if (provider === "groq") {
@@ -146,15 +161,15 @@ ${inputText}`
         return json(resp.status, {
           error: data.error?.message || data.error || `Upstream error (${resp.status})`,
           provider,
-        });
+        }, event)
       }
 
       const summary = data.choices?.[0]?.message?.content?.trim();
       if (!summary) {
-        return json(500, { error: "No summary returned from AI provider.", provider });
+        return json(500, { error: "No summary returned from AI provider.", provider }, event)
       }
 
-      return json(200, { summary, provider });
+      return json(200, { summary, provider }, event)
 
     // ==================== OPENAI PROVIDER ====================
     } else {
@@ -191,17 +206,17 @@ ${inputText}`
         return json(resp.status, {
           error: data.error?.message || data.error || `Upstream error (${resp.status})`,
           provider,
-        });
+        }, event)
       }
 
       const summary = data.choices?.[0]?.message?.content?.trim();
       if (!summary) {
-        return json(500, { error: "No summary returned from AI provider.", provider });
+        return json(500, { error: "No summary returned from AI provider.", provider }, event)
       }
 
-      return json(200, { summary, provider });
+      return json(200, { summary, provider }, event)
     }
   } catch (err) {
-    return json(500, { error: err?.message || "Unknown error" });
+    return json(500, { error: err?.message || "Unknown error" }, event)
   }
 };

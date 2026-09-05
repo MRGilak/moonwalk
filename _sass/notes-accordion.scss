@@ -1,0 +1,96 @@
+/* === Recursive Collapsible Notes Accordion === */
+
+.notes-accordion {
+  list-style: none;
+  padding: 0;
+}
+
+.accordion-item {
+  margin-bottom: 0.5rem;
+}
+
+.accordion-header {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accordion-header:hover,
+.accordion-header:focus-visible {
+  filter: brightness(0.95);
+  outline: 2px solid var(--links);
+  outline-offset: 2px;
+}
+
+html[data-theme="dark"] .accordion-header:hover,
+html[data-theme="dark"] .accordion-header:focus-visible {
+  filter: brightness(1.2);
+}
+
+.accordion-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.8em;
+  min-width: 1em;
+}
+
+.accordion-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.accordion-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1.5rem;
+}
+
+.accordion-content.expanded {
+  max-height: 10000px; /* Large enough for nested content */
+  padding-top: 0.5rem;
+}
+
+.accordion-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accordion-content li {
+  padding: 0.3rem 0;
+}
+
+/* Nested folder styling */
+.nested-accordion {
+  margin-top: 0.5rem;
+}
+
+.nested-accordion .accordion-header {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95em;
+}
+
+.nested-accordion .accordion-title {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+/* Note links */
+.note-link {
+  padding: 0.2rem 0;
+  display: block;
+}
+
+.overview-section {
+  margin-bottom: 1.5rem;
+}
