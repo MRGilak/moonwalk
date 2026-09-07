@@ -1,21 +1,21 @@
 # lychee link-checker configuration
 # See https://lychee.cli.rs/configuration/ for all options.
 
-# Paths to skip entirely (repo-local plugins, generated output).
+# Links are checked against the BUILT site (_site), never source markdown:
+# source files contain Liquid `{{ ... }}` artifacts and root-relative links
+# that lychee cannot resolve, which would drown real findings in noise.
+# root_dir makes "/assets/..." resolve to "./_site/assets/...".
+root_dir = "_site"
+
+# Paths to skip (repo-local plugins and cache; inputs come from explicit globs in args).
 exclude_path = [
   ".git",
-  "_site",
   "graft",
   "vendor",
-  "assets/Projects",
 ]
 
 # Do not check links that point at private/local addresses.
 exclude_all_private = true
-
-# Skip checking HTML files inside the upstream theme (already upstream-vetted is not
-# assumed; only speed: the vendored theme is checked by upstream).
-include = ["*.md"]
 
 # HTTP tuning for unreliable public hosts.
 max_concurrency = 10

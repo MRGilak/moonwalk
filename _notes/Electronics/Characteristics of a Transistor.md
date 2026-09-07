@@ -44,4 +44,4 @@ $$
 	I_E = I_{SE} e^{\frac{V_{BE}}{V_T}} - \alpha' I_{SC} e^{\frac{V_{BC}}{V_T}} .
 $$
 
-Continue learning about electronics [here](/notes/Electronics/Small Signal Model of a Transistor/).
+Continue learning about electronics [here](/notes/Electronics/Four-Element Model of a Transistor/).

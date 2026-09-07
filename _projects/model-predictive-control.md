@@ -20,19 +20,19 @@ A very simple explanation of DMC is included in [this file](https://github.com/M
 
 The functions and scripts are as follows:
 ### DMC functions
-- [simulate_linear_system](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/simulate_linear_system.m) and [simulate_nonlinear_system(DMC/simulate_nonlinear_system) simulate the systems by running the whole simulation, calling the MPC controller at each timestep to get the control input, applying the control input to the systems and moving the dynamics forward.
-- [dmc_linear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/dmc_linear.m) determines the control input for the linear system using the DMC logic
-- [dmc_nonlinear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/dmc_nonlinear.m) is the same as [dmc_linear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/dmc_linear.m) with the difference that it moves the nonlinear system's dynamics forward to calculate `Ypast`.
-- [update_linear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/update_linear_state.m) moves the linear system's dynamics forward one step. You can insert your linear system dynamics here.
-- [update_nonlinear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/update_nonlinear_state.m) moves the nonlinear system's dynamics forward one step. You can insert your nonlinear system dynamics here.
+- [simulate_linear_system](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/simulate_linear_system.m) and [simulate_nonlinear_system(DMC/simulate_nonlinear_system) simulate the systems by running the whole simulation, calling the MPC controller at each timestep to get the control input, applying the control input to the systems and moving the dynamics forward.
+- [dmc_linear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+controllers/+dmc/DMCController.m) determines the control input for the linear system using the DMC logic
+- [dmc_nonlinear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+controllers/+dmc/DMCController.m) is the same as [dmc_linear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+controllers/+dmc/DMCController.m) with the difference that it moves the nonlinear system's dynamics forward to calculate `Ypast`.
+- [update_linear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+dmc/update_linear_state.m) moves the linear system's dynamics forward one step. You can insert your linear system dynamics here.
+- [update_nonlinear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+dmc/update_nonlinear_state.m) moves the nonlinear system's dynamics forward one step. You can insert your nonlinear system dynamics here.
 A considerably smaller step size (compared to control sample time) should be considered when simulating the nonlinear system itself. The `substeps` parameter can be tuned for that (keep it at least at 10 for a realistic simulation).
-- [plot_simulation_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/plot_simulation_results.m), [plot_comparison_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/plot_comparison_results.m), [plot_comparison_results_for_Q](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/plot_comparison_results_for_Q.m) and [plot_comparison_results_for_alpha](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/plot_comparison_results_for_alpha.m) are used for plotting the results.
-- [plot_static_gain](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/plot_static_gain.m) is used for analyzing the nonlinear system's static gain at a given point 
+- [plot_simulation_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_simulation_results.m), [plot_comparison_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_comparison_results.m), [plot_comparison_results_for_Q](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_comparison_results_for_Q.m) and [plot_comparison_results_for_alpha](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_comparison_results_for_alpha.m) are used for plotting the results.
+- [plot_static_gain](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_static_gain.m) is used for analyzing the nonlinear system's static gain at a given point 
 
 ### DMC scripts
 
-- [plot_step_response](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/plot_step_response.m) is used to analyzing the linearized system's step response to obtain a reliable model horizon N
-- [general](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/general.m) runs the simulation with the set parameters and saves the results. Parameters include:
+- [plot_step_response](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_step_response.m) is used to analyzing the linearized system's step response to obtain a reliable model horizon N
+- [general](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/main.m) runs the simulation with the set parameters and saves the results. Parameters include:
     - `Ts` sampling time
     - `tf` final simulation time
     - `N` model horizon
@@ -51,14 +51,14 @@ A considerably smaller step size (compared to control sample time) should be con
     - `noise_power` power of white noise on the output (in dB)
     - `dist_amp` the amplitude of disturbance on the output. The disturbance is considered to be a pulse signal.
     - `dist_start_time` the time when the disturbance is applied
-- [compare_Ms](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/compare_Ms.m) compares different values of M. 
-- [compare_Ns](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/compare_Ns.m) compares different values of N. 
-- [compare_Ps](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/compare_Ps.m) compares different values of P. 
-- [compare_Qs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/compare_Qs.m) compares different values of Q. 
-- [compare_Rs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/compare_Rs.m) compares different values of R.
-- [compare_alphas](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/compare_alphas.m) compares different values of alpha. 
-- [pulse](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/pulse.m) pulse reference signal
-- [sinusoid](https://github.com/MRGilak/Model-Predictive-Control/blob/main/DMC/sinusoid.m) sinusoid reference signal
+- [compare_Ms](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/compare_Ms.m) compares different values of M. 
+- [compare_Ns](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/compare_Ns.m) compares different values of N. 
+- [compare_Ps](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/compare_Ps.m) compares different values of P. 
+- [compare_Qs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/compare_Qs.m) compares different values of Q. 
+- [compare_Rs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/compare_Rs.m) compares different values of R.
+- [compare_alphas](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/compare_alphas.m) compares different values of alpha. 
+- [pulse](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/pulse.m) pulse reference signal
+- [sinusoid](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/dmc/sinusoid.m) sinusoid reference signal
 
 
 ## EPFC
@@ -97,18 +97,18 @@ A very simple explanation of EPFC is included in [this file](https://github.com/
 
 The functions and scripts are as follows:
 ### EPFC functions
-- [run_simulation](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/run_simulation.m) runs the simulation given
-linearization method: set to 'perturbation' or 'jacobian'. Jacobian uses the provided Jacobian of the system (which should be provided in [linearize_dynamics](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/linearize_dynamics.m)). The perturbation method uses the predictive model and applies two inputs. One where the input is kept unchanged as it is at this sample time, and one with a small change in the control input value. By dividing the change of the output in the two cases by the change of the input, a linearized model is achieved.
-- [linearize_dynamics](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/linearize_dynamics.m) provides the jacobian for the 'jacobian' lineariztion method. You should set this function according to your system's dynamics.
-- [get_step_response_nonlinear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/get_step_response_nonlinear.m) provides the outputs for a given constant input. It is used in 'perturbation' linearization technique.
-- [update_nonlinear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/update_nonlinear_state.m) moves the nonlinear system's dynamics forward one step. You can insert your system dynamics here.
+- [run_simulation](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/epfc/simulate_closed_loop.m) runs the simulation given
+linearization method: set to 'perturbation' or 'jacobian'. Jacobian uses the provided Jacobian of the system (which should be provided in [linearize_dynamics](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+epfc/linearize_dynamics.m)). The perturbation method uses the predictive model and applies two inputs. One where the input is kept unchanged as it is at this sample time, and one with a small change in the control input value. By dividing the change of the output in the two cases by the change of the input, a linearized model is achieved.
+- [linearize_dynamics](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+epfc/linearize_dynamics.m) provides the jacobian for the 'jacobian' lineariztion method. You should set this function according to your system's dynamics.
+- [get_step_response_nonlinear](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+epfc/get_step_response_nonlinear.m) provides the outputs for a given constant input. It is used in 'perturbation' linearization technique.
+- [update_nonlinear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+epfc/update_nonlinear_state.m) moves the nonlinear system's dynamics forward one step. You can insert your system dynamics here.
 A considerably smaller step size (compared to control sample time) should be considered when simulating the nonlinear system itself. The `substeps` parameter can be tuned for that (keep it at least at 10 for a realistic simulation).
-- [update_nonlinear_state_actual](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/update_nonlinear_state_actual.m) is used when model mismatch is considered. You can skip setting up this function if your model is exact. If not, use the model at hand in [update_nonlinear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/update_nonlinear_state.m) and in [update_nonlinear_state_actual](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/update_nonlinear_state_actual.m) write the actual system model (unknown). 
-- [plot_simulation_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/plot_simulation_results.m) and [plot_comparison_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/plot_comparison_results.m) are used for plotting and saving the outputs. The outputs are saved in a folder called `simulation_results` in `downloads`. If no such folder exists, one will be created.
+- [update_nonlinear_state_actual](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+actual/+epfc/update_nonlinear_state.m) is used when model mismatch is considered. You can skip setting up this function if your model is exact. If not, use the model at hand in [update_nonlinear_state](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+model/+epfc/update_nonlinear_state.m) and in [update_nonlinear_state_actual](https://github.com/MRGilak/Model-Predictive-Control/blob/main/+systems/+actual/+epfc/update_nonlinear_state.m) write the actual system model (unknown). 
+- [plot_simulation_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/epfc/plot_simulation_results.m) and [plot_comparison_results](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/epfc/plot_comparison_results.m) are used for plotting and saving the outputs. The outputs are saved in a folder called `simulation_results` in `downloads`. If no such folder exists, one will be created.
 
 ### EPFC scripts
-- [plot_static_gain](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/plot_static_gain.m) is used for analyzing the nonlinear system static gain and consider a change of variables if necessary
-- [main](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/main.m) runs the simulation with the set parameters and saves the results. Parameters include:
+- [plot_static_gain](https://github.com/MRGilak/Model-Predictive-Control/blob/main/utils/dmc/plot_static_gain.m) is used for analyzing the nonlinear system static gain and consider a change of variables if necessary
+- [main](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/main.m) runs the simulation with the set parameters and saves the results. Parameters include:
     - `Ts` sampling time
     - `tf` final simulation time
     - `N-model` not actually used in PFC, but set it to something larger than all the `mu`s
@@ -127,21 +127,21 @@ A considerably smaller step size (compared to control sample time) should be con
     - `dist_amp` the amplitude of disturbance on the output. The disturbance is considered to be a pulse signal.
     - `dist_time` the time when the disturbance is applied
     - `dist_duration` the duration of the disturbance
-- [one_input_one_output](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/one_input_one_output.m) simulates the system for one input and one output coincidence points.
-- [one_input_three_outputs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/one_input_three_outputs.m) simulates the system for one input and three output coincidence points.
-- [one_input_three_outputs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/one_input_three_outputs.m) simulates the system for three input and three output coincidence points.
-- [compare_coincidence_points](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_coincidence_points.m) compares the three cases above.
-- [compare_input_coincidence_points](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_input_coincidence_points.m) compare different sets of input coincidence points.
-- [compare_output_coincidence_points](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_output_coincidence_points.m) compare different sets of output coincidence points.
-- [compare_constrained_vs_unconstrained](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_constrained_vs_unconstrained.m) compares the controller performance in presence and absence of input constraints
-- [compare_linearization_methods](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_linearization_methods.m) compares 'perturbation' and 'jacobian' linearization methods.
-- [compare_q_values](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_q_values.m) compares different values of q. 
-- [compare_r_values](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_r_values.m) compares different values of r.
-- [compare_psi_values](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_psi_values.m) compares different values of psi.
-- [compare_nominal_vs_uncertainty](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_nominal_vs_uncertainty.m) compares the controller performance in presence and absence of uncertainty in the model.
-- [compare_programmed](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/compare_programmed.m) compares programmed vs unprogrammed reference signal.
-- [noise_and_disturbance](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/noise_and_disturbance.m) is just [main](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/main.m) with more noise and disturbance to see their effects.
-- [initial_condition](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/initial_condition.m) is just [main](https://github.com/MRGilak/Model-Predictive-Control/blob/main/EPFC/main.m) with different initial conditions to see their effects.
+- [one_input_one_output](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/one_input_one_output.m) simulates the system for one input and one output coincidence points.
+- [one_input_three_outputs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/one_input_three_outputs.m) simulates the system for one input and three output coincidence points.
+- [three_inputs_three_outputs](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/three_inputs_three_outputs.m) simulates the system for three input and three output coincidence points.
+- [compare_coincidence_points](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_coincidence_points.m) compares the three cases above.
+- [compare_input_coincidence_points](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_input_coincidence_points.m) compare different sets of input coincidence points.
+- [compare_output_coincidence_points](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_output_coincidence_points.m) compare different sets of output coincidence points.
+- [compare_constrained_vs_unconstrained](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_constrained_vs_unconstrained.m) compares the controller performance in presence and absence of input constraints
+- [compare_linearization_methods](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_linearization_methods.m) compares 'perturbation' and 'jacobian' linearization methods.
+- [compare_q_values](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_q_values.m) compares different values of q. 
+- [compare_r_values](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_r_values.m) compares different values of r.
+- [compare_psi_values](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_psi_values.m) compares different values of psi.
+- [compare_nominal_vs_uncertainty](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_nominal_vs_uncertainty.m) compares the controller performance in presence and absence of uncertainty in the model.
+- [compare_programmed](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/compare_programmed.m) compares programmed vs unprogrammed reference signal.
+- [noise_and_disturbance](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/noise_and_disturbance.m) is just [main](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/main.m) with more noise and disturbance to see their effects.
+- [initial_condition](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/initial_condition.m) is just [main](https://github.com/MRGilak/Model-Predictive-Control/blob/main/scripts/epfc/main.m) with different initial conditions to see their effects.
 
 
 

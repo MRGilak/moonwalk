@@ -12,7 +12,7 @@ excerpt: "Kinematics involves defining joint angles and deriving equations of mo
 
 The [single leg project](/notes/Robotics/Single Leg Project/Single Leg Project/) requires working with frames, defining angles and deriving kinematics and dynamics. Dynamics of the robot are derived [here](/notes/Robotics/Single Leg Project/Mathematical Modeling of a Single Leg Robot/). Kinematics will be derived here.
 We define the hip angle and the knee angle as in the image below.
-![kinematics.jpg](/assets/Robotics/Single Leg Project/images/kinematics.jpg)
+![kinematics.jpg](/assets/Robotics/Single Leg Project/kinematics.jpg)
 It is now easy to write
 
 $$

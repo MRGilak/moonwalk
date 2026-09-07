@@ -90,4 +90,4 @@ $$
 
 It is obvious that we have achieved a far larger gain by using buffers.
 
-Continue with learning about the CASCODE structure [here](/notes/Electronics/CASCODE Structure/).
+Continue with learning about the CASCODE structure [here](/notes/Electronics/Common Base Structure/).

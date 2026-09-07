@@ -79,7 +79,7 @@ The solver implements this by performing alternating optimization: first updatin
 
 ## Documentation
 
-The exact logic explained in [the theoretical background](#theoretical-background) has been implemented in the function [optimalControlSolver](/matlab/optimalControlSolver.m) (and [the same function](https://github.com/MRGilak/Optimal-Control/blob/main/python/optimalControlSolver.py) for Python). Here, we go over the variables, inputs and outputs of the function.
+The exact logic explained in [the theoretical background](#theoretical-background) has been implemented in the function [optimalControlSolver](https://github.com/MRGilak/Optimal-Control/blob/main/matlab/optimalControlSolver.m) (and [the same function](https://github.com/MRGilak/Optimal-Control/blob/main/python/optimalControlSolver.py) for Python). Here, we go over the variables, inputs and outputs of the function.
 
 I've only explained the MATLAB script, but the Python function is similar as well. I've even tried to use the exact same names in both functions.
 

@@ -66,7 +66,7 @@ Please pay attention to the following:
 - The Simulink files are generated using MATLAB 2025b. If you have an older version and need the files, you can contact me to export them for you. I will add automatic support for older versions as well in the future. You can contact me via email at _mrgilak02@gmail.com_, but I might not be able to respond quickly due to frequent internet shutdowns in Iran :)
 
 # MATLAB
-You can take a look at [this file](/docs/matlab_docs.md) to see how the code works. 
+You can take a look at [this file](https://github.com/MRGilak/Active-Disturbance-Rejection-Controller/blob/main/docs/matlab_docs.md) to see how the code works. 
 
 **_Note_**: I have tried to use the same names in MATLAB, Python, and C++; however, I still feel it's necessary to add proper documentation for each. This is in the [TODOs](#todos).
 

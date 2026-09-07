@@ -13,4 +13,4 @@ The robotic projects I am working on include:
 - Autonomous Driving Vehicle
 - Humanoid Robot
 
-You can visit these projects to learn more about them or you can take a look at my [Robotics Tutorials](/notes/robotics-tutorials/).
+You can visit these projects to learn more about them or you can take a look at my [Robotics Tutorials](/notes/tag/robotics.html).

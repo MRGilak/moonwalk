@@ -25,7 +25,7 @@ When systems of bodies get very complicated, it is often easier to work with Lag
 	$$
 
 This approach has been used to derive the equations of motion for the double-joint single leg below.
-![400](/assets/Robotics/Single Leg Project/images/kinematics.jpg)
+![400](/assets/Robotics/Single Leg Project/kinematics.jpg)
 The kinetic energies are:
 - _Linear Horizontal Kinetic Energy of Load Mass_: $K_M^h = 0$
 - _Linear Vertical Kinetic Energy of Load Mass_: $K_M^v = \frac{1}{2} M \dot{h}_{hip}^2$
