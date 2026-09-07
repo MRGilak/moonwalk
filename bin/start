@@ -5,3 +5,6 @@ bundle exec jekyll serve
 
 # use this for spell-check
 # npx --yes cspell --config .cspell.json "**/*.md" "**/*.html" "_config.yml" "_data/**/*.yml"
+
+# use this for checking links
+# lychee --config .lychee.toml --no-progress "./_site/**/*.html" "./_site/**/*.json"
