@@ -18,7 +18,7 @@ exclude_all_private = true
 include = ["*.md"]
 
 # HTTP tuning for unreliable public hosts.
-max_conns = 10
+max_concurrency = 10
 timeout = 20
 retry_wait_time = 2
 max_retries = 2
