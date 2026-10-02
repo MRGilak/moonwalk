@@ -13,6 +13,9 @@ layout: default
     {% if site.theme_config.show_description == true %}
       <p>{{ site.description }}</p>
     {% endif %}
+    {% if site.motto %}
+      <p class="site-motto"><em>&ldquo;{{ site.motto }}&rdquo;</em> &mdash; {{ site.motto_author }}</p>
+    {% endif %}
   </header>
 
   {{ content }}

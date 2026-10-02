@@ -9,13 +9,11 @@ permalink: /now/
 
 _Last updated: September 2026_
 
-- Working on model predictive control and contact-aware control for a
+- Working on model predictive control and whole-body control for a
   quadrupedal robot platform at Fasta Robotics.
-- Wrapping up our paper on *An Energy Conservation Approach to Variable
-  Stiffness Single Leg Jumping*, presented at ICEE 2026 — adding the DOI once
-  it is indexed.
-- Teaching labs for Linear Control, Industrial Control, and Optimal Control at
-  Sharif University of Technology.
+- Working on Cascaded ESO Active Disturbance Rejection control (ADRC)
+  on theory and implementation side
+- Teaching Simulation in Control Lab at Sharif University of Technology.
 - Keeping this site's [notes](/notes/) alive: control theory, estimation,
   robotics, and the math connecting them.
 
