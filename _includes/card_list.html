@@ -24,7 +24,11 @@
 
         {% if item.image %}
           <div class="card__media">
-            <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.title }}" loading="lazy" />
+            {% if item.image contains '.mp4' %}
+              <video src="{{ item.image | relative_url }}" autoplay muted loop playsinline preload="metadata"></video>
+            {% else %}
+              <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.title }}" loading="lazy" />
+            {% endif %}
           </div>
         {% endif %}
       </a>

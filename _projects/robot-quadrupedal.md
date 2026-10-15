@@ -2,7 +2,7 @@
 layout: page
 title: Quadrupedal Robots
 desc: Notes and development updates on the design and control of a quadrupedal robotic platform.
-featured_order: 3
+featured_order: 4
 home_sections:
   - featured
 ---

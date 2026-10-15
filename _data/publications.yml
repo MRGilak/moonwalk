@@ -30,11 +30,13 @@
       me: true
   venue: "34th Iranian Conference on Electrical Engineering (ICEE)"
   year: 2026
-  note: "Presented at ICEE 2026; DOI to be added once indexed."
+  doi: "10.1109/ICEE70628.2026.11710800"
   bibtex: |
     @inproceedings{gilak2026energy,
-      author    = {Gilak, Mohammadreza},
+      author    = {Gilak, Mohammadreza and Zarei, Mehdi and et al.},
       title     = {An Energy Conservation Approach to Variable Stiffness Single Leg Jumping},
       booktitle = {34th Iranian Conference on Electrical Engineering (ICEE)},
-      year      = {2026}
+      year      = {2026},
+      doi       = {10.1109/ICEE70628.2026.11710800},
+      publisher = {IEEE}
     }

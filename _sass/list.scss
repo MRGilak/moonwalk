@@ -197,7 +197,8 @@ ul.horizontal-list {
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-      img {
+      img,
+      video {
         display: block;
         width: 100%;
         height: 100%;
@@ -211,7 +212,8 @@ ul.horizontal-list {
       transform: translateY(-1px) scale(1.015);
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.12);
 
-      img {
+      img,
+      video {
         transform: scale(1.04);
       }
     }

@@ -5,7 +5,7 @@ desc: A multi-language implementation of active disturbance rejection control.
 highlight: Open-source
 image: /assets/Projects/project-thumbnails/adrc-app.png
 image_alt: ADRC App
-featured_order: 6
+featured_order: 7
 open_source_order: 2
 home_sections:
   - featured
