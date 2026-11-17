@@ -1,7 +1,24 @@
 <figure class="video-figure">
-  <video class="video-responsive" controls preload="metadata" playsinline{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}>
+  {%- assign _poster = include.poster -%}
+  {%- if _poster == nil and include.src contains '.mp4' -%}
+    {%- assign _poster = include.src | replace: '.mp4', '-poster.jpg' -%}
+  {%- endif -%}
+  {%- if include.autoplay -%}
+  <video
+    class="video-responsive lazy-video"
+    data-src="{{ include.src | relative_url }}"
+    {% if _poster %}poster="{{ _poster | relative_url }}"{% endif %}
+    {% if include.aspect %}style="aspect-ratio: {{ include.aspect }};"{% endif %}
+    muted
+    loop
+    playsinline
+    preload="none"
+    aria-label="{{ include.caption | default: include.alt | default: 'Video' }}"></video>
+  {%- else -%}
+  <video class="video-responsive" controls preload="metadata" playsinline{% if _poster %} poster="{{ _poster | relative_url }}"{% endif %}>
     <source src="{{ include.src | relative_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  {%- endif -%}
   {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
 </figure>

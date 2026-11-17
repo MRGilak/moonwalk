@@ -22,10 +22,23 @@
           {% endif %}
         </div>
 
-        {% if item.image %}
+        {% if item.image or item.image_video %}
           <div class="card__media">
-            {% if item.image contains '.mp4' %}
-              <video src="{{ item.image | relative_url }}" autoplay muted loop playsinline preload="metadata"></video>
+            {% if item.image_video or item.image contains '.mp4' %}
+              {%- assign _src = item.image_video | default: item.image -%}
+              {%- assign _poster = item.image -%}
+              {%- if _poster contains '.mp4' -%}
+                {%- assign _poster = _poster | replace: '.mp4', '-poster.jpg' -%}
+              {%- endif -%}
+              <video
+                class="lazy-video"
+                data-src="{{ _src | relative_url }}"
+                {% if _poster %}poster="{{ _poster | relative_url }}"{% endif %}
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-label="{{ item.image_alt | default: item.title }}"></video>
             {% else %}
               <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.title }}" loading="lazy" />
             {% endif %}

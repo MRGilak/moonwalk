@@ -2,7 +2,8 @@
 layout: page
 title: Quadruped Parameter Identification
 desc: Notes on quadruped robots' parameter identification.
-image: /assets/Projects/project-thumbnails/system_identification.gif
+image: /assets/Projects/project-thumbnails/system_identification-poster.jpg
+image_video: /assets/Projects/project-thumbnails/system_identification.mp4
 image_alt: Quadruped Parameter Identification
 media_wide: true
 featured_order: 5
@@ -12,4 +13,4 @@ home_sections:
 
 I will shortly add my studies related to parameter identification in quadrupedal robots, and the simulations I have done (I am just a bit busy at the moment).
 
-![Quadrupedal Identification](/assets/Projects/project-thumbnails/system_identification.gif)
+{% include video.html src="/assets/Projects/project-thumbnails/system_identification.mp4" autoplay=true aspect="2560 / 720" %}

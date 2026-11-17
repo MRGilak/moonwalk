@@ -2,7 +2,8 @@
 layout: page
 title: Contact Detection
 desc: Contact and collision detection for quadrupedal locomotion gait planning.
-image: /assets/Projects/project-thumbnails/contact-detection.gif
+image: /assets/Projects/project-thumbnails/contact-detection-poster.jpg
+image_video: /assets/Projects/project-thumbnails/contact-detection.mp4
 image_alt: Contact Detection
 featured_order: 3
 home_sections:
