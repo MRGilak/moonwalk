@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Quadruped Simulation
-desc: Isaac Sim and Mujoco simualtion for quadrupedal locomotion.
+desc: Isaac Sim and Mujoco simulation for quadrupedal locomotion.
 image: /assets/Projects/project-thumbnails/quadrupedal-locomotion-isaac-poster.jpg
 image_video: /assets/Projects/project-thumbnails/quadrupedal-locomotion-isaac.mp4
-image_alt: Isaac Sim and Mujoco simualtion for quadrupedal locomotion
+image_alt: Isaac Sim and Mujoco simulation for quadrupedal locomotion
 media_wide: true
 featured_order: 2
 home_sections:

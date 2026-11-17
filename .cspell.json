@@ -212,7 +212,10 @@
     "truncatewords",
     "endfor",
     "notetag",
-    "autotag"
+    "autotag",
+    "autoplay",
+    "Mehdi",
+    "Zarei"
   ],
   "ignorePaths": [
     "_site/**",

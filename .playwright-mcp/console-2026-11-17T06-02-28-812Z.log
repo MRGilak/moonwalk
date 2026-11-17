@@ -1,0 +1,20 @@
+[   20917ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/Projects/project-thumbnails/quadrupedal-locomotion-poster.jpg:1
+[   40458ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/fonts/inter/latin-400-normal.woff2:1
+[   40476ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/images/bg-desktop-dark.jpg:1
+[   40476ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/Projects/project-thumbnails/contact-detection-poster.jpg:1
+[   40476ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/Projects/project-thumbnails/manipulator-circle-poster.jpg:1
+[   40476ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/Projects/project-thumbnails/system_identification-poster.jpg:1
+[   40477ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/Projects/project-thumbnails/adrc-app.png:1
+[   40477ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/fonts/inter/latin-700-normal.woff2:1
+[   40478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/parallax.js:1
+[   40478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/card-tilt.js:1
+[   40478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/fenced-code.js:1
+[   40478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/typing-animation.js:1
+[   40479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/reading-progress.js:1
+[   40479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/copy-citation.js:1
+[   40479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/back-to-top.js:1
+[   40479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/lazy-video.js:1
+[   40479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/js/lazy-images.js:1
+[   40479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://mgilak.ir/assets/vendor/aos/aos.js:1
+[   40496ms] ReferenceError: AOS is not defined
+    at HTMLDocument.<anonymous> (https://mgilak.ir/:103:7)

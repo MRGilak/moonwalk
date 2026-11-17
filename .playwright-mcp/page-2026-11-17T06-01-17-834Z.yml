@@ -1,0 +1,174 @@
+- generic [active] [ref=f2e1]:
+  - navigation [ref=f2e2]:
+    - list [ref=f2e3]:
+      - listitem [ref=f2e4]:
+        - link "Projects" [ref=f2e5] [cursor=pointer]:
+          - /url: /#projects
+      - listitem [ref=f2e6]:
+        - link "Notes" [ref=f2e7] [cursor=pointer]:
+          - /url: /notes/
+      - listitem [ref=f2e8]:
+        - link "Publications" [ref=f2e9] [cursor=pointer]:
+          - /url: /publications/
+      - listitem [ref=f2e10]:
+        - link "CV" [ref=f2e11] [cursor=pointer]:
+          - /url: /cv/
+      - listitem [ref=f2e12]:
+        - link "Now" [ref=f2e13] [cursor=pointer]:
+          - /url: /now/
+      - listitem [ref=f2e14]:
+        - link "About" [ref=f2e15] [cursor=pointer]:
+          - /url: /about/
+  - main "Content" [ref=f2e16]:
+    - generic [ref=f2e17]:
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]:
+          - heading "|" [level=1] [ref=f2e20]
+          - paragraph [ref=f2e22]: Welcome to my personal site, where I write about my projects and share my notes.
+          - paragraph [ref=f2e23]:
+            - emphasis [ref=f2e24]: “The book of nature is written in the language of mathematics.”
+            - text: — Galileo Galilei
+        - heading "My Projects" [level=2] [ref=f2e25]
+        - list [ref=f2e26]:
+          - listitem [ref=f2e27]:
+            - link "Quadruped Locomotion Model Predictive Control for quadrupedal locomotion. Model Predictive Control for quadrupedal locomotion" [ref=f2e28] [cursor=pointer]:
+              - /url: /projects/quadrupedal-locomotion/
+              - generic [ref=f2e29]:
+                - generic [ref=f2e30]: Quadruped Locomotion
+                - separator [ref=f2e31]
+                - paragraph [ref=f2e32]: Model Predictive Control for quadrupedal locomotion.
+              - generic "Model Predictive Control for quadrupedal locomotion" [ref=f2e34]
+          - listitem [ref=f2e35]:
+            - link "Quadruped Simulation Isaac Sim and Mujoco simualtion for quadrupedal locomotion. Isaac Sim and Mujoco simualtion for quadrupedal locomotion" [ref=f2e36] [cursor=pointer]:
+              - /url: /projects/quadrupedal-simulation/
+              - generic [ref=f2e37]:
+                - generic [ref=f2e38]: Quadruped Simulation
+                - separator [ref=f2e39]
+                - paragraph [ref=f2e40]: Isaac Sim and Mujoco simualtion for quadrupedal locomotion.
+              - generic "Isaac Sim and Mujoco simualtion for quadrupedal locomotion" [ref=f2e42]
+          - listitem [ref=f2e43]:
+            - link "Contact Detection Contact and collision detection for quadrupedal locomotion gait planning. Contact Detection" [ref=f2e44] [cursor=pointer]:
+              - /url: /projects/contact-detection/
+              - generic [ref=f2e45]:
+                - generic [ref=f2e46]: Contact Detection
+                - separator [ref=f2e47]
+                - paragraph [ref=f2e48]: Contact and collision detection for quadrupedal locomotion gait planning.
+              - generic "Contact Detection" [ref=f2e50]
+          - listitem [ref=f2e51]:
+            - link "Quadrupedal Robots Notes and development updates on the design and control of a quadrupedal robotic platform." [ref=f2e52] [cursor=pointer]:
+              - /url: /projects/robot-quadrupedal/
+              - generic [ref=f2e53]:
+                - generic [ref=f2e54]: Quadrupedal Robots
+                - separator [ref=f2e55]
+                - paragraph [ref=f2e56]: Notes and development updates on the design and control of a quadrupedal robotic platform.
+          - listitem [ref=f2e57]:
+            - link "Quadruped Parameter Identification Notes on quadruped robots' parameter identification. Quadruped Parameter Identification" [ref=f2e58] [cursor=pointer]:
+              - /url: /projects/quadruped-identification/
+              - generic [ref=f2e59]:
+                - generic [ref=f2e60]: Quadruped Parameter Identification
+                - separator [ref=f2e61]
+                - paragraph [ref=f2e62]: Notes on quadruped robots' parameter identification.
+              - generic "Quadruped Parameter Identification" [ref=f2e64]
+          - listitem [ref=f2e65]:
+            - link [ref=f2e66] [cursor=pointer]:
+              - /url: /projects/inverse-optimal-control/
+              - generic [ref=f2e67]:
+                - generic [ref=f2e68]:
+                  - text: Inverse Optimal Control
+                  - mark [ref=f2e69]: Published
+                - separator [ref=f2e70]
+                - paragraph [ref=f2e71]: Notes on our conference paper on inverse optimal control.
+          - listitem [ref=f2e72]:
+            - link [ref=f2e73] [cursor=pointer]:
+              - /url: /projects/active-disturbance-rejection-control/
+              - generic [ref=f2e74]:
+                - generic [ref=f2e75]:
+                  - text: Active Disturbance Rejection Control
+                  - mark [ref=f2e76]: Open-source
+                - separator [ref=f2e77]
+                - paragraph [ref=f2e78]: A multi-language implementation of active disturbance rejection control.
+              - img "ADRC App" [ref=f2e80]
+        - heading [level=2] [ref=f2e81]:
+          - link "My Notes" [ref=f2e82] [cursor=pointer]:
+            - /url: /notes/
+        - list [ref=f2e83]:
+          - listitem [ref=f2e84]:
+            - paragraph [ref=f2e85]:
+              - text: 2026-04-10 •
+              - link "Git" [ref=f2e86] [cursor=pointer]:
+                - /url: /notes/Computer%20Science/Git/
+          - listitem [ref=f2e87]:
+            - paragraph [ref=f2e88]:
+              - text: 2026-04-02 •
+              - link "Geometric Approach to Nonlinear Control" [ref=f2e89] [cursor=pointer]:
+                - /url: /notes/Control/Nonlinear%20Control/Geometric%20Approach%20to%20Nonlinear%20Control/Geometric%20Approach%20to%20Nonlinear%20Control/
+          - listitem [ref=f2e90]:
+            - paragraph [ref=f2e91]:
+              - text: 2026-04-02 •
+              - link "Change of Coordinates" [ref=f2e92] [cursor=pointer]:
+                - /url: /notes/Control/Nonlinear%20Control/Geometric%20Approach%20to%20Nonlinear%20Control/Change%20of%20Coordinates/
+          - listitem [ref=f2e93]:
+            - paragraph [ref=f2e94]:
+              - text: 2026-04-02 •
+              - link "Basics of Differential Geometry" [ref=f2e95] [cursor=pointer]:
+                - /url: /notes/Control/Nonlinear%20Control/Geometric%20Approach%20to%20Nonlinear%20Control/Basics%20of%20Differential%20Geometry/
+          - listitem [ref=f2e96]:
+            - paragraph [ref=f2e97]:
+              - text: 2026-04-01 •
+              - link "Nonlinear Control" [ref=f2e98] [cursor=pointer]:
+                - /url: /notes/Control/Nonlinear%20Control/Nonlinear%20Control/
+        - heading "My Open Source Projects" [level=2] [ref=f2e99]
+        - list [ref=f2e100]:
+          - listitem [ref=f2e101]:
+            - link "Model Predictive Control MATLAB codes for a DMC and an EPFC controller." [ref=f2e102] [cursor=pointer]:
+              - /url: /projects/model-predictive-control/
+              - generic [ref=f2e103]:
+                - generic [ref=f2e104]: Model Predictive Control
+                - separator [ref=f2e105]
+                - paragraph [ref=f2e106]: MATLAB codes for a DMC and an EPFC controller.
+          - listitem [ref=f2e107]:
+            - link [ref=f2e108] [cursor=pointer]:
+              - /url: /projects/active-disturbance-rejection-control/
+              - generic [ref=f2e109]:
+                - generic [ref=f2e110]:
+                  - text: Active Disturbance Rejection Control
+                  - mark [ref=f2e111]: Open-source
+                - separator [ref=f2e112]
+                - paragraph [ref=f2e113]: A multi-language implementation of active disturbance rejection control.
+              - img "ADRC App" [ref=f2e115]
+          - listitem [ref=f2e116]:
+            - link "Manipulator Simulation An object-oriented MATLAB implementation of manipulator kinematics, dynamics and control. Manipulator Simulation" [ref=f2e117] [cursor=pointer]:
+              - /url: /projects/manipulator-simulation/
+              - generic [ref=f2e118]:
+                - generic [ref=f2e119]: Manipulator Simulation
+                - separator [ref=f2e120]
+                - paragraph [ref=f2e121]: An object-oriented MATLAB implementation of manipulator kinematics, dynamics and control.
+              - generic "Manipulator Simulation" [ref=f2e123]
+          - listitem [ref=f2e124]:
+            - link "Optimal Control MATLAB codes for solving the general nonlinear optimal control problem." [ref=f2e125] [cursor=pointer]:
+              - /url: /projects/optimal-control/
+              - generic [ref=f2e126]:
+                - generic [ref=f2e127]: Optimal Control
+                - separator [ref=f2e128]
+                - paragraph [ref=f2e129]: MATLAB codes for solving the general nonlinear optimal control problem.
+        - list [ref=f2e132]:
+          - listitem [ref=f2e133]:
+            - link "Linkedin" [ref=f2e134] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/mohammadreza-gilak-7aa830226/
+          - listitem [ref=f2e135]:
+            - link "Github" [ref=f2e136] [cursor=pointer]:
+              - /url: https://github.com/MRGilak
+          - listitem [ref=f2e137]:
+            - link "Google Scholar" [ref=f2e138] [cursor=pointer]:
+              - /url: https://scholar.google.com/citations?user=sAYdpEwAAAAJ
+          - listitem [ref=f2e139]:
+            - link "ORCID" [ref=f2e140] [cursor=pointer]:
+              - /url: https://orcid.org/my-orcid?orcid=0009-0006-3824-2736
+          - listitem [ref=f2e141]:
+            - link "Mathworks" [ref=f2e142] [cursor=pointer]:
+              - /url: https://www.mathworks.com/matlabcentral/profile/authors/38114750
+      - button "Toggle theme" [ref=f2e143] [cursor=pointer]
+      - generic [ref=f2e146]:
+        - text: © 2026 Mohammadreza Gilak · Built with
+        - link "Moonwalk" [ref=f2e147] [cursor=pointer]:
+          - /url: https://github.com/abhinavs/moonwalk
