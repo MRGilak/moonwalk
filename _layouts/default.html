@@ -23,34 +23,16 @@
     </main>
 
     {% if site.theme_config.smooth_scroll %}
-      <!-- butter-style smooth scroll script -->
-      <script src="{{ '/assets/js/butter.js' | relative_url }}"></script>
+      <!-- butter-style smooth scroll script (page-scoped, kept separate) -->
+      <script src="{{ '/assets/js/butter.js' | relative_url }}" defer></script>
     {% endif %}
 
-    <!-- Only load parallax script on home page -->
+    <!-- Homepage-only behaviors: parallax + typing animation (one request) -->
     {% if page.layout == "home" %}
-      <script src="{{ '/assets/js/parallax.js' | relative_url }}"></script>
-      <script src="{{ '/assets/js/typing-animation.js' | relative_url }}"></script>
+      <script src="{{ '/assets/js/bundle-home.js' | relative_url }}" defer></script>
     {% endif %}
-    <!-- Consolidated fenced-code fallback renderer -->
-    <script src="{{ '/assets/js/fenced-code.js' | relative_url }}"></script>
-
-    <!-- 3D Card Tilt Effect -->
-    <script src="{{ '/assets/js/card-tilt.js' | relative_url }}"></script>
-    
-    <!-- Reading Progress Bar (shows on all pages with scrollable content) -->
-    <script src="{{ '/assets/js/reading-progress.js' | relative_url }}"></script>
-    
-    <!-- Back to Top Button -->
-    <script src="{{ '/assets/js/back-to-top.js' | relative_url }}"></script>
-
-    <!-- Publications "Copy BibTeX" buttons (no-op on pages without them) -->
-    <script src="{{ '/assets/js/copy-citation.js' | relative_url }}"></script>
-
-    <!-- Lazy-load content images site-wide -->
-    <script src="{{ '/assets/js/lazy-images.js' | relative_url }}"></script>
-
-    <!-- Load + play looping videos only when scrolled into view -->
-    <script src="{{ '/assets/js/lazy-video.js' | relative_url }}"></script>
+    <!-- Site-wide behaviors: fenced-code, card-tilt, reading-progress,
+         back-to-top, copy-citation, lazy-images, lazy-video (one request) -->
+    <script src="{{ '/assets/js/bundle-core.js' | relative_url }}" defer></script>
   </body>
 </html>

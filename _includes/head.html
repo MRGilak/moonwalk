@@ -60,6 +60,9 @@
   <script src="/assets/vendor/aos/aos.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Guard: if the vendor file was blocked/reset in transit, the page
+      // must still work — animations are enhancement, not requirement.
+      if (typeof AOS === 'undefined') return;
       AOS.init({
         duration: 800,        // Animation duration in ms
         easing: 'ease-out-cubic',  // Smooth easing
